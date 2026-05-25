@@ -18,7 +18,7 @@
   </script>
   <!-- Primary SEO -->
   <title>GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed</title>
-  <meta name="description" content="GameBeeper brings together video game news, reveals, reviews, platform updates and industry stories from trusted gaming sources in one fast feed." />
+  <meta name="description" content="GameBeeper brings together video game news, reveals, reviews, platform updates and industry stories from trusted gaming sources in one fast feed. No ads. No paywalls." />
   <meta name="application-name" content="GameBeeper" />
   <meta name="rating" content="general" />
   <meta name="language" content="English" />
@@ -39,13 +39,13 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://GameBeeper.gg/" />
   <meta name="twitter:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
-  <meta name="twitter:description" content="All the games worth watching. One signal. Video game news aggregated from 19 trusted gaming sources." />
+  <meta name="twitter:description" content="Your gaming signal. News, reviews, reveals and community picks from 34 trusted gaming sources." />
   <meta name="twitter:image" content="https://GameBeeper.gg/og-image.png" />
   <meta name="twitter:image:alt" content="GameBeeper — Video Game News Aggregator" />
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <!-- Theme / PWA -->
-  <meta name="theme-color" content="#07070c" />
+  <meta name="theme-color" content="#090B11" />
   <link rel="manifest" href="/manifest.json" />
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/favicon-DqLig5T2.svg" />
@@ -58,7 +58,8 @@
   <link rel="dns-prefetch" href="https://api.codetabs.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700;800&family=Oxanium:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Space Grotesk (display), Inter (body), JetBrains Mono (utility) -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   [
@@ -72,22 +73,14 @@
       "inLanguage": "en-US",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://GameBeeper.gg/?q={search_term_string}"
-        },
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://GameBeeper.gg/?q={search_term_string}" },
         "query-input": "required name=search_term_string"
       },
       "publisher": {
         "@type": "Organization",
         "name": "GameBeeper",
         "url": "https://GameBeeper.gg/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://GameBeeper.gg/favicon.svg",
-          "width": 512,
-          "height": 512
-        }
+        "logo": { "@type": "ImageObject", "url": "https://GameBeeper.gg/favicon.svg", "width": 512, "height": 512 }
       }
     },
     {
@@ -95,25 +88,10 @@
       "@type": "WebPage",
       "name": "GameBeeper — Video Game News Aggregator",
       "url": "https://GameBeeper.gg/",
-      "description": "GameBeeper aggregates video game news from 19 trusted sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, and more — in one fast, ad-free feed.",
+      "description": "GameBeeper aggregates video game news from 34 trusted sources in one fast, ad-free feed.",
       "isPartOf": { "@type": "WebSite", "url": "https://GameBeeper.gg/" },
-      "about": {
-        "@type": "Thing",
-        "name": "Video Game News Aggregation"
-      },
       "privacyPolicy": "https://GameBeeper.gg/privacy.html",
-      "dateModified": "2026-05-25",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://GameBeeper.gg/"
-          }
-        ]
-      }
+      "dateModified": "2026-05-25"
     }
   ]
   </script>
@@ -122,62 +100,83 @@
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Video Game News Sources aggregated by GameBeeper",
-    "description": "All 19 RSS feed sources aggregated by GameBeeper — the free video game news aggregator.",
     "url": "https://GameBeeper.gg/",
-    "numberOfItems": 19,
+    "numberOfItems": 34,
     "itemListElement": [
       {"@type":"ListItem","position":1,"name":"VGC","url":"https://GameBeeper.gg/?source=VGC"},
       {"@type":"ListItem","position":2,"name":"Gematsu","url":"https://GameBeeper.gg/?source=Gematsu"},
-      {"@type":"ListItem","position":3,"name":"PlayStation Blog","url":"https://GameBeeper.gg/?source=PlayStation+Blog"},
-      {"@type":"ListItem","position":4,"name":"Xbox Wire","url":"https://GameBeeper.gg/?source=Xbox+Wire"},
-      {"@type":"ListItem","position":5,"name":"Nintendo Life","url":"https://GameBeeper.gg/?source=Nintendo+Life"},
-      {"@type":"ListItem","position":6,"name":"Push Square","url":"https://GameBeeper.gg/?source=Push+Square"},
-      {"@type":"ListItem","position":7,"name":"Pure Xbox","url":"https://GameBeeper.gg/?source=Pure+Xbox"},
-      {"@type":"ListItem","position":8,"name":"Nintendo Everything","url":"https://GameBeeper.gg/?source=Nintendo+Everything"},
-      {"@type":"ListItem","position":9,"name":"PC Gamer","url":"https://GameBeeper.gg/?source=PC+Gamer"},
-      {"@type":"ListItem","position":10,"name":"Rock Paper Shotgun","url":"https://GameBeeper.gg/?source=Rock+Paper+Shotgun"},
-      {"@type":"ListItem","position":11,"name":"Eurogamer","url":"https://GameBeeper.gg/?source=Eurogamer"},
-      {"@type":"ListItem","position":12,"name":"GamesIndustry.biz","url":"https://GameBeeper.gg/?source=GamesIndustry.biz"},
-      {"@type":"ListItem","position":13,"name":"IGN","url":"https://GameBeeper.gg/?source=IGN"},
-      {"@type":"ListItem","position":14,"name":"GameSpot","url":"https://GameBeeper.gg/?source=GameSpot"},
-      {"@type":"ListItem","position":15,"name":"Destructoid","url":"https://GameBeeper.gg/?source=Destructoid"},
-      {"@type":"ListItem","position":16,"name":"Polygon","url":"https://GameBeeper.gg/?source=Polygon"},
-      {"@type":"ListItem","position":17,"name":"Kotaku","url":"https://GameBeeper.gg/?source=Kotaku"},
-      {"@type":"ListItem","position":18,"name":"PCGamesN","url":"https://GameBeeper.gg/?source=PCGamesN"},
-      {"@type":"ListItem","position":19,"name":"TheGamer","url":"https://GameBeeper.gg/?source=TheGamer"}
+      {"@type":"ListItem","position":3,"name":"Eurogamer","url":"https://GameBeeper.gg/?source=Eurogamer"},
+      {"@type":"ListItem","position":4,"name":"IGN","url":"https://GameBeeper.gg/?source=IGN"},
+      {"@type":"ListItem","position":5,"name":"GameSpot","url":"https://GameBeeper.gg/?source=GameSpot"},
+      {"@type":"ListItem","position":6,"name":"Polygon","url":"https://GameBeeper.gg/?source=Polygon"},
+      {"@type":"ListItem","position":7,"name":"Kotaku","url":"https://GameBeeper.gg/?source=Kotaku"},
+      {"@type":"ListItem","position":8,"name":"Destructoid","url":"https://GameBeeper.gg/?source=Destructoid"},
+      {"@type":"ListItem","position":9,"name":"GamesRadar","url":"https://GameBeeper.gg/?source=GamesRadar"},
+      {"@type":"ListItem","position":10,"name":"Ars Technica Gaming","url":"https://GameBeeper.gg/?source=Ars+Technica+Gaming"},
+      {"@type":"ListItem","position":11,"name":"The Verge","url":"https://GameBeeper.gg/?source=The+Verge"},
+      {"@type":"ListItem","position":12,"name":"PlayStation Blog","url":"https://GameBeeper.gg/?source=PlayStation+Blog"},
+      {"@type":"ListItem","position":13,"name":"Push Square","url":"https://GameBeeper.gg/?source=Push+Square"},
+      {"@type":"ListItem","position":14,"name":"Xbox Wire","url":"https://GameBeeper.gg/?source=Xbox+Wire"},
+      {"@type":"ListItem","position":15,"name":"Pure Xbox","url":"https://GameBeeper.gg/?source=Pure+Xbox"},
+      {"@type":"ListItem","position":16,"name":"Nintendo Life","url":"https://GameBeeper.gg/?source=Nintendo+Life"},
+      {"@type":"ListItem","position":17,"name":"Nintendo Everything","url":"https://GameBeeper.gg/?source=Nintendo+Everything"},
+      {"@type":"ListItem","position":18,"name":"PC Gamer","url":"https://GameBeeper.gg/?source=PC+Gamer"},
+      {"@type":"ListItem","position":19,"name":"Rock Paper Shotgun","url":"https://GameBeeper.gg/?source=Rock+Paper+Shotgun"},
+      {"@type":"ListItem","position":20,"name":"PCGamesN","url":"https://GameBeeper.gg/?source=PCGamesN"},
+      {"@type":"ListItem","position":21,"name":"IGN Reviews","url":"https://GameBeeper.gg/?source=IGN+Reviews"},
+      {"@type":"ListItem","position":22,"name":"GameSpot Reviews","url":"https://GameBeeper.gg/?source=GameSpot+Reviews"},
+      {"@type":"ListItem","position":23,"name":"RPS Reviews","url":"https://GameBeeper.gg/?source=RPS+Reviews"},
+      {"@type":"ListItem","position":24,"name":"Nintendo Life Reviews","url":"https://GameBeeper.gg/?source=Nintendo+Life+Reviews"},
+      {"@type":"ListItem","position":25,"name":"Push Square Reviews","url":"https://GameBeeper.gg/?source=Push+Square+Reviews"},
+      {"@type":"ListItem","position":26,"name":"Pure Xbox Reviews","url":"https://GameBeeper.gg/?source=Pure+Xbox+Reviews"},
+      {"@type":"ListItem","position":27,"name":"Gematsu Trailers","url":"https://GameBeeper.gg/?source=Gematsu+Trailers"},
+      {"@type":"ListItem","position":28,"name":"Dot Esports","url":"https://GameBeeper.gg/?source=Dot+Esports"},
+      {"@type":"ListItem","position":29,"name":"GamesIndustry.biz","url":"https://GameBeeper.gg/?source=GamesIndustry.biz"},
+      {"@type":"ListItem","position":30,"name":"Digital Foundry","url":"https://GameBeeper.gg/?source=Digital+Foundry"},
+      {"@type":"ListItem","position":31,"name":"Tom's Hardware","url":"https://GameBeeper.gg/?source=Tom%27s+Hardware"},
+      {"@type":"ListItem","position":32,"name":"Siliconera","url":"https://GameBeeper.gg/?source=Siliconera"},
+      {"@type":"ListItem","position":33,"name":"Indie Games Plus","url":"https://GameBeeper.gg/?source=Indie+Games+Plus"},
+      {"@type":"ListItem","position":34,"name":"itch.io Devlogs","url":"https://GameBeeper.gg/?source=itch.io+Devlogs"}
     ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/index-BedkIF0s.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BtrlEYyz.css">
+  <script type="module" crossorigin src="/assets/index-ioXqKoLl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-HliLwe8M.css">
 </head>
 <body>
   <!-- Skip to main content (accessibility) -->
   <a class="skip-link" href="#latest">Skip to latest articles</a>
   <!-- Live region for screen reader feed status announcements -->
   <div id="feedStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
-  <!-- NAV -->
+
+  <!-- ============== NAV ============== -->
   <nav class="top-nav" aria-label="Main navigation">
     <div class="page-wrap">
       <div class="nav-inner">
         <a href="/" class="logo" aria-label="GameBeeper home">
           <div class="logo-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="16" cy="16" r="4" fill="#26e6ff"/>
-              <circle cx="16" cy="16" r="8"  fill="none" stroke="#26e6ff" stroke-width="2" stroke-opacity="0.7"/>
-              <circle cx="16" cy="16" r="13" fill="none" stroke="#26e6ff" stroke-width="1.5" stroke-opacity="0.4"/>
+            <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
+              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
             </svg>
           </div>
           <span class="logo-name">GameBeeper</span>
         </a>
         <div class="nav-links" aria-label="Site sections">
-          <a href="#latest" class="nav-link">Feed</a>
-          <a href="#sources" class="nav-link">Sources</a>
-          <a href="#about" class="nav-link">About</a>
+          <a href="#latest"   class="nav-link">Feed</a>
+          <a href="#sources"  class="nav-link">Sources</a>
+          <a href="#about"    class="nav-link">About</a>
           <a href="#feedback" class="nav-link">Feedback</a>
         </div>
         <div class="nav-actions">
-          <!-- hamburger menu button (mobile only) -->
+          <button id="navSearchBtn" class="btn btn-ghost btn-sm" title="Search articles" aria-label="Open search" aria-expanded="false">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+          <button id="savedStoriesBtn" class="btn btn-ghost btn-sm" title="View saved stories" aria-label="View saved stories" onclick="window.__setFilter&&window.__setFilter('Bookmarks');document.getElementById('latest').scrollIntoView({behavior:'smooth'})">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            <span id="sbBmCount" class="nav-bm-count" aria-label="saved stories count">0</span>
+          </button>
           <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
             <span class="nav-hamburger-bar"></span>
             <span class="nav-hamburger-bar"></span>
@@ -190,150 +189,177 @@
   <!-- Mobile nav drawer -->
   <div class="nav-drawer" id="navDrawer" aria-hidden="true" role="dialog" aria-label="Site navigation">
     <nav class="nav-drawer-links">
-      <a href="#latest"   class="nav-drawer-link">Feed</a>
-      <a href="#sources"  class="nav-drawer-link">Sources</a>
-      <a href="#about"    class="nav-drawer-link">About</a>
-      <a href="#feedback" class="nav-drawer-link">Feedback</a>
+      <a href="#latest"    class="nav-drawer-link">Feed</a>
+      <a href="#sources"   class="nav-drawer-link">Sources</a>
+      <a href="#about"     class="nav-drawer-link">About</a>
+      <a href="#feedback"  class="nav-drawer-link">Feedback</a>
     </nav>
   </div>
   <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
-  <div class="page-wrap">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span class="pulse" aria-hidden="true"></span>
-          Video game news aggregator
+
+  <!-- ============== HERO ============== -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="page-wrap">
+      <div class="hero-inner">
+        <!-- Left column -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="pulse" aria-hidden="true"></span>
+            Player-First Gaming Signal
+          </div>
+          <h1 id="hero-heading">Discover what's<br /><em>worth playing.</em></h1>
+          <p class="hero-sub">News, reviews, reveals and player conversation from trusted gaming sources — brought together in one clean signal.</p>
+          <div class="hero-ctas">
+            <a href="#latest" class="btn btn-primary btn-lg">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+              Explore the Feed
+            </a>
+            <button id="refreshBtnHero" class="btn btn-ghost btn-lg" title="Refresh feeds" aria-label="Refresh feeds">
+              <span id="refreshIcon"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M13.5 8a5.5 5.5 0 1 1-1.3-3.6"/><polyline points="14,2 14,6 10,6"/></svg></span>Refresh
+            </button>
+          </div>
+          <div class="hero-trust" role="list" aria-label="Platform promises">
+            <span role="listitem"><span id="heroFeedCount">34</span> trusted sources</span>
+            <span class="trust-dot" aria-hidden="true">·</span>
+            <span role="listitem">No ads</span>
+            <span class="trust-dot" aria-hidden="true">·</span>
+            <span role="listitem">No paywalls</span>
+          </div>
+          <div class="hero-stats" aria-label="Live feed statistics">
+            <div class="hero-stat">
+              <span class="val" id="statFeeds">34</span>
+              <span class="lbl">Sources</span>
+            </div>
+            <div class="hero-stat">
+              <span class="val" id="statToday">--</span>
+              <span class="lbl">New today</span>
+            </div>
+            <div class="hero-stat">
+              <span class="val">11</span>
+              <span class="lbl">Platforms &amp; topics</span>
+            </div>
+            <div class="hero-stat">
+              <span class="val" id="statSources">--</span>
+              <span class="lbl">Active sources</span>
+            </div>
+          </div>
         </div>
-        <h1 id="hero-heading">All the games<br />worth watching.<br /><em>One signal.</em></h1>
-        <p class="hero-sub">GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories from <span id="heroFeedCount">19</span> trusted gaming sources in one fast, distraction-free feed. No ads. No paywalls.</p>
-        <div class="hero-ctas">
-          <a href="#latest" class="btn btn-primary btn-lg">Browse latest news</a>
-          <button id="refreshBtnHero" class="btn btn-ghost btn-lg" title="Refresh feeds">
-            <span id="refreshIcon"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M13.5 8a5.5 5.5 0 1 1-1.3-3.6"/><polyline points="14,2 14,6 10,6"/></svg></span>Refresh
-          </button>
-          <button id="savedStoriesBtn" class="btn btn-ghost btn-lg" onclick="window.__setFilter&&window.__setFilter('Bookmarks')">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>View saved stories
-          </button>
+        <!-- Signal wave background decoration -->
+        <div class="hero-signal-bg" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="600" height="520" viewBox="0 0 600 520" fill="none" preserveAspectRatio="xMidYMid slice">
+            <ellipse cx="300" cy="260" rx="60" ry="60" stroke="rgba(163,255,63,0.35)" stroke-width="1.2" fill="none"/>
+            <ellipse cx="300" cy="260" rx="110" ry="100" stroke="rgba(163,255,63,0.22)" stroke-width="1" fill="none"/>
+            <ellipse cx="300" cy="260" rx="170" ry="150" stroke="rgba(36,214,255,0.18)" stroke-width="0.9" fill="none"/>
+            <ellipse cx="300" cy="260" rx="240" ry="210" stroke="rgba(36,214,255,0.12)" stroke-width="0.8" fill="none"/>
+            <ellipse cx="300" cy="260" rx="320" ry="280" stroke="rgba(163,255,63,0.08)" stroke-width="0.7" fill="none"/>
+            <ellipse cx="300" cy="260" rx="410" ry="360" stroke="rgba(139,108,255,0.07)" stroke-width="0.6" fill="none"/>
+            <line x1="300" y1="0" x2="300" y2="520" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+            <line x1="0" y1="260" x2="600" y2="260" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+          </svg>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="val" id="statFeeds">19</span>
-            <span class="lbl">Sources</span>
-          </div>
-          <div class="hero-stat">
-            <span class="val" id="statToday">--</span>
-            <span class="lbl">New today</span>
-          </div>
-          <div class="hero-stat">
-            <span class="val">11</span>
-            <span class="lbl">Platforms &amp; topics</span>
-          </div>
-          <div class="hero-stat">
-            <span class="val" id="statSources">--</span>
-            <span class="lbl">Active</span>
+        <!-- Right column: Featured story card -->
+        <div class="hero-featured" aria-label="Featured story preview">
+          <div class="hero-featured-card" id="heroFeaturedCard">
+            <div class="hfc-skeleton" aria-hidden="true">
+              <div class="hfc-skeleton-img"></div>
+              <div style="display:flex;flex-direction:column;gap:8px;padding:4px 2px">
+                <div class="sk sk-chip" style="width:80px;height:18px;border-radius:99px"></div>
+                <div class="sk sk-h1" style="height:14px"></div>
+                <div class="sk sk-h2" style="height:14px"></div>
+                <div class="sk sk-t1" style="height:11px;width:65%"></div>
+                <div class="sk sk-foot" style="margin-top:4px;height:28px"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- MOBILE FILTERS (shown on small screens) -->
+    </div>
+  </section>
+
+
+  <!-- ============== CATEGORY CHIPS (all screens) ============== -->
+  <div class="mobile-filters-wrap">
     <div id="mobileFilters" class="mobile-filters" role="group" aria-label="Filter by category"></div>
-    <!-- APP LAYOUT -->
-    <div class="app-layout" id="latest">
-      <!-- SIDEBAR -->
-      <aside class="sidebar" aria-label="Explore and signal status">
-        <div class="sidebar-section">
-          <div class="sidebar-label">Explore</div>
-          <nav id="sidebarFilters" class="filter-nav" aria-label="Category filters"></nav>
+  </div>
+
+  <!-- ============== APP LAYOUT ============== -->
+  <div class="app-layout page-wrap" id="latest">
+
+    <!-- MAIN CONTENT FEED -->
+    <main class="content" aria-labelledby="latest-heading">
+      <div class="feed-header">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <h2 id="latest-heading" class="feed-title">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:8px"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>Latest Signal
+          </h2>
+          <span id="articleCount" class="article-count" style="display:none"></span>
         </div>
-        <div class="sidebar-section">
-          <div class="sidebar-label">Saved</div>
-          <div class="sidebar-card">
-            <div style="display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--gs-muted);">
-              <div style="display:flex;align-items:center;gap:7px;color:var(--gs-text);">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--gs-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-                <span style="color:var(--gs-cyan);font-weight:700;">GameBeeper</span>
-                <span style="margin-left:auto;" id="sbBmCount">0</span>
-              </div>
-              <div style="color:var(--gs-muted);font-size:10px;line-height:1.6;">Click
-                <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-                on any card to save a story
-              </div>
-              <button id="clearBookmarksBtn" class="btn btn-ghost btn-sm" style="font-size:10px;padding:4px 8px;color:var(--gs-magenta);border-color:var(--gs-magenta);opacity:0.7;" title="Clear all bookmarks">Clear all</button>
-            </div>
-          </div>
-        </div>
-        <div class="sidebar-section">
-          <div class="sidebar-label">Signal status</div>
-          <div class="sidebar-card">
-            <div style="display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--gs-muted);">
-              <div style="display:flex;justify-content:space-between;">
-                <span>sources online</span>
-                <span id="sbFeeds" style="color:var(--gs-lime)">--</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;">
-                <span>last refresh</span>
-                <span id="sbUpdated" style="color:var(--gs-cyan)">--</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;">
-                <span>failed feeds</span>
-                <span id="sbFailed" style="color:var(--gs-warning)">0</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <!-- MAIN CONTENT -->
-      <main class="content" aria-labelledby="latest-heading">
-        <h2 id="latest-heading" class="section-heading">Latest</h2>
-        <!-- Search bar -->
         <div class="search-bar-wrap">
           <label for="articleSearch" class="sr-only">Search articles</label>
           <div class="search-bar">
             <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="search" id="articleSearch" class="search-input" placeholder="Search game news… (press / to focus)" autocomplete="off" spellcheck="false" />
+            <input type="search" id="articleSearch" class="search-input" placeholder="Search gaming news… (press / to focus)" autocomplete="off" spellcheck="false" />
             <kbd class="search-kbd" id="searchKbd">/</kbd>
           </div>
         </div>
-        <!-- Toolbar -->
         <div class="toolbar">
           <div class="toolbar-left">
             <div class="toolbar-status">
               <span id="statusDot" class="status-dot loading"></span>
               <span id="statusText">Tuning into the latest game stories…</span>
             </div>
-            <span id="articleCount" class="article-count" style="display:none"></span>
           </div>
           <div class="view-toggle" role="group" aria-label="View mode">
             <button class="view-btn active" id="gridViewBtn" title="Grid view" aria-label="Grid view" aria-pressed="true"><svg aria-hidden="true" viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="5" height="5"/><rect x="8" y="1" width="5" height="5"/><rect x="1" y="8" width="5" height="5"/><rect x="8" y="8" width="5" height="5"/></svg></button>
             <button class="view-btn" id="listViewBtn" title="List view" aria-label="List view" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="1" y1="3.5" x2="13" y2="3.5"/><line x1="1" y1="7" x2="13" y2="7"/><line x1="1" y1="10.5" x2="13" y2="10.5"/></svg></button>
           </div>
         </div>
-        <!-- Error banner -->
-        <div id="errorBanner" class="error-banner" role="alert">
-          <span class="e-icon"><svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5L1 14h14z"/><line x1="8" y1="6.5" x2="8" y2="10"/><circle cx="8" cy="12" r=".6" fill="currentColor" stroke="none"/></svg></span>
-          <span id="errorMessage"></span>
-        </div>
-        <!-- Feed health bar — loaded from public/feed-health.json -->
-        <div id="feedHealthBar" class="feed-health-bar" aria-live="polite" style="display:none"></div>
-        <!-- Noscript fallback — visible to crawlers and users without JS -->
-        <noscript>
-          <section style="padding:2rem 0">
-            <h2 style="margin-bottom:1rem">Latest video game news</h2>
-            <p>GameBeeper aggregates video game news from 19 curated RSS feeds across PlayStation, Xbox, Nintendo, PC, indie, reviews, trailers, esports, hardware, and industry topics.</p>
-            <p>Enable JavaScript to browse the latest articles with search, category filters, and bookmarks.</p>
-            <p>Sources include: PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, IGN, Polygon, Kotaku, GamesIndustry.biz, and more — <a href="#sources">see the full list</a>.</p>
-          </section>
-        </noscript>
-        <!-- SEO static article fallback — injected by scripts/generate-seo-content.mjs -->
-        <!-- GENERATED_LATEST_ARTICLES_START -->
+      </div>
+      <!-- Error banner -->
+      <div id="errorBanner" class="error-banner" role="alert">
+        <span class="e-icon"><svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5L1 14h14z"/><line x1="8" y1="6.5" x2="8" y2="10"/><circle cx="8" cy="12" r=".6" fill="currentColor" stroke="none"/></svg></span>
+        <span id="errorMessage"></span>
+      </div>
+      <!-- Feed health bar -->
+      <div id="feedHealthBar" class="feed-health-bar" aria-live="polite" style="display:none"></div>
+      <!-- Noscript fallback -->
+      <noscript>
+        <section style="padding:2rem 0">
+          <h2 style="margin-bottom:1rem">Latest video game news</h2>
+          <p>GameBeeper aggregates video game news from 34 curated RSS feeds across PlayStation, Xbox, Nintendo, PC, indie, reviews, trailers, esports, hardware, and industry topics.</p>
+          <p>Enable JavaScript to browse the latest articles with search, category filters, and bookmarks.</p>
+          <p>Sources include: PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, IGN, Polygon, Kotaku, GamesIndustry.biz, and more — <a href="#sources">see the full list</a>.</p>
+        </section>
+      </noscript>
+      <!-- SEO static article fallback — injected by scripts/generate-seo-content.mjs -->
+      <!-- GENERATED_LATEST_ARTICLES_START -->
 
-  <!-- Latest articles from 10 of 303 cached stories (generated May 25, 2026) -->
+  <!-- Latest articles from 10 of 363 cached stories (generated May 25, 2026) -->
   <section id="seoLatestFallback" class="seo-latest-articles" aria-label="Latest video game news (SEO fallback)" style="margin-top:24px">
     <h2>
       Latest Video Game News
     </h2>
     <div class="seo-articles-grid">
+
+    <article class="seo-card">
+      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/UPuf82fV4LKsjMrBbogcGE-1280-80.jpg" alt="Article image for: Marvel star says he &quot;didn&#39;t have any thoughts&quot; about Backrooms&#39; &quot;viral nature&quot;, was just drawn to its &quot;deep psychological resonance&quot;" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3><a href="https://www.gamesradar.com/entertainment/horror-movies/marvel-star-says-he-didnt-have-any-thoughts-about-backrooms-viral-nature-was-just-drawn-to-its-deep-psychological-resonance/" rel="noopener noreferrer">Marvel star says he &quot;didn&#39;t have any thoughts&quot; about Backrooms&#39; &quot;viral nature&quot;, was just drawn to its &quot;deep psychological resonance&quot;</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Exclusive: Chiwetel Ejiofor explains why he didn&#39;t feel any pressure to live up to Backrooms fans&#39; expectations with the…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-industry"></span>
+          <span>GamesRadar &middot; May 25, 2026</span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.gamesradar.com/entertainment/horror-movies/marvel-star-says-he-didnt-have-any-thoughts-about-backrooms-viral-nature-was-just-drawn-to-its-deep-psychological-resonance/" data-share-title="Marvel star says he &quot;didn&#39;t have any thoughts&quot; about Backrooms&#39; &quot;viral nature&quot;, was just drawn to its &quot;deep psychological resonance&quot;" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.gamesradar.com/entertainment/horror-movies/marvel-star-says-he-didnt-have-any-thoughts-about-backrooms-viral-nature-was-just-drawn-to-its-deep-psychological-resonance/" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
 
     <article class="seo-card">
       <div class="seo-card-img-wrap"><img src="https://media.dotesports.com/wp-content/uploads/2026/05/Subnautica-2-Troilite-Cover.jpg" alt="Article image for: Where to find Troilite in Subnautica 2" loading="lazy" decoding="async" width="640" height="360" /></div>
@@ -376,6 +402,26 @@
     </article>
 
     <article class="seo-card">
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzI3NDc2NTgwLnBuZw==/400x224%23c/ggw8p3.png" alt="Article image for: EMUUROM IS OUT ON STEAM!" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3><a href="https://borbware.itch.io/emuurom/devlog/1533776/emuurom-is-out-on-steam" rel="noopener noreferrer">EMUUROM IS OUT ON STEAM!</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Hello all! It’s a big day… EMUUROM is finally coming out… children_cheering.wav …on Steam at least, that is. boooo.wav Yeah I know, it would be ideal to have…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span>itch.io Devlogs &middot; May 25, 2026</span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://borbware.itch.io/emuurom/devlog/1533776/emuurom-is-out-on-steam" data-share-title="EMUUROM IS OUT ON STEAM!" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://borbware.itch.io/emuurom/devlog/1533776/emuurom-is-out-on-steam" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card">
       <div class="seo-card-img-wrap"><img src="https://nintendoeverything.com/wp-content/uploads/Yoshi-and-the-Mysterious-Book-review-2.jpg" alt="Article image for: Yoshi and the Mysterious Book review for Nintendo Switch 2" loading="lazy" decoding="async" width="640" height="360" /></div>
       <h3><a href="https://nintendoeverything.com/yoshi-and-the-mysterious-book-review-for-nintendo-switch-2/" rel="noopener noreferrer">Yoshi and the Mysterious Book review for Nintendo Switch 2</a></h3>
       <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>System:&amp;#160;Switch 2 Release date:&amp;#160;May 21, 2026 Developer:&amp;#160;Good-Feel Publisher:&amp;#160;Nintendo Out of all Nintendo franchises, Yoshi is quite…</p></div>
@@ -389,46 +435,6 @@
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
           <a href="https://nintendoeverything.com/yoshi-and-the-mysterious-book-review-for-nintendo-switch-2/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.dexerto.com/cdn-image/wp-content/uploads/2026/03/17/Marathon-ranked-information-1.jpg?width=1080&amp;quality=75&amp;format=auto" alt="Article image for: Marathon actor hits back at “sad” people hating on the game and tells them to “just stop”" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.dexerto.com/gaming/marathon-actor-hits-back-at-sad-people-hating-on-the-game-and-tells-them-to-just-stop-3367886/" rel="noopener noreferrer">Marathon actor hits back at “sad” people hating on the game and tells them to “just stop”</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>A voice actor for Bungie’s Marathon has challenged negativity surrounding the game, saying those who wish for it to fail should “just stop…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-esports"></span>
-          <span>Dexerto &middot; May 25, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.dexerto.com/gaming/marathon-actor-hits-back-at-sad-people-hating-on-the-game-and-tells-them-to-just-stop-3367886/" data-share-title="Marathon actor hits back at “sad” people hating on the game and tells them to “just stop”" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.dexerto.com/gaming/marathon-actor-hits-back-at-sad-people-hating-on-the-game-and-tells-them-to-just-stop-3367886/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.dexerto.com/cdn-image/wp-content/uploads/2026/05/25/khabylame.jpg?width=1080&amp;quality=75&amp;format=auto" alt="Article image for: TikTok star Khaby Lame joins joins 007 First Light in surprise cameo" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.dexerto.com/gaming/tiktok-star-khaby-lame-joins-joins-007-first-light-in-surprise-cameo-3367888/" rel="noopener noreferrer">TikTok star Khaby Lame joins joins 007 First Light in surprise cameo</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>007 First Light has revealed that TikTok star Khaby Lame will appear in the upcoming James Bond game as part of a “globetrotting adventure” set in…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-esports"></span>
-          <span>Dexerto &middot; May 25, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.dexerto.com/gaming/tiktok-star-khaby-lame-joins-joins-007-first-light-in-surprise-cameo-3367888/" data-share-title="TikTok star Khaby Lame joins joins 007 First Light in surprise cameo" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.dexerto.com/gaming/tiktok-star-khaby-lame-joins-joins-007-first-light-in-surprise-cameo-3367888/" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
@@ -456,6 +462,26 @@
     </article>
 
     <article class="seo-card">
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzExNjM5NzQxLnBuZw==/original/GNesIX.png" alt="Article image for: Guess who is back?" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3><a href="https://honeybunny-of.itch.io/subjectluv/devlog/1533575/guess-who-is-back" rel="noopener noreferrer">Guess who is back?</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Hello everyone! How have you all been doing? 💖 Today we&amp;#039;re here to talk about a subject very dear to us and planned for a very long time 👀 And yes… if…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span>itch.io Devlogs &middot; May 25, 2026</span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://honeybunny-of.itch.io/subjectluv/devlog/1533575/guess-who-is-back" data-share-title="Guess who is back?" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://honeybunny-of.itch.io/subjectluv/devlog/1533575/guess-who-is-back" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card">
       <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/kfvNwDT4D6jpoBvqVwPdcE-1280-80.webp" alt="Article image for: Researchers identify people through ordinary Wi-Fi routers with 99.5% accuracy — technique works with standard Wi-Fi routers" loading="lazy" decoding="async" width="640" height="360" /></div>
       <h3><a href="https://www.tomshardware.com/tech-industry/researchers-identify-people-through-ordinary-wi-fi-routers-with-99-percent-accuracy" rel="noopener noreferrer">Researchers identify people through ordinary Wi-Fi routers with 99.5% accuracy — technique works with standard Wi-Fi routers</a></h3>
       <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>The system requires no specialized hardware, no access to the target Wi-Fi network, and works even if the person being tracked isn&#39;t carrying a wireless…</p></div>
@@ -476,19 +502,19 @@
     </article>
 
     <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20360'%3e%3crect%20width='640'%20height='360'%20fill='%2310111a'/%3e%3ccircle%20cx='320'%20cy='180'%20r='120'%20fill='%23ff3abf10'/%3e%3csvg%20x='248'%20y='108'%20width='144'%20height='144'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23ff3abf'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M12%202l3.09%206.26L22%209.27l-5%204.87%201.18%206.88L12%2017.77l-6.18%203.25L7%2014.14%202%209.27l6.91-1.01L12%202z'/%3e%3c/svg%3e%3ccircle%20cx='320'%20cy='180'%20r='80'%20fill='none'%20stroke='%23ff3abf30'%20stroke-width='1'/%3e%3c/svg%3e" alt="Article image for: Wash It All Away Manga Volume 8 Mixes in Helpful Laundry Advice" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.siliconera.com/wash-it-all-away-manga-volume-8-mixes-in-helpful-laundry-advice/" rel="noopener noreferrer">Wash It All Away Manga Volume 8 Mixes in Helpful Laundry Advice</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>With Wash It All Away being a manga about a young woman running a laundry in Japan, it’s inevitable for some actually helpful advice to come up during the…</p></div>
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzEwNzU3NTU4LnBuZw==/original/mJdjf5.png" alt="Article image for: Regarding the future of Project: Eden&amp;#039;s Garden" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3><a href="https://project-edens-garden.itch.io/projecteg/devlog/1532969/regarding-the-future-of-project-edens-garden" rel="noopener noreferrer">Regarding the future of Project: Eden&amp;#039;s Garden</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Hey everyone, Juvey here. I would like to start just by asking everyone to read this statement in full. But, cutting to the chase: We are canceling the…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
           <span class="src-dot cat-indie"></span>
-          <span>Siliconera &middot; May 24, 2026</span>
+          <span>itch.io Devlogs &middot; May 24, 2026</span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.siliconera.com/wash-it-all-away-manga-volume-8-mixes-in-helpful-laundry-advice/" data-share-title="Wash It All Away Manga Volume 8 Mixes in Helpful Laundry Advice" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://project-edens-garden.itch.io/projecteg/devlog/1532969/regarding-the-future-of-project-edens-garden" data-share-title="Regarding the future of Project: Eden&amp;#039;s Garden" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.siliconera.com/wash-it-all-away-manga-volume-8-mixes-in-helpful-laundry-advice/" rel="noopener noreferrer" class="card-link">
+          <a href="https://project-edens-garden.itch.io/projecteg/devlog/1532969/regarding-the-future-of-project-edens-garden" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
@@ -496,39 +522,19 @@
     </article>
 
     <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://images.purexbox.com/c5150e84f909e/large.jpg" alt="Article image for: PSA: Microsoft Is Removing SMS Authentication From Everyone&amp;#039;s Xbox Account" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.purexbox.com/news/2026/05/psa-microsoft-is-removing-sms-authentication-from-everyones-xbox-account" rel="noopener noreferrer">PSA: Microsoft Is Removing SMS Authentication From Everyone&amp;#039;s Xbox Account</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>&quot;SMS-based authentication is now a leading source of fraud&quot;. Microsoft is officially in the process of removing SMS authentication and account recovery as an…</p></div>
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzI2OTM0ODY4LnBuZw==/original/5uRhgW.png" alt="Article image for: 1 - Add Godot shader" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3><a href="https://pixel-boy.itch.io/patternmix/devlog/1532869/1-add-godot-shader" rel="noopener noreferrer">1 - Add Godot shader</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>At the request of several people, I&amp;#039;ve added the shader used to create the effects shown in the previews, the file is located here:…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
-          <span class="src-dot cat-xbox"></span>
-          <span>Pure Xbox &middot; May 24, 2026</span>
+          <span class="src-dot cat-indie"></span>
+          <span>itch.io Devlogs &middot; May 24, 2026</span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.purexbox.com/news/2026/05/psa-microsoft-is-removing-sms-authentication-from-everyones-xbox-account" data-share-title="PSA: Microsoft Is Removing SMS Authentication From Everyone&amp;#039;s Xbox Account" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://pixel-boy.itch.io/patternmix/devlog/1532869/1-add-godot-shader" data-share-title="1 - Add Godot shader" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.purexbox.com/news/2026/05/psa-microsoft-is-removing-sms-authentication-from-everyones-xbox-account" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/cook-and-sell-pcgn-featured.jpg" alt="Article image for: Cook and Sell codes (May 2026)" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.pcgamesn.com/cook-and-sell/codes" rel="noopener noreferrer">Cook and Sell codes (May 2026)</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>If the thought of paying off your shop loan before you&#39;ve even baked your first loaf is already spiking your cortisol levels, new Cook and Sell codes could be…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-pc"></span>
-          <span>PCGamesN &middot; May 24, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.pcgamesn.com/cook-and-sell/codes" data-share-title="Cook and Sell codes (May 2026)" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.pcgamesn.com/cook-and-sell/codes" rel="noopener noreferrer" class="card-link">
+          <a href="https://pixel-boy.itch.io/patternmix/devlog/1532869/1-add-godot-shader" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
@@ -537,103 +543,229 @@
     </div>
   </section>
   <!-- GENERATED_LATEST_ARTICLES_END -->
-        <!-- Feed grid -->
-        <div id="feedGrid" class="feed-grid"></div>
-      </main>
-    </div><!-- /.app-layout -->
-  </div><!-- /.page-wrap -->
-  <!-- FEEDBACK SECTION -->
+      <!-- Pulse summary bar — populated by JS when My Pulse preferences active -->
+      <div id="pulseSummaryBar" role="status" aria-live="polite"></div>
+      <!-- Feed grid — populated by JS -->
+      <div id="feedGrid" class="feed-grid"></div>
+    </main>
+
+    <!-- COMMUNITY RAIL (right column, desktop) -->
+    <aside class="community-rail" aria-label="Community and signal status">
+      <!-- Trending Topics (placeholder populated by JS) -->
+      <div class="rail-card">
+        <div class="rail-card-title" style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Trending Topics
+        </div>
+        <div id="trendingTopicsGrid" class="trending-grid">
+          <button class="trending-topic" onclick="window.__setFilter&&window.__setFilter('PlayStation')">PlayStation</button>
+          <button class="trending-topic" onclick="window.__setFilter&&window.__setFilter('Nintendo')">Nintendo</button>
+          <button class="trending-topic" onclick="window.__setFilter&&window.__setFilter('PC')">PC Gaming</button>
+          <button class="trending-topic" onclick="window.__setFilter&&window.__setFilter('Indie')">Indie</button>
+          <button class="trending-topic" onclick="window.__setFilter&&window.__setFilter('Reviews')">Reviews</button>
+        </div>
+      </div>
+      <!-- Signal Status -->
+      <div class="rail-card">
+        <div class="rail-card-title" style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>Signal Status
+        </div>
+        <div class="rail-card-body">
+          <div class="rail-signal-row">
+            <span>Sources online</span>
+            <span id="sbFeeds" class="rail-signal-val online">--</span>
+          </div>
+          <div class="rail-signal-row">
+            <span>Last refresh</span>
+            <span id="sbUpdated" class="rail-signal-val time">--</span>
+          </div>
+          <div class="rail-signal-row">
+            <span>Failed feeds</span>
+            <span id="sbFailed" class="rail-signal-val warn">0</span>
+          </div>
+        </div>
+      </div>
+      <!-- Source Transparency -->
+      <div class="rail-card">
+        <div class="rail-card-title" style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Source Transparency
+        </div>
+        <p class="rail-card-subtitle">Stories come from hand-picked publishers — no algorithmic ranking, no promoted content.</p>
+        <a href="#sources" class="rail-sources-link">View all 34 sources <svg aria-hidden="true" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" class="rail-sources-link" style="font-size:11px;color:var(--ink3);margin-top:2px">Editorial policy →</a>
+      </div>
+    </aside>
+
+  </div><!-- /.app-layout -->
+
+  <!-- Hidden sidebar for JS filter-nav compat -->
+  <div style="display:none" aria-hidden="true">
+    <nav id="sidebarFilters" class="filter-nav" aria-label="Category filters (hidden js compat)"></nav>
+  </div>
+
+
+  <!-- ============== TRUST SECTION ============== -->
+  <section class="trust-section" aria-labelledby="trust-heading">
+    <div class="page-wrap">
+      <div class="trust-inner">
+        <header class="trust-header">
+          <h2 id="trust-heading" class="trust-title">A cleaner way to<br /><em>follow gaming.</em></h2>
+          <p class="trust-subtitle">Built for players, not advertisers. GameBeeper is open, transparent and completely free.</p>
+        </header>
+        <div class="trust-grid">
+          <div class="trust-badge" style="--tb-color:var(--color-brand)">
+            <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+            <div class="trust-badge-title">No Ads</div>
+            <p class="trust-badge-desc">Zero advertising, zero trackers, zero monetisation that compromises your reading experience.</p>
+          </div>
+          <div class="trust-badge" style="--tb-color:var(--color-brand)">
+            <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <div class="trust-badge-title">No Paywalls</div>
+            <p class="trust-badge-desc">Every story, every category and every feature is completely free — always.</p>
+          </div>
+          <div class="trust-badge" style="--tb-color:var(--color-accent-cyan)">
+            <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="trust-badge-title">Trusted Sources</div>
+            <p class="trust-badge-desc">34 hand-picked publishers — official platform blogs, leading independents and industry reporters.</p>
+          </div>
+          <div class="trust-badge" style="--tb-color:var(--color-accent-cyan)">
+            <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+            <div class="trust-badge-title">Curated, Not Algorithmic</div>
+            <p class="trust-badge-desc">Stories sorted chronologically — no engagement manipulation, no filter bubbles.</p>
+          </div>
+          <div class="trust-badge" style="--tb-color:var(--color-accent-violet)">
+            <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+            <div class="trust-badge-title">Open Source</div>
+            <p class="trust-badge-desc">The full codebase is public on GitHub. Inspect it, fork it, contribute to it.</p>
+          </div>
+          <div class="trust-badge" style="--tb-color:var(--color-accent-violet)">
+            <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="trust-badge-title">Privacy First</div>
+            <p class="trust-badge-desc">Analytics only run with your consent. No persistent tracking, no data selling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FEEDBACK SECTION ============== -->
   <section class="feedback-section" id="feedback" aria-labelledby="feedback-heading">
     <div class="page-wrap">
       <div class="contribute-inner">
         <div class="contribute-copy">
           <div class="contribute-eyebrow">
             <span class="pulse" aria-hidden="true"></span>
-            <span>your feedback shapes this</span>
+            <span>Your feedback shapes this</span>
           </div>
           <h2 id="feedback-heading" class="contribute-title">Something broken?<br /><em>Tell us.</em></h2>
-          <p class="contribute-desc">
-            Found a broken feed? Know a gaming source worth adding? Have a UI suggestion?
-            GitHub Issues is the fastest path to a fix — every report gets read.
-          </p>
+          <p class="contribute-desc">Found a broken feed? Know a gaming source worth adding? Have a UI suggestion? GitHub Issues is the fastest path to a fix — every report gets read.</p>
           <ul class="contribute-ways">
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><line x1="8" y1="5" x2="8" y2="8"/><circle cx="8" cy="11" r=".6" fill="currentColor" stroke="none"/></svg>
-              <span>Report a broken or dead RSS feed</span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6h14"/></svg>
-              <span>Suggest a quality gaming source worth adding</span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 3 3 5-6"/></svg>
-              <span>Share a UI or performance improvement idea</span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,1 10,6 15,6 11,9.5 12.5,14.5 8,11.5 3.5,14.5 5,9.5 1,6 6,6"/></svg>
-              <span>Just say hi — every message is appreciated</span>
-            </li>
+            <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><line x1="8" y1="5" x2="8" y2="8"/><circle cx="8" cy="11" r=".6" fill="currentColor" stroke="none"/></svg><span>Report a broken or dead RSS feed</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6h14"/></svg><span>Suggest a quality gaming source worth adding</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 3 3 5-6"/></svg><span>Share a UI or performance improvement idea</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,1 10,6 15,6 11,9.5 12.5,14.5 8,11.5 3.5,14.5 5,9.5 1,6 6,6"/></svg><span>Just say hi — every message is appreciated</span></li>
           </ul>
           <div class="contribute-actions">
             <a href="https://github.com/dante0747/GameBeeper.gg/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" style="vertical-align:-2px;margin-right:6px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Open an Issue
+              <svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" style="vertical-align:-2px;margin-right:6px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Open an Issue on GitHub
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- ABOUT SECTION -->
+
+  <!-- ============== ABOUT SECTION ============== -->
   <section class="contribute-section" id="about" aria-labelledby="about-heading">
     <div class="page-wrap">
       <div class="contribute-inner" style="gap:2rem">
         <div class="contribute-copy" style="max-width:680px">
           <div class="contribute-eyebrow">
             <span class="pulse" aria-hidden="true"></span>
-            about this project
+            About this project
           </div>
           <h2 id="about-heading" class="contribute-title">Behind<br /><em>GameBeeper.</em></h2>
-          <p class="contribute-desc">
-            GameBeeper is an open-source video game news aggregator. It collects RSS feeds from 19 trusted gaming sources — official platform publishers, independent outlets, and industry reporters — into one fast, clean, distraction-free feed. No ads, no paywalls, no tracking without consent.
-          </p>
+          <p class="contribute-desc">GameBeeper is an open-source video game news aggregator. It collects RSS feeds from 34 trusted gaming sources — official platform publishers, independent outlets, and industry reporters — into one fast, clean, distraction-free feed. No ads, no paywalls, no tracking without consent.</p>
           <ul class="contribute-ways" style="margin-bottom:1.25rem">
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              <span>Open source — <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer" style="color:var(--gs-cyan)">view on GitHub</a></span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM1 6h14"/></svg>
-              <span>Editorial policy: <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--gs-cyan)">Feed selection criteria</a></span>
-            </li>
+            <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>Open source — <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-cyan)">view on GitHub</a></span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM1 6h14"/></svg><span>Editorial policy: <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-cyan)">Feed selection criteria</a></span></li>
           </ul>
-          <p style="font-size:0.82rem;color:var(--gs-muted)">
-            Launched 2026 — Open source — No ads — No paywalls
-          </p>
+          <p style="font-size:0.82rem;color:var(--ink3)">Launched 2026 — Open source — No ads — No paywalls</p>
           <div style="margin-top:1rem;font-size:0.82rem;display:flex;gap:1rem;flex-wrap:wrap">
-            <a href="/privacy.html" style="color:var(--gs-muted);font-size:11px">Privacy Policy</a>
-            <a href="/terms.html" style="color:var(--gs-muted);font-size:11px">Terms of Use</a>
+            <a href="/privacy.html" style="color:var(--ink3);font-size:11px">Privacy Policy</a>
+            <a href="/terms.html" style="color:var(--ink3);font-size:11px">Terms of Use</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ============== FOOTER ============== -->
   <footer class="site-footer">
     <div class="page-wrap">
-      <!-- Sources index -->
+      <!-- Sources -->
       <section class="footer-sources" id="sources" aria-labelledby="sources-heading">
         <div class="footer-sources-title" id="sources-heading">Feed sources</div>
         <ul class="footer-sources-list">
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Latest')">Latest</a>: <a href="https://www.videogameschronicle.com/" target="_blank" rel="noopener noreferrer">VGC</a>, <a href="https://www.gematsu.com/" target="_blank" rel="noopener noreferrer">Gematsu</a>, <a href="https://www.eurogamer.net/" target="_blank" rel="noopener noreferrer">Eurogamer</a>, <a href="https://www.ign.com/" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/" target="_blank" rel="noopener noreferrer">GameSpot</a>, <a href="https://www.destructoid.com/" target="_blank" rel="noopener noreferrer">Destructoid</a>, <a href="https://www.polygon.com/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://kotaku.com/" target="_blank" rel="noopener noreferrer">Kotaku</a>, <a href="https://www.thegamer.com/" target="_blank" rel="noopener noreferrer">TheGamer</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Latest')">General</a>: <a href="https://www.videogameschronicle.com/" target="_blank" rel="noopener noreferrer">VGC</a>, <a href="https://www.gematsu.com/" target="_blank" rel="noopener noreferrer">Gematsu</a>, <a href="https://www.eurogamer.net/" target="_blank" rel="noopener noreferrer">Eurogamer</a>, <a href="https://www.ign.com/" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/" target="_blank" rel="noopener noreferrer">GameSpot</a>, <a href="https://www.destructoid.com/" target="_blank" rel="noopener noreferrer">Destructoid</a>, <a href="https://www.polygon.com/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://kotaku.com/" target="_blank" rel="noopener noreferrer">Kotaku</a>, <a href="https://www.gamesradar.com/" target="_blank" rel="noopener noreferrer">GamesRadar</a>, <a href="https://arstechnica.com/gaming/" target="_blank" rel="noopener noreferrer">Ars Technica</a>, <a href="https://www.theverge.com/games" target="_blank" rel="noopener noreferrer">The Verge</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Reviews')">Reviews</a>: <a href="https://www.ign.com/reviews" target="_blank" rel="noopener noreferrer">IGN Reviews</a>, <a href="https://www.gamespot.com/reviews/" target="_blank" rel="noopener noreferrer">GameSpot Reviews</a>, <a href="https://www.rockpapershotgun.com/reviews" target="_blank" rel="noopener noreferrer">RPS Reviews</a>, <a href="https://www.nintendolife.com/reviews" target="_blank" rel="noopener noreferrer">Nintendo Life Reviews</a>, <a href="https://www.pushsquare.com/reviews" target="_blank" rel="noopener noreferrer">Push Square Reviews</a>, <a href="https://www.purexbox.com/reviews" target="_blank" rel="noopener noreferrer">Pure Xbox Reviews</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Trailers')">Trailers</a>: <a href="https://www.gematsu.com/category/trailers" target="_blank" rel="noopener noreferrer">Gematsu Trailers</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('PlayStation')">PlayStation</a>: <a href="https://blog.playstation.com/" target="_blank" rel="noopener noreferrer">PlayStation Blog</a> <span class="official-badge">Official</span>, <a href="https://www.pushsquare.com/" target="_blank" rel="noopener noreferrer">Push Square</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Xbox')">Xbox</a>: <a href="https://news.xbox.com/" target="_blank" rel="noopener noreferrer">Xbox Wire</a> <span class="official-badge">Official</span>, <a href="https://www.purexbox.com/" target="_blank" rel="noopener noreferrer">Pure Xbox</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Nintendo')">Nintendo</a>: <a href="https://www.nintendolife.com/" target="_blank" rel="noopener noreferrer">Nintendo Life</a>, <a href="https://nintendoeverything.com/" target="_blank" rel="noopener noreferrer">Nintendo Everything</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('PC')">PC Gaming</a>: <a href="https://www.pcgamer.com/" target="_blank" rel="noopener noreferrer">PC Gamer</a>, <a href="https://www.rockpapershotgun.com/" target="_blank" rel="noopener noreferrer">Rock Paper Shotgun</a>, <a href="https://www.pcgamesn.com/" target="_blank" rel="noopener noreferrer">PCGamesN</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Esports')">Esports</a>: <a href="https://dotesports.com/" target="_blank" rel="noopener noreferrer">Dot Esports</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Hardware')">Hardware</a>: <a href="https://www.digitalfoundry.net" target="_blank" rel="noopener noreferrer">Digital Foundry</a>, <a href="https://www.tomshardware.com/" target="_blank" rel="noopener noreferrer">Tom's Hardware</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Indie')">Indie</a>: <a href="https://www.siliconera.com/" target="_blank" rel="noopener noreferrer">Siliconera</a>, <a href="https://indiegamesplus.com/" target="_blank" rel="noopener noreferrer">Indie Games Plus</a>, <a href="https://itch.io/devlogs" target="_blank" rel="noopener noreferrer">itch.io Devlogs</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Industry')">Industry</a>: <a href="https://www.gamesindustry.biz/" target="_blank" rel="noopener noreferrer">GamesIndustry.biz</a></li>
         </ul>
       </section>
-      <div class="footer-inner">
+      <!-- Footer grid -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
+              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+            </svg>
+            <span class="footer-brand-name">GameBeeper</span>
+          </div>
+          <p class="footer-mission">GameBeeper brings trusted gaming stories together in one player-first signal. Independent. Open source. No ads. No paywalls.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Feed</div>
+          <div class="footer-col-links">
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('All')">All News</a>
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('PlayStation')">PlayStation</a>
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('Xbox')">Xbox</a>
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('Nintendo')">Nintendo</a>
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('PC')">PC Gaming</a>
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('Indie')">Indie</a>
+            <a href="#latest" onclick="window.__setFilter&&window.__setFilter('Reviews')">Reviews</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Project</div>
+          <div class="footer-col-links">
+            <a href="#sources">Sources</a>
+            <a href="#community">Community</a>
+            <a href="#about">About</a>
+            <a href="#feedback">Feedback</a>
+            <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer">Editorial Policy</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <div class="footer-col-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
         <div class="footer-left">
-          <div class="footer-tagline">Video game news — curated, not algorithmically sorted.</div>
           <div class="footer-shortcuts" aria-label="Keyboard shortcuts">
             <span class="footer-kbd-label">Keyboard shortcuts:</span>
             <kbd class="footer-kbd">/</kbd><span> search</span>
@@ -644,24 +776,20 @@
           </div>
           <div class="footer-copy">&#169; 2026 GameBeeper &mdash; Free to use. No ads. No tracking. No paywalls.</div>
           <div class="footer-copy" style="margin-top:6px;font-size:0.75rem">
-            <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer" style="color:var(--gs-cyan);text-decoration:none">GitHub</a>
-            &nbsp;&middot;&nbsp;
-            <a href="#about" style="color:var(--gs-cyan);text-decoration:none">About</a>
-            &nbsp;&middot;&nbsp;
-            <a href="/privacy.html" style="color:var(--gs-cyan);text-decoration:none">Privacy</a>
-            &nbsp;&middot;&nbsp;
-            <a href="/terms.html" style="color:var(--gs-cyan);text-decoration:none">Terms</a>
-          </div>
-          <div class="footer-copy" style="margin-top:8px;font-size:0.72rem;color:var(--gs-muted)">
             <a id="siteVersion" href="https://github.com/dante0747/GameBeeper.gg/commits/main" target="_blank" rel="noopener noreferrer" title="View changelog on GitHub" class="site-version-badge">loading version—</a>
           </div>
-          <div class="footer-copy" style="margin-top:6px;font-size:0.72rem;color:var(--gs-muted)">
-            Forked from <a href="https://geekspulse.dev" target="_blank" rel="noopener noreferrer" style="color:var(--gs-muted);text-decoration:underline;opacity:0.75">geekspulse.dev</a>
+          <div class="footer-copy" style="margin-top:6px;font-size:0.72rem;color:var(--ink3)">
+            Forked from <a href="https://geekspulse.dev" target="_blank" rel="noopener noreferrer" style="color:var(--ink3);text-decoration:underline;opacity:0.75">geekspulse.dev</a>
           </div>
+        </div>
+        <div class="footer-transparency">
+          <strong>Independent · Open Source · No Ads · No Paywalls</strong>
         </div>
       </div>
     </div>
   </footer>
+
+
   <!-- Back to top button -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
