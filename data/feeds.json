@@ -1,4 +1,4 @@
-[
+﻿[
   { "id": "vgc",               "name": "VGC",                  "url": "https://www.videogameschronicle.com/feed/",          "homepage": "https://www.videogameschronicle.com/",          "category": "Latest",       "enabled": true },
   { "id": "gematsu",           "name": "Gematsu",               "url": "https://www.gematsu.com/feed",                       "homepage": "https://www.gematsu.com/",                      "category": "Latest",       "enabled": true },
   { "id": "playstation-blog",  "name": "PlayStation Blog",      "url": "https://blog.playstation.com/feed/",                 "homepage": "https://blog.playstation.com/",                 "category": "PlayStation",  "enabled": true },
@@ -17,5 +17,9 @@
   { "id": "polygon",           "name": "Polygon",               "url": "https://www.polygon.com/rss/index.xml",              "homepage": "https://www.polygon.com/",                      "category": "Latest",       "enabled": true },
   { "id": "kotaku",            "name": "Kotaku",                "url": "https://kotaku.com/rss",                             "homepage": "https://kotaku.com/",                           "category": "Latest",       "enabled": true },
   { "id": "pcgamesn",          "name": "PCGamesN",              "url": "https://www.pcgamesn.com/mainrss.xml",               "homepage": "https://www.pcgamesn.com/",                     "category": "PC",           "enabled": true },
-  { "id": "the-gamer",         "name": "TheGamer",              "url": "https://www.thegamer.com/feed/",                     "homepage": "https://www.thegamer.com/",                     "category": "Latest",       "enabled": true }
+  { "id": "the-gamer",         "name": "TheGamer",              "url": "https://www.thegamer.com/feed/",                     "homepage": "https://www.thegamer.com/",                     "category": "Latest",       "enabled": true },
+  { "id": "dot-esports",       "name": "Dot Esports",           "url": "https://dotesports.com/feed",                        "homepage": "https://dotesports.com/",                       "category": "Esports",      "enabled": true },
+  { "id": "dexerto",           "name": "Dexerto",               "url": "https://www.dexerto.com/feed/",                      "homepage": "https://www.dexerto.com/",                      "category": "Esports",      "enabled": true },
+  { "id": "digital-foundry",   "name": "Digital Foundry",       "url": "https://www.eurogamer.net/digitalfoundry.rss",       "homepage": "https://www.eurogamer.net/digitalfoundry",      "category": "Hardware",     "enabled": true },
+  { "id": "toms-hardware",     "name": "Tom's Hardware",        "url": "https://www.tomshardware.com/feeds/all",             "homepage": "https://www.tomshardware.com/",                 "category": "Hardware",     "enabled": true }
 ]

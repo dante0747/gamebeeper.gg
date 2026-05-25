@@ -288,7 +288,12 @@ function buildFilters() {
   allArticles.forEach(a => { counts[a.category] = (counts[a.category] || 0) + 1; });
   const bmCount = loadBookmarks().length;
 
-  sidebarFilters.innerHTML = categories.map(c => {
+  const visibleCategories = categories.filter(c => {
+    if (c.id === 'All' || c.id === 'Bookmarks') return true;
+    return (counts[c.id] || 0) > 0;
+  });
+
+  sidebarFilters.innerHTML = visibleCategories.map(c => {
     let count;
     if (c.id === 'All') count = allArticles.length;
     else if (c.id === 'Bookmarks') count = bmCount;
@@ -302,7 +307,7 @@ function buildFilters() {
       </button>`;
   }).join('');
 
-  mobileFilters.innerHTML = categories.map(c => `
+  mobileFilters.innerHTML = visibleCategories.map(c => `
     <button class="chip${c.id === activeFilter ? ' active' : ''}" data-cat="${esc(c.id)}">
       <span style="color:${c.color};display:inline-flex;vertical-align:middle;margin-right:4px">${c.icon}</span>${esc(c.id)}
     </button>`).join('');
@@ -580,6 +585,16 @@ async function fetchAll() {
   updateSidebarStats(cacheGeneratedAt);
   loadFeedHealthBanner();
   loadSiteVersion();
+
+  // If the active filter no longer has articles, reset to 'All'
+  if (activeFilter !== 'All' && activeFilter !== 'Bookmarks') {
+    const hasArticles = allArticles.some(a => a.category === activeFilter);
+    if (!hasArticles) {
+      activeFilter = 'All';
+      PREF.set('filter', 'All');
+    }
+  }
+
   buildFilters();
   render();
 
