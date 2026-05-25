@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 import { categories, catMeta, REFRESH_OPTIONS, SPONSORED_RE, DAY_MS, CACHE_STALE_MS } from './config.js';
 import { loadFeedsRegistry, getFeeds } from './feeds-registry.js';

@@ -1,4 +1,4 @@
-﻿import { catMeta } from './config.js';
+import { catMeta } from './config.js';
 import { esc, safeUrl, catClass, relTime, readTime } from './utils.js';
 import { isBookmarked } from './storage.js';
 

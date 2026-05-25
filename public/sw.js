@@ -1,4 +1,4 @@
-﻿/**
+/**
  * GameBeeper Service Worker
  *
  * Strategies:

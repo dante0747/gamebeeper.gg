@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/lib/parser.mjs
  * RSS/Atom feed parsing and fetching.
  */

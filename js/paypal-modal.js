@@ -1,4 +1,4 @@
-﻿export function initPayPalModal() {
+export function initPayPalModal() {
   const PAYPAL_ME = 'https://paypal.me/MajidAbarghooei';
   const QR_URL    = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=12&data=${encodeURIComponent(PAYPAL_ME)}`;
 

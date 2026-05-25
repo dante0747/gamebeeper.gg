@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/lib/summarizer.mjs
  * LLM-powered article summarization (Ollama only).
  * Falls back gracefully to the existing RSS snippet when Ollama is unavailable.

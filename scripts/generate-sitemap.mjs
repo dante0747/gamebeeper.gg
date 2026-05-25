@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/generate-sitemap.mjs
  *
  * Generates a minimal sitemap.xml containing only real canonical pages.

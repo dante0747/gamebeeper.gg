@@ -1,4 +1,4 @@
-﻿/**
+/**
  * js/consent.js
  *
  * Manages cookie/analytics consent for GDPR compliance.

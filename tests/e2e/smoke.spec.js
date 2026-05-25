@@ -1,4 +1,4 @@
-﻿/**
+/**
  * tests/e2e/smoke.spec.js
  * Playwright end-to-end smoke tests for GameBeeper.dev
  *

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * js/summary.js
  *
  * AI Summary modal â€” shows pre-cached summaries from feed.json.

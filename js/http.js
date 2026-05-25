@@ -1,4 +1,4 @@
-﻿import { CORS_PROXIES } from './config.js';
+import { CORS_PROXIES } from './config.js';
 
 // â”€â”€ In-session proxy health cache â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Tracks which proxy indices failed this session so they are deprioritised.

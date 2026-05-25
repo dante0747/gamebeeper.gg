@@ -1,4 +1,4 @@
-﻿import { RSS2JSON, MAX_PER_FEED } from './config.js';
+import { RSS2JSON, MAX_PER_FEED } from './config.js';
 import { getFeeds } from './feeds-registry.js';
 import { truncate, stripHtml, getText, safeUrl } from './utils.js';
 import {

@@ -1,4 +1,4 @@
-﻿// â”€â”€ Persistent preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€ Persistent preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Namespace migrated from 'geeksup_' / 'gp:' to 'gs:' for GameBeeper.
 // Old developer-news category filters are intentionally cleared on first load
 // via a one-time migration key so stale values don't break category filters.

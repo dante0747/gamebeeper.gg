@@ -1,4 +1,4 @@
-﻿import { categories } from './config.js';
+import { categories } from './config.js';
 import { getFeeds } from './feeds-registry.js';
 import { loadPreferences, savePreferences, resetPreferences, PULSE_PREF_KEY } from './storage.js';
 import { esc, showBmToast } from './utils.js';

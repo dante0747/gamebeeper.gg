@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/lib/images.mjs
  * Image extraction from RSS feed XML and article page og:image resolution.
  */

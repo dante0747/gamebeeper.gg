@@ -1,4 +1,4 @@
-﻿import { REFRESH_OPTIONS } from './config.js';
+import { REFRESH_OPTIONS } from './config.js';
 import { PREF } from './storage.js';
 import { showBmToast } from './utils.js';
 

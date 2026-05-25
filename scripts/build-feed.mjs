@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/build-feed.mjs
  *
  * Entry point â€” orchestrates the feed build pipeline.
