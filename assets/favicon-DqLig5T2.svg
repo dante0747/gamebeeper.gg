@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141522"/>
+      <stop offset="100%" stop-color="#07070c"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#26e6ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#26e6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- Glow halo -->
+  <circle cx="256" cy="256" r="200" fill="url(#glow)"/>
+  <!-- Signal / radar waves -->
+  <circle cx="256" cy="256" r="60"  fill="none" stroke="#26e6ff" stroke-width="18" stroke-opacity="0.9"/>
+  <circle cx="256" cy="256" r="110" fill="none" stroke="#26e6ff" stroke-width="12" stroke-opacity="0.55"/>
+  <circle cx="256" cy="256" r="162" fill="none" stroke="#26e6ff" stroke-width="7"  stroke-opacity="0.3"/>
+  <!-- Centre dot / signal point -->
+  <circle cx="256" cy="256" r="28" fill="#26e6ff"/>
+  <!-- Accent: cyan-to-violet wedge sweep (top-right quadrant only) -->
+  <path d="M256,256 L256,94 A162,162 0 0,1 418,256 Z" fill="#7c5cff" fill-opacity="0.18"/>
+  <!-- GB monogram -->
+  <text x="256" y="440" text-anchor="middle" font-size="72" font-family="system-ui,sans-serif" font-weight="800" letter-spacing="-2" fill="#26e6ff" fill-opacity="0.85">GB</text>
+</svg>
