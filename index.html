@@ -154,10 +154,20 @@
       <div class="nav-inner">
         <a href="/" class="logo" aria-label="GameBeeper home">
           <div class="logo-mark" aria-hidden="true">
+            <!--
+              Nav mark — signal arcs centred at (18, 27) in 36×36 viewBox
+              r= 9 → (10, 22) → (26, 22)
+              r=16 → ( 4, 18) → (32, 18)
+            -->
             <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
-              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+              <!-- Outer arc — subtle cyan tint -->
+              <path d="M 4,18 A 16,16 0 0,1 32,18"
+                    stroke="#A3FF3F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-opacity="0.52"/>
+              <!-- Inner arc — bold lime -->
+              <path d="M 10,22 A  9, 9 0 0,1 26,22"
+                    stroke="#A3FF3F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <!-- Centre dot -->
+              <circle cx="18" cy="27" r="3.6" fill="#A3FF3F"/>
             </svg>
           </div>
           <span class="logo-name">GameBeeper</span>
@@ -723,9 +733,11 @@
         <div class="footer-brand">
           <div class="footer-brand-logo">
             <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
-              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+              <path d="M 4,18 A 16,16 0 0,1 32,18"
+                    stroke="#A3FF3F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-opacity="0.52"/>
+              <path d="M 10,22 A  9, 9 0 0,1 26,22"
+                    stroke="#A3FF3F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <circle cx="18" cy="27" r="3.6" fill="#A3FF3F"/>
             </svg>
             <span class="footer-brand-name">GameBeeper</span>
           </div>

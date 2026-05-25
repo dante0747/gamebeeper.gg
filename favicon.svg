@@ -1,26 +1,66 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#141522"/>
-      <stop offset="100%" stop-color="#07070c"/>
+    <!-- Background gradient: deep navy -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#14182B"/>
+      <stop offset="100%" stop-color="#060A14"/>
+    </linearGradient>
+    <!-- Signal gradient: lime → cyan flowing up -->
+    <linearGradient id="sig" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%"  stop-color="#A3FF3F"/>
+      <stop offset="75%" stop-color="#24EEFF"/>
+    </linearGradient>
+    <!-- Dot gradient: lime core with lighter highlight -->
+    <radialGradient id="dotg" cx="38%" cy="35%" r="60%">
+      <stop offset="0%"   stop-color="#D4FF80"/>
+      <stop offset="100%" stop-color="#82DD00"/>
     </radialGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#26e6ff" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#26e6ff" stop-opacity="0"/>
-    </radialGradient>
+    <!-- Glow blur for halo effect -->
+    <filter id="halo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur"/>
+    </filter>
+    <!-- Soft glow for dot -->
+    <filter id="dotglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22"/>
+    </filter>
   </defs>
+
   <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <!-- Glow halo -->
-  <circle cx="256" cy="256" r="200" fill="url(#glow)"/>
-  <!-- Signal / radar waves -->
-  <circle cx="256" cy="256" r="60"  fill="none" stroke="#26e6ff" stroke-width="18" stroke-opacity="0.9"/>
-  <circle cx="256" cy="256" r="110" fill="none" stroke="#26e6ff" stroke-width="12" stroke-opacity="0.55"/>
-  <circle cx="256" cy="256" r="162" fill="none" stroke="#26e6ff" stroke-width="7"  stroke-opacity="0.3"/>
-  <!-- Centre dot / signal point -->
-  <circle cx="256" cy="256" r="28" fill="#26e6ff"/>
-  <!-- Accent: cyan-to-violet wedge sweep (top-right quadrant only) -->
-  <path d="M256,256 L256,94 A162,162 0 0,1 418,256 Z" fill="#7c5cff" fill-opacity="0.18"/>
-  <!-- GB monogram -->
-  <text x="256" y="440" text-anchor="middle" font-size="72" font-family="system-ui,sans-serif" font-weight="800" letter-spacing="-2" fill="#26e6ff" fill-opacity="0.85">GB</text>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- Subtle lime border ring -->
+  <rect width="512" height="512" rx="112" fill="none" stroke="#A3FF3F" stroke-width="2.5" stroke-opacity="0.18"/>
+
+  <!--
+    Signal icon centred at (256, 348).
+    Arc angles: ±58° from vertical  →  sin58°≈0.848, cos58°≈0.530
+    r= 72 → endpoints (195, 310) → (317, 310)
+    r=134 → endpoints (143, 277) → (369, 277)
+    r=196 → endpoints ( 90, 244) → (422, 244)
+  -->
+
+  <!-- Glow / halo layer (behind sharp strokes) -->
+  <g filter="url(#halo)" opacity="0.55">
+    <path d="M 195,310 A  72, 72 0 0,1 317,310" stroke="#A3FF3F" stroke-width="36" fill="none" stroke-linecap="round"/>
+    <path d="M 143,277 A 134,134 0 0,1 369,277" stroke="#24EEFF" stroke-width="28" fill="none" stroke-linecap="round"/>
+    <path d="M  90,244 A 196,196 0 0,1 422,244" stroke="#24EEFF" stroke-width="20" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Dot glow -->
+  <circle cx="256" cy="348" r="38" fill="#A3FF3F" filter="url(#dotglow)" opacity="0.8"/>
+
+  <!-- Arc strokes -->
+  <!-- Outer arc — faintest, cyan-tinted -->
+  <path d="M  90,244 A 196,196 0 0,1 422,244"
+        fill="none" stroke="url(#sig)" stroke-width="16" stroke-linecap="round" stroke-opacity="0.48"/>
+  <!-- Middle arc -->
+  <path d="M 143,277 A 134,134 0 0,1 369,277"
+        fill="none" stroke="url(#sig)" stroke-width="22" stroke-linecap="round" stroke-opacity="0.70"/>
+  <!-- Inner arc — boldest, most lime -->
+  <path d="M 195,310 A  72, 72 0 0,1 317,310"
+        fill="none" stroke="#A3FF3F"   stroke-width="30" stroke-linecap="round"/>
+
+  <!-- Centre dot (the "beep" source) -->
+  <circle cx="256" cy="348" r="36" fill="url(#dotg)"/>
+  <!-- Specular micro-highlight -->
+  <circle cx="246" cy="339" r="11" fill="white" fill-opacity="0.24"/>
 </svg>
