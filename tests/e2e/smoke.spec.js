@@ -1,4 +1,4 @@
-/**
+﻿/**
  * tests/e2e/smoke.spec.js
  * Playwright end-to-end smoke tests for GameBeeper.dev
  *
@@ -34,22 +34,22 @@ test('page title contains GameBeeper', async ({ page }) => {
 
 // ── Category filter ───────────────────────────────────────────────────────────
 
-test('sidebar category filter — Security shows only Security cards', async ({ page }) => {
+test('sidebar category filter — PC shows only PC cards', async ({ page }) => {
   await page.goto('/');
   await waitForCards(page);
 
-  // Click the Security filter button in the sidebar
-  await page.locator('#sidebarFilters button', { hasText: 'Security' }).first().click();
+  // Click the PC filter button in the sidebar
+  await page.locator('#sidebarFilters button[data-cat="PC"]').first().click();
   await page.waitForTimeout(300); // allow filter animation
 
   const cards = page.locator('#feedGrid article.card:visible');
   const count = await cards.count();
   expect(count).toBeGreaterThan(0);
 
-  // Every visible card should have data-category="Security"
+  // Every visible card should have data-category="PC"
   for (let i = 0; i < Math.min(count, 5); i++) {
     const cat = await cards.nth(i).getAttribute('data-category');
-    expect(cat).toBe('Security');
+    expect(cat).toBe('PC');
   }
 });
 
