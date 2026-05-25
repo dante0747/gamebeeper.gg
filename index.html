@@ -48,8 +48,8 @@
   <meta name="theme-color" content="#090B11" />
   <link rel="manifest" href="/manifest.json" />
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon-DqLig5T2.svg" />
-  <link rel="shortcut icon" href="/assets/favicon-DqLig5T2.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-DNtmISOy.svg" />
+  <link rel="shortcut icon" href="/assets/favicon-DNtmISOy.svg" />
   <link rel="sitemap" type="application/xml" href="data:text/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHVybHNldCB4bWxucz0iaHR0cDovL3d3dy5zaXRlbWFwcy5vcmcvc2NoZW1hcy9zaXRlbWFwLzAuOSIKICAgICAgICB4bWxuczppbWFnZT0iaHR0cDovL3d3dy5nb29nbGUuY29tL3NjaGVtYXMvc2l0ZW1hcC1pbWFnZS8xLjEiPgoKICA8IS0tIEhvbWVwYWdlIOKAlCBhZ2dyZWdhdGVzIGFsbCBjdXJhdGVkIFJTUyBmZWVkcyAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL0dhbWVCZWVwZXIuZ2cvPC9sb2M+CiAgICA8bGFzdG1vZD4yMDI2LTA1LTI1PC9sYXN0bW9kPgogICAgPGNoYW5nZWZyZXE+aG91cmx5PC9jaGFuZ2VmcmVxPgogICAgPHByaW9yaXR5PjEuMDwvcHJpb3JpdHk+CiAgICA8aW1hZ2U6aW1hZ2U+CiAgICAgIDxpbWFnZTpsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL29nLWltYWdlLnBuZzwvaW1hZ2U6bG9jPgogICAgICA8aW1hZ2U6dGl0bGU+R2FtZUJlZXBlciDvv70gVmlkZW8gR2FtZSBOZXdzIEFnZ3JlZ2F0b3I8L2ltYWdlOnRpdGxlPgogICAgICA8aW1hZ2U6Y2FwdGlvbj5WaWRlbyBnYW1lIG5ld3MsIHJldmlld3MsIHJldmVhbHMgYW5kIHBsYXRmb3JtIHVwZGF0ZXMgZnJvbSB0cnVzdGVkIGdhbWluZyBzb3VyY2VzLiBObyBhZHMsIG5vIHBheXdhbGxzLjwvaW1hZ2U6Y2FwdGlvbj4KICAgIDwvaW1hZ2U6aW1hZ2U+CiAgPC91cmw+CgogIDwhLS0gUHJpdmFjeSBQb2xpY3kgLS0+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL3ByaXZhY3kuaHRtbDwvbG9jPgogICAgPGxhc3Rtb2Q+MjAyNi0wNS0yNTwvbGFzdG1vZD4KICAgIDxjaGFuZ2VmcmVxPm1vbnRobHk8L2NoYW5nZWZyZXE+CiAgICA8cHJpb3JpdHk+MC4zPC9wcmlvcml0eT4KICA8L3VybD4KCiAgPCEtLSBUZXJtcyBvZiBVc2UgLS0+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL3Rlcm1zLmh0bWw8L2xvYz4KICAgIDxsYXN0bW9kPjIwMjYtMDUtMjU8L2xhc3Rtb2Q+CiAgICA8Y2hhbmdlZnJlcT5tb250aGx5PC9jaGFuZ2VmcmVxPgogICAgPHByaW9yaXR5PjAuMzwvcHJpb3JpdHk+CiAgPC91cmw+Cgo8L3VybHNldD4K" />
   <!-- DNS prefetch -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -140,8 +140,8 @@
     ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/index-ioXqKoLl.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-HliLwe8M.css">
+  <script type="module" crossorigin src="/assets/index-C0GycHEV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CHsX-D2-.css">
 </head>
 <body>
   <!-- Skip to main content (accessibility) -->
@@ -155,10 +155,20 @@
       <div class="nav-inner">
         <a href="/" class="logo" aria-label="GameBeeper home">
           <div class="logo-mark" aria-hidden="true">
+            <!--
+              Nav mark — signal arcs centred at (18, 27) in 36×36 viewBox
+              r= 9 → (10, 22) → (26, 22)
+              r=16 → ( 4, 18) → (32, 18)
+            -->
             <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
-              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+              <!-- Outer arc — subtle cyan tint -->
+              <path d="M 4,18 A 16,16 0 0,1 32,18"
+                    stroke="#A3FF3F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-opacity="0.52"/>
+              <!-- Inner arc — bold lime -->
+              <path d="M 10,22 A  9, 9 0 0,1 26,22"
+                    stroke="#A3FF3F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <!-- Centre dot -->
+              <circle cx="18" cy="27" r="3.6" fill="#A3FF3F"/>
             </svg>
           </div>
           <span class="logo-name">GameBeeper</span>
@@ -176,6 +186,10 @@
           <button id="savedStoriesBtn" class="btn btn-ghost btn-sm" title="View saved stories" aria-label="View saved stories" onclick="window.__setFilter&&window.__setFilter('Bookmarks');document.getElementById('latest').scrollIntoView({behavior:'smooth'})">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
             <span id="sbBmCount" class="nav-bm-count" aria-label="saved stories count">0</span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-support aria-label="Support GameBeeper via PayPal" title="Donate via PayPal" style="gap:5px;color:var(--color-accent-cyan);border-color:rgba(36,214,255,0.35)">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            <span class="btn-label">Donate</span>
           </button>
           <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
             <span class="nav-hamburger-bar"></span>
@@ -340,6 +354,26 @@
       Latest Video Game News
     </h2>
     <div class="seo-articles-grid">
+
+    <article class="seo-card">
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzI3NDU2OTQwLnBuZw==/original/A%2FFzWE.png" alt="Article image for: Prerolled DEMO!!!" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3><a href="https://orphic-dreaming.itch.io/prerolled/devlog/1533202/prerolled-demo" rel="noopener noreferrer">Prerolled DEMO!!!</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>We are proud to announce that the official demo for Prerolled is now out and ready for you to play on Itch! Hi all, it&amp;#039;s Jack here! (Orphic Dreaming) I…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span>itch.io Devlogs &middot; May 25, 2026</span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://orphic-dreaming.itch.io/prerolled/devlog/1533202/prerolled-demo" data-share-title="Prerolled DEMO!!!" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://orphic-dreaming.itch.io/prerolled/devlog/1533202/prerolled-demo" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
 
     <article class="seo-card">
       <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/UPuf82fV4LKsjMrBbogcGE-1280-80.jpg" alt="Article image for: Marvel star says he &quot;didn&#39;t have any thoughts&quot; about Backrooms&#39; &quot;viral nature&quot;, was just drawn to its &quot;deep psychological resonance&quot;" loading="lazy" decoding="async" width="640" height="360" /></div>
@@ -515,26 +549,6 @@
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
           <a href="https://project-edens-garden.itch.io/projecteg/devlog/1532969/regarding-the-future-of-project-edens-garden" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzI2OTM0ODY4LnBuZw==/original/5uRhgW.png" alt="Article image for: 1 - Add Godot shader" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://pixel-boy.itch.io/patternmix/devlog/1532869/1-add-godot-shader" rel="noopener noreferrer">1 - Add Godot shader</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>At the request of several people, I&amp;#039;ve added the shader used to create the effects shown in the previews, the file is located here:…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-indie"></span>
-          <span>itch.io Devlogs &middot; May 24, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://pixel-boy.itch.io/patternmix/devlog/1532869/1-add-godot-shader" data-share-title="1 - Add Godot shader" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://pixel-boy.itch.io/patternmix/devlog/1532869/1-add-godot-shader" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
@@ -724,9 +738,11 @@
         <div class="footer-brand">
           <div class="footer-brand-logo">
             <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
-              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+              <path d="M 4,18 A 16,16 0 0,1 32,18"
+                    stroke="#A3FF3F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-opacity="0.52"/>
+              <path d="M 10,22 A  9, 9 0 0,1 26,22"
+                    stroke="#A3FF3F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <circle cx="18" cy="27" r="3.6" fill="#A3FF3F"/>
             </svg>
             <span class="footer-brand-name">GameBeeper</span>
           </div>
@@ -753,6 +769,9 @@
             <a href="#feedback">Feedback</a>
             <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer">Editorial Policy</a>
+            <a href="#" data-support style="color:var(--color-accent-cyan)">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="vertical-align:-1px;margin-right:4px"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>Donate via PayPal
+            </a>
           </div>
         </div>
         <div>
