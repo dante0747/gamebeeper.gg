@@ -68,7 +68,7 @@ async function main() {
   await initOllama();
 
   // â”€â”€ 1. Fetch all feeds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  const feedDefs = JSON.parse(await fs.readFile(path.join(ROOT, 'data', 'feeds.json'), 'utf8'));
+  const feedDefs = JSON.parse((await fs.readFile(path.join(ROOT, 'data', 'feeds.json'), 'utf8')).replace(/^\uFEFF/, ''));
   const enabled  = feedDefs.filter(f => f.enabled !== false);
   console.log(`[build-feed] Fetching ${enabled.length} feeds…`);
 
