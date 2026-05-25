@@ -1,8 +1,8 @@
-﻿import { catMeta } from './config.js';
+﻿﻿﻿﻿import { catMeta } from './config.js';
 import { esc, safeUrl, catClass, relTime, readTime } from './utils.js';
 import { isBookmarked } from './storage.js';
 
-// â”€â”€ Summary button helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Summary button helper -----------------------------------------------------
 
 function summaryBtn(a, extraStyle = '') {
   const isAi = a.summaryType === 'ai';
@@ -13,7 +13,7 @@ function summaryBtn(a, extraStyle = '') {
   return `<button class="card-summary-btn${isAi ? '' : ' card-summary-btn--snippet'}" data-summary-title="${esc(a.title)}" data-summary-snippet="${esc(a.snippet || '')}" data-summary-type="${esc(a.summaryType || '')}" data-summary-link="${esc(a.link)}" data-summary-source="${esc(a.source || '')}"${extraStyle ? ` style="${extraStyle}"` : ''} title="${label}" aria-label="Show ${label}">${icon}</button>`;
 }
 
-// â”€â”€ Category icon helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Category icon helpers -----------------------------------------------------
 
 export function catIconSm(category) {
   const meta = catMeta[category];
@@ -29,33 +29,17 @@ export function catIconCard(category) {
   return `<span class="card-cat-icon" style="color:${meta.color}">${svg}</span>`;
 }
 
-// â”€â”€ Card image placeholder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Card image placeholder ---------------------------------------------------
+
+const KNOWN_FALLBACKS = new Set(['latest','playstation','xbox','nintendo','pc','indie','reviews','trailers','esports','industry','hardware']);
+const catFallbackSvg = cat => `/assets/fallbacks/${KNOWN_FALLBACKS.has((cat||'').toLowerCase()) ? cat.toLowerCase() : 'general'}.svg`;
 
 export function cardPlaceholder(category, link) {
-  const meta  = catMeta[category];
-  const color = meta ? meta.color : '#94A3B8';
-  const bigSvg = meta ? meta.icon.replace(/width="\d+" height="\d+"/, 'width="48" height="48"') : '';
-  const tag = {
-    'Latest':      '▶ Now',
-    'PlayStation':  '🎮 PS',
-    'Xbox':        '🟢 Xbox',
-    'Nintendo':    '🔴 Nintendo',
-    'PC':          '🖥 PC',
-    'Indie':       '⭐ Indie',
-    'Reviews':     '★ Review',
-    'Trailers':    '▶ Reveal',
-    'Esports':     '🏆 Esports',
-    'Industry':    '📊 Industry',
-    'Hardware':    '🔧 Hardware',
-  }[category] || '▶ Gaming';
-  return `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-placeholder" data-ph-cat="${esc(category)}" style="--ph-color:${color}" tabindex="-1" aria-hidden="true">
-    <span class="card-placeholder__icon">${bigSvg}</span>
-    <span class="card-placeholder__tag">${esc(tag)}</span>
-    <span class="card-placeholder__grid"></span>
-  </a>`;
+  const src = catFallbackSvg(category);
+  return `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap" tabindex="-1" aria-hidden="true"><img class="card-img" src="${src}" alt="Category illustration for ${esc(category)}" loading="lazy" decoding="async" width="640" height="360"></a>`;
 }
 
-// â”€â”€ Grid card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Grid card -----------------------------------------------------
 
 export function gridCard(a, i) {
   const date = relTime(a.date);
@@ -104,7 +88,7 @@ export function gridCard(a, i) {
     </article>`;
 }
 
-// â"€â"€ List card
+// -- List card
 
 export function listCard(a, i) {
   const date = relTime(a.date);
@@ -116,7 +100,7 @@ export function listCard(a, i) {
   const listImgAlt = listImgSrc ? `Article image for: ${a.title}` : `Category illustration for ${a.category}`;
   const imgHtml = listImgSrc
     ? `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-img-wrap--list" tabindex="-1" aria-hidden="true"><img class="card-img card-img--list" src="${esc(listImgSrc)}" alt="${esc(listImgAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="240" height="180" data-category="${esc(a.category)}" data-link="${esc(a.link)}"></a>`
-    : `<span class="card-img-wrap card-img-wrap--list card-placeholder card-placeholder--list" style="--ph-color:${catMeta[a.category]?.color||'#94A3B8'}"><span class="card-placeholder__icon">${catMeta[a.category] ? catMeta[a.category].icon.replace(/width="\d+" height="\d+"/, 'width="28" height="28"') : ''}</span></span>`;
+    : `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-img-wrap--list" tabindex="-1" aria-hidden="true"><img class="card-img card-img--list" src="${catFallbackSvg(a.category)}" alt="${esc(listImgAlt)}" loading="lazy" decoding="async" width="240" height="135"></a>`;
   return `
     <article class="card card-row ${catClass(a.category)}" data-card-idx="${i}" data-article-url="${esc(a.link)}" data-category="${esc(a.category)}">
       <span class="card-num">${num}</span>
@@ -150,7 +134,7 @@ export function listCard(a, i) {
     </article>`;
 }
 
-// â”€â”€ Skeleton loading cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Skeleton loading cards -----------------------------------------------------
 
 export function buildSkeletons(n = 8) {
   return Array.from({ length: n }, () => `
