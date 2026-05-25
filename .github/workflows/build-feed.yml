@@ -15,6 +15,8 @@ jobs:
   # ── Unit + integration tests ─────────────────────────────────────────────────
   test:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,6 +37,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: test                 # ← blocks deploy if tests fail
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
@@ -117,6 +121,8 @@ jobs:
     needs: build                # runs after the app is built + deployed
     # Only run E2E on the main branch to avoid hammering preview deploys
     if: github.ref == 'refs/heads/main'
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
