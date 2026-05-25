@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/lib/utils.mjs
  * Pure utility helpers and the shared HTTP streaming function.
  */
@@ -12,7 +12,7 @@ import {
 // ── Category helpers ───────────────────────────────────────────────────────
 
 export function getFallbackImage(category) {
-  return CATEGORY_FALLBACK_IMAGES[category] || CATEGORY_FALLBACK_IMAGES['General'];
+  return CATEGORY_FALLBACK_IMAGES[category] || CATEGORY_FALLBACK_IMAGES['Latest'];
 }
 
 // ── String / URL helpers ───────────────────────────────────────────────────

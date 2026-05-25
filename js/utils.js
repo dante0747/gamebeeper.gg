@@ -1,4 +1,4 @@
-﻿import { loadingMessages } from './config.js';
+import { loadingMessages } from './config.js';
 
 // â”€â”€ HTML escaping & URL validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -52,7 +52,7 @@ export function stripHtml(html) {
 
 export function truncate(str, n = 160) {
   const s = (str || '').replace(/\s+/g, ' ').trim();
-  return s.length > n ? s.slice(0, n) + 'â€¦' : s;
+  return s.length > n ? s.slice(0, n) + '\u2026' : s;
 }
 
 export function readTime(title, snippet) {

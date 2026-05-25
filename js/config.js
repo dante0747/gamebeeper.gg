@@ -1,4 +1,4 @@
-﻿// â”€â”€ Brand constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€ Brand constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const BRAND = {
   name:         'GameBeeper',
   shortName:    'GS',
@@ -59,7 +59,7 @@ export const CAT_SVG = {
     `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
   'Hardware':
     `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg>`,
-];
+};
 
 export const categories = [
   { id: 'All',          label: 'All news',        color: '#26e6ff', icon: CAT_SVG['All']          },
@@ -82,17 +82,17 @@ export const categories = [
 export const catMeta = Object.fromEntries(categories.map(c => [c.id, { icon: c.icon, color: c.color }]));
 
 export const loadingMessages = [
-  'Tuning into the latest game storiesâ€¦',
-  'Scanning official channelsâ€¦',
-  'New stories incomingâ€¦',
-  'Downloading today\'s game newsâ€¦',
-  'Locking onto the signalâ€¦',
-  'Loading the latest from gaming\'s finest sourcesâ€¦',
-  'Your daily briefing is loadingâ€¦',
-  'Aggregating news from across gamingâ€¦',
-  'Checking in with all platformsâ€¦',
+  'Tuning into the latest game stories\u2026',
+  'Scanning official channels\u2026',
+  'New stories incoming\u2026',
+  'Downloading today\'s game news\u2026',
+  'Locking onto the signal\u2026',
+  'Loading the latest from gaming\'s finest sources\u2026',
+  'Your daily briefing is loading\u2026',
+  'Aggregating news from across gaming\u2026',
+  'Checking in with all platforms\u2026',
 ];
 
-// Runtime sponsored-content regex â€” used for live-fetched articles
+// Runtime sponsored-content regex \u2014 used for live-fetched articles
 export const SPONSORED_RE = /\b(sponsored|partner[ -]content|promoted|advertorial|advertisement|webinar|webcast|brought[ -]to[ -]you[ -]by|in[ -]partnership[ -]with|paid[ -]post|native[ -]ad|content[ -]marketing|affiliate|deals?[ -]roundup)\b/i;
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/lib/config.mjs
  * Shared constants, regex patterns, and the XML parser instance.
  */
@@ -92,8 +92,8 @@ export const CATEGORY_KEYWORDS = {
   'PC':          /\b(PC gaming|Steam\b|Steam Deck|Epic Games Store|GOG\b|NVIDIA|GeForce|Radeon|DLSS|modding|mod community)\b/i,
   'Indie':       /\b(indie|independent developer|independent studio|Indie World|ID@Xbox|demo festival|AA game)\b/i,
   'Reviews':     /\b(review|reviewed|verdict|score\b|hands-on|impressions|rating)\b/i,
+  'Esports':     /\b(esports|e-sports|tournament|championship|league\b|Valorant|LCS|Dota|Counter-Strike|CS2|competitive gaming)\b/i,
   'Trailers':    /\b(trailer|gameplay reveal|announce(?:d|ment)?|showcase|world premiere|release date reveal|first look)\b/i,
-  'Esports':     /\b(esports|e-sports|tournament|championship|major\b|league\b|Valorant|LCS|Dota|Counter-Strike|CS2|competitive gaming)\b/i,
   'Hardware':    /\b(console hardware|handheld console|gaming controller|gaming headset|gaming monitor|GPU\b|gaming hardware|gaming accessory)\b/i,
   'Industry':    /\b(acquisition|layoff|studio closure|publisher|earnings|union\b|lawsuit|regulatory|delay(?:ed)? production|developer layoff)\b/i,
 };
