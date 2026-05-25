@@ -3,7 +3,7 @@
  * Article category classification for gaming news — keyword tier and optional Ollama LLM tier.
  *
  * Category precedence (deterministic keyword pass):
- *   PlayStation → Xbox → Nintendo → PC → Indie → Reviews → Esports → Trailers → Hardware → Industry → Latest
+ *   PlayStation → Xbox → Nintendo → PC → Reviews → Trailers → Esports → Hardware → Indie → Industry → Latest
  *
  * For official platform feeds (feedCategory !== 'Latest'), the feed's own category is trusted
  * directly — keyword and LLM passes are skipped to avoid false reclassification.

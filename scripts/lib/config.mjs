@@ -83,19 +83,19 @@ export const CATEGORY_FALLBACK_IMAGES = {
 };
 
 // Deterministic keyword classification — gaming taxonomy
-// Precedence (for general/Latest feeds): topic-specific → platform-specific → Latest fallback
-// Topic categories come first so "PS5 Review" → Reviews, "Nintendo Direct Trailer" → Trailers.
+// Precedence (for general/Latest feeds): platform-specific → topic-specific → Latest fallback
+// Platform categories come first so "PS5 review" → PlayStation, "Nintendo Direct trailer" → Nintendo.
 // For articles from official platform feeds (feedCategory !== 'Latest'), trust the feed category.
 export const CATEGORY_KEYWORDS = {
+  'PlayStation': /\b(PlayStation|PS5|PS4|PS VR2|PSVR2|PS Plus|State of Play|PlayStation Studios|PlayStation Store)\b/i,
+  'Xbox':        /\b(Xbox|Game Pass|Xbox Series|Xbox Game Studios|ID@Xbox|Microsoft Gaming|Xbox Cloud)\b/i,
+  'Nintendo':    /\b(Nintendo|Switch 2?|Nintendo Direct|Joy-Con|eShop|Mario|Zelda|Metroid|Pok[eé]mon)\b/i,
+  'PC':          /\b(PC gaming|Steam\b|Steam Deck|Epic Games Store|GOG\b|NVIDIA|GeForce|Radeon|DLSS|modding|mod community)\b/i,
   'Reviews':     /\b(review(?:ed|s)?|verdict|hands-on|impressions|review roundup|game of the year|GOTY|scored? \d|rating)\b/i,
   'Trailers':    /\b(trailer|gameplay reveal|world premiere|first look|release date (?:trailer|reveal)|CGI trailer|gameplay trailer|reveal trailer|story trailer|official trailer)\b/i,
   'Esports':     /\b(esports|e-sports|tournament|championship|pro league|Valorant|LCS|LEC|VCT|Dota 2?|Counter-Strike|CS2|competitive gaming|major\b.*gaming|gaming.*major\b)\b/i,
   'Hardware':    /\b(console hardware|handheld console|gaming controller|gaming headset|gaming monitor|GPU\b|gaming hardware|gaming accessory|graphics card|benchmark|frame rate|performance test)\b/i,
   'Indie':       /\b(indie game|independent developer|independent studio|Indie World|demo festival|AA game|indie dev|indie showcase)\b/i,
-  'PlayStation': /\b(PlayStation|PS5|PS4|PS VR2|PSVR2|PS Plus|State of Play|PlayStation Studios|PlayStation Store)\b/i,
-  'Xbox':        /\b(Xbox|Game Pass|Xbox Series|Xbox Game Studios|ID@Xbox|Microsoft Gaming|Xbox Cloud)\b/i,
-  'Nintendo':    /\b(Nintendo|Switch 2?|Nintendo Direct|Joy-Con|eShop|Mario|Zelda|Metroid|Pok[eé]mon)\b/i,
-  'PC':          /\b(PC gaming|Steam\b|Steam Deck|Epic Games Store|GOG\b|NVIDIA|GeForce|Radeon|DLSS|modding|mod community)\b/i,
   'Industry':    /\b(acquisition|layoff|studio closure|publisher|earnings|union\b|lawsuit|regulatory|delay(?:ed)? production|developer layoff)\b/i,
 };
 
