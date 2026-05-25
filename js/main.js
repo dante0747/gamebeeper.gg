@@ -446,13 +446,12 @@ function updateTrendingTopics(articles) {
 
   const topCats = Object.entries(catCounts)
     .sort(([, a], [, b]) => b - a)
-    .slice(0, 8)
-    .map(([cat]) => cat);
+    .slice(0, 8);
 
   if (!topCats.length) return;
 
-  trendingGrid.innerHTML = topCats.map(cat =>
-    `<button class="trending-topic" data-trending-cat="${esc(cat)}">${esc(cat)}</button>`
+  trendingGrid.innerHTML = topCats.map(([cat, count]) =>
+    `<button class="trending-topic" data-trending-cat="${esc(cat)}">${esc(cat)}<span class="trending-topic-count">${count}</span></button>`
   ).join('');
 
   trendingGrid.querySelectorAll('.trending-topic').forEach(btn => {
