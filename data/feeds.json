@@ -21,5 +21,8 @@
   { "id": "dot-esports",       "name": "Dot Esports",           "url": "https://dotesports.com/feed",                        "homepage": "https://dotesports.com/",                       "category": "Esports",      "enabled": true },
   { "id": "dexerto",           "name": "Dexerto",               "url": "https://www.dexerto.com/feed/",                      "homepage": "https://www.dexerto.com/",                      "category": "Esports",      "enabled": true },
   { "id": "digital-foundry",   "name": "Digital Foundry",       "url": "https://www.digitalfoundry.net/feed",                "homepage": "https://www.digitalfoundry.net",                 "category": "Hardware",     "enabled": true },
-  { "id": "toms-hardware",     "name": "Tom's Hardware",        "url": "https://www.tomshardware.com/feeds/all",             "homepage": "https://www.tomshardware.com/",                 "category": "Hardware",     "enabled": true }
+  { "id": "toms-hardware",     "name": "Tom's Hardware",        "url": "https://www.tomshardware.com/feeds/all",             "homepage": "https://www.tomshardware.com/",                 "category": "Hardware",     "enabled": true },
+  { "id": "siliconera",        "name": "Siliconera",            "url": "https://www.siliconera.com/feed/",                   "homepage": "https://www.siliconera.com/",                   "category": "Indie",        "enabled": true },
+  { "id": "indie-games-plus",  "name": "Indie Games Plus",      "url": "https://indiegamesplus.com/feed",                    "homepage": "https://indiegamesplus.com/",                   "category": "Indie",        "enabled": true },
+  { "id": "itch-io-blog",      "name": "itch.io Blog",          "url": "https://itch.io/blog.xml",                           "homepage": "https://itch.io/blog",                          "category": "Indie",        "enabled": true }
 ]
