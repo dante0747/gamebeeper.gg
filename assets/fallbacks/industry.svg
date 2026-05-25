@@ -2,31 +2,13 @@
   <rect width="640" height="360" fill="#10111a"/>
   <circle cx="320" cy="180" r="120" fill="#a3a6bd10"/>
   <svg x="248" y="108" width="144" height="144" viewBox="0 0 24 24" fill="none" stroke="#a3a6bd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Main tall tower -->
-    <rect x="8" y="2" width="8" height="20" rx="0.5"/>
-    <!-- Left wing building -->
-    <rect x="3" y="9" width="5" height="13" rx="0.5"/>
-    <!-- Right wing building -->
-    <rect x="16" y="9" width="5" height="13" rx="0.5"/>
-    <!-- Ground line -->
-    <line x1="1" y1="22" x2="23" y2="22"/>
-    <!-- Main tower windows -->
-    <rect x="10" y="4.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="12.5" y="4.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="10" y="7.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="12.5" y="7.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="10" y="10.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="12.5" y="10.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="10" y="13.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="12.5" y="13.5" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <!-- Left wing windows -->
-    <rect x="4.5" y="11" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="4.5" y="14" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <!-- Right wing windows -->
-    <rect x="18" y="11" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <rect x="18" y="14" width="1.5" height="1.5" rx="0.2" fill="#a3a6bd" stroke="none"/>
-    <!-- Antenna on top -->
-    <line x1="12" y1="2" x2="12" y2="0.5" stroke-width="1.5"/>
+    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+    <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+    <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+    <path d="M10 6h4"/>
+    <path d="M10 10h4"/>
+    <path d="M10 14h4"/>
+    <path d="M10 18h4"/>
   </svg>
   <circle cx="320" cy="180" r="80" fill="none" stroke="#a3a6bd30" stroke-width="1"/>
 </svg>
