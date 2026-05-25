@@ -1,9 +1,9 @@
-import { CORS_PROXIES } from './config.js';
+﻿import { CORS_PROXIES } from './config.js';
 
-// â”€â”€ In-session proxy health cache â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- In-session proxy health cache ---------------------------------
 // Tracks which proxy indices failed this session so they are deprioritised.
 // Reset if the tab is closed; no persistent storage needed.
-const _proxyFailedAt = new Map(); // index â†’ timestamp ms
+const _proxyFailedAt = new Map(); // index -> timestamp ms
 const PROXY_COOLDOWN_MS = 5 * 60 * 1000; // 5 min before retrying a failed proxy
 
 function isProxyCoolingDown(idx) {
@@ -19,7 +19,7 @@ function markProxyFailed(idx) {
   console.debug(`[GameBeeper] CORS proxy #${idx} marked as failed (cooldown ${PROXY_COOLDOWN_MS / 60000}m)`);
 }
 
-// â”€â”€ Body validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Body validation -----------------------------------------------
 
 /** True when the response body looks like real web content (not an error JSON). */
 export function looksLikeUsableBody(text) {
@@ -40,7 +40,7 @@ export function looksLikeUsableBody(text) {
   return true;
 }
 
-// â”€â”€ CORS proxy chain â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- CORS proxy chain ----------------------------------------------
 
 /** Fetch a URL via a chain of public CORS proxies; returns response text or null. */
 export async function fetchViaCorsProxy(targetUrl, { timeoutMs = 8000 } = {}) {

@@ -9,7 +9,7 @@ import { XMLParser }  from 'fast-xml-parser';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ── Brand ─────────────────────────────────────────────────────────────────────
+// -- Brand ---------------------------------------------------------------------
 
 export const BRAND = {
   name:          'GameBeeper',
@@ -21,12 +21,12 @@ export const BRAND = {
   socialHandle:  '',
 };
 
-// ── Paths ──────────────────────────────────────────────────────────────────
+// -- Paths ------------------------------------------------------------------
 
 /** Absolute path to the repository root. */
 export const ROOT = path.resolve(__dirname, '../..');
 
-// ── Fetch / pipeline tuning ────────────────────────────────────────────────
+// -- Fetch / pipeline tuning ------------------------------------------------
 
 export const FEED_TIMEOUT_MS           = 10_000;
 export const ARTICLE_TIMEOUT_MS        = 8_000;
@@ -40,7 +40,7 @@ export const ARTICLE_TEXT_MAX_CHARS    = 3_000;
 export const IMAGE_HEAD_MAX_BYTES      = 256 * 1024;
 export const USER_AGENT                = 'GameBeeper/1.0 (+https://GameBeeper.gg; feed-bot)';
 
-// ── AI / Ollama ────────────────────────────────────────────────────────────
+// -- AI / Ollama ------------------------------------------------------------
 
 export const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2:1b';
 export const OLLAMA_HOST  = process.env.OLLAMA_HOST  || 'http://127.0.0.1:11434';
@@ -53,7 +53,7 @@ export const VALID_CATS = [
   'Indie', 'Reviews', 'Trailers', 'Esports', 'Industry', 'Hardware',
 ];
 
-// ── XML parser ─────────────────────────────────────────────────────────────
+// -- XML parser -------------------------------------------------------------
 
 export const XML_PARSER = new XMLParser({
   ignoreAttributes: false,
@@ -66,7 +66,7 @@ export const XML_PARSER = new XMLParser({
   stopNodes: ['*.description', '*.content', '*.content:encoded', '*.summary'],
 });
 
-// ── Category metadata ──────────────────────────────────────────────────────
+// -- Category metadata ------------------------------------------------------
 
 export const CATEGORY_FALLBACK_IMAGES = {
   'Latest':       '/assets/fallbacks/latest.svg',
@@ -102,7 +102,7 @@ export const CATEGORY_KEYWORDS = {
 // Sponsored-content patterns (regex tier — catches obvious cases without LLM)
 export const SPONSORED_RE = /\b(sponsored|partner[ -]content|promoted|advertorial|advertisement|webinar|webcast|brought[ -]to[ -]you[ -]by|in[ -]partnership[ -]with|paid[ -]post|native[ -]ad|content[ -]marketing|affiliate|deals?[ -]roundup)\b/i;
 
-// ── Image-filter constants ─────────────────────────────────────────────────
+// -- Image-filter constants -------------------------------------------------
 
 export const BAD_PATH_PATTERNS = [
   'rss', 'logo', 'logos', 'icon', 'icons', 'favicon', 'avatar', 'avatars',

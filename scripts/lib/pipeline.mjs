@@ -14,7 +14,7 @@ import { detectSponsored }              from './sponsored.mjs';
 import { summarizeArticle }             from './summarizer.mjs';
 import { fetchArticleImage }            from './images.mjs';
 
-// ── Article set transforms ─────────────────────────────────────────────────
+// -- Article set transforms -------------------------------------------------
 
 /**
  * Deduplicate by link — when the same URL appears in multiple feeds, keep the
@@ -73,7 +73,7 @@ export function capByCategory(articles, maxPerCat = MAX_PER_CATEGORY) {
   return capped;
 }
 
-// ── Pipeline passes ────────────────────────────────────────────────────────
+// -- Pipeline passes --------------------------------------------------------
 
 /** Run keyword + optional LLM classification on every article in-place. */
 export async function runClassificationPass(articles) {

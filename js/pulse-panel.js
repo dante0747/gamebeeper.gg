@@ -65,7 +65,7 @@ export function initMyPulse({ render, buildFilters }) {
       <div class="mpd-header">
         <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
           <span class="mpd-title"><svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>My Signal</span>
-          <button class="mpd-close" id="myPulseClose" aria-label="Close My Signal panel">âœ•</button>
+          <button class="mpd-close" id="myPulseClose" aria-label="Close My Signal panel">x</button>
         </div>
         <div class="mpd-subtitle">// customize your gaming signal</div>
       </div>
@@ -108,7 +108,7 @@ export function initMyPulse({ render, buildFilters }) {
               const muted = prefs.mutedSources.includes(name);
               return `<button class="mpd-source${muted ? ' mpd-source--muted' : ''}" data-src-mute="${esc(name)}" aria-pressed="${muted}" title="${muted ? 'Unmute' : 'Mute'} ${esc(name)}">
                 <span class="mpd-src-name">${esc(name)}</span>
-                <span class="mpd-src-badge">${muted ? 'muted' : 'âœ“ live'}</span>
+                <span class="mpd-src-badge">${muted ? 'muted' : 'ok live'}</span>
               </button>`;
             }).join('')}
           </div>
@@ -195,7 +195,7 @@ export function initMyPulse({ render, buildFilters }) {
       btn.setAttribute('aria-pressed', String(muted));
       btn.title = (muted ? 'Unmute' : 'Mute') + ' ' + src;
       const badge = btn.querySelector('.mpd-src-badge');
-      if (badge) badge.textContent = muted ? 'muted' : 'âœ“ live';
+      if (badge) badge.textContent = muted ? 'muted' : 'ok live';
       const countEl = drawer.querySelector('#mpSrcCount');
       if (countEl) countEl.textContent = p.mutedSources.length > 0 ? `(${p.mutedSources.length} muted)` : '';
       render();
@@ -227,7 +227,7 @@ export function initMyPulse({ render, buildFilters }) {
       resetPreferences();
       buildDrawerContent();
       render();
-      showBmToast('âœ¨ My Signal reset to defaults');
+      showBmToast('My Signal reset to defaults');
     });
   }
 
@@ -273,8 +273,8 @@ export function initMyPulse({ render, buildFilters }) {
       nudge.innerHTML = `
         <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:var(--cyan)"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
         <span>Customize your signal in 30 seconds.</span>
-        <button class="pulse-nudge-btn" id="pulseNudgeOpen">Set up My Signal â†’</button>
-        <button class="pulse-nudge-close" aria-label="Dismiss this message" id="pulseNudgeDismiss">âœ•</button>`;
+        <button class="pulse-nudge-btn" id="pulseNudgeOpen">Set up My Signal -></button>
+        <button class="pulse-nudge-close" aria-label="Dismiss this message" id="pulseNudgeDismiss">x</button>`;
       const healthBar = document.getElementById('feedHealthBar');
       const anchor = healthBar || feedGrid;
       if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(nudge, anchor.nextSibling || anchor);

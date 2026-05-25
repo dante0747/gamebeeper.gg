@@ -7,7 +7,7 @@ import { XML_PARSER, MAX_PER_FEED, FEED_TIMEOUT_MS, USER_AGENT } from './config.
 import { hashId, normalizeUrl, stripHtml, isLowValueSnippet, truncate, normalizeDate, getFallbackImage } from './utils.mjs';
 import { extractBestImage } from './images.mjs';
 
-// â”€â”€ Article record builder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Article record builder -------------------------------------------------
 
 /** Build a normalised article record – single source of truth for the shape. */
 export function buildArticleRecord(feed, { link, title, summary, date, image }) {
@@ -28,7 +28,7 @@ export function buildArticleRecord(feed, { link, title, summary, date, image }) 
   };
 }
 
-// â”€â”€ Feed parsers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Feed parsers -----------------------------------------------------------
 
 export function parseRssItems(parsed, feed) {
   const channel  = parsed?.rss?.channel || parsed?.channel;
@@ -81,7 +81,7 @@ export function parseFeedXml(xml, feed) {
   return rssItems.length ? rssItems : parseAtomEntries(parsed, feed);
 }
 
-// â”€â”€ Feed fetcher â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Feed fetcher -----------------------------------------------------------
 
 export async function fetchOneFeed(feed) {
   const controller = new AbortController();

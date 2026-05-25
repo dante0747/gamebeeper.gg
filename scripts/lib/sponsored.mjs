@@ -7,13 +7,13 @@
 import { SPONSORED_RE, OLLAMA_MODEL } from './config.mjs';
 import { ollamaClient, aiCache }       from './ai.mjs';
 
-// ── Tier 1: regex (always runs — catches obvious cases instantly) ──────────
+// -- Tier 1: regex (always runs — catches obvious cases instantly) ----------
 
 export function regexDetectSponsored(title = '', summary = '') {
   return SPONSORED_RE.test(`${title} ${summary}`);
 }
 
-// ── Tier 2: LLM (only when Ollama is running) ─────────────────────────────
+// -- Tier 2: LLM (only when Ollama is running) -----------------------------
 
 export async function detectSponsored(title = '', summary = '') {
   // Fast path: regex catches it — no LLM call needed

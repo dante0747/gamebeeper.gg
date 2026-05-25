@@ -8,7 +8,7 @@ import {
 } from './images.js';
 import { fetchViaCorsProxy } from './http.js';
 
-// â”€â”€ rss2json session guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- rss2json session guard ----------------------------------------
 // If rss2json returns a rate-limit or auth error, we skip it for the
 // remainder of the browser session to avoid hammering the free-tier endpoint.
 
@@ -24,7 +24,7 @@ function banRss2Json(reason) {
   console.warn(`[GameBeeper] rss2json suspended for ${RSS2JSON_RETRY_AFTER_MS / 60_000}m – ${reason}`);
 }
 
-// â”€â”€ RSS XML parser â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- RSS XML parser ------------------------------------------------
 
 export function parseRssXml(xmlText, feed) {
   const parser = new DOMParser();
@@ -72,7 +72,7 @@ export function parseRssXml(xmlText, feed) {
   return items;
 }
 
-// â”€â”€ Feed fetchers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Feed fetchers -------------------------------------------------
 
 async function fetchFeedDirect(feed) {
   const text = await fetchViaCorsProxy(feed.url, { timeoutMs: 10000 });
@@ -141,7 +141,7 @@ export async function fetchFeed(feed) {
   }
 }
 
-// â”€â”€ Static cache loader â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Static cache loader -------------------------------------------
 
 export async function loadFeedCache() {
   const resp = await fetch('/public/feed.json', { cache: 'no-cache', signal: AbortSignal.timeout(8000) });
@@ -171,7 +171,7 @@ export function normaliseCachedArticle(a) {
   };
 }
 
-// â”€â”€ Emergency RSS fallback â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Emergency RSS fallback ----------------------------------------
 
 export async function fetchAllFromRSS() {
   const feeds = getFeeds();

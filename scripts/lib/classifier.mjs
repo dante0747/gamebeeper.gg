@@ -12,7 +12,7 @@
 import { CATEGORY_KEYWORDS, VALID_CATS, OLLAMA_MODEL } from './config.mjs';
 import { ollamaClient, aiCache, saveCache }             from './ai.mjs';
 
-// ── Tier 1: keyword rules (always works, zero LLM dependency) ──────────────
+// -- Tier 1: keyword rules (always works, zero LLM dependency) --------------
 
 export function keywordClassify(title = '', summary = '', feedCategory = 'Latest') {
   const text = `${title} ${summary}`;
@@ -22,7 +22,7 @@ export function keywordClassify(title = '', summary = '', feedCategory = 'Latest
   return feedCategory;
 }
 
-// ── Tier 2: Ollama local LLM (used in CI via GitHub Actions, optional locally) ──
+// -- Tier 2: Ollama local LLM (used in CI via GitHub Actions, optional locally) --
 
 export async function classifyArticle(title = '', summary = '', feedCategory = 'Latest') {
   // 1. For articles from dedicated (non-Latest) feeds, trust the feed's own category.

@@ -29,7 +29,7 @@ import { MAX_PER_FEED } from '../../scripts/lib/config.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixture = name => readFileSync(join(__dirname, '../fixtures', name), 'utf8');
 
-// ── deduplicateArticles ───────────────────────────────────────────────────────
+// -- deduplicateArticles -------------------------------------------------------
 
 describe('deduplicateArticles', () => {
   it('removes duplicate articles by link', () => {
@@ -65,7 +65,7 @@ describe('deduplicateArticles', () => {
   });
 });
 
-// ── newestFirst sort ──────────────────────────────────────────────────────────
+// -- newestFirst sort ----------------------------------------------------------
 
 describe('newestFirst sort', () => {
   it('sorts a mixed-date array in descending order', () => {
@@ -83,7 +83,7 @@ describe('newestFirst sort', () => {
   });
 });
 
-// ── MAX_PER_FEED cap ──────────────────────────────────────────────────────────
+// -- MAX_PER_FEED cap ----------------------------------------------------------
 
 describe('MAX_PER_FEED cap', () => {
   it(`parseFeedXml returns at most MAX_PER_FEED (${MAX_PER_FEED}) articles`, () => {

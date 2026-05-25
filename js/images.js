@@ -1,7 +1,7 @@
-import { esc } from './utils.js';
+﻿import { esc } from './utils.js';
 import { fetchViaCorsProxy } from './http.js';
 
-// â”€â”€ Constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Constants -----------------------------------------------------
 
 const IMAGE_CACHE_TTL            = 7 * 24 * 60 * 60 * 1000; // 7 days
 const IMAGE_NEG_CACHE_TTL        = 6 * 60 * 60 * 1000;      // 6 h
@@ -13,7 +13,7 @@ const _BAD_URL_RE = /\b(logo|icon|favicon|avatar|sprite|pixel|tracking|badge|pla
 // Prevents duplicate concurrent fetches
 const resolvingImageUrls = new Set();
 
-// â”€â”€ URL normalisation & filtering â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- URL normalisation & filtering --------------------------------
 
 export function normalizeImageUrl(url, baseUrl) {
   if (!url) return null;
@@ -41,7 +41,7 @@ export function isProbablyBadImageUrl(url) {
   return false;
 }
 
-// â”€â”€ Scoring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Scoring -------------------------------------------------------
 
 function scoreImageCandidate(candidate) {
   const { url, source, width: w, height: h } = candidate;
@@ -67,7 +67,7 @@ function scoreImageCandidate(candidate) {
   return score;
 }
 
-// â”€â”€ srcset parsing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- srcset parsing ------------------------------------------------
 
 function parseSrcset(srcset, baseUrl) {
   return srcset
@@ -92,7 +92,7 @@ function parseSrcset(srcset, baseUrl) {
     .sort((a, b) => b.descriptorScore - a.descriptorScore);
 }
 
-// â”€â”€ Candidate extraction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Candidate extraction ------------------------------------------
 
 export function extractImageCandidatesFromHtml(html, baseUrl) {
   const candidates = [];
@@ -196,7 +196,7 @@ export function extractImage(el, descHtml, contentHtml) {
   return best ? best.url : null;
 }
 
-// â”€â”€ Image validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Image validation ----------------------------------------------
 
 export function validateImageUrl(url, timeoutMs = 3500) {
   return new Promise(resolve => {
@@ -222,7 +222,7 @@ export function validateImageUrl(url, timeoutMs = 3500) {
   });
 }
 
-// â”€â”€ localStorage image cache â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- localStorage image cache --------------------------------------
 
 export function getCachedImage(articleUrl) {
   try {
@@ -260,7 +260,7 @@ export function setCachedImageMiss(articleUrl) {
   } catch { /* ignore quota */ }
 }
 
-// â”€â”€ Head extraction helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Head extraction helpers ---------------------------------------
 
 function getHeadHtml(html) {
   if (!html) return '';
@@ -287,7 +287,7 @@ function findImageInMarkdown(md, baseUrl) {
   return null;
 }
 
-// â”€â”€ Article metadata image resolver â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Article metadata image resolver ------------------------------
 
 export async function resolveArticleMetadataImage(articleUrl) {
   if (!articleUrl) return null;
@@ -374,7 +374,7 @@ export async function resolveArticleMetadataImage(articleUrl) {
   }
 }
 
-// â”€â”€ Concurrent worker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Concurrent worker ---------------------------------------------
 
 export async function runLimited(items, limit, worker) {
   const queue = [...items];
@@ -384,7 +384,7 @@ export async function runLimited(items, limit, worker) {
   await Promise.all(workers);
 }
 
-// â”€â”€ Progressive image resolution â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Progressive image resolution ----------------------------------
 
 export async function progressivelyResolveMissingImages() {
   const feedGrid = document.getElementById('feedGrid');
@@ -409,7 +409,7 @@ export async function progressivelyResolveMissingImages() {
   });
 }
 
-// â”€â”€ Card image updater â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Card image updater --------------------------------------------
 
 export function updateCardImage(cardEl, imageData) {
   if (!cardEl || !imageData || !imageData.url) return;

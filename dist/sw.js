@@ -25,7 +25,7 @@ const SHELL_ASSETS = [
   '/favicon.svg',
 ];
 
-// ── Install: precache shell ───────────────────────────────────────
+// -- Install: precache shell ---------------------------------------
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -34,7 +34,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// ── Activate: purge old caches ────────────────────────────────────
+// -- Activate: purge old caches ------------------------------------
 
 self.addEventListener('activate', event => {
   event.waitUntil(
@@ -46,7 +46,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// ── Fetch: route requests ─────────────────────────────────────────
+// -- Fetch: route requests -----------------------------------------
 
 self.addEventListener('fetch', event => {
   const { request } = event;
@@ -86,7 +86,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(networkFirst(request, RUNTIME_CACHE));
 });
 
-// ── Strategy helpers ──────────────────────────────────────────────
+// -- Strategy helpers ----------------------------------------------
 
 async function cacheFirst(request, cacheName, { maxEntries } = {}) {
   const cache    = await caches.open(cacheName);

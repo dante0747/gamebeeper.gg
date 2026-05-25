@@ -8,7 +8,7 @@ import { OLLAMA_MODEL, MIN_SUMMARY_LEN, ARTICLE_TEXT_MAX_BYTES, ARTICLE_TEXT_MAX
 import { ollamaClient, aiCache } from './ai.mjs';
 import { streamHtml }            from './utils.mjs';
 
-// â”€â”€ Article text fetcher â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Article text fetcher ---------------------------------------------------
 
 /** Fetch an article page and return plain-text body content (best-effort). */
 async function fetchArticleText(articleUrl) {
@@ -19,7 +19,7 @@ async function fetchArticleText(articleUrl) {
   const bodyMatch = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i);
   const bodyHtml  = bodyMatch ? bodyMatch[1] : html;
 
-  // Strip scripts, styles, nav, footer, aside, then all tags â†’ plain text
+  // Strip scripts, styles, nav, footer, aside, then all tags -> plain text
   const text = bodyHtml
     .replace(/<(script|style|nav|footer|aside|header)[^>]*>[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
@@ -35,7 +35,7 @@ async function fetchArticleText(articleUrl) {
   return text.slice(0, ARTICLE_TEXT_MAX_CHARS) || null;
 }
 
-// â”€â”€ Summarizer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Summarizer ------------------------------------------------------------
 
 export async function summarizeArticle(title = '', existingSummary = '', articleUrl = '') {
   if (!ollamaClient) return existingSummary;

@@ -1,4 +1,4 @@
-// â”€â”€ Feed registry â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+﻿// -- Feed registry -------------------------------------------------
 // Single source of truth: /data/feeds.json.
 // Call loadFeedsRegistry() once at startup before reading feeds.
 // Feeds with "enabled": false in the JSON are excluded automatically.

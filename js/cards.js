@@ -61,7 +61,7 @@ export function gridCard(a, i) {
       <div class="card-top">
         <span class="card-num">${num}</span>
         ${catIconCard(a.category)}
-        <span class="card-cat ${catClass(a.category)}">${esc(a.category)}</span>
+        <span class="card-cat ${catClass(a.category)}">${esc(catMeta[a.category]?.label ?? a.category)}</span>
         ${date ? `<span class="card-date">${date}</span>` : ''}
         <button class="bm-btn${bm ? ' bm-active' : ''}" data-bm-link="${esc(a.link)}" title="${bm ? 'Remove bookmark' : 'Save to GameBeeper bookmarks'}" aria-label="${bm ? 'Remove bookmark' : 'Bookmark this article'}">
           <svg viewBox="0 0 24 24" width="13" height="13" fill="${bm ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
@@ -108,7 +108,7 @@ export function listCard(a, i) {
       <div class="card-body">
         <div class="card-top">
           ${catIconCard(a.category)}
-          <span class="card-cat ${catClass(a.category)}">${esc(a.category)}</span>
+          <span class="card-cat ${catClass(a.category)}">${esc(catMeta[a.category]?.label ?? a.category)}</span>
           ${date ? `<span class="card-date">${date}</span>` : ''}
           <button class="bm-btn${bm ? ' bm-active' : ''}" data-bm-link="${esc(a.link)}" title="${bm ? 'Remove bookmark' : 'Save to GameBeeper bookmarks'}" aria-label="${bm ? 'Remove bookmark' : 'Bookmark this article'}">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="${bm ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>

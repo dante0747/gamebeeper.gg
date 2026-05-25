@@ -1,4 +1,4 @@
-// â”€â”€ Brand constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Brand constants -----------------------------------------------
 export const BRAND = {
   name:         'GameBeeper',
   shortName:    'GS',
@@ -7,7 +7,7 @@ export const BRAND = {
   canonicalUrl: 'https://GameBeeper.gg/',
 };
 
-// â”€â”€ Static data & constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Static data & constants ------------------------------------------
 
 export const CORS_PROXIES = [
   url => 'https://api.codetabs.com/v1/proxy/?quest='  + encodeURIComponent(url),
@@ -38,7 +38,7 @@ export const CAT_SVG = {
   'All':
     `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>`,
   'Latest':
-    `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>`,
+    `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>`,
   'PlayStation':
     `<svg aria-hidden="true" viewBox="0 0 576 512" width="15" height="15" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M570.9 372.3c-11.3 14.2-38.8 24.3-38.8 24.3L327 470.2v-54.3l150.9-53.8c17.1-6.1 19.8-14.8 5.8-19.4-13.9-4.6-39.1-3.3-56.2 2.9L327 381.1v-56.4c23.2-7.8 47.1-13.6 75.7-16.8 40.9-4.5 90.9.6 130.2 15.5 44.2 14 49.2 34.7 38 48.9zm-224.4-92.5v-139c0-16.3-3-31.3-18.3-35.6-11.7-3.8-19 7.1-19 23.4v347.9l-93.8-29.8V32c39.9 7.4 98 24.9 129.2 35.4C424.1 94.7 451 128.7 451 205.2c0 74.5-46 102.8-104.5 74.6zM43.2 410.2c-45.4-12.8-53-39.5-32.3-54.8 19.1-14.2 51.7-24.9 51.7-24.9l134.5-47.8v54.5l-96.8 34.6c-17.1 6.1-19.7 14.8-5.8 19.4 13.9 4.6 39.1 3.3 56.2-2.9l46.4-16.9v48.8c-51.6 9.3-101.4 7.3-153.9-10z"/></svg>`,
   'Xbox':
@@ -63,7 +63,7 @@ export const CAT_SVG = {
 
 export const categories = [
   { id: 'All',          label: 'All news',        color: '#26e6ff', icon: CAT_SVG['All']          },
-  { id: 'Latest',       label: 'Latest',           color: '#26e6ff', icon: CAT_SVG['Latest']       },
+  { id: 'Latest',       label: 'General',          color: '#26e6ff', icon: CAT_SVG['Latest']       },
   { id: 'PlayStation',  label: 'PlayStation',      color: '#0070D1', icon: CAT_SVG['PlayStation']  },
   { id: 'Xbox',         label: 'Xbox',             color: '#52B043', icon: CAT_SVG['Xbox']         },
   { id: 'Nintendo',     label: 'Nintendo',         color: '#E40012', icon: CAT_SVG['Nintendo']     },
@@ -78,8 +78,8 @@ export const categories = [
     icon: `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>` },
 ];
 
-// Fast lookup: category id â†’ { icon, color }
-export const catMeta = Object.fromEntries(categories.map(c => [c.id, { icon: c.icon, color: c.color }]));
+// Fast lookup: category id -> { icon, color, label }
+export const catMeta = Object.fromEntries(categories.map(c => [c.id, { icon: c.icon, color: c.color, label: c.label }]));
 
 export const loadingMessages = [
   'Tuning into the latest game stories\u2026',

@@ -9,7 +9,7 @@ import {
 } from './config.mjs';
 import { normalizeUrl, absUrl, decodeHtmlEntities, streamHtml } from './utils.mjs';
 
-// â”€â”€ Image URL validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Image URL validation ---------------------------------------------------
 
 export function isBadImageUrl(url) {
   if (!url) return true;
@@ -30,7 +30,7 @@ export function isBadImageUrl(url) {
   return false;
 }
 
-// â”€â”€ Image scoring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Image scoring ---------------------------------------------------------
 
 export function scoreImage(url, source, w = 0, h = 0) {
   let score = 0;
@@ -51,7 +51,7 @@ export function scoreImage(url, source, w = 0, h = 0) {
   return score;
 }
 
-// â”€â”€ HTML image extraction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- HTML image extraction -------------------------------------------------
 
 /** Extract <img> URLs from an HTML string using regex (no DOM available in Node). */
 export function extractImagesFromHtml(html) {
@@ -86,7 +86,7 @@ export function extractImagesFromHtml(html) {
   return results;
 }
 
-// â”€â”€ RSS feed image extraction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- RSS feed image extraction ----------------------------------------------
 
 export function extractBestImage(item) {
   const candidates = [];
@@ -132,7 +132,7 @@ export function extractBestImage(item) {
   return scored[0]?.score > 0 ? scored[0].url : null;
 }
 
-// â”€â”€ Article-page og:image resolver (Node-side; no CORS limits) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Article-page og:image resolver (Node-side; no CORS limits) ------------
 
 /** Extract the first matching <meta>/<link> attribute from raw HTML. */
 function extractMetaUrl(html, attr, valueRe) {

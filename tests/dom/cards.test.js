@@ -43,7 +43,7 @@ const mockArticle = {
   date:          new Date(Date.now() - 300_000).toISOString(), // 5 min ago
 };
 
-// ── gridCard ──────────────────────────────────────────────────────────────────
+// -- gridCard ------------------------------------------------------------------
 
 describe('gridCard', () => {
   let html;
@@ -88,7 +88,7 @@ describe('gridCard', () => {
   });
 });
 
-// ── gridCard without image ────────────────────────────────────────────────────
+// -- gridCard without image ----------------------------------------------------
 
 describe('gridCard without image', () => {
   it('renders placeholder when no image', () => {
@@ -98,7 +98,7 @@ describe('gridCard without image', () => {
   });
 });
 
-// ── listCard ──────────────────────────────────────────────────────────────────
+// -- listCard ------------------------------------------------------------------
 
 describe('listCard', () => {
   let html;
@@ -138,7 +138,7 @@ describe('listCard', () => {
   });
 });
 
-// ── buildSkeletons ────────────────────────────────────────────────────────────
+// -- buildSkeletons ------------------------------------------------------------
 
 describe('buildSkeletons', () => {
   it('returns HTML containing exactly n skeleton elements', () => {

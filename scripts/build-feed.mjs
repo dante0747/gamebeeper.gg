@@ -40,7 +40,7 @@ import {
   runImageResolutionPass,
 } from './lib/pipeline.mjs';
 
-// â”€â”€ Output writers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Output writers ---------------------------------------------------------
 
 async function writeOutputFiles(publicDir, feedJson, healthJson) {
   await fs.mkdir(publicDir, { recursive: true });
@@ -62,12 +62,12 @@ async function patchReadme(rootDir, feedCount) {
   }
 }
 
-// â”€â”€ Main â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Main -------------------------------------------------------------------
 
 async function main() {
   await initOllama();
 
-  // â”€â”€ 1. Fetch all feeds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // -- 1. Fetch all feeds ----------------------------------------------------
   const feedDefs = JSON.parse((await fs.readFile(path.join(ROOT, 'data', 'feeds.json'), 'utf8')).replace(/^\uFEFF/, ''));
   const enabled  = feedDefs.filter(f => f.enabled !== false);
   console.log(`[build-feed] Fetching ${enabled.length} feeds…`);
@@ -88,26 +88,26 @@ async function main() {
     console.log(`  ${ok ? '✓' : '✗'} ${feed.name} – ${articles.length} articles${ok ? '' : ` (${error})`}`);
   }
 
-  // â”€â”€ 2. Deduplicate â†’ sort â†’ guarantee category representation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // -- 2. Deduplicate -> sort -> guarantee category representation -------------
   const deduped  = deduplicateArticles(allArticles).sort(newestFirst);
   const balanced = guaranteeCategoryRepresentation(deduped, MIN_PER_CATEGORY).sort(newestFirst);
 
-  // â”€â”€ 3. Classify (keyword always runs; LLM when Ollama is available) â”€â”€â”€â”€â”€â”€â”€â”€
+  // -- 3. Classify (keyword always runs; LLM when Ollama is available) --------
   await runClassificationPass(balanced);
 
-  // â”€â”€ 4. Cap over-represented categories (after classification is final) â”€â”€â”€â”€â”€â”€
+  // -- 4. Cap over-represented categories (after classification is final) ------
   const articles = capByCategory(balanced, MAX_PER_CATEGORY);
   const dropped  = balanced.length - articles.length;
   if (dropped > 0) {
     console.log(`[build-feed] Category cap: dropped ${dropped} over-represented articles (max ${MAX_PER_CATEGORY} per category).`);
   }
 
-  // â”€â”€ 5. AI passes: sponsored detection â†’ summarization â†’ image resolution â”€â”€â”€
+  // -- 5. AI passes: sponsored detection -> summarization -> image resolution ---
   await runSponsoredDetectionPass(articles);
   await runSummarizationPass(articles);
   await runImageResolutionPass(articles);
 
-  // â”€â”€ 6. Write output files â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // -- 6. Write output files -------------------------------------------------
   const successCount = health.filter(h => h.ok).length;
   const failedCount  = health.filter(h => !h.ok).length;
 

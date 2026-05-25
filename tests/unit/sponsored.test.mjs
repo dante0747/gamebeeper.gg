@@ -15,7 +15,7 @@ vi.mock('../../scripts/lib/ai.mjs', () => ({
 import { regexDetectSponsored, detectSponsored } from '../../scripts/lib/sponsored.mjs';
 import { SPONSORED_RE } from '../../js/config.js';
 
-// ── SPONSORED_RE (from js/config.js — runtime regex) ─────────────────────────
+// -- SPONSORED_RE (from js/config.js — runtime regex) -------------------------
 
 describe('SPONSORED_RE (runtime regex from js/config.js)', () => {
   it('detects "Sponsored post:"', () => {
@@ -52,7 +52,7 @@ describe('SPONSORED_RE (runtime regex from js/config.js)', () => {
   });
 });
 
-// ── regexDetectSponsored (build-side function) ────────────────────────────────
+// -- regexDetectSponsored (build-side function) --------------------------------
 
 describe('regexDetectSponsored', () => {
   it('detects sponsored in title', () => {
@@ -68,7 +68,7 @@ describe('regexDetectSponsored', () => {
   });
 });
 
-// ── detectSponsored (without Ollama) ──────────────────────────────────────────
+// -- detectSponsored (without Ollama) ------------------------------------------
 
 describe('detectSponsored (no Ollama)', () => {
   it('returns true for sponsored title', async () => {

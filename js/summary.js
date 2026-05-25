@@ -2,12 +2,12 @@
  * js/summary.js
  *
  * AI Summary modal – shows pre-cached summaries from feed.json.
- * summaryType === 'ai'      â†’ LLM-generated summary  â†’ badge: "AI Summary"
- * summaryType === 'snippet' â†’ raw RSS excerpt         â†’ badge: "Article Snippet"
- * summaryType === ''        â†’ no summary available
+ * summaryType === 'ai'      -> LLM-generated summary  -> badge: "AI Summary"
+ * summaryType === 'snippet' -> raw RSS excerpt         -> badge: "Article Snippet"
+ * summaryType === ''        -> no summary available
  */
 
-// â”€â”€ Modal DOM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Modal DOM ------------------------------------------------------
 
 let _modal = null;
 
@@ -37,7 +37,7 @@ function getModal() {
         <p class="summary-error" id="summaryError" hidden></p>
       </div>
       <div class="summary-dialog__footer">
-        <a class="card-link" id="summaryReadLink" href="#" target="_blank" rel="noopener noreferrer">Read full article â†’</a>
+        <a class="card-link" id="summaryReadLink" href="#" target="_blank" rel="noopener noreferrer">Read full article -></a>
         <span class="summary-source" id="summarySource"></span>
       </div>
     </div>`;
@@ -77,7 +77,7 @@ function getModal() {
   return _modal;
 }
 
-// â”€â”€ Public API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Public API -----------------------------------------------------
 
 export function initSummaryModal() {
   // Eagerly create the modal DOM so it's ready

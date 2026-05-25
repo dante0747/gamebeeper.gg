@@ -25,7 +25,7 @@ const MOCK_FEED = {
   category: 'General',
 };
 
-// ── parseFeedXml — RSS ────────────────────────────────────────────────────────
+// -- parseFeedXml — RSS --------------------------------------------------------
 
 describe('parseFeedXml — rss-valid.xml', () => {
   let articles;
@@ -130,7 +130,7 @@ describe('parseFeedXml — rss-empty.xml', () => {
   });
 });
 
-// ── buildArticleRecord ────────────────────────────────────────────────────────
+// -- buildArticleRecord --------------------------------------------------------
 
 describe('buildArticleRecord', () => {
   const record = buildArticleRecord(MOCK_FEED, {
@@ -172,7 +172,7 @@ describe('buildArticleRecord', () => {
   });
 });
 
-// ── fetchOneFeed with mocked fetch ────────────────────────────────────────────
+// -- fetchOneFeed with mocked fetch --------------------------------------------
 
 describe('fetchOneFeed', () => {
   afterEach(() => {

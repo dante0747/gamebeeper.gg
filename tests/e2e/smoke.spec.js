@@ -8,7 +8,7 @@
 
 import { test, expect } from '@playwright/test';
 
-// ── Block external network dependencies ───────────────────────────────────────
+// -- Block external network dependencies ---------------------------------------
 // Google Fonts is loaded as a render-blocking <link rel="stylesheet">.
 // On a slow or rate-limited connection it can delay the `load` event far beyond
 // the test timeout.  Stub it out so every test gets a near-instant empty CSS
@@ -26,7 +26,7 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// -- Helpers -------------------------------------------------------------------
 
 /**
  * Navigate to the given URL using `domcontentloaded` rather than the default
@@ -45,7 +45,7 @@ async function waitForCards(page) {
   await page.waitForSelector('#feedGrid article.card', { timeout: 15_000 });
 }
 
-// ── Page loads and shows articles ────────────────────────────────────────────
+// -- Page loads and shows articles --------------------------------------------
 
 test('page loads and shows article cards', async ({ page }) => {
   await goto(page);
@@ -62,7 +62,7 @@ test('page title contains GameBeeper', async ({ page }) => {
   await expect(page).toHaveTitle(/GameBeeper/i);
 });
 
-// ── Category filter ───────────────────────────────────────────────────────────
+// -- Category filter -----------------------------------------------------------
 
 test('sidebar category filter — PC shows only PC cards', async ({ page }) => {
   await goto(page);
@@ -83,7 +83,7 @@ test('sidebar category filter — PC shows only PC cards', async ({ page }) => {
   }
 });
 
-// ── Search ────────────────────────────────────────────────────────────────────
+// -- Search --------------------------------------------------------------------
 
 test('search filters articles by keyword', async ({ page }) => {
   await goto(page);
@@ -119,7 +119,7 @@ test('clearing search restores all articles', async ({ page }) => {
   expect(restored).toBe(allCount);
 });
 
-// ── Keyboard navigation ───────────────────────────────────────────────────────
+// -- Keyboard navigation -------------------------------------------------------
 
 test('pressing / focuses the search input', async ({ page }) => {
   await goto(page);
@@ -148,7 +148,7 @@ test('pressing Escape clears and blurs search', async ({ page }) => {
   expect(value).toBe('');
 });
 
-// ── Bookmark flow ─────────────────────────────────────────────────────────────
+// -- Bookmark flow -------------------------------------------------------------
 
 test('bookmarking first card shows toast and activates the bookmark button', async ({ page }) => {
   await goto(page);
@@ -171,7 +171,7 @@ test('bookmarking first card shows toast and activates the bookmark button', asy
   expect(parseInt(countText || '0', 10)).toBeGreaterThan(0);
 });
 
-// ── Mobile viewport ───────────────────────────────────────────────────────────
+// -- Mobile viewport -----------------------------------------------------------
 
 test('mobile viewport: chip filters visible and sidebar is hidden', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
@@ -194,7 +194,7 @@ test('mobile viewport: chip filters visible and sidebar is hidden', async ({ pag
   expect(isHiddenOffscreen || isHiddenByStyle).toBe(true);
 });
 
-// ── View toggle ───────────────────────────────────────────────────────────────
+// -- View toggle ---------------------------------------------------------------
 
 test('switching to list view changes card layout', async ({ page }) => {
   await goto(page);

@@ -1,4 +1,4 @@
-﻿// â”€â”€ Persistent preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+﻿// -- Persistent preferences ---------------------------------------
 // Namespace migrated from 'geeksup_' / 'gp:' to 'gs:' for GameBeeper.
 // Old developer-news category filters are intentionally cleared on first load
 // via a one-time migration key so stale values don't break category filters.
@@ -23,7 +23,7 @@ if (typeof localStorage !== 'undefined' && !localStorage.getItem(MIGRATION_KEY))
   } catch { /* ignore */ }
 }
 
-// â”€â”€ Signal Filters (formerly "My Pulse"): versioned preferences â”€â”€â”€
+// -- Signal Filters (formerly "My Pulse"): versioned preferences ---
 
 export const PULSE_PREF_KEY = 'GameBeeper.preferences.v1';
 
@@ -72,7 +72,7 @@ export function hasActivePreferences(prefs) {
   );
 }
 
-// â”€â”€ Bookmarks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Bookmarks -----------------------------------------------------
 
 export const BOOKMARK_KEY = 'gs:bookmarks';
 /** Maximum number of bookmarks stored. Oldest entries are pruned when exceeded. */

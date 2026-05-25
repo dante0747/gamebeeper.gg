@@ -17,7 +17,7 @@ import {
   runLimited,
 } from '../../scripts/lib/utils.mjs';
 
-// ── hashId ──────────────────────────────────────────────────────────────────
+// -- hashId ------------------------------------------------------------------
 
 describe('hashId', () => {
   it('returns a 12-char hex string', () => {
@@ -34,7 +34,7 @@ describe('hashId', () => {
   });
 });
 
-// ── normalizeUrl ─────────────────────────────────────────────────────────────
+// -- normalizeUrl -------------------------------------------------------------
 
 describe('normalizeUrl', () => {
   it('passes through valid https URL', () => {
@@ -75,7 +75,7 @@ describe('normalizeUrl', () => {
   });
 });
 
-// ── absUrl ───────────────────────────────────────────────────────────────────
+// -- absUrl -------------------------------------------------------------------
 
 describe('absUrl', () => {
   it('resolves relative path against base', () => {
@@ -91,7 +91,7 @@ describe('absUrl', () => {
   });
 });
 
-// ── decodeHtmlEntities ───────────────────────────────────────────────────────
+// -- decodeHtmlEntities -------------------------------------------------------
 
 describe('decodeHtmlEntities', () => {
   it('decodes &amp;', () => expect(decodeHtmlEntities('a &amp; b')).toBe('a & b'));
@@ -101,7 +101,7 @@ describe('decodeHtmlEntities', () => {
   it('decodes &#39;', () => expect(decodeHtmlEntities('it&#39;s')).toBe("it's"));
 });
 
-// ── stripHtml ────────────────────────────────────────────────────────────────
+// -- stripHtml ----------------------------------------------------------------
 
 describe('stripHtml', () => {
   it('strips HTML tags', () => {
@@ -150,7 +150,7 @@ describe('stripHtml', () => {
   });
 });
 
-// ── isLowValueSnippet ────────────────────────────────────────────────────────
+// -- isLowValueSnippet --------------------------------------------------------
 
 describe('isLowValueSnippet', () => {
   it('returns true for empty string', () => expect(isLowValueSnippet('')).toBe(true));
@@ -162,7 +162,7 @@ describe('isLowValueSnippet', () => {
   });
 });
 
-// ── truncate ─────────────────────────────────────────────────────────────────
+// -- truncate -----------------------------------------------------------------
 
 describe('truncate', () => {
   it('does not truncate when str.length <= n', () => {
@@ -180,7 +180,7 @@ describe('truncate', () => {
   });
 });
 
-// ── normalizeDate ─────────────────────────────────────────────────────────────
+// -- normalizeDate -------------------------------------------------------------
 
 describe('normalizeDate', () => {
   it('valid ISO string round-trips', () => {
@@ -202,7 +202,7 @@ describe('normalizeDate', () => {
   });
 });
 
-// ── newestFirst ───────────────────────────────────────────────────────────────
+// -- newestFirst ---------------------------------------------------------------
 
 describe('newestFirst', () => {
   it('sorts articles newest first', () => {
@@ -227,7 +227,7 @@ describe('newestFirst', () => {
   });
 });
 
-// ── runLimited ────────────────────────────────────────────────────────────────
+// -- runLimited ----------------------------------------------------------------
 
 describe('runLimited', () => {
   it('processes all items', async () => {

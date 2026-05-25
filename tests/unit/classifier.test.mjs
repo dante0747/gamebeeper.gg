@@ -14,7 +14,7 @@ vi.mock('../../scripts/lib/ai.mjs', () => ({
 
 import { keywordClassify, classifyArticle } from '../../scripts/lib/classifier.mjs';
 
-// ── keywordClassify ───────────────────────────────────────────────────────────
+// -- keywordClassify -----------------------------------------------------------
 
 describe('keywordClassify', () => {
   it('classifies PlayStation article', () => {
@@ -58,7 +58,7 @@ describe('keywordClassify', () => {
   });
 });
 
-// ── classifyArticle ───────────────────────────────────────────────────────────
+// -- classifyArticle -----------------------------------------------------------
 
 describe('classifyArticle (no Ollama)', () => {
   it('short-circuits immediately for non-Latest feed category', async () => {

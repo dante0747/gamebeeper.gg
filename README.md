@@ -1,18 +1,18 @@
 ﻿<div align="center">
 
 ```
- ██████╗  █████╗ ███╗   ███╗███████╗██████╗ ███████╗███████╗██████╗ ███████╗██████╗ 
-██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔══██╗██╔════╝██╔════╝██╔══██╗██╔════╝██╔══██╗
-██║  ███╗███████║██╔████╔██║█████╗  ██████╔╝█████╗  █████╗  ██████╔╝█████╗  ██████╔╝
-██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  ██╔══██╗██╔══╝  ██╔══╝  ██╔═══╝ ██╔══╝  ██╔══██╗
-╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗██████╔╝███████╗███████╗██║     ███████╗██║  ██║
- ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═════╝ ╚══════╝╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
+ ██████+  █████+ ███+   ███+███████+██████+ ███████+███████+██████+ ███████+██████+ 
+██+====+ ██+==██+████+ ████|██+====+██+==██+██+====+██+====+██+==██+██+====+██+==██+
+██|  ███+███████|██+████+██|█████+  ██████++█████+  █████+  ██████++█████+  ██████++
+██|   ██|██+==██|██|+██++██|██+==+  ██+==██+██+==+  ██+==+  ██+===+ ██+==+  ██+==██+
++██████++██|  ██|██| +=+ ██|███████+██████++███████+███████+██|     ███████+██|  ██|
+ +=====+ +=+  +=++=+     +=++======++=====+ +======++======++=+     +======++=+  +=+
 ```
 
 **All the games worth watching. One signal.**
 
 [![Live](https://img.shields.io/badge/status-live-39d353?style=flat-square&logo=statuspage&logoColor=black)](https://GameBeeper.gg)
-[![Feeds](https://img.shields.io/badge/RSS_feeds-23-58c8ff?style=flat-square&logo=rss&logoColor=black)](https://GameBeeper.gg)
+[![Feeds](https://img.shields.io/badge/RSS_feeds-26-58c8ff?style=flat-square&logo=rss&logoColor=black)](https://GameBeeper.gg)
 [![Paywalls](https://img.shields.io/badge/paywalls-0-39d353?style=flat-square)](https://GameBeeper.gg)
 [![No Ad Trackers](https://img.shields.io/badge/ad_trackers-none-ff5555?style=flat-square)](https://GameBeeper.gg)
 [![No Ads](https://img.shields.io/badge/ads-nope-bc8cff?style=flat-square)](https://GameBeeper.gg)
@@ -181,16 +181,16 @@ tests/
 
 ```
 push / schedule
-    │
+    |
     ▼
  test job  — npm test (Vitest)
-    │  needs: test
+    |  needs: test
     ▼
  build job — Ollama LLM classification + feed data + GitHub Pages deploy
-    │  needs: build  (main branch only)
+    |  needs: build  (main branch only)
     ▼
  e2e job   — npm run test:e2e (Playwright smoke tests)
-              └─ report uploaded as CI artifact (7-day retention)
+              +- report uploaded as CI artifact (7-day retention)
 ```
 
 A failing unit or integration test **blocks the entire pipeline** — no bad code can reach production.
@@ -250,60 +250,60 @@ npm run build
 
 ```
 GameBeeper.gg/
-├── index.html               Main page
-├── styles.css               GameBeeper design system
-├── privacy.html             Privacy policy
-├── terms.html               Terms of use
-├── favicon.svg              Signal-wave emblem
-├── og-image.png             1200×630 social preview
-├── CNAME                    GameBeeper.gg
-│
-├── js/                      Browser ES modules
-│   ├── main.js              App entry-point
-│   ├── config.js            Brand constants + gaming categories
-│   ├── cards.js             Card HTML generation
-│   ├── feed.js              Feed fetching + rendering
-│   ├── feeds-registry.js    Source registry
-│   ├── storage.js           localStorage (gs: namespace)
-│   ├── settings-panel.js    Settings popover
-│   ├── pulse-panel.js       "My Signal" filter drawer
-│   ├── summary.js           AI summary modal
-│   ├── images.js            Lazy image loading
-│   ├── utils.js             Escape, formatting helpers
-│   ├── analytics.js         GA4 consent wrapper
-│   └── consent.js           Cookie consent banner
-│
-├── scripts/                 Node.js build pipeline
-│   ├── build-feed.mjs       Main feed builder
-│   ├── generate-sitemap.mjs Sitemap generator
-│   ├── generate-seo-content.mjs SEO fallback injector
-│   ├── generate-version.mjs public/version.json writer
-│   └── lib/
-│       ├── config.mjs       Gaming categories, keywords, USER_AGENT
-│       ├── classifier.mjs   Keyword + LLM gaming classifier
-│       ├── parser.mjs       RSS/Atom parser
-│       ├── pipeline.mjs     Dedup, sort, cap
-│       ├── images.mjs       Image extraction + validation
-│       ├── summarizer.mjs   AI snippet/summary generation
-│       ├── sponsored.mjs    Sponsored-post filter
-│       └── utils.mjs        Shared utilities
-│
-├── data/
-│   └── feeds.json           19 enabled gaming RSS sources
-│
-├── public/                  Generated + static assets
-│   ├── feed.json            Pre-built article cache
-│   ├── feed-health.json     Feed status metadata
-│   ├── version.json         Build timestamp
-│   ├── manifest.json        PWA manifest
-│   └── sw.js                Service worker
-│
-├── assets/fallbacks/        Animated SVG category placeholders (gaming only)
-│
-├── tests/                   Full test suite (Vitest + Playwright)
-└── .github/workflows/
-    ├── build-feed.yml       Hourly feed refresh + Pages deploy
-    └── ci.yml               PR/push build + audit gate
++-- index.html               Main page
++-- styles.css               GameBeeper design system
++-- privacy.html             Privacy policy
++-- terms.html               Terms of use
++-- favicon.svg              Signal-wave emblem
++-- og-image.png             1200×630 social preview
++-- CNAME                    GameBeeper.gg
+|
++-- js/                      Browser ES modules
+|   +-- main.js              App entry-point
+|   +-- config.js            Brand constants + gaming categories
+|   +-- cards.js             Card HTML generation
+|   +-- feed.js              Feed fetching + rendering
+|   +-- feeds-registry.js    Source registry
+|   +-- storage.js           localStorage (gs: namespace)
+|   +-- settings-panel.js    Settings popover
+|   +-- pulse-panel.js       "My Signal" filter drawer
+|   +-- summary.js           AI summary modal
+|   +-- images.js            Lazy image loading
+|   +-- utils.js             Escape, formatting helpers
+|   +-- analytics.js         GA4 consent wrapper
+|   +-- consent.js           Cookie consent banner
+|
++-- scripts/                 Node.js build pipeline
+|   +-- build-feed.mjs       Main feed builder
+|   +-- generate-sitemap.mjs Sitemap generator
+|   +-- generate-seo-content.mjs SEO fallback injector
+|   +-- generate-version.mjs public/version.json writer
+|   +-- lib/
+|       +-- config.mjs       Gaming categories, keywords, USER_AGENT
+|       +-- classifier.mjs   Keyword + LLM gaming classifier
+|       +-- parser.mjs       RSS/Atom parser
+|       +-- pipeline.mjs     Dedup, sort, cap
+|       +-- images.mjs       Image extraction + validation
+|       +-- summarizer.mjs   AI snippet/summary generation
+|       +-- sponsored.mjs    Sponsored-post filter
+|       +-- utils.mjs        Shared utilities
+|
++-- data/
+|   +-- feeds.json           19 enabled gaming RSS sources
+|
++-- public/                  Generated + static assets
+|   +-- feed.json            Pre-built article cache
+|   +-- feed-health.json     Feed status metadata
+|   +-- version.json         Build timestamp
+|   +-- manifest.json        PWA manifest
+|   +-- sw.js                Service worker
+|
++-- assets/fallbacks/        Animated SVG category placeholders (gaming only)
+|
++-- tests/                   Full test suite (Vitest + Playwright)
++-- .github/workflows/
+    +-- build-feed.yml       Hourly feed refresh + Pages deploy
+    +-- ci.yml               PR/push build + audit gate
 ```
 
 ---

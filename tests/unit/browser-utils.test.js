@@ -15,7 +15,7 @@ vi.mock('../../js/config.js', () => ({
 
 import { esc, safeUrl, catClass, relTime, truncate, readTime, animateCounter } from '../../js/utils.js';
 
-// ── esc ───────────────────────────────────────────────────────────────────────
+// -- esc -----------------------------------------------------------------------
 
 describe('esc', () => {
   it('escapes &', () => expect(esc('a & b')).toBe('a &amp; b'));
@@ -30,7 +30,7 @@ describe('esc', () => {
   });
 });
 
-// ── safeUrl ──────────────────────────────────────────────────────────────────
+// -- safeUrl ------------------------------------------------------------------
 
 describe('safeUrl', () => {
   it('returns valid https URL unchanged', () => {
@@ -58,7 +58,7 @@ describe('safeUrl', () => {
   });
 });
 
-// ── catClass ─────────────────────────────────────────────────────────────────
+// -- catClass -----------------------------------------------------------------
 
 describe('catClass', () => {
   it('converts "Open Source" to "cat-open-source"', () => {
@@ -74,7 +74,7 @@ describe('catClass', () => {
   });
 });
 
-// ── relTime ───────────────────────────────────────────────────────────────────
+// -- relTime -------------------------------------------------------------------
 
 describe('relTime', () => {
   beforeEach(() => {
@@ -110,7 +110,7 @@ describe('relTime', () => {
   });
 });
 
-// ── truncate (browser) ────────────────────────────────────────────────────────
+// -- truncate (browser) --------------------------------------------------------
 
 describe('truncate (browser)', () => {
   it('does not truncate when str.length <= n', () => {
@@ -133,7 +133,7 @@ describe('truncate (browser)', () => {
   });
 });
 
-// ── readTime ─────────────────────────────────────────────────────────────────
+// -- readTime -----------------------------------------------------------------
 
 describe('readTime', () => {
   it('returns at least 1 for any input', () => {
@@ -150,7 +150,7 @@ describe('readTime', () => {
   });
 });
 
-// ── animateCounter ────────────────────────────────────────────────────────────
+// -- animateCounter ------------------------------------------------------------
 
 describe('animateCounter', () => {
   it('eventually sets el.textContent to target', async () => {

@@ -9,13 +9,13 @@ import {
   USER_AGENT,
 } from './config.mjs';
 
-// ── Category helpers ───────────────────────────────────────────────────────
+// -- Category helpers -------------------------------------------------------
 
 export function getFallbackImage(category) {
   return CATEGORY_FALLBACK_IMAGES[category] || CATEGORY_FALLBACK_IMAGES['Latest'];
 }
 
-// ── String / URL helpers ───────────────────────────────────────────────────
+// -- String / URL helpers ---------------------------------------------------
 
 export function hashId(input) {
   return createHash('sha1').update(input).digest('hex').slice(0, 12);
@@ -139,7 +139,7 @@ export async function runLimited(items, limit, worker) {
   await Promise.all(workers);
 }
 
-// ── HTTP ───────────────────────────────────────────────────────────────────
+// -- HTTP -------------------------------------------------------------------
 
 /**
  * Stream-read a URL's HTML response body up to `maxBytes`.

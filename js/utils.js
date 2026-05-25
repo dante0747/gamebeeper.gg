@@ -1,6 +1,6 @@
 import { loadingMessages } from './config.js';
 
-// â”€â”€ HTML escaping & URL validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- HTML escaping & URL validation -------------------------------
 
 export function esc(str) {
   if (!str) return '';
@@ -23,7 +23,7 @@ export function safeUrl(value) {
   }
 }
 
-// â”€â”€ String / date helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- String / date helpers -----------------------------------------
 
 export function catClass(cat) {
   return 'cat-' + cat.toLowerCase().replace(/\s+/g, '-');
@@ -69,7 +69,7 @@ export function randomMsg() {
   return loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
 }
 
-// â”€â”€ Share helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Share helper --------------------------------------------------
 
 export async function shareArticle(title, url) {
   if (navigator.share) {
@@ -86,14 +86,14 @@ export async function shareArticle(title, url) {
   }
 }
 
-// â”€â”€ Screen-reader live region â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Screen-reader live region -------------------------------------
 
 export function announce(message) {
   const el = document.getElementById('feedStatus');
   if (el) el.textContent = message;
 }
 
-// â”€â”€ Animated counter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Animated counter ----------------------------------------------
 
 export function animateCounter(el, target, duration = 800) {
   if (!el || isNaN(target)) return;
@@ -107,7 +107,7 @@ export function animateCounter(el, target, duration = 800) {
   requestAnimationFrame(tick);
 }
 
-// â”€â”€ Toast notification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Toast notification --------------------------------------------
 
 let toastTimer = null;
 

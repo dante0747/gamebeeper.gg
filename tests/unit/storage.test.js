@@ -25,7 +25,7 @@ beforeEach(() => {
   localStorage.clear();
 });
 
-// ── PREF ─────────────────────────────────────────────────────────────────────
+// -- PREF ---------------------------------------------------------------------
 
 describe('PREF.get / PREF.set', () => {
   it('round-trips a value', () => {
@@ -44,7 +44,7 @@ describe('PREF.get / PREF.set', () => {
   });
 });
 
-// ── loadPreferences / savePreferences ─────────────────────────────────────────
+// -- loadPreferences / savePreferences -----------------------------------------
 
 describe('loadPreferences', () => {
   it('returns defaults when storage is empty', () => {
@@ -74,7 +74,7 @@ describe('loadPreferences', () => {
   });
 });
 
-// ── resetPreferences ─────────────────────────────────────────────────────────
+// -- resetPreferences ---------------------------------------------------------
 
 describe('resetPreferences', () => {
   it('restores defaults after reset', () => {
@@ -84,7 +84,7 @@ describe('resetPreferences', () => {
   });
 });
 
-// ── hasActivePreferences ──────────────────────────────────────────────────────
+// -- hasActivePreferences ------------------------------------------------------
 
 describe('hasActivePreferences', () => {
   it('returns false for default preferences', () => {
@@ -104,7 +104,7 @@ describe('hasActivePreferences', () => {
   });
 });
 
-// ── isBookmarked / toggleBookmark ─────────────────────────────────────────────
+// -- isBookmarked / toggleBookmark ---------------------------------------------
 
 describe('isBookmarked', () => {
   it('returns false when article not bookmarked', () => {
@@ -139,7 +139,7 @@ describe('toggleBookmark', () => {
   });
 });
 
-// ── loadBookmarks ─────────────────────────────────────────────────────────────
+// -- loadBookmarks -------------------------------------------------------------
 
 describe('loadBookmarks', () => {
   it('returns [] on empty storage', () => {
@@ -158,7 +158,7 @@ describe('loadBookmarks', () => {
   });
 });
 
-// ── BOOKMARK_MAX cap ──────────────────────────────────────────────────────────
+// -- BOOKMARK_MAX cap ----------------------------------------------------------
 
 describe('BOOKMARK_MAX cap', () => {
   it('enforces BOOKMARK_MAX limit when adding bookmarks', () => {
