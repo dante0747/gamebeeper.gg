@@ -12,7 +12,7 @@
 **All the games worth watching. One signal.**
 
 [![Live](https://img.shields.io/badge/status-live-39d353?style=flat-square&logo=statuspage&logoColor=black)](https://GameBeeper.gg)
-[![Feeds](https://img.shields.io/badge/RSS_feeds-26-58c8ff?style=flat-square&logo=rss&logoColor=black)](https://GameBeeper.gg)
+[![Feeds](https://img.shields.io/badge/RSS_feeds-34-58c8ff?style=flat-square&logo=rss&logoColor=black)](https://GameBeeper.gg)
 [![Paywalls](https://img.shields.io/badge/paywalls-0-39d353?style=flat-square)](https://GameBeeper.gg)
 [![No Ad Trackers](https://img.shields.io/badge/ad_trackers-none-ff5555?style=flat-square)](https://GameBeeper.gg)
 [![No Ads](https://img.shields.io/badge/ads-nope-bc8cff?style=flat-square)](https://GameBeeper.gg)
