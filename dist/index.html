@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <!-- Google Analytics — loaded only after user consent (see js/consent.js) -->
   <script>
-    // If consent was already given on a previous visit, load GA4 immediately
-    // to avoid losing the first pageview. js/consent.js handles new visitors.
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('gp:analytics:consent') === 'yes') {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('gs:analytics:consent') === 'yes') {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function(){window.dataLayer.push(arguments);};
       window.gtag('js', new Date());
@@ -19,123 +16,93 @@
       document.head.appendChild(_s);
     }
   </script>
-
   <!-- Primary SEO -->
-  <title>GeeksPulse — Developer News, One Feed</title>
-  <meta name="description" content="GeeksPulse aggregates 39 hand-picked RSS feeds — AI, security, DevOps, JavaScript, Rust, Go, Java, open source, and architecture — into one clean, ad-free, paywall-free reading experience." />
-  <meta name="author" content="Majid Abarghooei" />
-  <meta name="copyright" content="GeeksPulse 2026" />
-  <meta name="language" content="English" />
+  <title>GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed</title>
+  <meta name="description" content="GameBeeper brings together video game news, reveals, reviews, platform updates and industry stories from trusted gaming sources in one fast feed." />
+  <meta name="application-name" content="GameBeeper" />
   <meta name="rating" content="general" />
-  <meta name="application-name" content="GeeksPulse" />
-  <meta name="generator" content="" />
-  <link rel="canonical" href="https://geekspulse.dev/" />
-  <link rel="author" href="/#about" />
-
-  <!-- Open Graph / Facebook -->
+  <meta name="language" content="English" />
+  <link rel="canonical" href="https://GameBeeper.gg/" />
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://geekspulse.dev/" />
-  <meta property="og:title" content="GeeksPulse — Developer News, One Feed" />
-  <meta property="og:description" content="39 hand-picked RSS feeds. Zero paywalls. No tracking. Hacker News, Krebs on Security, GitHub Blog, IEEE Spectrum and 35 more — in one distraction-free place." />
-  <meta property="og:image" content="https://geekspulse.dev/og-image.png" />
+  <meta property="og:url" content="https://GameBeeper.gg/" />
+  <meta property="og:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
+  <meta property="og:description" content="GameBeeper aggregates trusted gaming sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, and more — into one distraction-free feed. No ads. No paywalls." />
+  <meta property="og:image" content="https://GameBeeper.gg/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt" content="GeeksPulse — Developer News Aggregator" />
-  <meta property="og:site_name" content="GeeksPulse" />
+  <meta property="og:image:alt" content="GameBeeper — Video Game News Aggregator" />
+  <meta property="og:site_name" content="GameBeeper" />
   <meta property="og:locale" content="en_US" />
-
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@geekspulse" />
-  <meta name="twitter:creator" content="@geekspulse" />
-  <meta name="twitter:url" content="https://geekspulse.dev/" />
-  <meta name="twitter:title" content="GeeksPulse — Developer News, One Feed" />
-  <meta name="twitter:description" content="39 hand-picked RSS feeds. Zero paywalls. No tracking. Everything worth reading, in one place." />
-  <meta name="twitter:image" content="https://geekspulse.dev/og-image.png" />
-  <meta name="twitter:image:alt" content="GeeksPulse — Developer News Aggregator" />
-
+  <meta name="twitter:url" content="https://GameBeeper.gg/" />
+  <meta name="twitter:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
+  <meta name="twitter:description" content="All the games worth watching. One signal. Video game news aggregated from 19 trusted gaming sources." />
+  <meta name="twitter:image" content="https://GameBeeper.gg/og-image.png" />
+  <meta name="twitter:image:alt" content="GameBeeper — Video Game News Aggregator" />
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-
   <!-- Theme / PWA -->
-  <meta name="theme-color" content="#060B15" />
+  <meta name="theme-color" content="#07070c" />
   <link rel="manifest" href="/manifest.json" />
-
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon-eB4uGud4.svg" />
-  <link rel="shortcut icon" href="/assets/favicon-eB4uGud4.svg" />
-  <link rel="sitemap" type="application/xml" href="data:text/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHVybHNldCB4bWxucz0iaHR0cDovL3d3dy5zaXRlbWFwcy5vcmcvc2NoZW1hcy9zaXRlbWFwLzAuOSIKICAgICAgICB4bWxuczppbWFnZT0iaHR0cDovL3d3dy5nb29nbGUuY29tL3NjaGVtYXMvc2l0ZW1hcC1pbWFnZS8xLjEiPgoKICA8IS0tIEhvbWVwYWdlIOKAlCBhZ2dyZWdhdGVzIGFsbCBjdXJhdGVkIFJTUyBmZWVkcyAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL2dlZWtzcHVsc2UuZGV2LzwvbG9jPgogICAgPGxhc3Rtb2Q+MjAyNi0wNS0xODwvbGFzdG1vZD4KICAgIDxjaGFuZ2VmcmVxPmhvdXJseTwvY2hhbmdlZnJlcT4KICAgIDxwcmlvcml0eT4xLjA8L3ByaW9yaXR5PgogICAgPGltYWdlOmltYWdlPgogICAgICA8aW1hZ2U6bG9jPmh0dHBzOi8vZ2Vla3NwdWxzZS5kZXYvb2ctaW1hZ2UucG5nPC9pbWFnZTpsb2M+CiAgICAgIDxpbWFnZTp0aXRsZT5HZWVrc1B1bHNlIOKAlCBEZXZlbG9wZXIgTmV3cyBBZ2dyZWdhdG9yPC9pbWFnZTp0aXRsZT4KICAgICAgPGltYWdlOmNhcHRpb24+RGV2ZWxvcGVyIG5ld3MgZnJvbSBjdXJhdGVkIFJTUyBmZWVkcy4gTm8gYWRzLCBubyBwYXl3YWxscywgbm8gYWQgdHJhY2tlcnMuPC9pbWFnZTpjYXB0aW9uPgogICAgPC9pbWFnZTppbWFnZT4KICA8L3VybD4KCiAgPCEtLSBQcml2YWN5IFBvbGljeSAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL2dlZWtzcHVsc2UuZGV2L3ByaXZhY3kuaHRtbDwvbG9jPgogICAgPGxhc3Rtb2Q+MjAyNi0wNS0xODwvbGFzdG1vZD4KICAgIDxjaGFuZ2VmcmVxPm1vbnRobHk8L2NoYW5nZWZyZXE+CiAgICA8cHJpb3JpdHk+MC4zPC9wcmlvcml0eT4KICA8L3VybD4KCiAgPCEtLSBUZXJtcyBvZiBVc2UgLS0+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly9nZWVrc3B1bHNlLmRldi90ZXJtcy5odG1sPC9sb2M+CiAgICA8bGFzdG1vZD4yMDI2LTA1LTE4PC9sYXN0bW9kPgogICAgPGNoYW5nZWZyZXE+bW9udGhseTwvY2hhbmdlZnJlcT4KICAgIDxwcmlvcml0eT4wLjM8L3ByaW9yaXR5PgogIDwvdXJsPgoKPC91cmxzZXQ+Cg==" />
-  <!-- DNS prefetch for key third-party origins -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-6Pg9osAL.svg" />
+  <link rel="shortcut icon" href="/assets/favicon-6Pg9osAL.svg" />
+  <link rel="sitemap" type="application/xml" href="data:text/xml;base64,77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjx1cmxzZXQgeG1sbnM9Imh0dHA6Ly93d3cuc2l0ZW1hcHMub3JnL3NjaGVtYXMvc2l0ZW1hcC8wLjkiDQogICAgICAgIHhtbG5zOmltYWdlPSJodHRwOi8vd3d3Lmdvb2dsZS5jb20vc2NoZW1hcy9zaXRlbWFwLWltYWdlLzEuMSI+DQoNCiAgPCEtLSBIb21lcGFnZSDvv70gYWdncmVnYXRlcyBhbGwgY3VyYXRlZCBSU1MgZmVlZHMgLS0+DQogIDx1cmw+DQogICAgPGxvYz5odHRwczovL0dhbWVCZWVwZXIuZ2cvPC9sb2M+DQogICAgPGxhc3Rtb2Q+MjAyNi0wNS0yNTwvbGFzdG1vZD4NCiAgICA8Y2hhbmdlZnJlcT5ob3VybHk8L2NoYW5nZWZyZXE+DQogICAgPHByaW9yaXR5PjEuMDwvcHJpb3JpdHk+DQogICAgPGltYWdlOmltYWdlPg0KICAgICAgPGltYWdlOmxvYz5odHRwczovL0dhbWVCZWVwZXIuZ2cvb2ctaW1hZ2UucG5nPC9pbWFnZTpsb2M+DQogICAgICA8aW1hZ2U6dGl0bGU+R2FtZUJlZXBlciDvv70gVmlkZW8gR2FtZSBOZXdzIEFnZ3JlZ2F0b3I8L2ltYWdlOnRpdGxlPg0KICAgICAgPGltYWdlOmNhcHRpb24+VmlkZW8gZ2FtZSBuZXdzLCByZXZpZXdzLCByZXZlYWxzIGFuZCBwbGF0Zm9ybSB1cGRhdGVzIGZyb20gdHJ1c3RlZCBnYW1pbmcgc291cmNlcy4gTm8gYWRzLCBubyBwYXl3YWxscy48L2ltYWdlOmNhcHRpb24+DQogICAgPC9pbWFnZTppbWFnZT4NCiAgPC91cmw+DQoNCiAgPCEtLSBQcml2YWN5IFBvbGljeSAtLT4NCiAgPHVybD4NCiAgICA8bG9jPmh0dHBzOi8vR2FtZUJlZXBlci5nZy9wcml2YWN5Lmh0bWw8L2xvYz4NCiAgICA8bGFzdG1vZD4yMDI2LTA1LTI1PC9sYXN0bW9kPg0KICAgIDxjaGFuZ2VmcmVxPm1vbnRobHk8L2NoYW5nZWZyZXE+DQogICAgPHByaW9yaXR5PjAuMzwvcHJpb3JpdHk+DQogIDwvdXJsPg0KDQogIDwhLS0gVGVybXMgb2YgVXNlIC0tPg0KICA8dXJsPg0KICAgIDxsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL3Rlcm1zLmh0bWw8L2xvYz4NCiAgICA8bGFzdG1vZD4yMDI2LTA1LTI1PC9sYXN0bW9kPg0KICAgIDxjaGFuZ2VmcmVxPm1vbnRobHk8L2NoYW5nZWZyZXE+DQogICAgPHByaW9yaXR5PjAuMzwvcHJpb3JpdHk+DQogIDwvdXJsPg0KDQo8L3VybHNldD4NCg==" />
+  <!-- DNS prefetch -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link rel="dns-prefetch" href="https://api.codetabs.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700;800&family=Oxanium:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "GeeksPulse",
-      "alternateName": "GeeksPulse Dev News",
-      "url": "https://geekspulse.dev/",
-      "description": "A free, indie developer news aggregator with no ads, no paywalls, and no ad trackers.",
+      "name": "GameBeeper",
+      "alternateName": "GameBeeper.gg",
+      "url": "https://GameBeeper.gg/",
+      "description": "GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories in one fast, distraction-free feed.",
       "inLanguage": "en-US",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://geekspulse.dev/?q={search_term_string}"
+          "urlTemplate": "https://GameBeeper.gg/?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "GeeksPulse",
-        "url": "https://geekspulse.dev/",
-        "email": "abarghooeimajid@gmail.com",
+        "name": "GameBeeper",
+        "url": "https://GameBeeper.gg/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://geekspulse.dev/favicon.svg",
+          "url": "https://GameBeeper.gg/favicon.svg",
           "width": 512,
           "height": 512
-        },
-        "sameAs": [
-          "https://twitter.com/geekspulse",
-          "https://github.com/dante0747/geekspulse.dev"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "abarghooeimajid@gmail.com",
-          "availableLanguage": "English"
-        },
-        "founder": {
-          "@type": "Person",
-          "name": "Majid Abarghooei",
-          "email": "abarghooeimajid@gmail.com",
-          "sameAs": ["https://github.com/dante0747"]
         }
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "GeeksPulse — Developer News Aggregator | Feel the Pulse of Dev",
-      "url": "https://geekspulse.dev/",
-      "description": "Free developer news aggregator. 39 RSS feeds, zero paywalls, no ad trackers. Hacker News, GitHub Blog, IEEE Spectrum and more — built for developers who value signal over noise.",
-      "isPartOf": { "@type": "WebSite", "url": "https://geekspulse.dev/" },
+      "name": "GameBeeper — Video Game News Aggregator",
+      "url": "https://GameBeeper.gg/",
+      "description": "GameBeeper aggregates video game news from 19 trusted sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, and more — in one fast, ad-free feed.",
+      "isPartOf": { "@type": "WebSite", "url": "https://GameBeeper.gg/" },
       "about": {
         "@type": "Thing",
-        "name": "Developer News Aggregation"
+        "name": "Video Game News Aggregation"
       },
-      "privacyPolicy": "https://geekspulse.dev/privacy.html",
-      "dateModified": "2026-05-18",
+      "privacyPolicy": "https://GameBeeper.gg/privacy.html",
+      "dateModified": "2026-05-25",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -143,7 +110,7 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://geekspulse.dev/"
+            "item": "https://GameBeeper.gg/"
           }
         ]
       }
@@ -154,55 +121,35 @@
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Developer News Sources aggregated by GeeksPulse",
-    "description": "All 39 RSS feed sources aggregated by GeeksPulse — the free developer news aggregator.",
-    "url": "https://geekspulse.dev/",
-    "numberOfItems": 39,
+    "name": "Video Game News Sources aggregated by GameBeeper",
+    "description": "All 19 RSS feed sources aggregated by GameBeeper — the free video game news aggregator.",
+    "url": "https://GameBeeper.gg/",
+    "numberOfItems": 19,
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Hacker News","url":"https://geekspulse.dev/?source=Hacker+News"},
-      {"@type":"ListItem","position":2,"name":"Lobsters","url":"https://geekspulse.dev/?source=Lobsters"},
-      {"@type":"ListItem","position":3,"name":"The Register","url":"https://geekspulse.dev/?source=The+Register"},
-      {"@type":"ListItem","position":4,"name":"Ars Technica","url":"https://geekspulse.dev/?source=Ars+Technica"},
-      {"@type":"ListItem","position":5,"name":"InfoQ","url":"https://geekspulse.dev/?source=InfoQ"},
-      {"@type":"ListItem","position":6,"name":"IEEE Spectrum","url":"https://geekspulse.dev/?source=IEEE+Spectrum"},
-      {"@type":"ListItem","position":7,"name":"Bleeping Computer","url":"https://geekspulse.dev/?source=Bleeping+Computer"},
-      {"@type":"ListItem","position":8,"name":"The Hacker News","url":"https://geekspulse.dev/?source=The+Hacker+News"},
-      {"@type":"ListItem","position":9,"name":"Krebs on Security","url":"https://geekspulse.dev/?source=Krebs+on+Security"},
-      {"@type":"ListItem","position":10,"name":"Schneier on Security","url":"https://geekspulse.dev/?source=Schneier+on+Security"},
-      {"@type":"ListItem","position":11,"name":"SANS Internet Storm","url":"https://geekspulse.dev/?source=SANS+Internet+Storm"},
-      {"@type":"ListItem","position":12,"name":"MIT AI News","url":"https://geekspulse.dev/?source=MIT+AI+News"},
-      {"@type":"ListItem","position":13,"name":"Google AI Blog","url":"https://geekspulse.dev/?source=Google+AI+Blog"},
-      {"@type":"ListItem","position":14,"name":"The Gradient","url":"https://geekspulse.dev/?source=The+Gradient"},
-      {"@type":"ListItem","position":15,"name":"Planet Python","url":"https://geekspulse.dev/?source=Planet+Python"},
-      {"@type":"ListItem","position":16,"name":"Real Python","url":"https://geekspulse.dev/?source=Real+Python"},
-      {"@type":"ListItem","position":17,"name":"JavaScript Weekly","url":"https://geekspulse.dev/?source=JavaScript+Weekly"},
-      {"@type":"ListItem","position":18,"name":"Node Weekly","url":"https://geekspulse.dev/?source=Node+Weekly"},
-      {"@type":"ListItem","position":19,"name":"MDN Blog","url":"https://geekspulse.dev/?source=MDN+Blog"},
-      {"@type":"ListItem","position":20,"name":"Docker Blog","url":"https://geekspulse.dev/?source=Docker+Blog"},
-      {"@type":"ListItem","position":21,"name":"Kubernetes Blog","url":"https://geekspulse.dev/?source=Kubernetes+Blog"},
-      {"@type":"ListItem","position":22,"name":"HashiCorp Blog","url":"https://geekspulse.dev/?source=HashiCorp+Blog"},
-      {"@type":"ListItem","position":23,"name":"AWS DevOps Blog","url":"https://geekspulse.dev/?source=AWS+DevOps+Blog"},
-      {"@type":"ListItem","position":24,"name":"LWN.net","url":"https://geekspulse.dev/?source=LWN.net"},
-      {"@type":"ListItem","position":25,"name":"GitHub Blog","url":"https://geekspulse.dev/?source=GitHub+Blog"},
-      {"@type":"ListItem","position":26,"name":"Spring Blog","url":"https://geekspulse.dev/?source=Spring+Blog"},
-      {"@type":"ListItem","position":27,"name":"InfoQ Java","url":"https://geekspulse.dev/?source=InfoQ+Java"},
-      {"@type":"ListItem","position":28,"name":"Rust Blog","url":"https://geekspulse.dev/?source=Rust+Blog"},
-      {"@type":"ListItem","position":29,"name":"This Week in Rust","url":"https://geekspulse.dev/?source=This+Week+in+Rust"},
-      {"@type":"ListItem","position":30,"name":"Go Blog","url":"https://geekspulse.dev/?source=Go+Blog"},
-      {"@type":"ListItem","position":31,"name":"Go Weekly","url":"https://geekspulse.dev/?source=Go+Weekly"},
-      {"@type":"ListItem","position":32,"name":"Dave Cheney","url":"https://geekspulse.dev/?source=Dave+Cheney"},
-      {"@type":"ListItem","position":33,"name":"Martin Fowler","url":"https://geekspulse.dev/?source=Martin+Fowler"},
-      {"@type":"ListItem","position":34,"name":"InfoQ Architecture","url":"https://geekspulse.dev/?source=InfoQ+Architecture"},
-      {"@type":"ListItem","position":35,"name":"AWS Architecture Blog","url":"https://geekspulse.dev/?source=AWS+Architecture+Blog"},
-      {"@type":"ListItem","position":36,"name":"High Scalability","url":"https://geekspulse.dev/?source=High+Scalability"},
-      {"@type":"ListItem","position":37,"name":"Netflix Tech Blog","url":"https://geekspulse.dev/?source=Netflix+Tech+Blog"},
-      {"@type":"ListItem","position":38,"name":"Meta Engineering","url":"https://geekspulse.dev/?source=Meta+Engineering"},
-      {"@type":"ListItem","position":39,"name":"Uber Engineering","url":"https://geekspulse.dev/?source=Uber+Engineering"}
+      {"@type":"ListItem","position":1,"name":"VGC","url":"https://GameBeeper.gg/?source=VGC"},
+      {"@type":"ListItem","position":2,"name":"Gematsu","url":"https://GameBeeper.gg/?source=Gematsu"},
+      {"@type":"ListItem","position":3,"name":"PlayStation Blog","url":"https://GameBeeper.gg/?source=PlayStation+Blog"},
+      {"@type":"ListItem","position":4,"name":"Xbox Wire","url":"https://GameBeeper.gg/?source=Xbox+Wire"},
+      {"@type":"ListItem","position":5,"name":"Nintendo Life","url":"https://GameBeeper.gg/?source=Nintendo+Life"},
+      {"@type":"ListItem","position":6,"name":"Push Square","url":"https://GameBeeper.gg/?source=Push+Square"},
+      {"@type":"ListItem","position":7,"name":"Pure Xbox","url":"https://GameBeeper.gg/?source=Pure+Xbox"},
+      {"@type":"ListItem","position":8,"name":"Nintendo Everything","url":"https://GameBeeper.gg/?source=Nintendo+Everything"},
+      {"@type":"ListItem","position":9,"name":"PC Gamer","url":"https://GameBeeper.gg/?source=PC+Gamer"},
+      {"@type":"ListItem","position":10,"name":"Rock Paper Shotgun","url":"https://GameBeeper.gg/?source=Rock+Paper+Shotgun"},
+      {"@type":"ListItem","position":11,"name":"Eurogamer","url":"https://GameBeeper.gg/?source=Eurogamer"},
+      {"@type":"ListItem","position":12,"name":"GamesIndustry.biz","url":"https://GameBeeper.gg/?source=GamesIndustry.biz"},
+      {"@type":"ListItem","position":13,"name":"IGN","url":"https://GameBeeper.gg/?source=IGN"},
+      {"@type":"ListItem","position":14,"name":"GameSpot","url":"https://GameBeeper.gg/?source=GameSpot"},
+      {"@type":"ListItem","position":15,"name":"Destructoid","url":"https://GameBeeper.gg/?source=Destructoid"},
+      {"@type":"ListItem","position":16,"name":"Polygon","url":"https://GameBeeper.gg/?source=Polygon"},
+      {"@type":"ListItem","position":17,"name":"Kotaku","url":"https://GameBeeper.gg/?source=Kotaku"},
+      {"@type":"ListItem","position":18,"name":"PCGamesN","url":"https://GameBeeper.gg/?source=PCGamesN"},
+      {"@type":"ListItem","position":19,"name":"TheGamer","url":"https://GameBeeper.gg/?source=TheGamer"}
     ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/index-DKO8FmaJ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DX2NWXSk.css">
+  <script type="module" crossorigin src="/assets/index-oEvc9-l6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BtrlEYyz.css">
 </head>
 <body>
   <!-- Skip to main content (accessibility) -->
@@ -213,23 +160,23 @@
   <nav class="top-nav" aria-label="Main navigation">
     <div class="page-wrap">
       <div class="nav-inner">
-        <a href="/" class="logo" aria-label="GeeksPulse home">
-          <div class="logo-mark" aria-hidden="true">GP</div>
-          <span class="logo-name">GeeksPulse</span>
+        <a href="/" class="logo" aria-label="GameBeeper home">
+          <div class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="16" cy="16" r="4" fill="#26e6ff"/>
+              <circle cx="16" cy="16" r="8"  fill="none" stroke="#26e6ff" stroke-width="2" stroke-opacity="0.7"/>
+              <circle cx="16" cy="16" r="13" fill="none" stroke="#26e6ff" stroke-width="1.5" stroke-opacity="0.4"/>
+            </svg>
+          </div>
+          <span class="logo-name">GameBeeper</span>
         </a>
         <div class="nav-links" aria-label="Site sections">
           <a href="#latest" class="nav-link">Feed</a>
           <a href="#sources" class="nav-link">Sources</a>
-          <a href="#contribute" class="nav-link">Contribute</a>
           <a href="#about" class="nav-link">About</a>
           <a href="#feedback" class="nav-link">Feedback</a>
         </div>
         <div class="nav-actions">
-          <!-- nav support button -->
-          <button data-support class="btn btn-primary btn-sm" title="Support GeeksPulse">
-            <svg class="btn-icon" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <span class="btn-label">Donate</span>
-          </button>
           <!-- hamburger menu button (mobile only) -->
           <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
             <span class="nav-hamburger-bar"></span>
@@ -243,11 +190,10 @@
   <!-- Mobile nav drawer -->
   <div class="nav-drawer" id="navDrawer" aria-hidden="true" role="dialog" aria-label="Site navigation">
     <nav class="nav-drawer-links">
-      <a href="#latest"     class="nav-drawer-link">Feed</a>
-      <a href="#sources"    class="nav-drawer-link">Sources</a>
-      <a href="#contribute" class="nav-drawer-link">Contribute</a>
-      <a href="#about"      class="nav-drawer-link">About</a>
-      <a href="#feedback"   class="nav-drawer-link">Feedback</a>
+      <a href="#latest"   class="nav-drawer-link">Feed</a>
+      <a href="#sources"  class="nav-drawer-link">Sources</a>
+      <a href="#about"    class="nav-drawer-link">About</a>
+      <a href="#feedback" class="nav-drawer-link">Feedback</a>
     </nav>
   </div>
   <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
@@ -257,20 +203,22 @@
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="pulse" aria-hidden="true"></span>
-          Free &amp; indie developer news aggregator
+          Video game news aggregator
         </div>
-        <h1 id="hero-heading">One feed.<br /><em>Everything that matters.</em></h1>
-        <p class="hero-sub"><span id="heroFeedCount">39</span> hand-picked RSS feeds — AI, security, DevOps, JavaScript, open source, Rust, Go, Java, and architecture — aggregated into one distraction-free reading experience. No algorithm. No ads.</p>
+        <h1 id="hero-heading">All the games<br />worth watching.<br /><em>One signal.</em></h1>
+        <p class="hero-sub">GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories from <span id="heroFeedCount">19</span> trusted gaming sources in one fast, distraction-free feed. No ads. No paywalls.</p>
         <div class="hero-ctas">
-          <a href="#latest" class="btn btn-primary btn-lg">Browse today's stories</a>
+          <a href="#latest" class="btn btn-primary btn-lg">Browse latest news</a>
           <button id="refreshBtnHero" class="btn btn-ghost btn-lg" title="Refresh feeds">
             <span id="refreshIcon"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M13.5 8a5.5 5.5 0 1 1-1.3-3.6"/><polyline points="14,2 14,6 10,6"/></svg></span>Refresh
           </button>
-          <button data-support class="btn btn-ghost btn-lg">Donate</button>
+          <button id="savedStoriesBtn" class="btn btn-ghost btn-lg" onclick="window.__setFilter&&window.__setFilter('Bookmarks')">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>View saved stories
+          </button>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="val" id="statFeeds">39</span>
+            <span class="val" id="statFeeds">19</span>
             <span class="lbl">Sources</span>
           </div>
           <div class="hero-stat">
@@ -279,7 +227,7 @@
           </div>
           <div class="hero-stat">
             <span class="val">11</span>
-            <span class="lbl">Topics</span>
+            <span class="lbl">Platforms &amp; topics</span>
           </div>
           <div class="hero-stat">
             <span class="val" id="statSources">--</span>
@@ -288,101 +236,48 @@
         </div>
       </div>
     </section>
-    <section class="signal-section" aria-labelledby="signal-heading">
-      <div class="signal-header">
-        <div class="signal-eyebrow">
-          <span class="pulse" aria-hidden="true"></span>
-          built for engineers, by an engineer
-        </div>
-        <h2 id="signal-heading" class="signal-title">Why use GeeksPulse?</h2>
-      </div>
-      <div class="signal-grid">
-        <div class="signal-card">
-          <div class="signal-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
-          </div>
-          <div class="signal-card-title">39 sources, one place</div>
-          <div class="signal-card-desc">Every feed is hand-picked: no aggregator bots, no scrapers, no SEO farms. Just Hacker News, IEEE Spectrum, Krebs, GitHub Blog, and 35 other sources engineers actually read.</div>
-        </div>
-        <div class="signal-card">
-          <div class="signal-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <div class="signal-card-title">Zero tracking. Full stop.</div>
-          <div class="signal-card-desc">No ad pixels, no fingerprinting, no session recording, no VC-funded data harvesting. GeeksPulse doesn't know who you are — and that's the point.</div>
-        </div>
-        <div class="signal-card">
-          <div class="signal-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <div class="signal-card-title">Always fresh</div>
-          <div class="signal-card-desc">A scheduled GitHub Actions pipeline rebuilds the feed from live RSS sources multiple times daily. The feed health panel shows you exactly when each source last synced — and flags any failures.</div>
-        </div>
-        <div class="signal-card">
-          <div class="signal-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <div class="signal-card-title">Fully open source</div>
-          <div class="signal-card-desc">Every line — feed list, build script, UI — is public on GitHub. Audit it, fork it, or open a PR to add a source. Transparency isn't a marketing claim here; it's a URL.</div>
-        </div>
-      </div>
-    </section>
-
     <!-- MOBILE FILTERS (shown on small screens) -->
     <div id="mobileFilters" class="mobile-filters" role="group" aria-label="Filter by category"></div>
     <!-- APP LAYOUT -->
     <div class="app-layout" id="latest">
       <!-- SIDEBAR -->
-      <aside class="sidebar" aria-label="Filters and info">
+      <aside class="sidebar" aria-label="Explore and signal status">
         <div class="sidebar-section">
-          <div class="sidebar-label">// categories</div>
+          <div class="sidebar-label">Explore</div>
           <nav id="sidebarFilters" class="filter-nav" aria-label="Category filters"></nav>
         </div>
         <div class="sidebar-section">
+          <div class="sidebar-label">Saved</div>
           <div class="sidebar-card">
-            <div class="sidebar-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;margin-right:5px"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>Support GeeksPulse</div>
-            <p>Completely free. No ads, no paywalls. If it's part of your morning routine, a coffee goes a long way.</p>
-            <button data-support class="btn btn-paypal">
-              Donate
-            </button>
-          </div>
-        </div>
-        <div class="sidebar-section">
-          <div class="sidebar-quote">
-            <span class="q-mark">"</span>It works on my machine.<span class="q-mark">"</span><br />
-            <br />
-            — Every developer, at least once
-          </div>
-        </div>
-        <div class="sidebar-section">
-          <div class="sidebar-label">// bookmarks</div>
-          <div class="sidebar-card">
-            <div style="display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:11px;color:var(--text-3);">
-              <div style="display:flex;align-items:center;gap:7px;color:var(--ink2);">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#6e7681" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-                <span style="color:#6e7681;font-weight:700;">GeeksPulse</span>
-                <span style="margin-left:auto;color:var(--ink3)" id="sbBmCount">0</span>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--gs-muted);">
+              <div style="display:flex;align-items:center;gap:7px;color:var(--gs-text);">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--gs-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                <span style="color:var(--gs-cyan);font-weight:700;">GameBeeper</span>
+                <span style="margin-left:auto;" id="sbBmCount">0</span>
               </div>
-              <div style="color:var(--ink3);font-size:10px;line-height:1.6;">// click <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> on any card to save</div>
-              <button id="clearBookmarksBtn" class="btn btn-ghost btn-sm" style="font-size:10px;padding:4px 8px;color:var(--red);border-color:var(--red);opacity:0.7;" title="Clear all bookmarks">Clear all</button>
+              <div style="color:var(--gs-muted);font-size:10px;line-height:1.6;">Click
+                <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                on any card to save a story
+              </div>
+              <button id="clearBookmarksBtn" class="btn btn-ghost btn-sm" style="font-size:10px;padding:4px 8px;color:var(--gs-magenta);border-color:var(--gs-magenta);opacity:0.7;" title="Clear all bookmarks">Clear all</button>
             </div>
           </div>
         </div>
         <div class="sidebar-section">
-          <div class="sidebar-label">// stats</div>
+          <div class="sidebar-label">Signal status</div>
           <div class="sidebar-card">
-            <div style="display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:11px;color:var(--text-3);">
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--gs-muted);">
               <div style="display:flex;justify-content:space-between;">
-                <span>feeds online</span>
-                <span id="sbFeeds" style="color:var(--green)">--</span>
+                <span>sources online</span>
+                <span id="sbFeeds" style="color:var(--gs-lime)">--</span>
               </div>
               <div style="display:flex;justify-content:space-between;">
                 <span>last refresh</span>
-                <span id="sbUpdated" style="color:var(--cyan)">--</span>
+                <span id="sbUpdated" style="color:var(--gs-cyan)">--</span>
               </div>
               <div style="display:flex;justify-content:space-between;">
                 <span>failed feeds</span>
-                <span id="sbFailed" style="color:var(--yellow)">0</span>
+                <span id="sbFailed" style="color:var(--gs-warning)">0</span>
               </div>
             </div>
           </div>
@@ -396,7 +291,7 @@
           <label for="articleSearch" class="sr-only">Search articles</label>
           <div class="search-bar">
             <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="search" id="articleSearch" class="search-input" placeholder="Search articles… (press / to focus)" autocomplete="off" spellcheck="false" />
+            <input type="search" id="articleSearch" class="search-input" placeholder="Search game news… (press / to focus)" autocomplete="off" spellcheck="false" />
             <kbd class="search-kbd" id="searchKbd">/</kbd>
           </div>
         </div>
@@ -405,7 +300,7 @@
           <div class="toolbar-left">
             <div class="toolbar-status">
               <span id="statusDot" class="status-dot loading"></span>
-              <span id="statusText">Fetching the latest developer pulse...</span>
+              <span id="statusText">Tuning into the latest game stories…</span>
             </div>
             <span id="articleCount" class="article-count" style="display:none"></span>
           </div>
@@ -421,380 +316,27 @@
         </div>
         <!-- Feed health bar — loaded from public/feed-health.json -->
         <div id="feedHealthBar" class="feed-health-bar" aria-live="polite" style="display:none"></div>
-
         <!-- Noscript fallback — visible to crawlers and users without JS -->
         <noscript>
           <section style="padding:2rem 0">
-            <h2 style="margin-bottom:1rem">Latest developer news</h2>
-            <p>GeeksPulse aggregates developer news from 39 curated RSS feeds across AI, security, DevOps, JavaScript, open source, Java, Rust, Go, architecture, and more.</p>
+            <h2 style="margin-bottom:1rem">Latest video game news</h2>
+            <p>GameBeeper aggregates video game news from 19 curated RSS feeds across PlayStation, Xbox, Nintendo, PC, indie, reviews, trailers, esports, hardware, and industry topics.</p>
             <p>Enable JavaScript to browse the latest articles with search, category filters, and bookmarks.</p>
-            <p>Feed sources include: Hacker News, Krebs on Security, IEEE Spectrum, GitHub Blog, Google AI Blog, Kubernetes Blog, Rust Blog, Go Blog, and many more — <a href="/#sources">see the full list</a>.</p>
+            <p>Sources include: PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, IGN, Polygon, Kotaku, GamesIndustry.biz, and more — <a href="#sources">see the full list</a>.</p>
           </section>
         </noscript>
         <!-- SEO static article fallback — injected by scripts/generate-seo-content.mjs -->
         <!-- GENERATED_LATEST_ARTICLES_START -->
-
-  <!-- Latest articles from 10 of 449 cached stories (generated May 18, 2026) -->
-  <section id="seoLatestFallback" class="seo-latest-articles" aria-label="Latest developer news (SEO fallback)" style="margin-top:24px">
-    <h2>
-      Latest Developer News
-    </h2>
-    <div class="seo-articles-grid">
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://image.theregister.com/?imageId=261796&amp;width=800" alt="Article image for: TanStack weighs invitation-only pull requests after supply chain attack" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.theregister.com/security/2026/05/18/tanstack-weighs-invitation-only-pull-requests-after-supply-chain-attack/5241899" rel="noopener noreferrer">TanStack weighs invitation-only pull requests after supply chain attack</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>The TanStack team has documented security measures and proposals following a damaging breach last week, including the possibility of making pull requests (PRs)…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>The Register &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.theregister.com/security/2026/05/18/tanstack-weighs-invitation-only-pull-requests-after-supply-chain-attack/5241899" data-share-title="TanStack weighs invitation-only pull requests after supply chain attack" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.theregister.com/security/2026/05/18/tanstack-weighs-invitation-only-pull-requests-after-supply-chain-attack/5241899" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.bleepstatic.com/content/hl-images/2026/05/18/Grafana.jpg" alt="Article image for: Grafana says stolen GitHub token let hackers steal codebase" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/" rel="noopener noreferrer">Grafana says stolen GitHub token let hackers steal codebase</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Grafana Labs disclosed that hackers have downloaded its source code after breaching its GitHub environment using a stolen access token.…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>Bleeping Computer &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/" data-share-title="Grafana says stolen GitHub token let hackers steal codebase" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://image.theregister.com/?imageId=4094209&amp;width=800" alt="Article image for: Microsoft remembers that taskbars used to move" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.theregister.com/personal-tech/2026/05/18/microsoft-remembers-that-taskbars-used-to-move/5241875" rel="noopener noreferrer">Microsoft remembers that taskbars used to move</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Microsoft has begun rolling out tweaks to the Windows 11 experience to make good on its promise to &quot;fix&quot; the operating system, starting with the ability to…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>The Register &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.theregister.com/personal-tech/2026/05/18/microsoft-remembers-that-taskbars-used-to-move/5241875" data-share-title="Microsoft remembers that taskbars used to move" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.theregister.com/personal-tech/2026/05/18/microsoft-remembers-that-taskbars-used-to-move/5241875" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://opengraph.githubassets.com/4d39561ee715047624d826714688f0fa816b00bed388925811e65aae6cf00f2b/zakirullin/files.md" alt="Article image for: Show HN: Files.md – open-source alternative to Obsidian" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://github.com/zakirullin/files.md" rel="noopener noreferrer">Show HN: Files.md – open-source alternative to Obsidian</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Files.md is a simple application for storing whole life experiences in plain .md files. It allows users to store notes, documents, projects, journals, habits,…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>Hacker News &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://github.com/zakirullin/files.md" data-share-title="Show HN: Files.md – open-source alternative to Obsidian" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://github.com/zakirullin/files.md" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzYwIiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjM2MCI+DQogIDxyZWN0IHdpZHRoPSI2NDAiIGhlaWdodD0iMzYwIiBmaWxsPSIjMEQxMTE3Ii8+DQogIDxnIHN0cm9rZT0icmdiYSgxNiwxODUsMTI5LDAuMDcpIiBzdHJva2Utd2lkdGg9IjEiPg0KICAgIDxsaW5lIHgxPSIwIiB5MT0iNzIiIHgyPSI2NDAiIHkyPSI3MiIvPjxsaW5lIHgxPSIwIiB5MT0iMTQ0IiB4Mj0iNjQwIiB5Mj0iMTQ0Ii8+DQogICAgPGxpbmUgeDE9IjAiIHkxPSIyMTYiIHgyPSI2NDAiIHkyPSIyMTYiLz48bGluZSB4MT0iMCIgeTE9IjI4OCIgeDI9IjY0MCIgeTI9IjI4OCIvPg0KICAgIDxsaW5lIHgxPSIxMjgiIHkxPSIwIiB4Mj0iMTI4IiB5Mj0iMzYwIi8+PGxpbmUgeDE9IjI1NiIgeTE9IjAiIHgyPSIyNTYiIHkyPSIzNjAiLz4NCiAgICA8bGluZSB4MT0iMzg0IiB5MT0iMCIgeDI9IjM4NCIgeTI9IjM2MCIvPjxsaW5lIHgxPSI1MTIiIHkxPSIwIiB4Mj0iNTEyIiB5Mj0iMzYwIi8+DQogIDwvZz4NCiAgPCEtLSBnbG9iZSBpY29uIHNjYWxlZCB0byA3MnB4LCBjZW50cmVkIC0tPg0KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjAsMTc1KSBzY2FsZSgzKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBCOTgxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+DQogICAgPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMiwtMTIpIi8+DQogICAgPGxpbmUgeDE9IjIiIHgyPSIyMiIgeTE9IjEyIiB5Mj0iMTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMiwtMTIpIi8+DQogICAgPHBhdGggZD0iTTEyIDJhMTUuMyAxNS4zIDAgMCAxIDQgMTAgMTUuMyAxNS4zIDAgMCAxLTQgMTAgMTUuMyAxNS4zIDAgMCAxLTQtMTAgMTUuMyAxNS4zIDAgMCAxIDQtMTB6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIsLTEyKSIvPg0KICA8L2c+DQogIDx0ZXh0IHg9IjMyMCIgeT0iMjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSmV0QnJhaW5zIE1vbm8sbW9ub3NwYWNlIiBmb250LXNpemU9IjEzIiBmaWxsPSIjMTBCOTgxIiBvcGFjaXR5PSIwLjQ1Ij5naXQgcHVsbCBvcmlnaW48L3RleHQ+DQo8L3N2Zz4NCg==" alt="Article image for: [$] Swap tables, flash-friendly swap, swap_ops, and more" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://lwn.net/Articles/1072657/" rel="noopener noreferrer">[$] Swap tables, flash-friendly swap, swap_ops, and more</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>The kernel&#39;s swap subsystem is charged with managing anonymous pages in secondary storage when those pages are (hopefully) not being used and the memory they…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-open-source"></span>
-          <span>LWN.net &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://lwn.net/Articles/1072657/" data-share-title="[$] Swap tables, flash-friendly swap, swap_ops, and more" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://lwn.net/Articles/1072657/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://res.infoq.com/news/2026/05/code-with-claude/en/headerimage/codewithclaude-1779025768208.jpeg" alt="Article image for: Anthropic&#39;s Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.infoq.com/news/2026/05/code-with-claude/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" rel="noopener noreferrer">Anthropic&#39;s Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Anthropic hosted &quot;Code with Claude 2026&quot; in San Francisco, featuring livestream sessions focused on Claude Code, the Claude API platform, and other projects.…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-ai"></span>
-          <span>InfoQ &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.infoq.com/news/2026/05/code-with-claude/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="Anthropic&#39;s Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.infoq.com/news/2026/05/code-with-claude/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://image.theregister.com/?imageId=5241871&amp;width=800" alt="Article image for: NGINX Rift attackers waste no time targeting exposed servers" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.theregister.com/security/2026/05/18/nginx-rift-attackers-waste-no-time-targeting-exposed-servers/5241851" rel="noopener noreferrer">NGINX Rift attackers waste no time targeting exposed servers</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Exploit attempts are already hammering a newly disclosed NGINX bug dubbed &quot;NGINX Rift,&quot; proving once again that attackers read patch notes faster than most…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>The Register &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.theregister.com/security/2026/05/18/nginx-rift-attackers-waste-no-time-targeting-exposed-servers/5241851" data-share-title="NGINX Rift attackers waste no time targeting exposed servers" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.theregister.com/security/2026/05/18/nginx-rift-attackers-waste-no-time-targeting-exposed-servers/5241851" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/69ee/live/22052400-52b0-11f1-8b8c-6d33e1d5abb6.jpg" alt="Article image for: &amp;#x27;We mould trees to grow into the shape of chairs&amp;#x27;" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.bbc.co.uk/news/articles/cvg0yy3gp71o" rel="noopener noreferrer">&amp;#x27;We mould trees to grow into the shape of chairs&amp;#x27;</a></h3>
-      
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>Hacker News &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.bbc.co.uk/news/articles/cvg0yy3gp71o" data-share-title="&amp;#x27;We mould trees to grow into the shape of chairs&amp;#x27;" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.bbc.co.uk/news/articles/cvg0yy3gp71o" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiu4cbMji6f7O37Q6sBOEkOEXWMs7Eg4ixA0RdW8AiO6cIPai9yYqLTvVVkUH9ApXP8XycVeezSCvDMXhldVsCiaA-_kr5SwWJ4EjTfkyX0RdUacOUF3plBO9C6PHCLsUGM-L-ZthpQA7mhdPmH4nLgPPQIVBWK9BZUNQf7V17Y_5jVVvZ0FNaiOsG7mvs/s1600/anyrun-main.jpg" alt="Article image for: How to Reduce Phishing Exposure Before It Turns into Business Disruption" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://thehackernews.com/2026/05/how-to-reduce-phishing-exposure-before.html" rel="noopener noreferrer">How to Reduce Phishing Exposure Before It Turns into Business Disruption</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>What happens when a phishing email looks clean enough to pass through security, but dangerous enough to expose the business after one click? That is the gap…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-security"></span>
-          <span>The Hacker News &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://thehackernews.com/2026/05/how-to-reduce-phishing-exposure-before.html" data-share-title="How to Reduce Phishing Exposure Before It Turns into Business Disruption" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://thehackernews.com/2026/05/how-to-reduce-phishing-exposure-before.html" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.docker.com/app/uploads/2026/05/image2-1.png" alt="Article image for: Coding Agent Horror Stories: The Security Crisis Threatening Developer Infrastructure" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/" rel="noopener noreferrer">Coding Agent Horror Stories: The Security Crisis Threatening Developer Infrastructure</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>This is issue 1 of a new series called Coding Agent Horror Stories where we examine critical security failures in the AI coding agent ecosystem and how Docker…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-devops"></span>
-          <span>Docker Blog &middot; May 18, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/" data-share-title="Coding Agent Horror Stories: The Security Crisis Threatening Developer Infrastructure" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-    </div>
-  </section>
-  <!-- GENERATED_LATEST_ARTICLES_END -->
+        <!-- GENERATED_LATEST_ARTICLES_END -->
         <!-- Feed grid -->
         <div id="feedGrid" class="feed-grid"></div>
       </main>
     </div><!-- /.app-layout -->
-    <section class="support-strip" aria-label="Support GeeksPulse">
-      <div class="support-text">
-        <div class="support-title">GeeksPulse saves you time. <svg aria-hidden="true" viewBox="0 0 10 16" width="10" height="16" fill="currentColor" style="vertical-align:-3px;margin-left:2px"><path d="M6.5 0L0 9h4.5L3.5 16 10 7H5.5z"/></svg></div>
-        <div class="support-desc">It's free, ad-free, and built by one developer in their spare time. If it's become part of how you stay current, consider supporting it — even a small amount keeps the lights on.</div>
-      </div>
-      <button data-support class="btn btn-primary btn-lg">Donate</button>
-    </section>
   </div><!-- /.page-wrap -->
-
-  <!-- CONTRIBUTE SECTION -->
-  <section class="contribute-section" id="contribute" aria-labelledby="contribute-heading">
-    <div class="page-wrap">
-      <div class="contribute-inner">
-        <!-- Left: copy -->
-        <div class="contribute-copy">
-          <div class="contribute-eyebrow">
-            <span class="pulse" aria-hidden="true"></span>
-            open source
-          </div>
-          <h2 id="contribute-heading" class="contribute-title">Make it<br /><em>even better.</em></h2>
-          <p class="contribute-desc">
-            GeeksPulse is open source and the feed list grows through community pull requests.
-            Whether you write code, spot bugs, or just know a great RSS source that's missing — there's a way for you to contribute.
-          </p>
-          <ul class="contribute-ways">
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              <span>Fork the repo and open a pull request</span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><line x1="8" y1="5" x2="8" y2="8"/><circle cx="8" cy="11" r=".6" fill="currentColor" stroke="none"/></svg>
-              <span>Report a broken feed or a UI bug via Issues</span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,1 10,6 15,6 11,9.5 12.5,14.5 8,11.5 3.5,14.5 5,9.5 1,6 6,6"/></svg>
-              <span>Star the repo — it helps more people find it</span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12M2 8h9M2 12h5"/></svg>
-              <span>Suggest a quality RSS source worth adding</span>
-            </li>
-          </ul>
-          <div class="contribute-actions">
-            <a href="https://github.com/dante0747/geekspulse.dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" style="vertical-align:-2px;margin-right:6px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub
-            </a>
-            <a href="https://github.com/dante0747/geekspulse.dev/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><circle cx="8" cy="8" r="7"/><line x1="8" y1="5" x2="8" y2="8"/><circle cx="8" cy="11" r=".6" fill="currentColor" stroke="none"/></svg>Open an Issue
-            </a>
-          </div>
-        </div>
-        <!-- Right: contribution flow art -->
-        <div class="contribute-terminal-wrap">
-          <div class="contribute-art-wrap" aria-hidden="true">
-            <svg class="contribute-art-svg" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="c-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="rgba(6,182,212,0.2)"/>
-                  <stop offset="100%" stop-color="rgba(6,182,212,0)"/>
-                </radialGradient>
-                <linearGradient id="branch-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="rgba(6,182,212,0.8)"/>
-                  <stop offset="100%" stop-color="rgba(91,94,234,0.8)"/>
-                </linearGradient>
-                <filter id="c-blur"><feGaussianBlur stdDeviation="3"/></filter>
-              </defs>
-
-              <!-- Background grid -->
-              <pattern id="c-grid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-                <path d="M32 0 L0 0 0 32" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-              </pattern>
-              <rect width="400" height="420" fill="url(#c-grid)" rx="12"/>
-              <rect width="400" height="420" fill="none" stroke="rgba(6,182,212,0.15)" stroke-width="1" rx="12"/>
-
-              <!-- Git graph: main branch vertical line -->
-              <line x1="80" y1="30" x2="80" y2="390" stroke="url(#branch-grad)" stroke-width="2"/>
-
-              <!-- Commits on main -->
-              <!-- commit 1 -->
-              <circle cx="80" cy="60" r="8" fill="var(--bg)" stroke="rgba(6,182,212,0.9)" stroke-width="2"/>
-              <circle cx="80" cy="60" r="3" fill="rgba(6,182,212,0.9)"/>
-              <text x="100" y="57" font-size="10" font-family="monospace" fill="rgba(255,255,255,0.7)" font-weight="600">main</text>
-              <text x="100" y="70" font-size="8.5" font-family="monospace" fill="rgba(255,255,255,0.35)">a3f9c12 · initial commit</text>
-
-              <!-- commit 2 — branch point -->
-              <circle cx="80" cy="130" r="8" fill="var(--bg)" stroke="rgba(6,182,212,0.9)" stroke-width="2"/>
-              <circle cx="80" cy="130" r="3" fill="rgba(6,182,212,0.9)"/>
-              <text x="100" y="127" font-size="8.5" font-family="monospace" fill="rgba(255,255,255,0.35)">7b2e841 · feat: 5 new feeds</text>
-
-              <!-- feature branch line -->
-              <path d="M80,165 C80,175 200,175 200,185" stroke="rgba(91,94,234,0.6)" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <line x1="200" y1="185" x2="200" y2="295" stroke="rgba(91,94,234,0.6)" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <!-- merge back -->
-              <path d="M200,295 C200,305 80,305 80,315" stroke="rgba(91,94,234,0.6)" stroke-width="1.5" stroke-dasharray="5 3"/>
-
-              <!-- feature branch label -->
-              <rect x="218" y="174" width="158" height="18" rx="3" fill="rgba(91,94,234,0.12)" stroke="rgba(91,94,234,0.3)" stroke-width="1"/>
-              <text x="226" y="187" font-size="8" font-family="monospace" fill="rgba(91,94,234,0.9)" font-weight="600">feat/add-pragmatic-engineer</text>
-
-              <!-- feature commits -->
-              <circle cx="200" cy="215" r="7" fill="var(--bg)" stroke="rgba(91,94,234,0.8)" stroke-width="1.5"/>
-              <circle cx="200" cy="215" r="2.5" fill="rgba(91,94,234,0.8)"/>
-              <text x="218" y="212" font-size="8.5" font-family="monospace" fill="rgba(255,255,255,0.35)">e91a3b7 · add feed url</text>
-
-              <circle cx="200" cy="255" r="7" fill="var(--bg)" stroke="rgba(91,94,234,0.8)" stroke-width="1.5"/>
-              <circle cx="200" cy="255" r="2.5" fill="rgba(91,94,234,0.8)"/>
-              <text x="218" y="252" font-size="8.5" font-family="monospace" fill="rgba(255,255,255,0.35)">f20cc91 · validate & test</text>
-
-              <!-- PR badge -->
-              <rect x="218" y="265" width="62" height="17" rx="8" fill="rgba(35,134,54,0.2)" stroke="rgba(35,134,54,0.5)" stroke-width="1"/>
-              <text x="249" y="277" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(35,134,54,0.95)" font-weight="700">● PR #42</text>
-
-              <!-- commit 3 — merge commit -->
-              <circle cx="80" cy="315" r="9" fill="var(--bg)" stroke="rgba(35,134,54,0.9)" stroke-width="2"/>
-              <circle cx="80" cy="315" r="3.5" fill="rgba(35,134,54,0.9)"/>
-              <text x="100" y="312" font-size="8.5" font-family="monospace" fill="rgba(255,255,255,0.35)">c19d005 · Merge pull request #42</text>
-              <rect x="100" y="318" width="108" height="15" rx="3" fill="rgba(35,134,54,0.12)" stroke="rgba(35,134,54,0.35)" stroke-width="1"/>
-              <text x="154" y="329" text-anchor="middle" font-size="7.5" font-family="monospace" fill="rgba(35,134,54,0.85)" font-weight="600">✓ merged · thank you!</text>
-
-              <!-- commit 4 — HEAD -->
-              <circle cx="80" cy="370" r="9" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.9)" stroke-width="2"/>
-              <circle cx="80" cy="370" r="3.5" fill="rgba(6,182,212,0.9)"/>
-              <!-- HEAD glow -->
-              <circle cx="80" cy="370" r="18" fill="url(#c-glow)" filter="url(#c-blur)"/>
-              <rect x="100" y="362" width="115" height="17" rx="3" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
-              <text x="157" y="374" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="700">HEAD → main</text>
-
-              <!-- Animated pulse on HEAD -->
-              <circle cx="80" cy="370" r="9" fill="none" stroke="rgba(6,182,212,0.5)" stroke-width="1.5">
-                <animate attributeName="r" values="9;22;9" dur="2.5s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
-              </circle>
-
-              <!-- Top label -->
-              <rect x="12" y="12" width="115" height="18" rx="4" fill="rgba(0,0,0,0.3)"/>
-              <text x="20" y="25" font-size="8.5" font-family="monospace" fill="rgba(255,255,255,0.4)">// git log --graph</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FEEDBACK SECTION -->
   <section class="feedback-section" id="feedback" aria-labelledby="feedback-heading">
     <div class="page-wrap">
       <div class="contribute-inner">
-        <!-- Left: copy -->
         <div class="contribute-copy">
           <div class="contribute-eyebrow">
             <span class="pulse" aria-hidden="true"></span>
@@ -802,7 +344,7 @@
           </div>
           <h2 id="feedback-heading" class="contribute-title">Something broken?<br /><em>Tell us.</em></h2>
           <p class="contribute-desc">
-            Found a broken feed? Know a source worth adding? Have a UI suggestion?
+            Found a broken feed? Know a gaming source worth adding? Have a UI suggestion?
             GitHub Issues is the fastest path to a fix — every report gets read.
           </p>
           <ul class="contribute-ways">
@@ -812,7 +354,7 @@
             </li>
             <li>
               <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6h14"/></svg>
-              <span>Suggest a quality source worth adding</span>
+              <span>Suggest a quality gaming source worth adding</span>
             </li>
             <li>
               <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 3 3 5-6"/></svg>
@@ -820,100 +362,18 @@
             </li>
             <li>
               <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,1 10,6 15,6 11,9.5 12.5,14.5 8,11.5 3.5,14.5 5,9.5 1,6 6,6"/></svg>
-              <span>Just say hi — we appreciate every message</span>
+              <span>Just say hi — every message is appreciated</span>
             </li>
           </ul>
           <div class="contribute-actions">
-            <a href="https://github.com/dante0747/geekspulse.dev/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <a href="https://github.com/dante0747/GameBeeper.gg/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
               <svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" style="vertical-align:-2px;margin-right:6px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Open an Issue
             </a>
-            <a href="mailto:abarghooeimajid@gmail.com" class="btn btn-ghost btn-lg">
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6l7 4 7-4"/></svg>Send an Email
-            </a>
           </div>
-        </div>
-        <!-- Right: issues art -->
-        <div class="contribute-terminal-wrap feedback-art-col" aria-hidden="true">
-          <svg class="feedback-art-svg" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="fb-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="rgba(91,94,234,0.2)"/>
-                <stop offset="100%" stop-color="rgba(91,94,234,0)"/>
-              </radialGradient>
-              <filter id="fb-blur"><feGaussianBlur stdDeviation="3"/></filter>
-            </defs>
-
-            <!-- Background grid -->
-            <pattern id="fb-grid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-              <path d="M32 0 L0 0 0 32" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-            </pattern>
-            <rect width="400" height="420" fill="url(#fb-grid)" rx="12"/>
-            <rect width="400" height="420" fill="none" stroke="rgba(91,94,234,0.15)" stroke-width="1" rx="12"/>
-
-            <!-- Header bar -->
-            <rect x="0" y="0" width="400" height="42" rx="12" fill="rgba(255,255,255,0.03)"/>
-            <rect x="0" y="30" width="400" height="12" fill="rgba(255,255,255,0.03)"/>
-            <circle cx="20" cy="21" r="5" fill="rgba(255,95,87,0.7)"/>
-            <circle cx="36" cy="21" r="5" fill="rgba(255,189,46,0.7)"/>
-            <circle cx="52" cy="21" r="5" fill="rgba(40,200,64,0.7)"/>
-            <text x="200" y="26" text-anchor="middle" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.3)">github.com/dante0747/geekspulse.dev/issues</text>
-
-            <!-- Issues list -->
-            <!-- Issue 1 — open -->
-            <rect x="16" y="56" width="368" height="62" rx="6" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-            <circle cx="36" cy="87" r="8" fill="none" stroke="rgba(35,134,54,0.85)" stroke-width="1.5"/>
-            <circle cx="36" cy="87" r="4" fill="rgba(35,134,54,0.7)"/>
-            <text x="52" y="82" font-size="9.5" font-family="monospace" fill="rgba(255,255,255,0.8)" font-weight="600">Feed: InfoQ returning 403 errors</text>
-            <text x="52" y="96" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.3)">#88 opened 2 days ago · bug</text>
-            <rect x="318" y="76" width="52" height="15" rx="7" fill="rgba(35,134,54,0.15)" stroke="rgba(35,134,54,0.4)" stroke-width="1"/>
-            <text x="344" y="87" text-anchor="middle" font-size="7.5" font-family="monospace" fill="rgba(35,134,54,0.9)" font-weight="600">● Open</text>
-
-            <!-- Issue 2 — closed -->
-            <rect x="16" y="126" width="368" height="62" rx="6" fill="rgba(255,255,255,0.018)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <circle cx="36" cy="157" r="8" fill="none" stroke="rgba(130,80,223,0.7)" stroke-width="1.5"/>
-            <path d="M32,157 L35,160 L40,153" stroke="rgba(130,80,223,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="52" y="152" font-size="9.5" font-family="monospace" fill="rgba(255,255,255,0.5)" font-weight="600">Add The Pragmatic Engineer RSS</text>
-            <text x="52" y="166" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">#87 closed 5 days ago · enhancement</text>
-            <rect x="305" y="146" width="65" height="15" rx="7" fill="rgba(130,80,223,0.12)" stroke="rgba(130,80,223,0.35)" stroke-width="1"/>
-            <text x="337" y="157" text-anchor="middle" font-size="7.5" font-family="monospace" fill="rgba(130,80,223,0.9)" font-weight="600">✓ Merged</text>
-
-            <!-- Issue 3 — open -->
-            <rect x="16" y="196" width="368" height="62" rx="6" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-            <circle cx="36" cy="227" r="8" fill="none" stroke="rgba(35,134,54,0.85)" stroke-width="1.5"/>
-            <circle cx="36" cy="227" r="4" fill="rgba(35,134,54,0.7)"/>
-            <text x="52" y="222" font-size="9.5" font-family="monospace" fill="rgba(255,255,255,0.8)" font-weight="600">Dark mode contrast on filter chips</text>
-            <text x="52" y="236" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.3)">#86 opened 1 week ago · ui</text>
-            <rect x="318" y="216" width="52" height="15" rx="7" fill="rgba(35,134,54,0.15)" stroke="rgba(35,134,54,0.4)" stroke-width="1"/>
-            <text x="344" y="227" text-anchor="middle" font-size="7.5" font-family="monospace" fill="rgba(35,134,54,0.9)" font-weight="600">● Open</text>
-
-            <!-- Issue 4 — closed -->
-            <rect x="16" y="266" width="368" height="62" rx="6" fill="rgba(255,255,255,0.018)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <circle cx="36" cy="297" r="8" fill="none" stroke="rgba(130,80,223,0.7)" stroke-width="1.5"/>
-            <path d="M32,297 L35,300 L40,293" stroke="rgba(130,80,223,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="52" y="292" font-size="9.5" font-family="monospace" fill="rgba(255,255,255,0.5)" font-weight="600">Keyboard shortcut 'r' not working on FF</text>
-            <text x="52" y="306" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">#85 closed 2 weeks ago · bug</text>
-            <rect x="305" y="286" width="65" height="15" rx="7" fill="rgba(130,80,223,0.12)" stroke="rgba(130,80,223,0.35)" stroke-width="1"/>
-            <text x="337" y="297" text-anchor="middle" font-size="7.5" font-family="monospace" fill="rgba(130,80,223,0.9)" font-weight="600">✓ Closed</text>
-
-            <!-- New issue prompt -->
-            <rect x="16" y="344" width="368" height="58" rx="6" fill="rgba(91,94,234,0.07)" stroke="rgba(91,94,234,0.25)" stroke-width="1" stroke-dasharray="4 3"/>
-            <circle cx="36" cy="373" r="8" fill="none" stroke="rgba(91,94,234,0.5)" stroke-width="1.5"/>
-            <text x="36" y="377" text-anchor="middle" font-size="11" font-family="monospace" fill="rgba(91,94,234,0.7)">+</text>
-            <text x="52" y="368" font-size="9" font-family="monospace" fill="rgba(91,94,234,0.7)" font-weight="600">Your issue here...</text>
-            <text x="52" y="382" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">every report gets read &amp; acted on</text>
-            <!-- Glow behind prompt -->
-            <rect x="16" y="344" width="368" height="58" rx="6" fill="url(#fb-glow)" filter="url(#fb-blur)"/>
-
-            <!-- Animated cursor blink in prompt -->
-            <rect x="138" y="362" width="6" height="11" rx="1" fill="rgba(91,94,234,0.7)">
-              <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
-            </rect>
-          </svg>
         </div>
       </div>
     </div>
   </section>
-
   <!-- ABOUT SECTION -->
   <section class="contribute-section" id="about" aria-labelledby="about-heading">
     <div class="page-wrap">
@@ -923,213 +383,76 @@
             <span class="pulse" aria-hidden="true"></span>
             about this project
           </div>
-          <h2 id="about-heading" class="contribute-title">Behind<br /><em>GeeksPulse.</em></h2>
+          <h2 id="about-heading" class="contribute-title">Behind<br /><em>GameBeeper.</em></h2>
           <p class="contribute-desc">
-            GeeksPulse is an indie project — designed, built, and maintained by <strong>Majid Abarghooei</strong>, a solo developer. It exists because keeping up with software engineering shouldn't require 12 browser tabs and a news algorithm optimised for rage. It aggregates 39 hand-picked RSS feeds with no ads, no paywalls, and no outside pressure.
+            GameBeeper is an open-source video game news aggregator. It collects RSS feeds from 19 trusted gaming sources — official platform publishers, independent outlets, and industry reporters — into one fast, clean, distraction-free feed. No ads, no paywalls, no tracking without consent.
           </p>
-          <!-- GitHub stars badge -->
-          <div style="margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-            <a id="githubStarsBadge" href="https://github.com/dante0747/geekspulse.dev" target="_blank" rel="noopener noreferrer" aria-label="View GeeksPulse on GitHub and see star count" class="gh-stars-badge">
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
-              <span>Star on GitHub</span>
-              <span class="gh-stars-count" id="ghStarCount" aria-label="star count"></span>
-            </a>
-            <span id="aboutLastUpdated" style="font-family:var(--mono);font-size:11px;color:var(--ink3)"></span>
-          </div>
-          <script>
-            (function(){
-              fetch('https://api.github.com/repos/dante0747/geekspulse.dev')
-                .then(function(r){return r.json();})
-                .then(function(d){
-                  var el = document.getElementById('ghStarCount');
-                  if(el && d && d.stargazers_count != null){
-                    var n = d.stargazers_count;
-                    el.textContent = n >= 1000 ? (n/1000).toFixed(1)+'k' : n;
-                  }
-                }).catch(function(){});
-            })();
-          </script>
           <ul class="contribute-ways" style="margin-bottom:1.25rem">
             <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M2 7l6 4 6-4"/></svg>
-              <span>Email: <a href="mailto:abarghooeimajid@gmail.com" style="color:var(--cyan)" aria-label="Send email to Majid Abarghooei">abarghooeimajid@gmail.com</a></span>
-            </li>
-            <li>
               <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              <span>GitHub: <a href="https://github.com/dante0747/geekspulse.dev" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)" aria-label="GeeksPulse source code on GitHub">github.com/dante0747/geekspulse.dev</a></span>
+              <span>Open source — <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer" style="color:var(--gs-cyan)">view on GitHub</a></span>
             </li>
             <li>
               <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM1 6h14"/></svg>
-              <span>Support: <a href="https://paypal.me/MajidAbarghooei" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)" aria-label="Support GeeksPulse via PayPal">paypal.me/MajidAbarghooei</a></span>
-            </li>
-            <li>
-              <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l6 4 6-4"/><rect x="1" y="3" width="14" height="10" rx="2"/></svg>
-              <span>Editorial policy: <a href="https://github.com/dante0747/geekspulse.dev/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)" aria-label="Read the GeeksPulse feed selection criteria">Feed selection criteria</a></span>
+              <span>Editorial policy: <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--gs-cyan)">Feed selection criteria</a></span>
             </li>
           </ul>
-          <p style="font-size:0.82rem;color:var(--ink3);font-family:var(--mono)">
-            // Launched 2026 · Open source · No ads · No paywalls · No tracking
+          <p style="font-size:0.82rem;color:var(--gs-muted)">
+            Launched 2026 — Open source — No ads — No paywalls
           </p>
           <div style="margin-top:1rem;font-size:0.82rem;display:flex;gap:1rem;flex-wrap:wrap">
-            <a href="/privacy.html" style="color:var(--ink3);font-family:var(--mono);font-size:11px" aria-label="GeeksPulse Privacy Policy">// Privacy Policy</a>
-            <a href="/terms.html" style="color:var(--ink3);font-family:var(--mono);font-size:11px" aria-label="GeeksPulse Terms of Use">// Terms of Use</a>
+            <a href="/privacy.html" style="color:var(--gs-muted);font-size:11px">Privacy Policy</a>
+            <a href="/terms.html" style="color:var(--gs-muted);font-size:11px">Terms of Use</a>
           </div>
-        </div>
-        <!-- Right: decorative network art -->
-        <div class="about-art" aria-hidden="true">
-          <svg class="about-network-svg" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="gp-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="rgba(91,94,234,0.35)"/>
-                <stop offset="100%" stop-color="rgba(91,94,234,0)"/>
-              </radialGradient>
-              <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="rgba(6,182,212,0.25)"/>
-                <stop offset="100%" stop-color="rgba(6,182,212,0)"/>
-              </radialGradient>
-              <filter id="blur-sm">
-                <feGaussianBlur stdDeviation="2.5"/>
-              </filter>
-              <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L6,3 z" fill="rgba(91,94,234,0.5)"/>
-              </marker>
-            </defs>
-
-            <!-- Glow behind center -->
-            <circle cx="210" cy="190" r="80" fill="url(#gp-glow)" filter="url(#blur-sm)"/>
-
-            <!-- Connection lines (source → GP) -->
-            <!-- HN -->
-            <line x1="52" y1="55" x2="183" y2="168" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- The Register -->
-            <line x1="368" y1="48" x2="237" y2="165" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- Krebs -->
-            <line x1="38" y1="195" x2="178" y2="192" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- GitHub -->
-            <line x1="380" y1="190" x2="242" y2="192" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- Rust Blog -->
-            <line x1="65" y1="330" x2="185" y2="215" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- Go Blog -->
-            <line x1="355" y1="325" x2="233" y2="214" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- MIT AI -->
-            <line x1="195" y1="28" x2="207" y2="158" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-            <!-- InfoQ -->
-            <line x1="215" y1="352" x2="211" y2="222" stroke="rgba(91,94,234,0.3)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-
-            <!-- Source nodes glow -->
-            <circle cx="52" cy="55" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="368" cy="48" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="38" cy="195" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="380" cy="190" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="65" cy="330" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="355" cy="325" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="195" cy="28" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-            <circle cx="215" cy="352" r="22" fill="url(#node-glow)" filter="url(#blur-sm)"/>
-
-            <!-- Source node circles -->
-            <circle cx="52" cy="55" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="368" cy="48" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="38" cy="195" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="380" cy="190" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="65" cy="330" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="355" cy="325" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="195" cy="28" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-            <circle cx="215" cy="352" r="18" fill="var(--bg2)" stroke="rgba(6,182,212,0.45)" stroke-width="1"/>
-
-            <!-- Source node labels -->
-            <text x="52" y="59" text-anchor="middle" font-size="7.5" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">HN</text>
-            <text x="368" y="52" text-anchor="middle" font-size="6" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">REG</text>
-            <text x="38" y="199" text-anchor="middle" font-size="6" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">SEC</text>
-            <text x="380" y="194" text-anchor="middle" font-size="6" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">GH</text>
-            <text x="65" y="334" text-anchor="middle" font-size="6.5" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">RUST</text>
-            <text x="355" y="329" text-anchor="middle" font-size="7" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">GO</text>
-            <text x="195" y="32" text-anchor="middle" font-size="6" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">MIT</text>
-            <text x="215" y="356" text-anchor="middle" font-size="6" font-family="monospace" fill="rgba(6,182,212,0.9)" font-weight="600">InfoQ</text>
-
-            <!-- Source count badges -->
-            <text x="52" y="82" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="368" y="75" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="38" y="222" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="380" y="217" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="65" y="357" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="355" y="352" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="195" y="55" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-            <text x="215" y="379" text-anchor="middle" font-size="8" font-family="monospace" fill="rgba(255,255,255,0.25)">RSS</text>
-
-            <!-- Central GP node glow ring -->
-            <circle cx="210" cy="190" r="52" fill="none" stroke="rgba(91,94,234,0.15)" stroke-width="1" stroke-dasharray="3 4"/>
-            <circle cx="210" cy="190" r="38" fill="rgba(91,94,234,0.12)" stroke="rgba(91,94,234,0.6)" stroke-width="1.5"/>
-
-            <!-- Central GP node -->
-            <circle cx="210" cy="190" r="30" fill="var(--bg)" stroke="rgba(91,94,234,0.9)" stroke-width="2"/>
-            <text x="210" y="186" text-anchor="middle" font-size="13" font-family="monospace" fill="white" font-weight="700" letter-spacing="-0.5">GP</text>
-            <text x="210" y="200" text-anchor="middle" font-size="6.5" font-family="monospace" fill="rgba(91,94,234,0.9)" font-weight="600" letter-spacing="0.05em">PULSE</text>
-
-            <!-- Animated pulse rings -->
-            <circle cx="210" cy="190" r="30" fill="none" stroke="rgba(91,94,234,0.4)" stroke-width="1.5">
-              <animate attributeName="r" values="30;58;30" dur="3s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
-            </circle>
-
-            <!-- "39 feeds" label -->
-            <rect x="155" y="228" width="110" height="20" rx="4" fill="rgba(6,182,212,0.08)" stroke="rgba(6,182,212,0.25)" stroke-width="1"/>
-            <text x="210" y="242" text-anchor="middle" font-size="8.5" font-family="monospace" fill="rgba(6,182,212,0.8)" font-weight="600">// 39 hand-picked feeds</text>
-          </svg>
         </div>
       </div>
     </div>
   </section>
   <footer class="site-footer">
     <div class="page-wrap">
-      <!-- Feed Sources index -->
+      <!-- Sources index -->
       <section class="footer-sources" id="sources" aria-labelledby="sources-heading">
         <div class="footer-sources-title" id="sources-heading">Feed sources</div>
         <ul class="footer-sources-list">
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('General')">General</a>: <a href="https://news.ycombinator.com/" target="_blank" rel="noopener noreferrer">Hacker News</a>, <a href="https://lobste.rs/" target="_blank" rel="noopener noreferrer">Lobsters</a>, <a href="https://www.theregister.com/" target="_blank" rel="noopener noreferrer">The Register</a>, <a href="https://arstechnica.com/" target="_blank" rel="noopener noreferrer">Ars Technica</a>, <a href="https://www.infoq.com/" target="_blank" rel="noopener noreferrer">InfoQ</a>, <a href="https://spectrum.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE Spectrum</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Security')">Security</a>: <a href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener noreferrer">Bleeping Computer</a>, <a href="https://thehackernews.com/" target="_blank" rel="noopener noreferrer">The Hacker News</a>, <a href="https://krebsonsecurity.com/" target="_blank" rel="noopener noreferrer">Krebs on Security</a>, <a href="https://www.schneier.com/" target="_blank" rel="noopener noreferrer">Schneier on Security</a>, <a href="https://isc.sans.edu/" target="_blank" rel="noopener noreferrer">SANS Internet Storm</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('AI')">AI</a>: <a href="https://news.mit.edu/" target="_blank" rel="noopener noreferrer">MIT AI News</a>, <a href="https://blog.google/technology/ai/" target="_blank" rel="noopener noreferrer">Google AI Blog</a>, <a href="https://thegradient.pub/" target="_blank" rel="noopener noreferrer">The Gradient</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Python')">Python</a>: <a href="https://planetpython.org/" target="_blank" rel="noopener noreferrer">Planet Python</a>, <a href="https://realpython.com/" target="_blank" rel="noopener noreferrer">Real Python</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('JavaScript')">JavaScript</a>: <a href="https://javascriptweekly.com/" target="_blank" rel="noopener noreferrer">JavaScript Weekly</a>, <a href="https://nodeweekly.com/" target="_blank" rel="noopener noreferrer">Node Weekly</a>, <a href="https://developer.mozilla.org/en-US/blog/" target="_blank" rel="noopener noreferrer">MDN Blog</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('DevOps')">DevOps</a>: <a href="https://www.docker.com/blog/" target="_blank" rel="noopener noreferrer">Docker Blog</a>, <a href="https://kubernetes.io/blog/" target="_blank" rel="noopener noreferrer">Kubernetes Blog</a>, <a href="https://www.hashicorp.com/blog/" target="_blank" rel="noopener noreferrer">HashiCorp Blog</a>, <a href="https://aws.amazon.com/blogs/devops/" target="_blank" rel="noopener noreferrer">AWS DevOps Blog</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Open Source')">Open Source</a>: <a href="https://lwn.net/" target="_blank" rel="noopener noreferrer">LWN.net</a>, <a href="https://github.blog/" target="_blank" rel="noopener noreferrer">GitHub Blog</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Java')">Java</a>: <a href="https://spring.io/blog/" target="_blank" rel="noopener noreferrer">Spring Blog</a>, <a href="https://www.infoq.com/java/" target="_blank" rel="noopener noreferrer">InfoQ Java</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Rust')">Rust</a>: <a href="https://blog.rust-lang.org/" target="_blank" rel="noopener noreferrer">Rust Blog</a>, <a href="https://this-week-in-rust.org/" target="_blank" rel="noopener noreferrer">This Week in Rust</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Go')">Go</a>: <a href="https://go.dev/blog/" target="_blank" rel="noopener noreferrer">Go Blog</a>, <a href="https://golangweekly.com/" target="_blank" rel="noopener noreferrer">Go Weekly</a>, <a href="https://dave.cheney.net/" target="_blank" rel="noopener noreferrer">Dave Cheney</a></li>
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Architecture')">Architecture</a>: <a href="https://martinfowler.com/" target="_blank" rel="noopener noreferrer">Martin Fowler</a>, <a href="https://www.infoq.com/architecture/" target="_blank" rel="noopener noreferrer">InfoQ Architecture</a>, <a href="https://aws.amazon.com/blogs/architecture/" target="_blank" rel="noopener noreferrer">AWS Architecture Blog</a>, <a href="http://highscalability.com/" target="_blank" rel="noopener noreferrer">High Scalability</a>, <a href="https://netflixtechblog.com/" target="_blank" rel="noopener noreferrer">Netflix Tech Blog</a>, <a href="https://engineering.fb.com/" target="_blank" rel="noopener noreferrer">Meta Engineering</a>, <a href="https://www.uber.com/en-US/blog/engineering/" target="_blank" rel="noopener noreferrer">Uber Engineering</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Latest')">Latest</a>: <a href="https://www.videogameschronicle.com/" target="_blank" rel="noopener noreferrer">VGC</a>, <a href="https://www.gematsu.com/" target="_blank" rel="noopener noreferrer">Gematsu</a>, <a href="https://www.eurogamer.net/" target="_blank" rel="noopener noreferrer">Eurogamer</a>, <a href="https://www.ign.com/" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/" target="_blank" rel="noopener noreferrer">GameSpot</a>, <a href="https://www.destructoid.com/" target="_blank" rel="noopener noreferrer">Destructoid</a>, <a href="https://www.polygon.com/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://kotaku.com/" target="_blank" rel="noopener noreferrer">Kotaku</a>, <a href="https://www.thegamer.com/" target="_blank" rel="noopener noreferrer">TheGamer</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('PlayStation')">PlayStation</a>: <a href="https://blog.playstation.com/" target="_blank" rel="noopener noreferrer">PlayStation Blog</a> <span class="official-badge">Official</span>, <a href="https://www.pushsquare.com/" target="_blank" rel="noopener noreferrer">Push Square</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Xbox')">Xbox</a>: <a href="https://news.xbox.com/" target="_blank" rel="noopener noreferrer">Xbox Wire</a> <span class="official-badge">Official</span>, <a href="https://www.purexbox.com/" target="_blank" rel="noopener noreferrer">Pure Xbox</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Nintendo')">Nintendo</a>: <a href="https://www.nintendolife.com/" target="_blank" rel="noopener noreferrer">Nintendo Life</a>, <a href="https://nintendoeverything.com/" target="_blank" rel="noopener noreferrer">Nintendo Everything</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('PC')">PC Gaming</a>: <a href="https://www.pcgamer.com/" target="_blank" rel="noopener noreferrer">PC Gamer</a>, <a href="https://www.rockpapershotgun.com/" target="_blank" rel="noopener noreferrer">Rock Paper Shotgun</a>, <a href="https://www.pcgamesn.com/" target="_blank" rel="noopener noreferrer">PCGamesN</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Industry')">Industry</a>: <a href="https://www.gamesindustry.biz/" target="_blank" rel="noopener noreferrer">GamesIndustry.biz</a></li>
         </ul>
       </section>
       <div class="footer-inner">
         <div class="footer-left">
-          <div class="footer-tagline">Developer news — curated, not algorithmically sorted.</div>
+          <div class="footer-tagline">Video game news — curated, not algorithmically sorted.</div>
           <div class="footer-shortcuts" aria-label="Keyboard shortcuts">
-            <span class="footer-kbd-label">// keyboard shortcuts:</span>
+            <span class="footer-kbd-label">Keyboard shortcuts:</span>
             <kbd class="footer-kbd">/</kbd><span> search</span>
             <kbd class="footer-kbd">j</kbd><kbd class="footer-kbd">k</kbd><span> navigate</span>
             <kbd class="footer-kbd">o</kbd><span> open</span>
             <kbd class="footer-kbd">r</kbd><span> refresh</span>
             <kbd class="footer-kbd">Esc</kbd><span> clear</span>
           </div>
-          <div class="footer-copy">&#169; 2026 GeeksPulse &mdash; Free to use. No ads. No tracking. No paywalls.</div>
+          <div class="footer-copy">&#169; 2026 GameBeeper &mdash; Free to use. No ads. No tracking. No paywalls.</div>
           <div class="footer-copy" style="margin-top:6px;font-size:0.75rem">
-            Contact: <a href="mailto:abarghooeimajid@gmail.com" style="color:var(--cyan);text-decoration:none" aria-label="Email Majid Abarghooei">abarghooeimajid@gmail.com</a>
+            <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer" style="color:var(--gs-cyan);text-decoration:none">GitHub</a>
             &nbsp;&middot;&nbsp;
-            <a href="https://github.com/dante0747/geekspulse.dev" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);text-decoration:none" aria-label="GeeksPulse on GitHub">GitHub</a>
+            <a href="#about" style="color:var(--gs-cyan);text-decoration:none">About</a>
             &nbsp;&middot;&nbsp;
-            <a href="#about" style="color:var(--cyan);text-decoration:none">About</a>
+            <a href="/privacy.html" style="color:var(--gs-cyan);text-decoration:none">Privacy</a>
             &nbsp;&middot;&nbsp;
-            <a href="/privacy.html" style="color:var(--cyan);text-decoration:none">Privacy</a>
-            &nbsp;&middot;&nbsp;
-            <a href="/terms.html" style="color:var(--cyan);text-decoration:none">Terms</a>
+            <a href="/terms.html" style="color:var(--gs-cyan);text-decoration:none">Terms</a>
           </div>
-          <div class="footer-copy" style="margin-top:8px;font-size:0.72rem;font-family:var(--mono);color:var(--ink3)">
-            <a id="siteVersion" href="https://github.com/dante0747/geekspulse.dev/commits/main" target="_blank" rel="noopener noreferrer" title="View changelog on GitHub" class="site-version-badge">// loading version…</a>
+          <div class="footer-copy" style="margin-top:8px;font-size:0.72rem;color:var(--gs-muted)">
+            <a id="siteVersion" href="https://github.com/dante0747/GameBeeper.gg/commits/main" target="_blank" rel="noopener noreferrer" title="View changelog on GitHub" class="site-version-badge">loading version—</a>
+          </div>
+          <div class="footer-copy" style="margin-top:6px;font-size:0.72rem;color:var(--gs-muted)">
+            Forked from <a href="https://geekspulse.dev" target="_blank" rel="noopener noreferrer" style="color:var(--gs-muted);text-decoration:underline;opacity:0.75">geekspulse.dev</a>
           </div>
         </div>
-
       </div>
     </div>
   </footer>
-
   <!-- Back to top button -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

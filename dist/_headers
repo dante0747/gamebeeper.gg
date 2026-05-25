@@ -1,7 +1,7 @@
-/*
+﻿/*
  * Cloudflare Pages / Netlify _headers
  *
- * These security headers apply to all responses from geekspulse.dev.
+ * These security headers apply to all responses from GameBeeper.gg.
  * GitHub Pages does NOT support custom headers — to use these, either:
  *   1. Deploy to Cloudflare Pages (recommended — free tier, supports _headers)
  *   2. Deploy to Netlify (free tier, supports _headers)
@@ -13,7 +13,7 @@
 /*
  * Apply to all routes
  */
-https://geekspulse.dev/*
+https://GameBeeper.gg/*
   # Prevent MIME-type sniffing attacks
   X-Content-Type-Options: nosniff
 

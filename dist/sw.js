@@ -1,5 +1,5 @@
 /**
- * GeeksPulse Service Worker
+ * GameBeeper Service Worker
  *
  * Strategies:
  *   - Static shell (HTML, CSS, JS bundles)  → Cache-first, updated on each SW install
