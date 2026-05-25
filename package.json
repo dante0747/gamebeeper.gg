@@ -1,0 +1,34 @@
+﻿{
+  "name": "gamebeeper",
+  "version": "1.0.0",
+  "description": "GameBeeper — Video Game News Aggregator",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build:app": "vite build",
+    "build:data": "node scripts/generate-version.mjs && node scripts/build-feed.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-seo-content.mjs",
+    "build": "npm run build:data && npm run build:app",
+    "build:feed": "node scripts/build-feed.mjs",
+    "build:sitemap": "node scripts/generate-sitemap.mjs",
+    "build:seo": "node scripts/generate-seo-content.mjs",
+    "build:version": "node scripts/generate-version.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.7.0",
+    "ollama": "^0.6.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@vitest/coverage-v8": "^4.1.6",
+    "happy-dom": "^20.9.0",
+    "msw": "^2.14.6",
+    "vite": "^6.4.2",
+    "vitest": "^4.1.6"
+  }
+}

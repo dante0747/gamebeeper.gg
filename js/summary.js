@@ -1,0 +1,135 @@
+﻿/**
+ * js/summary.js
+ *
+ * AI Summary modal â€” shows pre-cached summaries from feed.json.
+ * summaryType === 'ai'      â†’ LLM-generated summary  â†’ badge: "AI Summary"
+ * summaryType === 'snippet' â†’ raw RSS excerpt         â†’ badge: "Article Snippet"
+ * summaryType === ''        â†’ no summary available
+ */
+
+// â”€â”€ Modal DOM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+let _modal = null;
+
+function getModal() {
+  if (_modal) return _modal;
+
+  _modal = document.createElement('div');
+  _modal.id = 'summaryModal';
+  _modal.setAttribute('role', 'dialog');
+  _modal.setAttribute('aria-modal', 'true');
+  _modal.setAttribute('aria-labelledby', 'summaryModalTitle');
+  _modal.innerHTML = `
+    <div class="summary-backdrop" id="summaryBackdrop"></div>
+    <div class="summary-dialog">
+      <div class="summary-dialog__header">
+        <span class="summary-ai-badge" id="summaryBadge">
+          <span id="summaryBadgeIcon" aria-hidden="true"></span>
+          <span id="summaryBadgeLabel">AI Summary</span>
+        </span>
+        <button class="summary-close" id="summaryClose" aria-label="Close summary">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <h3 class="summary-dialog__title" id="summaryModalTitle"></h3>
+      <div class="summary-dialog__body" id="summaryBody">
+        <p class="summary-text" id="summaryText"></p>
+        <p class="summary-error" id="summaryError" hidden></p>
+      </div>
+      <div class="summary-dialog__footer">
+        <a class="card-link" id="summaryReadLink" href="#" target="_blank" rel="noopener noreferrer">Read full article â†’</a>
+        <span class="summary-source" id="summarySource"></span>
+      </div>
+    </div>`;
+
+  document.body.appendChild(_modal);
+
+  document.getElementById('summaryBackdrop').addEventListener('click', closeSummaryModal);
+  document.getElementById('summaryClose').addEventListener('click', closeSummaryModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && _modal.classList.contains('open')) closeSummaryModal();
+  });
+
+  // Swipe-down-to-close (mobile bottom sheet)
+  const dialog = _modal.querySelector('.summary-dialog');
+  let touchStartY = 0;
+  let touchDeltaY = 0;
+  dialog.addEventListener('touchstart', e => {
+    touchStartY = e.touches[0].clientY;
+    touchDeltaY = 0;
+    dialog.style.transition = 'none';
+  }, { passive: true });
+  dialog.addEventListener('touchmove', e => {
+    touchDeltaY = e.touches[0].clientY - touchStartY;
+    if (touchDeltaY > 0) {
+      dialog.style.transform = `translateY(${touchDeltaY}px)`;
+    }
+  }, { passive: true });
+  dialog.addEventListener('touchend', () => {
+    dialog.style.transition = '';
+    dialog.style.transform = '';
+    if (touchDeltaY > 80) {
+      closeSummaryModal();
+    }
+    touchDeltaY = 0;
+  }, { passive: true });
+
+  return _modal;
+}
+
+// â”€â”€ Public API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+export function initSummaryModal() {
+  // Eagerly create the modal DOM so it's ready
+  getModal();
+}
+
+export function openSummaryModal({ title, snippet, summaryType, link, source }) {
+  const modal = getModal();
+
+  document.getElementById('summaryModalTitle').textContent = title || '';
+  document.getElementById('summaryText').textContent = '';
+  document.getElementById('summaryError').hidden = true;
+  document.getElementById('summaryError').textContent = '';
+  document.getElementById('summaryReadLink').href = link || '#';
+  document.getElementById('summarySource').textContent = source ? `// ${source}` : '';
+
+  // Differentiate badge label + icon based on summary origin
+  const badgeLabel = document.getElementById('summaryBadgeLabel');
+  const badgeIcon  = document.getElementById('summaryBadgeIcon');
+  const badge      = document.getElementById('summaryBadge');
+
+  if (summaryType === 'ai') {
+    badgeLabel.textContent = 'AI Summary';
+    badge.classList.remove('summary-ai-badge--snippet');
+    // Robot / chip icon
+    badgeIcon.innerHTML = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`;
+  } else {
+    badgeLabel.textContent = 'Article Snippet';
+    badge.classList.add('summary-ai-badge--snippet');
+    // Document / lines icon
+    badgeIcon.innerHTML = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>`;
+  }
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  const text = (snippet || '').trim();
+  if (text.length >= 40) {
+    document.getElementById('summaryText').textContent = text;
+  } else {
+    const errEl = document.getElementById('summaryError');
+    errEl.textContent = 'No summary available for this article.';
+    errEl.hidden = false;
+  }
+
+  // Focus the close button for accessibility
+  setTimeout(() => document.getElementById('summaryClose')?.focus(), 50);
+}
+
+function closeSummaryModal() {
+  if (!_modal) return;
+  _modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
