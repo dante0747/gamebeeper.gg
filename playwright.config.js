@@ -26,7 +26,9 @@ export default defineConfig({
   // root is '.', making the public/ folder accessible at its full path.
   // (vite preview serves dist/ where feed.json is at root, not /public/.)
   webServer: {
-    command: 'npx vite',
+    // --no-open prevents Vite from launching a system browser tab that would
+    // compete with Playwright for Vite's Node.js event loop on each test.
+    command: 'npx vite --no-open',
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,

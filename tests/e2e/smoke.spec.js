@@ -8,7 +8,37 @@
 
 import { test, expect } from '@playwright/test';
 
+// ── Block external network dependencies ───────────────────────────────────────
+// Google Fonts is loaded as a render-blocking <link rel="stylesheet">.
+// On a slow or rate-limited connection it can delay the `load` event far beyond
+// the test timeout.  Stub it out so every test gets a near-instant empty CSS
+// response and the fonts fall back to the stack declared in styles.css.
+test.beforeEach(async ({ page }) => {
+  await page.route('https://fonts.googleapis.com/**', route =>
+    route.fulfill({ status: 200, contentType: 'text/css; charset=utf-8', body: '' })
+  );
+  await page.route('https://fonts.gstatic.com/**', route =>
+    route.fulfill({ status: 200, contentType: 'font/woff2', body: '' })
+  );
+  // Stub Google Analytics in case consent is somehow set in the test profile
+  await page.route('https://www.googletagmanager.com/**', route =>
+    route.fulfill({ status: 200, contentType: 'application/javascript', body: '' })
+  );
+});
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+/**
+ * Navigate to the given URL using `domcontentloaded` rather than the default
+ * `load`.  The `load` event can stall when any subresource (e.g. an external
+ * stylesheet that escaped the route-stub list) is slow.  Using
+ * `domcontentloaded` returns as soon as the HTML is parsed and all deferred
+ * ES-module scripts have executed — which is all the app needs to initialise.
+ * Individual tests already call `waitForCards()` to confirm the app is ready.
+ */
+async function goto(page, path = '/') {
+  await page.goto(path, { waitUntil: 'domcontentloaded' });
+}
 
 /** Wait for article cards to be rendered in #feedGrid */
 async function waitForCards(page) {
@@ -18,7 +48,7 @@ async function waitForCards(page) {
 // ── Page loads and shows articles ────────────────────────────────────────────
 
 test('page loads and shows article cards', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   const cards = page.locator('#feedGrid article.card');
@@ -28,14 +58,14 @@ test('page loads and shows article cards', async ({ page }) => {
 });
 
 test('page title contains GameBeeper', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await expect(page).toHaveTitle(/GameBeeper/i);
 });
 
 // ── Category filter ───────────────────────────────────────────────────────────
 
 test('sidebar category filter — PC shows only PC cards', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   // Click the PC filter button in the sidebar
@@ -56,7 +86,7 @@ test('sidebar category filter — PC shows only PC cards', async ({ page }) => {
 // ── Search ────────────────────────────────────────────────────────────────────
 
 test('search filters articles by keyword', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   const allBefore = await page.locator('#feedGrid article.card').count();
@@ -74,7 +104,7 @@ test('search filters articles by keyword', async ({ page }) => {
 });
 
 test('clearing search restores all articles', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   const allCount = await page.locator('#feedGrid article.card').count();
@@ -92,7 +122,7 @@ test('clearing search restores all articles', async ({ page }) => {
 // ── Keyboard navigation ───────────────────────────────────────────────────────
 
 test('pressing / focuses the search input', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   // Click somewhere neutral first (not inside search)
@@ -104,7 +134,7 @@ test('pressing / focuses the search input', async ({ page }) => {
 });
 
 test('pressing Escape clears and blurs search', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   const searchInput = page.locator('#articleSearch');
@@ -121,7 +151,7 @@ test('pressing Escape clears and blurs search', async ({ page }) => {
 // ── Bookmark flow ─────────────────────────────────────────────────────────────
 
 test('bookmarking first card shows toast and activates the bookmark button', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   // Click the bookmark button on the first card
@@ -145,7 +175,7 @@ test('bookmarking first card shows toast and activates the bookmark button', asy
 
 test('mobile viewport: chip filters visible and sidebar is hidden', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   // Mobile chip filter row should be visible
@@ -167,7 +197,7 @@ test('mobile viewport: chip filters visible and sidebar is hidden', async ({ pag
 // ── View toggle ───────────────────────────────────────────────────────────────
 
 test('switching to list view changes card layout', async ({ page }) => {
-  await page.goto('/');
+  await goto(page);
   await waitForCards(page);
 
   await page.locator('#listViewBtn').click();
@@ -177,4 +207,3 @@ test('switching to list view changes card layout', async ({ page }) => {
   const listCard = page.locator('#feedGrid article.card-row').first();
   await expect(listCard).toBeVisible();
 });
-
