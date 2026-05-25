@@ -1,4 +1,4 @@
-/**
+﻿/**
  * js/consent.js
  *
  * Manages cookie/analytics consent for GDPR compliance.
@@ -85,7 +85,7 @@ export function initConsent() {
   if (stored === 'no') {
     return; // user already declined
   }
-  // No decision yet â€” show banner after a short delay so it doesn't flash instantly
+  // No decision yet – show banner after a short delay so it doesn't flash instantly
   setTimeout(showBanner, 1500);
 }
 

@@ -80,7 +80,7 @@ export async function shareArticle(title, url) {
   }
   try {
     await navigator.clipboard.writeText(url);
-    showBmToast('ðŸ”— Link copied to clipboard!');
+    showBmToast('🔗 Link copied to clipboard!');
   } catch {
     showBmToast('Copy: ' + url);
   }

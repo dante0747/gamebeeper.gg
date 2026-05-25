@@ -1,4 +1,4 @@
-import { categories } from './config.js';
+﻿import { categories } from './config.js';
 import { getFeeds } from './feeds-registry.js';
 import { loadPreferences, savePreferences, resetPreferences, PULSE_PREF_KEY } from './storage.js';
 import { esc, showBmToast } from './utils.js';
@@ -15,7 +15,7 @@ export function initMyPulse({ render, buildFilters }) {
   const myPulseBtn = document.createElement('button');
   myPulseBtn.id = 'myPulseBtn';
   myPulseBtn.className = 'btn btn-ghost btn-sm';
-  myPulseBtn.title = 'My Signal â€” customize your feed';
+  myPulseBtn.title = 'My Signal – customize your feed';
   myPulseBtn.setAttribute('aria-label', 'Open My Signal signal filters');
   myPulseBtn.setAttribute('aria-haspopup', 'dialog');
   myPulseBtn.innerHTML = `<svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg><span class="btn-label"> My Signal</span>`;
@@ -38,7 +38,7 @@ export function initMyPulse({ render, buildFilters }) {
   drawer.id = 'myPulseDrawer';
   drawer.className = 'my-pulse-drawer';
   drawer.setAttribute('role', 'dialog');
-  drawer.setAttribute('aria-label', 'My Signal â€” Signal Filters');
+  drawer.setAttribute('aria-label', 'My Signal – Signal Filters');
   drawer.setAttribute('aria-modal', 'true');
   document.body.appendChild(backdrop);
   document.body.appendChild(drawer);

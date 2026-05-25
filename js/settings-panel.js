@@ -1,4 +1,4 @@
-import { REFRESH_OPTIONS } from './config.js';
+﻿import { REFRESH_OPTIONS } from './config.js';
 import { PREF } from './storage.js';
 import { showBmToast } from './utils.js';
 
@@ -149,7 +149,7 @@ export function initSettings(ctx) {
       );
       siteKeys.forEach(k => localStorage.removeItem(k));
       removeOverlay();
-      showBmToast(`ðŸ—‘ï¸ Cache cleared (${siteKeys.length} item${siteKeys.length !== 1 ? 's' : ''}) â€” reloadingâ€¦`);
+      showBmToast(`🗑️ Cache cleared (${siteKeys.length} item${siteKeys.length !== 1 ? 's' : ''}) – reloading…`);
       setTimeout(() => location.reload(), 1200);
     });
   });

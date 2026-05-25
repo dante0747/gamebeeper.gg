@@ -1,4 +1,4 @@
-import { RSS2JSON, MAX_PER_FEED } from './config.js';
+﻿import { RSS2JSON, MAX_PER_FEED } from './config.js';
 import { getFeeds } from './feeds-registry.js';
 import { truncate, stripHtml, getText, safeUrl } from './utils.js';
 import {
@@ -21,7 +21,7 @@ function isRss2JsonAvailable() {
 
 function banRss2Json(reason) {
   _rss2jsonBannedUntil = Date.now() + RSS2JSON_RETRY_AFTER_MS;
-  console.warn(`[GameBeeper] rss2json suspended for ${RSS2JSON_RETRY_AFTER_MS / 60_000}m â€” ${reason}`);
+  console.warn(`[GameBeeper] rss2json suspended for ${RSS2JSON_RETRY_AFTER_MS / 60_000}m – ${reason}`);
 }
 
 // â”€â”€ RSS XML parser â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -136,7 +136,7 @@ export async function fetchFeed(feed) {
     if (items.length > 0) return items;
     return await fetchFeedJson(feed);
   } catch (e) {
-    console.warn(`[GameBeeper] Direct fetch failed for ${feed.name}, trying rss2jsonâ€¦`, e.message);
+    console.warn(`[GameBeeper] Direct fetch failed for ${feed.name}, trying rss2json…`, e.message);
     return await fetchFeedJson(feed);
   }
 }

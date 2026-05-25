@@ -1,4 +1,4 @@
-/**
+﻿/**
  * scripts/lib/parser.mjs
  * RSS/Atom feed parsing and fetching.
  */
@@ -9,7 +9,7 @@ import { extractBestImage } from './images.mjs';
 
 // â”€â”€ Article record builder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-/** Build a normalised article record â€” single source of truth for the shape. */
+/** Build a normalised article record – single source of truth for the shape. */
 export function buildArticleRecord(feed, { link, title, summary, date, image }) {
   return {
     id:            hashId(link),

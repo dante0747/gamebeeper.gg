@@ -1,4 +1,4 @@
-// â”€â”€ Persistent preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+﻿// â”€â”€ Persistent preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Namespace migrated from 'geeksup_' / 'gp:' to 'gs:' for GameBeeper.
 // Old developer-news category filters are intentionally cleared on first load
 // via a one-time migration key so stale values don't break category filters.
@@ -8,7 +8,7 @@ export const PREF = {
   set: (k, v) => localStorage.setItem('gs:' + k, v),
 };
 
-// One-time migration marker â€” clears stale developer-category data from old namespace
+// One-time migration marker – clears stale developer-category data from old namespace
 const MIGRATION_KEY = 'gs:migrated:v1';
 if (typeof localStorage !== 'undefined' && !localStorage.getItem(MIGRATION_KEY)) {
   // Remove any keys from the old 'geeksup_' / 'gp:' namespaces
@@ -92,7 +92,7 @@ export function saveBookmarks(bms) {
       try {
         const pruned = capped.slice(0, Math.floor(capped.length / 2));
         localStorage.setItem(BOOKMARK_KEY, JSON.stringify(pruned));
-        console.warn(`[GameBeeper] localStorage quota exceeded â€” bookmarks pruned to ${pruned.length}.`);
+        console.warn(`[GameBeeper] localStorage quota exceeded – bookmarks pruned to ${pruned.length}.`);
       } catch {
         console.error('[GameBeeper] Cannot save bookmarks: storage quota full even after pruning.');
       }

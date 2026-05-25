@@ -1,26 +1,26 @@
-/**
+﻿/**
  * scripts/build-feed.mjs
  *
- * Entry point â€” orchestrates the feed build pipeline.
+ * Entry point – orchestrates the feed build pipeline.
  *
  * Fetches all enabled RSS/Atom feeds from data/feeds.json,
  * normalises articles, deduplicates, and writes:
- *   public/feed.json        â€” full article cache consumed by the browser
- *   public/feed-health.json â€” per-feed health report
+ *   public/feed.json        – full article cache consumed by the browser
+ *   public/feed-health.json – per-feed health report
  *
  * Run: node scripts/build-feed.mjs
  * Requires Node 18+ (native fetch + crypto).
  *
  * Module layout:
- *   lib/config.mjs      â€” constants, regex patterns, XML parser
- *   lib/utils.mjs       â€” pure helpers, streamHtml
- *   lib/ai.mjs          â€” Ollama client + shared AI cache
- *   lib/classifier.mjs  â€” keyword + LLM category classification
- *   lib/sponsored.mjs   â€” regex + LLM sponsored content detection
- *   lib/summarizer.mjs  â€” LLM article summarization
- *   lib/images.mjs      â€” image extraction + og:image resolution
- *   lib/parser.mjs      â€” RSS/Atom parsing + feed fetching
- *   lib/pipeline.mjs    â€” article set helpers + pipeline pass functions
+ *   lib/config.mjs      – constants, regex patterns, XML parser
+ *   lib/utils.mjs       – pure helpers, streamHtml
+ *   lib/ai.mjs          – Ollama client + shared AI cache
+ *   lib/classifier.mjs  – keyword + LLM category classification
+ *   lib/sponsored.mjs   – regex + LLM sponsored content detection
+ *   lib/summarizer.mjs  – LLM article summarization
+ *   lib/images.mjs      – image extraction + og:image resolution
+ *   lib/parser.mjs      – RSS/Atom parsing + feed fetching
+ *   lib/pipeline.mjs    – article set helpers + pipeline pass functions
  */
 
 import fs   from 'node:fs/promises';
@@ -54,7 +54,7 @@ async function patchReadme(rootDir, feedCount) {
     let readme = await fs.readFile(readmePath, 'utf8');
     readme = readme
       .replace(/RSS_feeds-\d+-/,                            `RSS_feeds-${feedCount}-`)
-      .replace(/# \d+ feeds Â· 0 paywalls Â· 100% signal/,    `# ${feedCount} feeds Â· 0 paywalls Â· 100% signal`);
+      .replace(/# \d+ feeds · 0 paywalls · 100% signal/,    `# ${feedCount} feeds · 0 paywalls · 100% signal`);
     await fs.writeFile(readmePath, readme, 'utf8');
     console.log(`[build-feed] README badge updated to ${feedCount} feeds.`);
   } catch (e) {
@@ -70,7 +70,7 @@ async function main() {
   // â”€â”€ 1. Fetch all feeds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const feedDefs = JSON.parse(await fs.readFile(path.join(ROOT, 'data', 'feeds.json'), 'utf8'));
   const enabled  = feedDefs.filter(f => f.enabled !== false);
-  console.log(`[build-feed] Fetching ${enabled.length} feedsâ€¦`);
+  console.log(`[build-feed] Fetching ${enabled.length} feeds…`);
 
   const results     = await Promise.allSettled(enabled.map(fetchOneFeed));
   const allArticles = [];
@@ -85,7 +85,7 @@ async function main() {
       fetchedAt: new Date().toISOString(),
     });
     if (ok) allArticles.push(...articles);
-    console.log(`  ${ok ? 'âœ“' : 'âœ—'} ${feed.name} â€” ${articles.length} articles${ok ? '' : ` (${error})`}`);
+    console.log(`  ${ok ? '✓' : '✗'} ${feed.name} – ${articles.length} articles${ok ? '' : ` (${error})`}`);
   }
 
   // â”€â”€ 2. Deduplicate â†’ sort â†’ guarantee category representation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€

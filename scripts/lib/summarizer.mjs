@@ -1,4 +1,4 @@
-/**
+﻿/**
  * scripts/lib/summarizer.mjs
  * LLM-powered article summarization (Ollama only).
  * Falls back gracefully to the existing RSS snippet when Ollama is unavailable.
@@ -61,7 +61,7 @@ export async function summarizeArticle(title = '', existingSummary = '', article
       `- Plain prose only. No markdown, no headers, no bullet points, no numbered lists, no bold, no italics.\n` +
       `- Do NOT start with "This article", "The article", or a restatement of the title.\n` +
       `- Do NOT include section labels like "Summary:", "Key Technology:", "Why it matters:", etc.\n` +
-      `- Output only the summary paragraph â€” nothing else.\n\n` +
+      `- Output only the summary paragraph – nothing else.\n\n` +
       `${articleText}`;
 
     const resp = await ollamaClient.generate({
@@ -89,12 +89,12 @@ export async function summarizeArticle(title = '', existingSummary = '', article
     }
 
     // If truncated mid-sentence (no sentence-ending punctuation at end), trim to last complete sentence
-    if (summary.length > 10 && !/[.!?â€¦]$/.test(summary)) {
-      const lastSentence = summary.match(/^([\s\S]*[.!?â€¦])\s/);
+    if (summary.length > 10 && !/[.!?…]$/.test(summary)) {
+      const lastSentence = summary.match(/^([\s\S]*[.!?…])\s/);
       if (lastSentence) {
         summary = lastSentence[1].trim();
       } else {
-        // No complete sentence found â€” discard to avoid publishing a cut-off snippet
+        // No complete sentence found – discard to avoid publishing a cut-off snippet
         console.warn(`[classifier] summary truncated with no complete sentence for "${title.slice(0, 50)}", discarding`);
         return existingSummary;
       }

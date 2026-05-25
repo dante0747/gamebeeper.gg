@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 import { categories, catMeta, REFRESH_OPTIONS, SPONSORED_RE, DAY_MS, CACHE_STALE_MS } from './config.js';
 import { loadFeedsRegistry, getFeeds } from './feeds-registry.js';
@@ -55,7 +55,7 @@ function isSponsoredItem(a) {
   // Pre-built articles carry a `sponsored` flag stamped by build-feed.mjs
   // (regex + optional Ollama LLM pass). Trust it when present.
   if (a.sponsored === true) return true;
-  // Live-fetched articles (loaded via CORS proxies at runtime) have no flag â€”
+  // Live-fetched articles (loaded via CORS proxies at runtime) have no flag –
   // fall back to the regex which covers the obvious keyword signals.
   return SPONSORED_RE.test([(a.title || ''), (a.snippet || ''), (a.source || '')].join(' '));
 }
@@ -116,7 +116,7 @@ function render() {
     const pulseFiltered  = !isBookmarkView && allArticles.length > 0 && hasActivePreferences(loadPreferences());
     feedGrid.innerHTML = `
       <div class="empty-state visible">
-        <div class="empty-art">${pulseFiltered ? '  [ My Pulse ]\n  // filtered everything' : (isBookmarkView ? '  [ GameBeeper bookmarks ]\n  // folder is empty' : '  Â¯\\_(ãƒ„)_/Â¯\n  404: news not found')}</div>
+        <div class="empty-art">${pulseFiltered ? '  [ My Pulse ]\n  // filtered everything' : (isBookmarkView ? '  [ GameBeeper bookmarks ]\n  // folder is empty' : '  ¯\\_(ツ)_/¯\n  404: news not found')}</div>
         <div class="empty-title">${pulseFiltered ? 'No stories match your current Pulse.' : (isBookmarkView ? 'No saved stories yet.' : 'No articles for this filter.')}</div>
         <div class="empty-sub">${pulseFiltered
           ? `// try enabling more topics or <button class="empty-pulse-reset" onclick="window.__pulseReset()">resetting your filters</button>`
@@ -178,8 +178,8 @@ function setLive() {
   const now = new Date();
   const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   statusDot.className = 'status-dot live';
-  statusText.textContent = `${allArticles.length} fresh stories loaded Â· Updated at ${timeStr}`;
-  if (navStatus) navStatus.textContent = `âœ“ ${allArticles.length} articles`;
+  statusText.textContent = `${allArticles.length} fresh stories loaded · Updated at ${timeStr}`;
+  if (navStatus) navStatus.textContent = `✓ ${allArticles.length} articles`;
   setRefreshBusy(false);
   if (statArticles) animateCounter(statArticles, allArticles.length, 900);
   const statFeedsEl = document.getElementById('statFeeds');
@@ -249,13 +249,13 @@ async function loadFeedHealthBanner() {
     if (health.generatedAt) {
       try {
         const d = new Date(health.generatedAt);
-        updatedStr = `Last updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}, ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} Â· `;
+        updatedStr = `Last updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}, ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} · `;
       } catch { /* skip */ }
     }
-    const statusEmoji = failed === 0 ? 'ðŸŸ¢' : 'ðŸŸ¡';
+    const statusEmoji = failed === 0 ? '🟢' : '🟡';
     let html = `<span class="fhb-info">${statusEmoji} ${updatedStr}${ok}/${total} feeds online</span>`;
     if (failed > 0 && failed_list.length > 0) {
-      const items = failed_list.map(f => `<li>${esc(f.name)}${f.error ? ' â€” ' + esc(f.error.slice(0, 60)) : ''}</li>`).join('');
+      const items = failed_list.map(f => `<li>${esc(f.name)}${f.error ? ' – ' + esc(f.error.slice(0, 60)) : ''}</li>`).join('');
       html += `<details class="fhb-details"><summary>${failed} feed${failed > 1 ? 's' : ''} need${failed === 1 ? 's' : ''} attention</summary><ul>${items}</ul></details>`;
     }
     bar.innerHTML = html;
@@ -274,8 +274,8 @@ async function loadSiteVersion() {
     const resp = await fetch('/public/version.json', { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
     if (!resp.ok) return;
     const v = await resp.json();
-    el.textContent = `// ${v.version} Â· ${v.commit} Â· ${v.date}`;
-    el.title = `Build #${v.build} â€” click to view changelog`;
+    el.textContent = `// ${v.version} · ${v.commit} · ${v.date}`;
+    el.title = `Build #${v.build} – click to view changelog`;
   } catch {
     el.textContent = '// version unavailable';
   }
@@ -524,12 +524,12 @@ function showStaleCacheBanner(generatedAt) {
     const ageMs = Date.now() - new Date(generatedAt).getTime();
     const hoursAgo = Math.round(ageMs / 3_600_000);
     bar.innerHTML =
-      `âš ï¸ Feed data is <strong>${hoursAgo}h old</strong> â€” consider refreshing.` +
+      `⚠️ Feed data is <strong>${hoursAgo}h old</strong> – consider refreshing.` +
       `<button class="stale-cache-bar__refresh" id="staleCacheRefresh">Refresh now</button>`;
     bar.classList.add('visible');
     document.getElementById('staleCacheRefresh')
       ?.addEventListener('click', () => { bar.classList.remove('visible'); fetchAll(); });
-  } catch { /* bad date â€” skip */ }
+  } catch { /* bad date – skip */ }
 }
 
 function hideStaleCacheBanner() {
@@ -563,7 +563,7 @@ async function fetchAll() {
       }
     }
   } catch (cacheErr) {
-    console.warn('[GameBeeper] Feed cache unavailable, attempting emergency RSS fallbackâ€¦', cacheErr.message);
+    console.warn('[GameBeeper] Feed cache unavailable, attempting emergency RSS fallback…', cacheErr.message);
     try {
       const result = await fetchAllFromRSS();
       allArticles = result.articles;
@@ -664,13 +664,13 @@ async function init() {
       buildFilters();
       updateSidebarStats();
       if (activeFilter === 'Bookmarks') render();
-      showBmToast('ðŸ—‘ï¸ All bookmarks cleared');
+      showBmToast('🗑️ All bookmarks cleared');
     });
   }
 
   updateSidebarStats();
 
-  // Image load quality guard â€” replace upscaled images with placeholder
+  // Image load quality guard – replace upscaled images with placeholder
   feedGrid.addEventListener('load', async event => {
     const img = event.target;
     if (!(img instanceof HTMLImageElement) || !img.classList.contains('card-img')) return;
@@ -693,7 +693,7 @@ async function init() {
     wrap.outerHTML = cardPlaceholder(category, link);
   }, true);
 
-  // Broken image handler â€” replace with placeholder, then try to resolve a better image
+  // Broken image handler – replace with placeholder, then try to resolve a better image
   feedGrid.addEventListener('error', async event => {
     const img = event.target;
     if (!(img instanceof HTMLImageElement) || !img.classList.contains('card-img')) return;
@@ -729,7 +729,7 @@ async function init() {
     btn.classList.toggle('bm-active', added);
     btn.title = added ? 'Remove bookmark' : 'Save to GameBeeper bookmarks';
     btn.setAttribute('aria-label', added ? 'Remove bookmark' : 'Bookmark this article');
-    showBmToast(added ? 'ðŸ”– Saved to GameBeeper bookmarks' : 'ðŸ—‘ï¸ Removed from bookmarks');
+    showBmToast(added ? '📖 Saved to GameBeeper bookmarks' : '🗑️ Removed from bookmarks');
     buildFilters();
     if (activeFilter === 'Bookmarks') render();
   });
@@ -829,14 +829,14 @@ async function init() {
         showNlMsg('Please enter a valid email address.', 'error');
         return;
       }
-      if (nlBtn) { nlBtn.disabled = true; nlBtn.textContent = 'Sendingâ€¦'; }
+      if (nlBtn) { nlBtn.disabled = true; nlBtn.textContent = 'Sending…'; }
       try {
         const res = await fetch(nlForm.action, {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({ email, _subject: 'New GameBeeper subscriber' }),
         });
-        if (res.ok) { showNlMsg('ðŸŽ‰ You\'re subscribed! Check your inbox.', 'ok'); nlForm.reset(); }
+        if (res.ok) { showNlMsg('🎉 You\'re subscribed! Check your inbox.', 'ok'); nlForm.reset(); }
         else showNlMsg('Something went wrong. Try again.', 'error');
       } catch {
         showNlMsg('Network error. Please try again.', 'error');

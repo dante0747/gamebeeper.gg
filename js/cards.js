@@ -1,4 +1,4 @@
-import { catMeta } from './config.js';
+﻿import { catMeta } from './config.js';
 import { esc, safeUrl, catClass, relTime, readTime } from './utils.js';
 import { isBookmarked } from './storage.js';
 
@@ -13,7 +13,7 @@ function summaryBtn(a, extraStyle = '') {
   return `<button class="card-summary-btn${isAi ? '' : ' card-summary-btn--snippet'}" data-summary-title="${esc(a.title)}" data-summary-snippet="${esc(a.snippet || '')}" data-summary-type="${esc(a.summaryType || '')}" data-summary-link="${esc(a.link)}" data-summary-source="${esc(a.source || '')}"${extraStyle ? ` style="${extraStyle}"` : ''} title="${label}" aria-label="Show ${label}">${icon}</button>`;
 }
 
-// â”€â”€ Category icon helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€ Category icon helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function catIconSm(category) {
   const meta = catMeta[category];
@@ -29,25 +29,25 @@ export function catIconCard(category) {
   return `<span class="card-cat-icon" style="color:${meta.color}">${svg}</span>`;
 }
 
-// â”€â”€ Card image placeholder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€ Card image placeholder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function cardPlaceholder(category, link) {
   const meta  = catMeta[category];
   const color = meta ? meta.color : '#94A3B8';
   const bigSvg = meta ? meta.icon.replace(/width="\d+" height="\d+"/, 'width="48" height="48"') : '';
   const tag = {
-    'Latest':      'â–¶ Now',
-    'PlayStation':  'ðŸŽ® PS',
-    'Xbox':        'ðŸŸ¢ Xbox',
-    'Nintendo':    'ðŸ”´ Nintendo',
-    'PC':          'ðŸ–¥ PC',
-    'Indie':       'â­ Indie',
-    'Reviews':     'â˜… Review',
-    'Trailers':    'â–¶ Reveal',
-    'Esports':     'ðŸ† Esports',
-    'Industry':    'ðŸ“Š Industry',
-    'Hardware':    'ðŸ”§ Hardware',
-  }[category] || 'â–¶ Gaming';
+    'Latest':      '▶ Now',
+    'PlayStation':  '🎮 PS',
+    'Xbox':        '🟢 Xbox',
+    'Nintendo':    '🔴 Nintendo',
+    'PC':          '🖥 PC',
+    'Indie':       '⭐ Indie',
+    'Reviews':     '★ Review',
+    'Trailers':    '▶ Reveal',
+    'Esports':     '🏆 Esports',
+    'Industry':    '📊 Industry',
+    'Hardware':    '🔧 Hardware',
+  }[category] || '▶ Gaming';
   return `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-placeholder" data-ph-cat="${esc(category)}" style="--ph-color:${color}" tabindex="-1" aria-hidden="true">
     <span class="card-placeholder__icon">${bigSvg}</span>
     <span class="card-placeholder__tag">${esc(tag)}</span>
@@ -98,13 +98,13 @@ export function gridCard(a, i) {
           <button class="card-share-btn" data-share-url="${esc(a.link)}" data-share-title="${esc(a.title)}" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Read â†’</a>
+          <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Read →</a>
         </div>
       </div>
     </article>`;
 }
 
-// â”€â”€ List card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â"€â"€ List card
 
 export function listCard(a, i) {
   const date = relTime(a.date);
@@ -145,12 +145,12 @@ export function listCard(a, i) {
         <button class="card-share-btn" data-share-url="${esc(a.link)}" data-share-title="${esc(a.title)}" title="Share" aria-label="Share article">
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         </button>
-        <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Read â†’</a>
+        <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Read →</a>
       </div>
     </article>`;
 }
 
-// â”€â”€ Skeleton loading cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€ Skeleton loading cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function buildSkeletons(n = 8) {
   return Array.from({ length: n }, () => `

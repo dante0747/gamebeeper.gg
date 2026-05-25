@@ -1,4 +1,4 @@
-/**
+﻿/**
  * scripts/lib/images.mjs
  * Image extraction from RSS feed XML and article page og:image resolution.
  */
@@ -150,7 +150,7 @@ function extractMetaUrl(html, attr, valueRe) {
 
 /** Fetch an article page and extract og:image / twitter:image / first body <img>. */
 export async function fetchArticleImage(articleUrl) {
-  // Stop reading after </head> â€” we only need meta tags, not the full body
+  // Stop reading after </head> – we only need meta tags, not the full body
   const html = await streamHtml(articleUrl, IMAGE_HEAD_MAX_BYTES, ARTICLE_TIMEOUT_MS, /<\/head>/i);
   if (!html) return null;
 

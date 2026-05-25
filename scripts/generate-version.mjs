@@ -1,4 +1,4 @@
-/**
+﻿/**
  * generate-version.mjs
  * Reads git commit count + short hash and writes public/version.json.
  * Run via: node scripts/generate-version.mjs
@@ -41,6 +41,6 @@ writeFileSync(
   'utf8'
 );
 
-console.log(`[generate-version] ${version} (${shortHash}) â€” ${commitDate}`);
+console.log(`[generate-version] ${version} (${shortHash}) – ${commitDate}`);
 
 

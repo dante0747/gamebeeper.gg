@@ -1,7 +1,7 @@
-/**
+﻿/**
  * js/summary.js
  *
- * AI Summary modal â€” shows pre-cached summaries from feed.json.
+ * AI Summary modal – shows pre-cached summaries from feed.json.
  * summaryType === 'ai'      â†’ LLM-generated summary  â†’ badge: "AI Summary"
  * summaryType === 'snippet' â†’ raw RSS excerpt         â†’ badge: "Article Snippet"
  * summaryType === ''        â†’ no summary available
