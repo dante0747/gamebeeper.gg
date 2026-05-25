@@ -20,6 +20,6 @@
   { "id": "the-gamer",         "name": "TheGamer",              "url": "https://www.thegamer.com/feed/",                     "homepage": "https://www.thegamer.com/",                     "category": "Latest",       "enabled": true },
   { "id": "dot-esports",       "name": "Dot Esports",           "url": "https://dotesports.com/feed",                        "homepage": "https://dotesports.com/",                       "category": "Esports",      "enabled": true },
   { "id": "dexerto",           "name": "Dexerto",               "url": "https://www.dexerto.com/feed/",                      "homepage": "https://www.dexerto.com/",                      "category": "Esports",      "enabled": true },
-  { "id": "digital-foundry",   "name": "Digital Foundry",       "url": "https://www.eurogamer.net/digitalfoundry.rss",       "homepage": "https://www.eurogamer.net/digitalfoundry",      "category": "Hardware",     "enabled": true },
+  { "id": "digital-foundry",   "name": "Digital Foundry",       "url": "https://www.digitalfoundry.net/feed",                "homepage": "https://www.digitalfoundry.net",                 "category": "Hardware",     "enabled": true },
   { "id": "toms-hardware",     "name": "Tom's Hardware",        "url": "https://www.tomshardware.com/feeds/all",             "homepage": "https://www.tomshardware.com/",                 "category": "Hardware",     "enabled": true }
 ]

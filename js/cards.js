@@ -1,4 +1,4 @@
-﻿﻿﻿﻿import { catMeta } from './config.js';
+import { catMeta } from './config.js';
 import { esc, safeUrl, catClass, relTime, readTime } from './utils.js';
 import { isBookmarked } from './storage.js';
 
@@ -36,7 +36,7 @@ const catFallbackSvg = cat => `/assets/fallbacks/${KNOWN_FALLBACKS.has((cat||'')
 
 export function cardPlaceholder(category, link) {
   const src = catFallbackSvg(category);
-  return `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap" tabindex="-1" aria-hidden="true"><img class="card-img" src="${src}" alt="Category illustration for ${esc(category)}" loading="lazy" decoding="async" width="640" height="360"></a>`;
+  return `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-placeholder" tabindex="-1" aria-hidden="true"><img class="card-img" src="${src}" alt="Category illustration for ${esc(category)}" loading="lazy" decoding="async" width="640" height="360"></a>`;
 }
 
 // -- Grid card -----------------------------------------------------
