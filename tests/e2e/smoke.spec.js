@@ -68,8 +68,9 @@ test('sidebar category filter — PC shows only PC cards', async ({ page }) => {
   await goto(page);
   await waitForCards(page);
 
-  // Click the PC filter button in the sidebar
-  await page.locator('#sidebarFilters button[data-cat="PC"]').first().click();
+  // Click the PC filter chip (mobileFilters is the always-visible chip row;
+  // #sidebarFilters is intentionally hidden via display:none)
+  await page.locator('#mobileFilters button[data-cat="PC"]').first().click();
   await page.waitForTimeout(300); // allow filter animation
 
   const cards = page.locator('#feedGrid article.card:visible');
@@ -183,7 +184,7 @@ test('mobile viewport: chip filters visible and sidebar is hidden', async ({ pag
   await expect(mobileFilters).toBeVisible();
 
   // Sidebar should be visually hidden (off-screen or display:none) on mobile
-  const sidebar = page.locator('aside.sidebar');
+  const sidebar = page.locator('aside.community-rail');
   // On mobile the sidebar is toggled via a panel, not visible inline
   const box = await sidebar.boundingBox();
   const isHiddenOffscreen = !box || box.x < 0 || box.width === 0;
