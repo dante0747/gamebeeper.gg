@@ -5,8 +5,10 @@ on:
     - cron: '0 * * * *'   # every hour
   workflow_dispatch:          # manual trigger from GitHub UI
   push:
-    paths:
-      - 'data/feeds.json'     # re-run whenever feeds list changes
+    branches: [main]          # deploy on any code change to main
+    paths-ignore:
+      - '**.md'               # skip docs-only changes
+      - '.github/workflows/ci.yml'
 
 permissions:
   contents: write             # needed to commit cache + push to Pages
@@ -90,17 +92,23 @@ jobs:
           OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'llama3.2:1b' }}
         run: node scripts/generate-version.mjs && node scripts/build-feed.mjs
 
+      # ── Build video feed (YouTube Atom RSS) ──────────────────────────────
+      - name: Build video feed
+        run: node scripts/build-videos.mjs
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
       - name: Generate sitemap & SEO content
         run: node scripts/generate-sitemap.mjs && node scripts/generate-seo-content.mjs
 
       # ── Commit updated AI cache back to repo ────────────────────────────
-      - name: Commit AI classification cache
+      - name: Commit updated data & AI cache
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "chore: refresh feed + update AI classification cache [skip ci]"
+          git commit -m "chore: refresh feed + videos + update AI classification cache [skip ci]"
           git pull --rebase --autostash origin main
           git push
 

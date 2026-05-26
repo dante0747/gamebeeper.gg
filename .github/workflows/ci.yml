@@ -1,13 +1,12 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
 jobs:
   audit-and-build:
+    name: Audit, test & build check
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -27,10 +26,13 @@ jobs:
       - name: Security audit
         run: npm audit --audit-level=moderate
 
-      - name: Build feed data
+      - name: Run unit & integration tests
+        run: npm test
+
+      - name: Build data (no LLM / no YouTube API)
         run: npm run build:data
         env:
-          OLLAMA_HOST: ''  # skip AI summaries in CI if not configured
+          OLLAMA_HOST: ''   # skip AI summaries — not needed for a PR build check
 
       - name: Build app
         run: npm run build:app
