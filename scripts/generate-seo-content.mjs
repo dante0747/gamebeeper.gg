@@ -20,7 +20,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT      = path.resolve(__dirname, '..');
 
-const SEO_ARTICLE_COUNT = 10;
+const SEO_ARTICLE_COUNT = 20;
 
 /** Same sponsored-content regex used in js/config.js — applied at build time too. */
 const SPONSORED_RE = /\b(sponsored|partner[ -]content|promoted|advertorial|advertisement|webinar|webcast|brought[ -]to[ -]you[ -]by|in[ -]partnership[ -]with|paid[ -]post|native[ -]ad|content[ -]marketing)\b/i;
@@ -147,7 +147,8 @@ async function main() {
     process.exit(0);
   }
 
-  // Build article HTML
+  // Build article HTML + JSON-LD Article structured data
+  const articleSchemas = [];
   const articleItems = articles.map(a => {
     // Use image only if it looks like a real hero image; otherwise use fallback
     const rawImage = (!looksLikeLogo(a.image) ? a.image : null) || a.fallbackImage;
@@ -155,6 +156,10 @@ async function main() {
       ? `<div class="seo-card-img-wrap"><img src="${esc(rawImage)}" alt="${esc('Article image for: ' + a.title)}" loading="lazy" decoding="async" width="640" height="360" /></div>`
       : '';
     const dateStr = formatDate(a.publishedAt);
+    const isoDate = a.publishedAt ? new Date(a.publishedAt).toISOString() : '';
+    const timeHtml = isoDate
+      ? `<time class="seo-card-date" datetime="${esc(isoDate)}">` + dateStr + `</time>`
+      : (dateStr || '');
     // Clean snippet: sanitize first, then escape for HTML output — never escape dirty HTML
     const cleaned = cleanSnippet(a.summary || '');
     const plainSummary = !isLowValueSnippet(cleaned) ? cleaned.slice(0, 160).replace(/\s+\S*$/, '…') : '';
@@ -163,15 +168,39 @@ async function main() {
       : '';
     // Derive a CSS category slug from the article category field (mirrors app logic)
     const catSlug = (a.category || 'general').toLowerCase().replace(/\s+/g, '-');
+
+    // Build Article JSON-LD for this article
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      'headline': a.title,
+      'url': a.link,
+      'datePublished': isoDate || undefined,
+      'description': plainSummary || undefined,
+      'publisher': {
+        '@type': 'NewsMediaOrganization',
+        'name': a.source,
+        'url': a.link ? new URL(a.link).origin : undefined,
+      },
+      'isPartOf': { '@type': 'WebSite', 'name': 'GameBeeper', 'url': 'https://gamebeeper.gg/' },
+    };
+    if (rawImage) { schema.image = rawImage; }
+    articleSchemas.push(schema);
+
     return `
-    <article class="seo-card">
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="${esc(a.link)}" />
+      ${rawImage ? `<meta itemprop="image" content="${esc(rawImage)}" />` : ''}
+      ${isoDate ? `<meta itemprop="datePublished" content="${esc(isoDate)}" />` : ''}
       ${imageHtml}
-      <h3><a href="${esc(a.link)}" rel="noopener noreferrer">${esc(a.title)}</a></h3>
+      <h3 itemprop="headline"><a href="${esc(a.link)}" rel="noopener noreferrer">${esc(a.title)}</a></h3>
       ${summary}
       <div class="seo-card-footer">
         <div class="card-source">
           <span class="src-dot cat-${esc(catSlug)}"></span>
-          <span>${esc(a.source)}${dateStr ? ' &middot; ' + dateStr : ''}</span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">${esc(a.source)}</span>${timeHtml ? ' &middot; ' + timeHtml : ''}
+          </span>
         </div>
         <div class="card-actions">
           <button class="card-share-btn" data-share-url="${esc(a.link)}" data-share-title="${esc(a.title)}" title="Share" aria-label="Share article">
@@ -188,8 +217,18 @@ async function main() {
   const generatedAt = feedData.generatedAt ? new Date(feedData.generatedAt).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' }) : '';
   const generatedComment = generatedAt ? ` (generated ${generatedAt})` : '';
 
+  // Build Article JSON-LD block (one schema per article)
+  const schemasJson = articleSchemas
+    .map(s => JSON.stringify(s, null, 2))
+    .join(',\n  ');
+
   const injectedHtml = `
   <!-- Latest articles from ${articles.length} of ${feedData.articleCount || articles.length} cached stories${generatedComment} -->
+  <script type="application/ld+json">
+  [
+  ${schemasJson}
+  ]
+  </script>
   <section id="seoLatestFallback" class="seo-latest-articles" aria-label="Latest video game news (SEO fallback)" style="margin-top:24px">
     <h2>
       Latest Video Game News

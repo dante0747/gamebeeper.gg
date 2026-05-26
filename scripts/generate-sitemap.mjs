@@ -1,4 +1,4 @@
-/**
+﻿/**
  * scripts/generate-sitemap.mjs
  *
  * Generates a minimal sitemap.xml containing only real canonical pages.
@@ -17,7 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT      = path.resolve(__dirname, '..');
 
 const TODAY     = new Date().toISOString().slice(0, 10);
-const BASE_URL  = 'https://GameBeeper.gg';
+const BASE_URL  = 'https://gamebeeper.gg';
 
 async function main() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -32,8 +32,8 @@ async function main() {
     <priority>1.0</priority>
     <image:image>
       <image:loc>${BASE_URL}/og-image.png</image:loc>
-      <image:title>GameBeeper � Video Game News Aggregator</image:title>
-      <image:caption>Video game news, reviews, reveals and platform updates from trusted gaming sources. No ads, no paywalls.</image:caption>
+      <image:title>GameBeeper &#8212; Video Game News Aggregator</image:title>
+      <image:caption>Video game news, reviews, reveals and platform updates from 34 trusted gaming sources. PlayStation, Xbox, Nintendo, PC, esports, indie. No ads, no paywalls.</image:caption>
     </image:image>
   </url>
 

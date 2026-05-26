@@ -18,29 +18,38 @@
   </script>
   <!-- Primary SEO -->
   <title>GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed</title>
-  <meta name="description" content="GameBeeper brings together video game news, reveals, reviews, platform updates and industry stories from trusted gaming sources in one fast feed. No ads. No paywalls." />
+  <meta name="description" content="GameBeeper aggregates the latest video game news, reviews, reveals, trailers and industry stories from 34 trusted gaming sources — PlayStation, Xbox, Nintendo, PC, esports, indie — in one fast, ad-free feed. No paywalls." />
   <meta name="application-name" content="GameBeeper" />
   <meta name="rating" content="general" />
   <meta name="language" content="English" />
-  <link rel="canonical" href="https://GameBeeper.gg/" />
+  <meta name="author" content="GameBeeper" />
+  <meta name="keywords" content="video game news, gaming news, game reviews, game reveals, PlayStation news, Xbox news, Nintendo news, Switch news, PC gaming news, esports news, indie games, game trailers, gaming industry news, new game releases 2026, latest gaming news, best game reviews" />
+  <meta name="news_keywords" content="video games, gaming, PlayStation, Xbox, Nintendo Switch, PC gaming, esports, indie games, game reviews, game trailers" />
+  <meta name="category" content="Games, Entertainment" />
+  <meta name="classification" content="Gaming News Aggregator" />
+  <link rel="canonical" href="https://gamebeeper.gg/" />
+  <!-- JSON feed discovery for news readers and crawlers -->
+  <link rel="alternate" type="application/json" title="GameBeeper Gaming News Feed" href="https://gamebeeper.gg/public/feed.json" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://GameBeeper.gg/" />
+  <meta property="og:url" content="https://gamebeeper.gg/" />
   <meta property="og:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
-  <meta property="og:description" content="GameBeeper aggregates trusted gaming sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, and more — into one distraction-free feed. No ads. No paywalls." />
-  <meta property="og:image" content="https://GameBeeper.gg/og-image.png" />
+  <meta property="og:description" content="GameBeeper aggregates 34 trusted gaming sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, IGN, Eurogamer, and more — into one fast, distraction-free feed. No ads. No paywalls." />
+  <meta property="og:image" content="https://gamebeeper.gg/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt" content="GameBeeper — Video Game News Aggregator" />
+  <meta property="og:image:alt" content="GameBeeper — Video Game News Aggregator covering PlayStation, Xbox, Nintendo, PC, and more" />
   <meta property="og:site_name" content="GameBeeper" />
   <meta property="og:locale" content="en_US" />
+  <meta property="article:publisher" content="https://github.com/dante0747/GameBeeper.gg" />
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://GameBeeper.gg/" />
+  <meta name="twitter:site" content="@GameBeeperGG" />
+  <meta name="twitter:url" content="https://gamebeeper.gg/" />
   <meta name="twitter:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
-  <meta name="twitter:description" content="Your gaming signal. News, reviews, reveals and community picks from 34 trusted gaming sources." />
-  <meta name="twitter:image" content="https://GameBeeper.gg/og-image.png" />
+  <meta name="twitter:description" content="Your gaming signal. Latest news, reviews and reveals from PlayStation, Xbox, Nintendo, PC and more — 34 trusted sources, no ads, no paywalls." />
+  <meta name="twitter:image" content="https://gamebeeper.gg/og-image.png" />
   <meta name="twitter:image:alt" content="GameBeeper — Video Game News Aggregator" />
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -50,6 +59,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="/og-image.png" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <!-- DNS prefetch -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -58,7 +68,8 @@
   <link rel="dns-prefetch" href="https://api.codetabs.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Space Grotesk (display), Inter (body), JetBrains Mono (utility) -->
+  <!-- Space Grotesk (display), Inter (body), JetBrains Mono (utility) — preloaded for LCP improvement -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <!-- JSON-LD Structured Data -->
@@ -68,76 +79,162 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "GameBeeper",
-      "alternateName": "GameBeeper.gg",
-      "url": "https://GameBeeper.gg/",
-      "description": "GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories in one fast, distraction-free feed.",
+      "alternateName": ["GameBeeper.gg", "Game Beeper"],
+      "url": "https://gamebeeper.gg/",
+      "description": "GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories from 34 trusted gaming sources in one fast, distraction-free feed.",
       "inLanguage": "en-US",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "https://GameBeeper.gg/?q={search_term_string}" },
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://gamebeeper.gg/?q={search_term_string}" },
         "query-input": "required name=search_term_string"
       },
       "publisher": {
         "@type": "Organization",
         "name": "GameBeeper",
-        "url": "https://GameBeeper.gg/",
-        "logo": { "@type": "ImageObject", "url": "https://GameBeeper.gg/favicon.svg", "width": 512, "height": 512 }
+        "url": "https://gamebeeper.gg/",
+        "logo": { "@type": "ImageObject", "url": "https://gamebeeper.gg/favicon.svg", "width": 512, "height": 512 },
+        "sameAs": ["https://github.com/dante0747/GameBeeper.gg"]
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "GameBeeper — Video Game News Aggregator",
-      "url": "https://GameBeeper.gg/",
-      "description": "GameBeeper aggregates video game news from 34 trusted sources in one fast, ad-free feed.",
-      "isPartOf": { "@type": "WebSite", "url": "https://GameBeeper.gg/" },
-      "privacyPolicy": "https://GameBeeper.gg/privacy.html",
-      "dateModified": "2026-05-25"
+      "url": "https://gamebeeper.gg/",
+      "description": "GameBeeper aggregates video game news from 34 trusted sources — PlayStation, Xbox, Nintendo, PC, esports, indie — in one fast, ad-free feed.",
+      "isPartOf": { "@type": "WebSite", "url": "https://gamebeeper.gg/" },
+      "about": {
+        "@type": "Thing",
+        "name": "Video Game News",
+        "description": "Latest gaming news covering PlayStation, Xbox, Nintendo, PC gaming, esports, indie games, reviews, and trailers"
+      },
+      "privacyPolicy": "https://gamebeeper.gg/privacy.html",
+      "dateModified": "2026-05-26"
     }
   ]
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "GameBeeper",
+    "alternateName": "GameBeeper.gg",
+    "url": "https://gamebeeper.gg/",
+    "description": "GameBeeper is a free, open-source video game news aggregator covering PlayStation, Xbox, Nintendo, PC gaming, esports, indie games, hardware, and game industry news from 34 trusted sources.",
+    "foundingDate": "2026",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gamebeeper.gg/favicon.svg",
+      "width": 512,
+      "height": 512
+    },
+    "masthead": "https://gamebeeper.gg/",
+    "sameAs": ["https://github.com/dante0747/GameBeeper.gg"],
+    "publishingPrinciples": "https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md",
+    "actionableFeedbackPolicy": "https://github.com/dante0747/GameBeeper.gg/issues",
+    "diversityPolicy": "https://gamebeeper.gg/privacy.html",
+    "ethicsPolicy": "https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GameBeeper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper is a free, open-source video game news aggregator that gathers the latest gaming news, reviews, reveals and trailers from 34 trusted sources — including PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, IGN, GameSpot, Eurogamer, Polygon, Kotaku, GamesRadar, and more — into one fast, ad-free feed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GameBeeper free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, GameBeeper is completely free with no ads, no paywalls, and no subscription required. The project is open source and supported by optional user donations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What gaming platforms and topics does GameBeeper cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper covers all major gaming platforms and topics: PlayStation (PS5, PS4, PlayStation Blog), Xbox (Xbox Series X/S, Xbox Wire), Nintendo (Switch, Switch 2, Nintendo Life, Nintendo Everything), PC gaming (PC Gamer, Rock Paper Shotgun, PCGamesN), esports (Dot Esports), indie games (Siliconera, Indie Games Plus, itch.io Devlogs), game reviews (IGN Reviews, GameSpot Reviews, RPS Reviews), game trailers, gaming hardware (Digital Foundry, Tom's Hardware), and the games industry (GamesIndustry.biz)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does GameBeeper get its gaming news from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper aggregates RSS feeds from 34 hand-picked, trusted gaming publications: VGC, Gematsu, Eurogamer, IGN, GameSpot, Polygon, Kotaku, Destructoid, GamesRadar, Ars Technica Gaming, The Verge, PlayStation Blog, Push Square, Xbox Wire, Pure Xbox, Nintendo Life, Nintendo Everything, PC Gamer, Rock Paper Shotgun, PCGamesN, Dot Esports, GamesIndustry.biz, Digital Foundry, Tom's Hardware, Siliconera, Indie Games Plus, and itch.io Devlogs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GameBeeper show ads or track users?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. GameBeeper has zero advertising and no persistent tracking. Analytics only run with your explicit consent. The full source code is publicly available on GitHub for complete transparency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is GameBeeper's gaming news feed updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper's feed is refreshed automatically every hour with the latest articles from all 34 gaming sources. You can also manually refresh the feed at any time using the refresh button."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Video Game News Sources aggregated by GameBeeper",
-    "url": "https://GameBeeper.gg/",
+    "description": "GameBeeper aggregates gaming news from these 34 trusted sources covering PlayStation, Xbox, Nintendo, PC gaming, esports, indie games, reviews, hardware, and industry news.",
+    "url": "https://gamebeeper.gg/",
     "numberOfItems": 34,
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"VGC","url":"https://GameBeeper.gg/?source=VGC"},
-      {"@type":"ListItem","position":2,"name":"Gematsu","url":"https://GameBeeper.gg/?source=Gematsu"},
-      {"@type":"ListItem","position":3,"name":"Eurogamer","url":"https://GameBeeper.gg/?source=Eurogamer"},
-      {"@type":"ListItem","position":4,"name":"IGN","url":"https://GameBeeper.gg/?source=IGN"},
-      {"@type":"ListItem","position":5,"name":"GameSpot","url":"https://GameBeeper.gg/?source=GameSpot"},
-      {"@type":"ListItem","position":6,"name":"Polygon","url":"https://GameBeeper.gg/?source=Polygon"},
-      {"@type":"ListItem","position":7,"name":"Kotaku","url":"https://GameBeeper.gg/?source=Kotaku"},
-      {"@type":"ListItem","position":8,"name":"Destructoid","url":"https://GameBeeper.gg/?source=Destructoid"},
-      {"@type":"ListItem","position":9,"name":"GamesRadar","url":"https://GameBeeper.gg/?source=GamesRadar"},
-      {"@type":"ListItem","position":10,"name":"Ars Technica Gaming","url":"https://GameBeeper.gg/?source=Ars+Technica+Gaming"},
-      {"@type":"ListItem","position":11,"name":"The Verge","url":"https://GameBeeper.gg/?source=The+Verge"},
-      {"@type":"ListItem","position":12,"name":"PlayStation Blog","url":"https://GameBeeper.gg/?source=PlayStation+Blog"},
-      {"@type":"ListItem","position":13,"name":"Push Square","url":"https://GameBeeper.gg/?source=Push+Square"},
-      {"@type":"ListItem","position":14,"name":"Xbox Wire","url":"https://GameBeeper.gg/?source=Xbox+Wire"},
-      {"@type":"ListItem","position":15,"name":"Pure Xbox","url":"https://GameBeeper.gg/?source=Pure+Xbox"},
-      {"@type":"ListItem","position":16,"name":"Nintendo Life","url":"https://GameBeeper.gg/?source=Nintendo+Life"},
-      {"@type":"ListItem","position":17,"name":"Nintendo Everything","url":"https://GameBeeper.gg/?source=Nintendo+Everything"},
-      {"@type":"ListItem","position":18,"name":"PC Gamer","url":"https://GameBeeper.gg/?source=PC+Gamer"},
-      {"@type":"ListItem","position":19,"name":"Rock Paper Shotgun","url":"https://GameBeeper.gg/?source=Rock+Paper+Shotgun"},
-      {"@type":"ListItem","position":20,"name":"PCGamesN","url":"https://GameBeeper.gg/?source=PCGamesN"},
-      {"@type":"ListItem","position":21,"name":"IGN Reviews","url":"https://GameBeeper.gg/?source=IGN+Reviews"},
-      {"@type":"ListItem","position":22,"name":"GameSpot Reviews","url":"https://GameBeeper.gg/?source=GameSpot+Reviews"},
-      {"@type":"ListItem","position":23,"name":"RPS Reviews","url":"https://GameBeeper.gg/?source=RPS+Reviews"},
-      {"@type":"ListItem","position":24,"name":"Nintendo Life Reviews","url":"https://GameBeeper.gg/?source=Nintendo+Life+Reviews"},
-      {"@type":"ListItem","position":25,"name":"Push Square Reviews","url":"https://GameBeeper.gg/?source=Push+Square+Reviews"},
-      {"@type":"ListItem","position":26,"name":"Pure Xbox Reviews","url":"https://GameBeeper.gg/?source=Pure+Xbox+Reviews"},
-      {"@type":"ListItem","position":27,"name":"Gematsu Trailers","url":"https://GameBeeper.gg/?source=Gematsu+Trailers"},
-      {"@type":"ListItem","position":28,"name":"Dot Esports","url":"https://GameBeeper.gg/?source=Dot+Esports"},
-      {"@type":"ListItem","position":29,"name":"GamesIndustry.biz","url":"https://GameBeeper.gg/?source=GamesIndustry.biz"},
-      {"@type":"ListItem","position":30,"name":"Digital Foundry","url":"https://GameBeeper.gg/?source=Digital+Foundry"},
-      {"@type":"ListItem","position":31,"name":"Tom's Hardware","url":"https://GameBeeper.gg/?source=Tom%27s+Hardware"},
-      {"@type":"ListItem","position":32,"name":"Siliconera","url":"https://GameBeeper.gg/?source=Siliconera"},
-      {"@type":"ListItem","position":33,"name":"Indie Games Plus","url":"https://GameBeeper.gg/?source=Indie+Games+Plus"},
-      {"@type":"ListItem","position":34,"name":"itch.io Devlogs","url":"https://GameBeeper.gg/?source=itch.io+Devlogs"}
+      {"@type":"ListItem","position":1,"name":"VGC","url":"https://gamebeeper.gg/?source=VGC"},
+      {"@type":"ListItem","position":2,"name":"Gematsu","url":"https://gamebeeper.gg/?source=Gematsu"},
+      {"@type":"ListItem","position":3,"name":"Eurogamer","url":"https://gamebeeper.gg/?source=Eurogamer"},
+      {"@type":"ListItem","position":4,"name":"IGN","url":"https://gamebeeper.gg/?source=IGN"},
+      {"@type":"ListItem","position":5,"name":"GameSpot","url":"https://gamebeeper.gg/?source=GameSpot"},
+      {"@type":"ListItem","position":6,"name":"Polygon","url":"https://gamebeeper.gg/?source=Polygon"},
+      {"@type":"ListItem","position":7,"name":"Kotaku","url":"https://gamebeeper.gg/?source=Kotaku"},
+      {"@type":"ListItem","position":8,"name":"Destructoid","url":"https://gamebeeper.gg/?source=Destructoid"},
+      {"@type":"ListItem","position":9,"name":"GamesRadar","url":"https://gamebeeper.gg/?source=GamesRadar"},
+      {"@type":"ListItem","position":10,"name":"Ars Technica Gaming","url":"https://gamebeeper.gg/?source=Ars+Technica+Gaming"},
+      {"@type":"ListItem","position":11,"name":"The Verge","url":"https://gamebeeper.gg/?source=The+Verge"},
+      {"@type":"ListItem","position":12,"name":"PlayStation Blog","url":"https://gamebeeper.gg/?source=PlayStation+Blog"},
+      {"@type":"ListItem","position":13,"name":"Push Square","url":"https://gamebeeper.gg/?source=Push+Square"},
+      {"@type":"ListItem","position":14,"name":"Xbox Wire","url":"https://gamebeeper.gg/?source=Xbox+Wire"},
+      {"@type":"ListItem","position":15,"name":"Pure Xbox","url":"https://gamebeeper.gg/?source=Pure+Xbox"},
+      {"@type":"ListItem","position":16,"name":"Nintendo Life","url":"https://gamebeeper.gg/?source=Nintendo+Life"},
+      {"@type":"ListItem","position":17,"name":"Nintendo Everything","url":"https://gamebeeper.gg/?source=Nintendo+Everything"},
+      {"@type":"ListItem","position":18,"name":"PC Gamer","url":"https://gamebeeper.gg/?source=PC+Gamer"},
+      {"@type":"ListItem","position":19,"name":"Rock Paper Shotgun","url":"https://gamebeeper.gg/?source=Rock+Paper+Shotgun"},
+      {"@type":"ListItem","position":20,"name":"PCGamesN","url":"https://gamebeeper.gg/?source=PCGamesN"},
+      {"@type":"ListItem","position":21,"name":"IGN Reviews","url":"https://gamebeeper.gg/?source=IGN+Reviews"},
+      {"@type":"ListItem","position":22,"name":"GameSpot Reviews","url":"https://gamebeeper.gg/?source=GameSpot+Reviews"},
+      {"@type":"ListItem","position":23,"name":"RPS Reviews","url":"https://gamebeeper.gg/?source=RPS+Reviews"},
+      {"@type":"ListItem","position":24,"name":"Nintendo Life Reviews","url":"https://gamebeeper.gg/?source=Nintendo+Life+Reviews"},
+      {"@type":"ListItem","position":25,"name":"Push Square Reviews","url":"https://gamebeeper.gg/?source=Push+Square+Reviews"},
+      {"@type":"ListItem","position":26,"name":"Pure Xbox Reviews","url":"https://gamebeeper.gg/?source=Pure+Xbox+Reviews"},
+      {"@type":"ListItem","position":27,"name":"Gematsu Trailers","url":"https://gamebeeper.gg/?source=Gematsu+Trailers"},
+      {"@type":"ListItem","position":28,"name":"Dot Esports","url":"https://gamebeeper.gg/?source=Dot+Esports"},
+      {"@type":"ListItem","position":29,"name":"GamesIndustry.biz","url":"https://gamebeeper.gg/?source=GamesIndustry.biz"},
+      {"@type":"ListItem","position":30,"name":"Digital Foundry","url":"https://gamebeeper.gg/?source=Digital+Foundry"},
+      {"@type":"ListItem","position":31,"name":"Tom's Hardware","url":"https://gamebeeper.gg/?source=Tom%27s+Hardware"},
+      {"@type":"ListItem","position":32,"name":"Siliconera","url":"https://gamebeeper.gg/?source=Siliconera"},
+      {"@type":"ListItem","position":33,"name":"Indie Games Plus","url":"https://gamebeeper.gg/?source=Indie+Games+Plus"},
+      {"@type":"ListItem","position":34,"name":"itch.io Devlogs","url":"https://gamebeeper.gg/?source=itch.io+Devlogs"}
     ]
   }
   </script>
@@ -338,10 +435,24 @@
       <!-- Noscript fallback -->
       <noscript>
         <section style="padding:2rem 0">
-          <h2 style="margin-bottom:1rem">Latest video game news</h2>
-          <p>GameBeeper aggregates video game news from 34 curated RSS feeds across PlayStation, Xbox, Nintendo, PC, indie, reviews, trailers, esports, hardware, and industry topics.</p>
-          <p>Enable JavaScript to browse the latest articles with search, category filters, and bookmarks.</p>
-          <p>Sources include: PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, IGN, Polygon, Kotaku, GamesIndustry.biz, and more — <a href="#sources">see the full list</a>.</p>
+          <h2 style="margin-bottom:1rem">Latest Video Game News — GameBeeper</h2>
+          <p>GameBeeper is a free video game news aggregator collecting the latest gaming news, reviews, reveals, game trailers, and industry stories from 34 trusted sources into one fast, ad-free feed.</p>
+          <p>Enable JavaScript to browse live articles with search, category filters, bookmarks, and AI summaries.</p>
+          <h3 style="margin:1.5rem 0 0.5rem">Gaming News Categories</h3>
+          <ul style="margin:0 0 1rem 1.5rem;line-height:2">
+            <li><strong>PlayStation News</strong> — PlayStation Blog (Official), Push Square</li>
+            <li><strong>Xbox News</strong> — Xbox Wire (Official), Pure Xbox</li>
+            <li><strong>Nintendo News</strong> — Nintendo Life, Nintendo Everything</li>
+            <li><strong>PC Gaming News</strong> — PC Gamer, Rock Paper Shotgun, PCGamesN</li>
+            <li><strong>Game Reviews</strong> — IGN Reviews, GameSpot Reviews, RPS Reviews, Nintendo Life Reviews, Push Square Reviews, Pure Xbox Reviews</li>
+            <li><strong>Game Trailers</strong> — Gematsu Trailers</li>
+            <li><strong>Esports News</strong> — Dot Esports</li>
+            <li><strong>Gaming Hardware</strong> — Digital Foundry, Tom's Hardware</li>
+            <li><strong>Indie Games</strong> — Siliconera, Indie Games Plus, itch.io Devlogs</li>
+            <li><strong>Gaming Industry</strong> — GamesIndustry.biz</li>
+            <li><strong>General Gaming</strong> — VGC, Gematsu, Eurogamer, IGN, GameSpot, Polygon, Kotaku, Destructoid, GamesRadar, Ars Technica, The Verge</li>
+          </ul>
+          <p><a href="#sources">See the full list of 34 gaming news sources</a>.</p>
         </section>
       </noscript>
       <!-- SEO static article fallback — injected by scripts/generate-seo-content.mjs -->
@@ -708,6 +819,60 @@
             <a href="/terms.html" style="color:var(--ink3);font-size:11px">Terms of Use</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SEO CONTENT SECTION ============== -->
+  <section class="seo-text-section" aria-label="About GameBeeper gaming news aggregator">
+    <div class="page-wrap">
+      <div class="seo-text-inner">
+        <h2>Your Free Video Game News Hub</h2>
+        <p>GameBeeper is the go-to destination for gamers who want to stay up to date with the latest video game news, game reviews, new game releases, and gaming industry developments — all in one place. Instead of visiting dozens of websites separately, GameBeeper pulls the best gaming stories from <strong>34 trusted sources</strong> into a single, clean, distraction-free feed.</p>
+        <div class="seo-text-grid">
+          <div>
+            <h3>PlayStation News &amp; Reviews</h3>
+            <p>Get the latest PS5 and PlayStation news directly from the <strong>PlayStation Blog</strong> alongside expert coverage from <strong>Push Square</strong>. From new PlayStation exclusives and firmware updates to PS5 game reviews and PlayStation Store deals — all curated in real-time.</p>
+          </div>
+          <div>
+            <h3>Xbox News &amp; Game Pass Updates</h3>
+            <p>Stay on top of everything Xbox with official updates from <strong>Xbox Wire</strong> and in-depth coverage from <strong>Pure Xbox</strong>. Never miss an Xbox Game Pass addition, Xbox Series X/S release, or major Xbox first-party game announcement.</p>
+          </div>
+          <div>
+            <h3>Nintendo Switch &amp; Switch 2 News</h3>
+            <p>Follow every Nintendo Switch and Nintendo Switch 2 announcement with stories from <strong>Nintendo Life</strong> and <strong>Nintendo Everything</strong> — covering Nintendo Direct events, new Switch games, eShop deals, and more.</p>
+          </div>
+          <div>
+            <h3>PC Gaming News</h3>
+            <p>Stay current with the PC gaming world through <strong>PC Gamer</strong>, <strong>Rock Paper Shotgun</strong>, and <strong>PCGamesN</strong> — covering Steam new releases, PC game reviews, graphics card benchmarks, and gaming hardware news.</p>
+          </div>
+          <div>
+            <h3>Game Reviews from Top Critics</h3>
+            <p>Read the latest game reviews from <strong>IGN</strong>, <strong>GameSpot</strong>, <strong>Rock Paper Shotgun</strong>, <strong>Nintendo Life</strong>, <strong>Push Square</strong>, and <strong>Pure Xbox</strong> — covering new games across all platforms as soon as reviews go live.</p>
+          </div>
+          <div>
+            <h3>Esports &amp; Competitive Gaming</h3>
+            <p>Follow the competitive gaming scene with the latest esports news, tournament results, and player moves from <strong>Dot Esports</strong> — covering League of Legends, Valorant, Counter-Strike, and the wider esports world.</p>
+          </div>
+          <div>
+            <h3>Indie Games &amp; Developer Logs</h3>
+            <p>Discover the best upcoming and newly released indie games through <strong>Siliconera</strong>, <strong>Indie Games Plus</strong>, and live developer updates from <strong>itch.io Devlogs</strong> — the freshest indie game news direct from the creators.</p>
+          </div>
+          <div>
+            <h3>Gaming Industry &amp; Hardware News</h3>
+            <p>Follow the business side of gaming and the latest hardware technology with <strong>GamesIndustry.biz</strong>, <strong>Digital Foundry</strong>, and <strong>Tom's Hardware</strong> — covering GPU benchmarks, game sales data, studio acquisitions, and console technology deep-dives.</p>
+          </div>
+        </div>
+        <h3>Why Gamers Choose GameBeeper</h3>
+        <ul class="seo-why-list">
+          <li><strong>No ads, no paywalls</strong> — completely free, always</li>
+          <li><strong>34 trusted gaming sources</strong> — hand-picked for quality and reliability</li>
+          <li><strong>Hourly updates</strong> — never miss breaking gaming news</li>
+          <li><strong>All platforms covered</strong> — PlayStation, Xbox, Nintendo, PC, mobile, and VR</li>
+          <li><strong>Search and filter</strong> — instantly find news about any game, platform, or topic</li>
+          <li><strong>Open source</strong> — built in public for transparency and community trust</li>
+          <li><strong>Privacy-first</strong> — no tracking without consent, no data selling</li>
+        </ul>
       </div>
     </div>
   </section>

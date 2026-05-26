@@ -1398,7 +1398,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   background: none; border: none; padding: 0;
 }
 .newsletter-title {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); margin-bottom: 12px;
 }
 .newsletter-title em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--gs-violet) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -1710,7 +1710,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 /* #15 — Scroll snap for filter chips */
 @media (max-width: 860px) {
   .mobile-filters { scroll-snap-type: x mandatory; }
-  .chip { scroll-snap-align: start; }
+  .chip { scroll-snap-align: start; padding: 8px 12px; }
 }
 
 /* -- Reduced motion -------------------- */
@@ -1995,7 +1995,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 @media (max-width: 860px) {
   .back-to-top {
     width: 44px; height: 44px;
-    bottom: calc(72px + var(--cookie-h, 0px)); right: 16px;
+    bottom: calc(72px + var(--cookie-h, 0px) + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -2138,8 +2138,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .community-inner { display: flex; flex-direction: column; gap: 48px; align-items: center; }
 .community-header { text-align: center; display: flex; flex-direction: column; gap: 16px; max-width: 600px; }
 .community-eyebrow {
-  display: inline-flex; align-items: center; gap: 7px; margin: 0 auto;
-  font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--ink3);
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 700; color: var(--ink3);
   letter-spacing: 0.1em; text-transform: uppercase; width: fit-content;
 }
 .community-title {
@@ -2324,4 +2324,58 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   background: rgba(36,214,255,0.04); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
-
+/* -- SEO Text Section -------------------- */
+.seo-text-section {
+  padding: 64px 0 72px;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+.seo-text-inner {
+  max-width: 900px;
+}
+.seo-text-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700; letter-spacing: -0.03em; color: var(--ink);
+  margin-bottom: 14px;
+}
+.seo-text-inner > p {
+  font-size: 15px; color: var(--ink2); line-height: 1.8;
+  margin-bottom: 32px; max-width: 760px;
+}
+.seo-text-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 36px;
+  margin-bottom: 36px;
+}
+@media(max-width:700px) { .seo-text-grid { grid-template-columns: 1fr; gap: 18px; } }
+.seo-text-grid h3 {
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 700; color: var(--color-accent-cyan);
+  letter-spacing: -0.01em; margin-bottom: 6px;
+}
+.seo-text-grid p {
+  font-size: 13px; color: var(--ink3); line-height: 1.75; margin: 0;
+}
+.seo-text-inner h3 {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.02em; margin-bottom: 12px;
+}
+.seo-why-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.seo-why-list li {
+  font-size: 13px; color: var(--ink2); padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-sm); line-height: 1.6;
+}
+.seo-why-list li::before {
+  content: '✓ '; color: var(--color-brand); font-weight: 700;
+}
+@media(max-width:600px) {
+  .seo-text-section { padding: 40px 0 48px; }
+}
