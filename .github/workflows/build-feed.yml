@@ -52,6 +52,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -76,9 +78,14 @@ jobs:
         run: curl -fsSL https://ollama.com/install.sh | sh
 
       - name: Start Ollama service
-        run: ollama serve &
-        # Give it a moment to bind the port
-      
+        run: |
+          # The install script may have already started Ollama as a systemd
+          # service.  Kill any running instance first to avoid the
+          # "address already in use" port conflict on 127.0.0.1:11434.
+          sudo pkill -f "ollama" || true
+          sleep 1
+          ollama serve &>/dev/null &
+
       - name: Wait for Ollama to be ready
         run: |
           for i in $(seq 1 15); do
@@ -111,6 +118,12 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Explicitly rewrite the remote URL to use the built-in GITHUB_TOKEN.
+          # This overrides any PAT that may be stored in a credential helper
+          # (e.g. the gh CLI's GH_TOKEN env var) so the push is always
+          # authenticated as github-actions[bot], not a personal account.
+          git remote set-url origin \
+            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           # Incorporate any remote changes that landed while this job was running,
           # preferring our freshly generated files on conflict (-X ours).
           git fetch origin main
@@ -118,7 +131,7 @@ jobs:
           git add -A
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
           git commit -m "chore: refresh feed + videos + update AI classification cache [skip ci]"
-          git push
+          git push origin HEAD:main
 
       # ── Build & deploy to GitHub Pages ──────────────────────────────────
       - name: Build Vite app
