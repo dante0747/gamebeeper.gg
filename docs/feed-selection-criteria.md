@@ -44,7 +44,7 @@ Feeds are informally categorised by tier:
 | **Dedicated** | Publication exclusively covering one platform or gaming topic. | Nintendo Life, Push Square, Pure Xbox, PCGamesN |
 | **Independent** | Established independent gaming journalism outlets. | Eurogamer, IGN, GameSpot, Polygon, Kotaku, Destructoid |
 | **Industry** | Trade press and industry analysts covering the business of games. | GamesIndustry.biz |
-| **News** | Fast-moving gaming news desks. | VGC, Gematsu, TheGamer |
+| **News** | Fast-moving gaming news desks. | VGC, Gematsu, Dot Esports |
 
 ---
 

@@ -18,7 +18,7 @@
 [![No Ads](https://img.shields.io/badge/ads-nope-bc8cff?style=flat-square)](https://GameBeeper.gg)
 [![Tests](https://img.shields.io/badge/tests-passing-39d353?style=flat-square&logo=vitest&logoColor=black)](./tests)
 
-> *Video game news aggregated from 19 trusted gaming sources — one fast, clean, distraction-free feed.*
+> *Video game news aggregated from 27 trusted gaming sources (34 RSS feeds) — one fast, clean, distraction-free feed.*
 
 </div>
 
@@ -30,7 +30,7 @@
 
 ## 📡 What Is GameBeeper?
 
-GameBeeper is a free, open-source video game news aggregator. A Node.js pipeline fetches and normalises RSS feeds from 19 trusted gaming sources into static JSON files; the frontend renders from that cache for instant, reliable loads.
+GameBeeper is a free, open-source video game news aggregator. A Node.js pipeline fetches and normalises 34 RSS feeds from 27 trusted gaming sources into static JSON files; the frontend renders from that cache for instant, reliable loads.
 
 It covers **PlayStation, Xbox, Nintendo, PC Gaming, Indie, Reviews, Trailers & Reveals, Esports, Industry, and Hardware** — sorted newest-first, no algorithm, no ads, no paywalls.
 
@@ -45,7 +45,7 @@ It covers **PlayStation, Xbox, Nintendo, PC Gaming, Indie, Reviews, Trailers & R
 
 | Feature | Details |
 |---|---|
-| 📡 **19 Gaming Feeds** | Hand-curated from official platforms, independent outlets, and industry reporters |
+| 📡 **34 Gaming Feeds** | 34 RSS feeds from 27 hand-curated sources: official platforms, independent outlets, and industry reporters |
 | 🗂️ **11 Categories** | Latest · PlayStation · Xbox · Nintendo · PC Gaming · Indie · Reviews · Trailers · Esports · Industry · Hardware |
 | 🤖 **AI Summaries** | On-demand article summaries via pre-cached snippets or local Ollama fallback |
 | ⚡ **Static Cache** | Articles pre-built by a Node.js pipeline; browser loads JSON instantly |
@@ -77,7 +77,9 @@ It covers **PlayStation, Xbox, Nintendo, PC Gaming, Indie, Reviews, Trailers & R
 - [Destructoid](https://www.destructoid.com/)
 - [Polygon](https://www.polygon.com/)
 - [Kotaku](https://kotaku.com/)
-- [TheGamer](https://www.thegamer.com/)
+- [GamesRadar](https://www.gamesradar.com/)
+- [Ars Technica Gaming](https://arstechnica.com/gaming/)
+- [The Verge](https://www.theverge.com/games)
 
 </details>
 
@@ -115,9 +117,52 @@ It covers **PlayStation, Xbox, Nintendo, PC Gaming, Indie, Reviews, Trailers & R
 </details>
 
 <details>
+<summary><strong>⭐ Reviews</strong></summary>
+
+- [IGN Reviews](https://www.ign.com/reviews)
+- [GameSpot Reviews](https://www.gamespot.com/reviews/)
+- [Push Square Reviews](https://www.pushsquare.com/reviews)
+- [Pure Xbox Reviews](https://www.purexbox.com/reviews)
+- [Nintendo Life Reviews](https://www.nintendolife.com/reviews)
+- [Rock Paper Shotgun Reviews](https://www.rockpapershotgun.com/reviews)
+
+</details>
+
+<details>
+<summary><strong>🎬 Trailers</strong></summary>
+
+- [Gematsu Trailers](https://www.gematsu.com/category/trailers)
+
+</details>
+
+<details>
+<summary><strong>🏆 Esports</strong></summary>
+
+- [Dot Esports](https://dotesports.com/)
+
+</details>
+
+<details>
 <summary><strong>🏢 Industry</strong></summary>
 
 - [GamesIndustry.biz](https://www.gamesindustry.biz/)
+
+</details>
+
+<details>
+<summary><strong>🔧 Hardware</strong></summary>
+
+- [Digital Foundry](https://www.digitalfoundry.net/)
+- [Tom's Hardware](https://www.tomshardware.com/)
+
+</details>
+
+<details>
+<summary><strong>🎯 Indie</strong></summary>
+
+- [Siliconera](https://www.siliconera.com/)
+- [Indie Games Plus](https://indiegamesplus.com/)
+- [itch.io Devlogs](https://itch.io/devlogs)
 
 </details>
 
@@ -165,11 +210,14 @@ tests/
     storage.test.js          ← js/storage.js
     classifier.test.mjs      ← scripts/lib/classifier.mjs  (gaming categories)
     sponsored.test.mjs       ← scripts/lib/sponsored.mjs
+    videos.test.mjs          ← js/videos.js  (filter logic, genre labels, formatDuration)
+    video-filters.test.mjs   ← js/video-filters.js  (VideoFilters state machine)
   integration/
     parser.test.mjs          ← scripts/lib/parser.mjs
     build-feed.test.mjs      ← pipeline dedup, sort, cap
   dom/
     cards.test.js            ← js/cards.js  (happy-dom)
+    video-player.test.js     ← js/video-player.js  (happy-dom, privacy-safe embed)
   e2e/
     smoke.spec.js            ← Playwright full-browser
   fixtures/
@@ -270,8 +318,15 @@ GameBeeper.gg/
 |   +-- summary.js           AI summary modal
 |   +-- images.js            Lazy image loading
 |   +-- utils.js             Escape, formatting helpers
+|   +-- http.js              Fetch wrapper with timeout/retry
 |   +-- analytics.js         GA4 consent wrapper
 |   +-- consent.js           Cookie consent banner
+|   +-- paypal-modal.js      Support/donation modal
+|   +-- videos.js            Video data helpers + genre labels
+|   +-- video-cards.js       Video card HTML generation
+|   +-- video-filters.js     Video filter state machine
+|   +-- video-player.js      Privacy-safe video player modal
+|   +-- watch-signal.js      Watch Signal section controller
 |
 +-- scripts/                 Node.js build pipeline
 |   +-- build-feed.mjs       Main feed builder
@@ -289,11 +344,14 @@ GameBeeper.gg/
 |       +-- utils.mjs        Shared utilities
 |
 +-- data/
-|   +-- feeds.json           19 enabled gaming RSS sources
+|   +-- feeds.json           34 enabled gaming RSS sources
+|   +-- video-sources.json   8 YouTube video sources for Watch Signal
 |
 +-- public/                  Generated + static assets
 |   +-- feed.json            Pre-built article cache
 |   +-- feed-health.json     Feed status metadata
+|   +-- videos.json          Pre-built video cache (Watch Signal)
+|   +-- video-health.json    Video source health metadata
 |   +-- version.json         Build timestamp
 |   +-- manifest.json        PWA manifest
 |   +-- sw.js                Service worker

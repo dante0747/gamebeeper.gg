@@ -32,9 +32,10 @@ Open [http://localhost:5173](http://localhost:5173) (Vite) or [http://localhost:
 
 1. Fork the repo and create a branch: `git checkout -b feat/your-idea`
 2. Make your changes.
-3. Test locally with `npx serve .` — verify feeds load, filters work, bookmarks work.
-4. If you changed feeds, run `npm run build:feed` and commit the updated `public/` files.
-5. Open a PR with a clear description of what you changed and why.
+3. Run the test suite: `npm test` — all tests must pass.
+4. Test locally with `npm run dev` — verify feeds load, filters work, bookmarks work.
+5. If you changed feeds, run `npm run build:feed` and commit the updated `public/` files.
+6. Open a PR with a clear description of what you changed and why.
 
 ## Adding a new RSS feed
 
@@ -45,7 +46,8 @@ Open [http://localhost:5173](http://localhost:5173) (Vite) or [http://localhost:
      "id": "my-blog",
      "name": "My Blog",
      "url": "https://myblog.com/feed.xml",
-     "category": "General",
+     "homepage": "https://myblog.com/",
+     "category": "Latest",
      "enabled": true
    }
    ```
@@ -56,7 +58,7 @@ Open [http://localhost:5173](http://localhost:5173) (Vite) or [http://localhost:
 
 - Vanilla JS ES modules — no frontend frameworks.
 - Vite is used as the dev server and production bundler (`npm run dev` / `npm run build`).
-- The frontend is split into **14 focused modules** under `js/`. Add new logic to the
+- The frontend is split into **20 focused modules** under `js/`. Add new logic to the
   most relevant module, or create a new one and import it from `js/main.js`.
 - `js/main.js` is the entry point: it owns app state, the `render()` loop, and all event wiring.
 - Prefer descriptive variable names over clever one-liners.
