@@ -42,7 +42,7 @@ export const USER_AGENT                = 'GameBeeper/1.0 (+https://GameBeeper.gg
 
 // -- AI / Ollama ------------------------------------------------------------
 
-export const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.1:8b';
+export const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2:1b';
 export const OLLAMA_HOST  = process.env.OLLAMA_HOST  || 'http://127.0.0.1:11434';
 export const USE_LLM      = process.env.USE_LLM === '1';
 export const CACHE_FILE   = path.resolve(__dirname, '../..', '.ai-category-cache.json');
