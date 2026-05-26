@@ -135,7 +135,7 @@ function renderPreview(videos) {
   section.style.display = '';
 
   const featured   = getFeaturedVideo(videos);
-  const supporting = videos.filter(v => v !== featured).slice(0, 4);
+  const supporting = videos.filter(v => v !== featured).slice(0, 8); // up to 8 supporting
 
   const html = [
     featured    ? videoPreviewCard(featured, 0, true) : '',
@@ -148,6 +148,163 @@ function renderPreview(videos) {
     const video = _allVideos.find(v => v.id === id);
     if (video) el.addEventListener('click', () => openVideoModal(video, el));
   });
+
+  // Boot carousel after cards are in the DOM
+  initPreviewCarousel();
+}
+
+// ── Homepage preview carousel controller ─────────────────────────────────────
+
+function initPreviewCarousel() {
+  const track   = $('watchPreviewGrid');
+  const prevBtn = $('watchCarouselPrev');
+  const nextBtn = $('watchCarouselNext');
+  const dotsWrap = $('watchCarouselDots');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const INTERVAL = 4500; // ms between auto-advances
+  let autoTimer  = null;
+  let isPaused   = false;
+
+  // ── Helpers ──────────────────────────────────────────────
+
+  function cardWidth() {
+    const card = track.querySelector('.vc-preview-card');
+    if (!card) return track.clientWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 16;
+    return card.offsetWidth + gap;
+  }
+
+  function cards() {
+    return Array.from(track.querySelectorAll('.vc-preview-card'));
+  }
+
+  function visibleCount() {
+    const w = cardWidth();
+    return w > 0 ? Math.max(1, Math.round(track.clientWidth / w)) : 1;
+  }
+
+  function currentIndex() {
+    const w = cardWidth();
+    return w > 0 ? Math.round(track.scrollLeft / w) : 0;
+  }
+
+  function maxIndex() {
+    return Math.max(0, cards().length - visibleCount());
+  }
+
+  function scrollTo(idx) {
+    const safeIdx = Math.max(0, Math.min(idx, maxIndex()));
+    track.scrollTo({ left: safeIdx * cardWidth(), behavior: 'smooth' });
+  }
+
+  // ── Dots ─────────────────────────────────────────────────
+
+  function buildDots() {
+    if (!dotsWrap) return;
+    const count = cards().length;
+    dotsWrap.innerHTML = Array.from({ length: count }, (_, i) =>
+      `<button class="watch-carousel-dot${i === 0 ? ' active' : ''}"
+         aria-label="Go to slide ${i + 1} of ${count}"
+         style="--carousel-interval:${INTERVAL}ms"
+         data-idx="${i}"></button>`
+    ).join('');
+    dotsWrap.querySelectorAll('.watch-carousel-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        scrollTo(parseInt(dot.dataset.idx));
+        resetAuto();
+      });
+    });
+  }
+
+  function updateDots(idx) {
+    if (!dotsWrap) return;
+    dotsWrap.querySelectorAll('.watch-carousel-dot').forEach((dot, i) => {
+      const wasActive = dot.classList.contains('active');
+      const isActive  = i === idx;
+      dot.classList.toggle('active', isActive);
+      // Restart the CSS progress-bar animation on newly active dot
+      if (isActive && !wasActive) {
+        dot.style.animation = 'none';
+        void dot.offsetWidth; // reflow
+        dot.style.animation = '';
+        // Re-inject the ::after by toggling
+        dot.classList.remove('active');
+        void dot.offsetWidth;
+        dot.classList.add('active');
+      }
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  // ── Navigation state ──────────────────────────────────────
+
+  function updateNav() {
+    const idx = currentIndex();
+    prevBtn.disabled = idx <= 0;
+    nextBtn.disabled = idx >= maxIndex();
+    updateDots(idx);
+  }
+
+  // ── Auto-advance ──────────────────────────────────────────
+
+  function startAuto() {
+    if (isPaused) return;
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => {
+      const idx = currentIndex();
+      scrollTo(idx >= maxIndex() ? 0 : idx + 1);
+    }, INTERVAL);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+    autoTimer = null;
+  }
+
+  function resetAuto() {
+    stopAuto();
+    startAuto();
+  }
+
+  // ── Event wiring ──────────────────────────────────────────
+
+  prevBtn.addEventListener('click', () => { scrollTo(currentIndex() - 1); resetAuto(); });
+  nextBtn.addEventListener('click', () => { scrollTo(currentIndex() + 1); resetAuto(); });
+
+  // Update nav state on scroll (incl. touch/swipe)
+  track.addEventListener('scroll', () => updateNav(), { passive: true });
+
+  // Pause auto-advance on hover or focus inside the carousel
+  const wrap = $('watchCarouselWrap');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', () => { isPaused = true;  stopAuto(); });
+    wrap.addEventListener('mouseleave', () => { isPaused = false; startAuto(); });
+    wrap.addEventListener('focusin',    () => { isPaused = true;  stopAuto(); });
+    wrap.addEventListener('focusout', e => {
+      if (!wrap.contains(e.relatedTarget)) { isPaused = false; startAuto(); }
+    });
+  }
+
+  // Keyboard: Left/Right arrows when carousel is focused
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  { scrollTo(currentIndex() - 1); resetAuto(); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { scrollTo(currentIndex() + 1); resetAuto(); e.preventDefault(); }
+  });
+
+  // Touch swipe detection
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { scrollTo(currentIndex() + (dx < 0 ? 1 : -1)); resetAuto(); }
+  }, { passive: true });
+
+  // ── Init ──────────────────────────────────────────────────
+
+  buildDots();
+  updateNav();
+  startAuto();
 }
 
 // ── Filter application ────────────────────────────────────────────────────────

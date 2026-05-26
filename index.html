@@ -395,21 +395,45 @@
 
   <!-- ============== WATCH SIGNAL HOMEPAGE PREVIEW ============== -->
   <section class="watch-preview-section" id="watchPreviewSection" aria-labelledby="watch-preview-heading" style="display:none">
-    <div class="page-wrap">
+    <div class="watch-preview-bg-glow" aria-hidden="true"></div>
+    <div class="page-wrap" style="position:relative;z-index:1">
       <div class="watch-preview-header">
         <div class="watch-preview-eyebrow">
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px;margin-right:5px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span class="watch-preview-live-dot" aria-hidden="true"></span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           WATCH SIGNAL
         </div>
         <div class="watch-preview-heading-row">
-          <h2 id="watch-preview-heading" class="watch-preview-title">Latest videos worth your time.</h2>
-          <a href="#watch" class="btn btn-ghost btn-sm watch-preview-cta">View all videos →</a>
+          <h2 id="watch-preview-heading" class="watch-preview-title">Latest videos <em>worth your time.</em></h2>
+          <a href="#watch" class="btn btn-sm watch-preview-cta">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            View all
+          </a>
         </div>
-        <p class="watch-preview-desc">Official trailers, gameplay reveals and trusted video coverage.</p>
+        <p class="watch-preview-desc">Official trailers, gameplay reveals and trusted video coverage — curated, not algorithmic.</p>
+        <div class="watch-preview-header-rule" aria-hidden="true"></div>
       </div>
-      <!-- Preview grid — populated by JS -->
-      <div class="watch-preview-grid" id="watchPreviewGrid" aria-label="Latest gaming videos preview">
-        <!-- Skeletons rendered by JS until data loads -->
+
+      <!-- Carousel -->
+      <div class="watch-carousel-wrap" id="watchCarouselWrap">
+        <button id="watchCarouselPrev" class="watch-carousel-btn watch-carousel-btn--prev" aria-label="Previous videos" disabled>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="watch-preview-grid" id="watchPreviewGrid" aria-label="Latest gaming videos" role="region" aria-live="polite">
+          <!-- Populated by JS -->
+        </div>
+        <button id="watchCarouselNext" class="watch-carousel-btn watch-carousel-btn--next" aria-label="Next videos">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots + footer CTA -->
+      <div class="watch-carousel-footer">
+        <div id="watchCarouselDots" class="watch-carousel-dots" role="group" aria-label="Video carousel navigation"></div>
+        <a href="#watch" class="watch-preview-footer-cta">
+          Browse full library
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
       </div>
     </div>
   </section>

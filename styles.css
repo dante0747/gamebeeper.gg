@@ -2079,22 +2079,22 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .watch-preview-cta { flex-shrink: 0; }
 .watch-preview-desc { font-size: 14px; color: var(--ink3); margin-top: 6px; }
 
-/* Preview grid: 1 featured (2/3 width) + 2×2 rail */
-.watch-preview-grid {
+/* Preview grid: 1 featured (2/3 width) + 2×2 rail — REPLACED BY CAROUSEL below */
+.watch-preview-grid-DISABLED {
   display: grid;
   grid-template-columns: 2fr repeat(4, 1fr);
   gap: 14px;
   align-items: start;
 }
-@media(max-width:1100px) { .watch-preview-grid { grid-template-columns: 1fr 1fr 1fr; } }
+@media(max-width:1100px) { .watch-preview-grid-DISABLED { grid-template-columns: 1fr 1fr 1fr; } }
 @media(max-width:700px) {
-  .watch-preview-grid {
+  .watch-preview-grid-DISABLED {
     grid-template-columns: 1fr;
     display: flex; overflow-x: auto; gap: 12px;
     scroll-snap-type: x mandatory; padding-bottom: 8px;
     scrollbar-width: none;
   }
-  .watch-preview-grid::-webkit-scrollbar { display: none; }
+  .watch-preview-grid-DISABLED::-webkit-scrollbar { display: none; }
 }
 
 /* ── Video Preview Cards ─────────────────────────── */
@@ -3024,4 +3024,440 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* ── Watch link in footer ────────────────────────── */
 .footer-col-links .watch-footer-link { color: var(--color-accent-cyan); }
+
+
+/* ================================================================
+   WATCH SIGNAL HOMEPAGE PREVIEW — Cinematic Redesign
+   ================================================================ */
+
+/* Section — richer cinematic atmosphere */
+.watch-preview-section {
+  padding: 72px 0 64px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background:
+    radial-gradient(ellipse 90% 55% at 75% -5%,  rgba(36,214,255,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 5%  110%,  rgba(139,108,255,0.06) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(36,214,255,0.03) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top edge highlight */
+.watch-preview-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(36,214,255,0.55) 40%, rgba(139,108,255,0.4) 65%, transparent 95%);
+}
+
+/* Ambient background glow orb */
+.watch-preview-bg-glow {
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(36,214,255,0.07) 0%, rgba(139,108,255,0.04) 40%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ── Section header ──────────────────────────────────────── */
+.watch-preview-header {
+  margin-bottom: 36px;
+  position: relative;
+  padding-bottom: 32px;
+}
+
+/* Decorative gradient rule under header */
+.watch-preview-header-rule {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: min(420px, 80%); height: 1px;
+  background: linear-gradient(90deg, rgba(36,214,255,0.5) 0%, rgba(36,214,255,0.15) 60%, transparent 100%);
+}
+
+/* Eyebrow — broadcast "LIVE" pill style */
+.watch-preview-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-accent-cyan);
+  background: rgba(36,214,255,0.07);
+  border: 1px solid rgba(36,214,255,0.28);
+  padding: 5px 13px 5px 10px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+  width: fit-content;
+  box-shadow: 0 0 12px rgba(36,214,255,0.08);
+}
+
+/* Pulsing "LIVE" dot */
+.watch-preview-live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #ff4b4b;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(255,75,75,0.8);
+  animation: watch-live-pulse 2.2s ease-in-out infinite;
+}
+@keyframes watch-live-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(255,75,75,0.8); }
+  50%       { opacity: 0.4; box-shadow: none; }
+}
+
+/* Title — gradient text effect */
+.watch-preview-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.5vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.watch-preview-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--ink) 0%, #a3d8ff 55%, var(--color-accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Description line */
+.watch-preview-desc {
+  font-size: 14px;
+  color: var(--ink3);
+  margin-top: 8px;
+  max-width: 560px;
+}
+
+/* CTA button — cyan accent */
+.watch-preview-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: 13px; font-weight: 600;
+  color: var(--color-accent-cyan);
+  border: 1px solid rgba(36,214,255,0.4);
+  background: rgba(36,214,255,0.07);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background var(--ease), border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+}
+.watch-preview-cta:hover {
+  background: rgba(36,214,255,0.14);
+  border-color: rgba(36,214,255,0.7);
+  box-shadow: 0 0 18px rgba(36,214,255,0.18);
+  transform: translateY(-1px);
+  color: var(--color-accent-cyan);
+}
+
+/* ── Featured preview card — cinematic overlay ───────────── */
+/* Handled in the CAROUSEL section below */
+
+/* ── Play button / card hover / footer CTA ───────────────── */
+/* All handled in the CAROUSEL section below */
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media(prefers-reduced-motion: reduce) {
+  .watch-preview-live-dot { animation: none; }
+  .vc-preview-card:hover  { transform: none; }
+  .watch-preview-cta:hover { transform: none; }
+}
+
+
+/* ================================================================
+   WATCH SIGNAL CAROUSEL — Full implementation
+   ================================================================ */
+
+/* ── Carousel outer wrapper (clips the track) ─────────────── */
+.watch-carousel-wrap {
+  position: relative;
+  /* Side fade masks to hint at off-screen cards */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+/* Remove mask on very small screens where there's no room */
+@media(max-width:480px) {
+  .watch-carousel-wrap {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ── Carousel track (the scrollable flex row) ─────────────── */
+.watch-preview-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 12px; /* top/bottom padding to show card shadows */
+  /* Clip within carousel wrap */
+}
+.watch-preview-grid::-webkit-scrollbar { display: none; }
+
+/* ── Card widths: 3 visible at desktop ───────────────────── */
+.watch-preview-grid .vc-preview-card {
+  flex: 0 0 calc(33.333% - 11px);
+  min-width: 200px;
+  scroll-snap-align: start;
+}
+@media(max-width:1100px) {
+  .watch-preview-grid .vc-preview-card {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+@media(max-width:700px) {
+  .watch-preview-grid { gap: 12px; }
+  .watch-preview-grid .vc-preview-card {
+    flex: 0 0 min(320px, 82%);
+  }
+}
+@media(max-width:400px) {
+  .watch-preview-grid .vc-preview-card {
+    flex: 0 0 88%;
+  }
+}
+
+/* ── Prev / Next navigation buttons ──────────────────────── */
+.watch-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 6px)); /* -6px to account for bottom padding */
+  z-index: 20;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(9,11,17,0.88);
+  border: 1px solid rgba(36,214,255,0.38);
+  color: var(--color-accent-cyan);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.55), 0 0 0 1px rgba(36,214,255,0.08);
+  transition:
+    background var(--ease),
+    border-color var(--ease),
+    transform var(--ease),
+    box-shadow var(--ease),
+    opacity var(--ease);
+}
+.watch-carousel-btn:hover:not(:disabled) {
+  background: rgba(36,214,255,0.14);
+  border-color: rgba(36,214,255,0.75);
+  transform: translateY(calc(-50% - 6px)) scale(1.1);
+  box-shadow: 0 6px 28px rgba(36,214,255,0.28), 0 0 0 1px rgba(36,214,255,0.2);
+}
+.watch-carousel-btn:active:not(:disabled) {
+  transform: translateY(calc(-50% - 6px)) scale(0.96);
+}
+.watch-carousel-btn:disabled {
+  opacity: 0.22;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.watch-carousel-btn--prev { left: -23px; }
+.watch-carousel-btn--next { right: -23px; }
+
+/* On small screens where there's no room, move buttons inside */
+@media(max-width:900px) {
+  .watch-carousel-btn--prev { left: 4px; }
+  .watch-carousel-btn--next { right: 4px; }
+  .watch-carousel-btn { width: 38px; height: 38px; }
+}
+@media(max-width:480px) {
+  .watch-carousel-btn { display: none; }
+}
+
+/* ── Dot indicators ───────────────────────────────────────── */
+.watch-carousel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.watch-carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.watch-carousel-dot {
+  position: relative;
+  width: 28px; height: 4px;
+  border: none;
+  padding: 0;
+  border-radius: 2px;
+  background: var(--color-border);
+  cursor: pointer;
+  overflow: hidden;
+  transition: background var(--ease), width var(--ease), opacity var(--ease);
+  opacity: 0.55;
+}
+.watch-carousel-dot:hover {
+  background: var(--color-border-light);
+  opacity: 0.85;
+}
+.watch-carousel-dot.active {
+  width: 40px;
+  background: rgba(36,214,255,0.25);
+  opacity: 1;
+}
+/* Animated fill on active dot */
+.watch-carousel-dot.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent-cyan);
+  border-radius: 2px;
+  transform-origin: left center;
+  animation: dot-progress var(--carousel-interval, 4500ms) linear forwards;
+  box-shadow: 0 0 8px rgba(36,214,255,0.6);
+}
+@keyframes dot-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+/* Pause progress bar animation when auto-advance is paused */
+.watch-carousel-wrap:hover .watch-carousel-dot.active::after,
+.watch-carousel-wrap:focus-within .watch-carousel-dot.active::after {
+  animation-play-state: paused;
+}
+.watch-carousel-dot:focus-visible {
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Footer CTA ───────────────────────────────────────────── */
+.watch-preview-footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink3);
+  white-space: nowrap;
+  transition: color var(--ease), gap var(--ease);
+}
+.watch-preview-footer-cta:hover {
+  color: var(--color-accent-cyan);
+  gap: 12px;
+}
+.watch-preview-footer-cta svg {
+  transition: transform var(--ease);
+}
+.watch-preview-footer-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Featured card — same width in carousel, but with overlay ── */
+/* Remove the 2fr treatment; featured card is now same size but visually distinct */
+@media(min-width:700px) {
+  .vc-preview-featured {
+    position: relative;
+    overflow: hidden;
+  }
+  .vc-preview-featured .vc-preview-body {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 3;
+    padding: 32px 14px 14px;
+    background: linear-gradient(to top,
+      rgba(9,11,17,0.98) 0%,
+      rgba(9,11,17,0.85) 35%,
+      rgba(9,11,17,0.4)  65%,
+      transparent        100%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .vc-preview-featured .vc-preview-title {
+    font-size: 13.5px; font-weight: 700;
+    color: #fff; letter-spacing: -0.015em;
+  }
+  .vc-preview-featured .vc-preview-title .vc-title-btn { color: #fff; }
+  .vc-preview-featured .vc-preview-title .vc-title-btn:hover { color: var(--color-accent-cyan); }
+  .vc-preview-featured .vc-preview-meta { color: rgba(175,184,200,0.75); font-size: 10.5px; }
+  .vc-preview-featured {
+    border-top: 2px solid rgba(36,214,255,0.6) !important;
+  }
+  .vc-preview-featured::after {
+    content: 'FEATURED';
+    position: absolute; top: 12px; right: 10px; z-index: 4;
+    font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+    padding: 3px 8px;
+    background: rgba(36,214,255,0.18);
+    border: 1px solid rgba(36,214,255,0.45);
+    border-radius: 3px;
+    color: var(--color-accent-cyan);
+    pointer-events: none;
+  }
+}
+
+/* ── Play button — always partially visible ───────────────── */
+.vc-preview-card .vc-play-btn {
+  opacity: 0.42;
+  transform: scale(0.86);
+}
+.vc-preview-card:hover .vc-play-btn,
+.vc-preview-card:focus-within .vc-play-btn {
+  opacity: 1; transform: scale(1);
+  background: rgba(0,0,0,0.72);
+  box-shadow: 0 0 28px rgba(36,214,255,0.45), 0 0 0 2px rgba(36,214,255,0.2);
+}
+
+/* ── Card hover ───────────────────────────────────────────── */
+.vc-preview-card:hover {
+  border-color: rgba(36,214,255,0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.55), 0 0 0 1px rgba(36,214,255,0.15);
+}
+.vc-preview-card:not(.vc-preview-featured) {
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.vc-preview-card:not(.vc-preview-featured):hover {
+  border-top-color: rgba(36,214,255,0.3);
+}
+@media(prefers-reduced-motion: no-preference) {
+  .vc-preview-card:hover .vc-preview-img { transform: scale(1.04); }
+}
+
+/* ── Responsive tweaks ────────────────────────────────────── */
+@media(max-width:700px) {
+  .watch-preview-section { padding: 48px 0 40px; }
+  .watch-carousel-footer { flex-direction: column; align-items: center; gap: 12px; }
+  .watch-preview-footer-cta { order: -1; }
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media(prefers-reduced-motion: reduce) {
+  .watch-preview-live-dot { animation: none; }
+  .vc-preview-card:hover { transform: none; }
+  .watch-carousel-btn:hover { transform: translateY(calc(-50% - 6px)); }
+  .watch-carousel-dot.active::after { animation: none; background: var(--color-accent-cyan); transform: scaleX(1); }
+}
+
 
