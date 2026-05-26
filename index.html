@@ -271,6 +271,9 @@
         </a>
         <div class="nav-links" aria-label="Site sections">
           <a href="#latest"   class="nav-link">Feed</a>
+          <a href="#watch"    class="nav-link nav-link-watch" aria-label="Watch Signal — gaming videos">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch
+          </a>
           <a href="#sources"  class="nav-link">Sources</a>
           <a href="#about"    class="nav-link">About</a>
           <a href="#feedback" class="nav-link">Feedback</a>
@@ -300,6 +303,9 @@
   <div class="nav-drawer" id="navDrawer" aria-hidden="true" role="dialog" aria-label="Site navigation">
     <nav class="nav-drawer-links">
       <a href="#latest"    class="nav-drawer-link">Feed</a>
+      <a href="#watch"     class="nav-drawer-link">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch
+      </a>
       <a href="#sources"   class="nav-drawer-link">Sources</a>
       <a href="#about"     class="nav-drawer-link">About</a>
       <a href="#feedback"  class="nav-drawer-link">Feedback</a>
@@ -386,6 +392,27 @@
     </div>
   </section>
 
+
+  <!-- ============== WATCH SIGNAL HOMEPAGE PREVIEW ============== -->
+  <section class="watch-preview-section" id="watchPreviewSection" aria-labelledby="watch-preview-heading" style="display:none">
+    <div class="page-wrap">
+      <div class="watch-preview-header">
+        <div class="watch-preview-eyebrow">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px;margin-right:5px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          WATCH SIGNAL
+        </div>
+        <div class="watch-preview-heading-row">
+          <h2 id="watch-preview-heading" class="watch-preview-title">Latest videos worth your time.</h2>
+          <a href="#watch" class="btn btn-ghost btn-sm watch-preview-cta">View all videos →</a>
+        </div>
+        <p class="watch-preview-desc">Official trailers, gameplay reveals and trusted video coverage.</p>
+      </div>
+      <!-- Preview grid — populated by JS -->
+      <div class="watch-preview-grid" id="watchPreviewGrid" aria-label="Latest gaming videos preview">
+        <!-- Skeletons rendered by JS until data loads -->
+      </div>
+    </div>
+  </section>
 
   <!-- ============== CATEGORY CHIPS (all screens) ============== -->
   <div class="mobile-filters-wrap">
@@ -727,6 +754,67 @@
   </div>
 
 
+  <!-- ============== WATCH SIGNAL PAGE ============== -->
+  <section class="watch-section" id="watch" aria-labelledby="watch-heading" style="display:none">
+    <div class="page-wrap">
+
+      <!-- A. Hero header -->
+      <header class="watch-hero">
+        <div class="watch-hero-eyebrow">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px;margin-right:5px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          WATCH SIGNAL
+        </div>
+        <h2 id="watch-heading" class="watch-hero-title">See what's next.</h2>
+        <p class="watch-hero-sub">Official trailers, gameplay reveals and trusted gaming video coverage in one clean feed.</p>
+        <p class="watch-hero-status" id="watchStatus" aria-live="polite"></p>
+      </header>
+
+      <!-- B. Featured spotlight -->
+      <div class="watch-featured-wrap" id="watchFeatured" aria-label="Featured video">
+        <!-- populated by JS -->
+      </div>
+
+      <!-- C. Filter controls -->
+      <div class="watch-filters-wrap" id="watchFiltersWrap">
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Type</span>
+          <div class="watch-filter-chips" id="watchFilterGenre" role="group" aria-label="Filter by video type"></div>
+        </div>
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Platform</span>
+          <div class="watch-filter-chips" id="watchFilterTopic" role="group" aria-label="Filter by platform"></div>
+        </div>
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Source</span>
+          <div class="watch-filter-chips" id="watchFilterTrust" role="group" aria-label="Filter by source trust"></div>
+        </div>
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Sort</span>
+          <div class="watch-filter-chips" id="watchFilterSort" role="group" aria-label="Sort order"></div>
+        </div>
+      </div>
+
+      <!-- D. Video grid -->
+      <div class="watch-grid-wrap">
+        <div class="watch-grid" id="watchGrid" aria-label="Video results" aria-live="polite">
+          <!-- populated by JS -->
+        </div>
+        <!-- Empty / error states -->
+        <div class="watch-empty" id="watchEmpty" style="display:none" role="status">
+          <div class="watch-empty-art">[ WATCH SIGNAL ]<br>// no signal found</div>
+          <div class="watch-empty-title">No video signal found.</div>
+          <div class="watch-empty-sub">Try another platform or video type.</div>
+          <button class="btn btn-ghost btn-sm" id="watchEmptyReset">Clear filters</button>
+        </div>
+        <div class="watch-error" id="watchError" style="display:none" role="alert">
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1.5L1 14h14z"/><line x1="8" y1="6.5" x2="8" y2="10"/><circle cx="8" cy="12" r=".6" fill="currentColor" stroke="none"/></svg>
+          <span id="watchErrorMsg">Video sources temporarily unavailable. The main feed continues to work normally.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ============== TRUST SECTION ============== -->
   <section class="trust-section" aria-labelledby="trust-heading">
     <div class="page-wrap">
@@ -896,6 +984,39 @@
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Indie')">Indie</a>: <a href="https://www.siliconera.com/" target="_blank" rel="noopener noreferrer">Siliconera</a>, <a href="https://indiegamesplus.com/" target="_blank" rel="noopener noreferrer">Indie Games Plus</a>, <a href="https://itch.io/devlogs" target="_blank" rel="noopener noreferrer">itch.io Devlogs</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Industry')">Industry</a>: <a href="https://www.gamesindustry.biz/" target="_blank" rel="noopener noreferrer">GamesIndustry.biz</a></li>
         </ul>
+
+        <!-- Video Sources subsection -->
+        <div class="footer-video-sources" id="videoSourcesSection">
+          <div class="footer-sources-title" style="margin-top:1.5rem">Video sources</div>
+          <p class="footer-video-sources-desc">Videos are selected from official publisher channels, platform owners and trusted editorial creators. No sponsored placements. No paid ranking.</p>
+          <div class="footer-video-source-groups" id="footerVideoSourceGroups">
+            <!-- populated dynamically by JS from data/video-sources.json -->
+            <div class="footer-video-source-group">
+              <strong class="fvsg-label">Official Platforms</strong>
+              <ul class="footer-sources-list">
+                <li><a href="https://www.youtube.com/@PlayStation" target="_blank" rel="noopener noreferrer">PlayStation</a> <span class="official-badge">Official</span> — PlayStation, Trailers, Showcases</li>
+                <li><a href="https://www.youtube.com/@Xbox" target="_blank" rel="noopener noreferrer">Xbox</a> <span class="official-badge">Official</span> — Xbox, Trailers, Showcases</li>
+                <li><a href="https://www.youtube.com/@Nintendo" target="_blank" rel="noopener noreferrer">Nintendo</a> <span class="official-badge">Official</span> — Nintendo, Trailers, Showcases</li>
+              </ul>
+            </div>
+            <div class="footer-video-source-group">
+              <strong class="fvsg-label">Trusted Editorial</strong>
+              <ul class="footer-sources-list">
+                <li><a href="https://www.youtube.com/@IGN" target="_blank" rel="noopener noreferrer">IGN</a> — Reviews, Trailers, General</li>
+                <li><a href="https://www.youtube.com/@GameSpot" target="_blank" rel="noopener noreferrer">GameSpot</a> — Reviews, Trailers, General</li>
+                <li><a href="https://www.youtube.com/@DigitalFoundry" target="_blank" rel="noopener noreferrer">Digital Foundry</a> — Hardware, Reviews</li>
+              </ul>
+            </div>
+            <div class="footer-video-source-group">
+              <strong class="fvsg-label">Events &amp; Showcases</strong>
+              <ul class="footer-sources-list">
+                <li><a href="https://www.youtube.com/@TheGameAwards" target="_blank" rel="noopener noreferrer">The Game Awards</a> — Trailers, Esports, Awards</li>
+                <li><a href="https://www.youtube.com/@SummerGameFest" target="_blank" rel="noopener noreferrer">Summer Game Fest</a> — Trailers, Showcases</li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:0.78rem;color:var(--ink3);margin-top:0.75rem">Official trailers and showcases may be featured because of freshness and relevance — never because of payment. <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-cyan)">Editorial policy →</a></p>
+        </div>
       </section>
       <!-- Footer grid -->
       <div class="footer-top">
@@ -973,6 +1094,7 @@
   </footer>
 
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/watch-signal.js"></script>
 
   <!-- Back to top button -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">

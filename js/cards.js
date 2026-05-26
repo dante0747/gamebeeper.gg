@@ -39,24 +39,52 @@ export function cardPlaceholder(category, link) {
   return `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-placeholder" tabindex="-1" aria-hidden="true"><img class="card-img" src="${src}" alt="Category illustration for ${esc(category)}" loading="lazy" decoding="async" width="640" height="360"></a>`;
 }
 
+// -- Video badge helper (for contentType:'video' in regular feed) ----------------
+
+function videoBadge(a) {
+  if (a.contentType !== 'video') return '';
+  const GENRE_MAP = {
+    'trailer':        'TRAILER',
+    'gameplay':       'GAMEPLAY',
+    'review':         'REVIEW',
+    'developer-diary':'DEV DIARY',
+    'showcase':       'SHOWCASE',
+    'esports':        'ESPORTS',
+    'interview':      'INTERVIEW',
+  };
+  const label = GENRE_MAP[a.videoGenre] || 'VIDEO';
+  return `<span class="card-video-badge" aria-label="Content type: ${label}">${label}</span>`;
+}
+
+function videoPlayOverlay(a) {
+  if (a.contentType !== 'video') return '';
+  return `<div class="card-video-play-overlay" aria-hidden="true">
+    <div class="card-video-play-circle">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+    </div>
+  </div>`;
+}
+
 // -- Grid card -----------------------------------------------------
 
 export function gridCard(a, i) {
-  const date = relTime(a.date);
+  const isVideo = a.contentType === 'video';
+  const date = relTime(a.date || a.publishedAt);
   const num  = String(i + 1).padStart(2, '0');
   const featured = i === 0;
   const bm = isBookmarked(a.link);
   const mins = readTime(a.title, a.snippet);
   const loadingAttr  = featured ? 'eager'  : 'lazy';
   const fetchpriAttr = featured ? 'high'   : 'auto';
-  const imgSrc = safeUrl(a.image || a.fallbackImage || null) || null;
+  const imgSrc = safeUrl(a.image || a.thumbnail || a.fallbackImage || null) || null;
   const imgSrc_ = imgSrc === '#' ? null : imgSrc;
   const imgAlt = imgSrc_ ? `Article image for: ${a.title}` : `Category illustration for ${a.category}`;
   const imgHtml = imgSrc_
-    ? `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap" tabindex="-1" aria-hidden="true"><img class="card-img" src="${esc(imgSrc_)}" alt="${esc(imgAlt)}" loading="${loadingAttr}" fetchpriority="${fetchpriAttr}" decoding="async" referrerpolicy="no-referrer" width="640" height="360" sizes="(max-width:700px) 100vw,(max-width:1100px) 50vw,33vw" data-category="${esc(a.category)}" data-link="${esc(a.link)}"></a>`
+    ? `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap${isVideo ? ' card-img-wrap--video' : ''}" tabindex="-1" aria-hidden="true"><img class="card-img" src="${esc(imgSrc_)}" alt="${esc(imgAlt)}" loading="${loadingAttr}" fetchpriority="${fetchpriAttr}" decoding="async" referrerpolicy="no-referrer" width="640" height="360" sizes="(max-width:700px) 100vw,(max-width:1100px) 50vw,33vw" data-category="${esc(a.category)}" data-link="${esc(a.link)}">${videoPlayOverlay(a)}${videoBadge(a)}</a>`
     : cardPlaceholder(a.category, a.link);
+  const ctaLabel = isVideo ? 'Watch →' : 'Read →';
   return `
-    <article class="card${featured ? ' card-featured' : ''} ${catClass(a.category)}" data-card-idx="${i}" data-article-url="${esc(a.link)}" data-category="${esc(a.category)}">
+    <article class="card${featured ? ' card-featured' : ''} ${catClass(a.category)}${isVideo ? ' card-video' : ''}" data-card-idx="${i}" data-article-url="${esc(a.link)}" data-category="${esc(a.category)}"${isVideo ? ` data-content-type="video"` : ''}>
       ${imgHtml}
       <div class="card-top">
         <span class="card-num">${num}</span>
@@ -75,14 +103,14 @@ export function gridCard(a, i) {
         <div class="card-source">
           <span class="src-dot ${catClass(a.category)}"></span>
           <span>${esc(a.source)}</span>
-          <span class="card-read-time">${mins} min read</span>
+          ${!isVideo ? `<span class="card-read-time">${mins} min read</span>` : ''}
         </div>
         <div class="card-actions">
-          ${summaryBtn(a)}
+          ${isVideo ? '' : summaryBtn(a)}
           <button class="card-share-btn" data-share-url="${esc(a.link)}" data-share-title="${esc(a.title)}" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Read →</a>
+          <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">${ctaLabel}</a>
         </div>
       </div>
     </article>`;
@@ -91,18 +119,20 @@ export function gridCard(a, i) {
 // -- List card
 
 export function listCard(a, i) {
-  const date = relTime(a.date);
+  const isVideo = a.contentType === 'video';
+  const date = relTime(a.date || a.publishedAt);
   const num  = String(i + 1).padStart(2, '0');
   const bm = isBookmarked(a.link);
   const mins = readTime(a.title, a.snippet);
-  const listImgSrcRaw = safeUrl(a.image || a.fallbackImage || null) || null;
+  const listImgSrcRaw = safeUrl(a.image || a.thumbnail || a.fallbackImage || null) || null;
   const listImgSrc = listImgSrcRaw === '#' ? null : listImgSrcRaw;
   const listImgAlt = listImgSrc ? `Article image for: ${a.title}` : `Category illustration for ${a.category}`;
   const imgHtml = listImgSrc
-    ? `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-img-wrap--list" tabindex="-1" aria-hidden="true"><img class="card-img card-img--list" src="${esc(listImgSrc)}" alt="${esc(listImgAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="240" height="180" data-category="${esc(a.category)}" data-link="${esc(a.link)}"></a>`
+    ? `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-img-wrap--list${isVideo ? ' card-img-wrap--video' : ''}" tabindex="-1" aria-hidden="true"><img class="card-img card-img--list" src="${esc(listImgSrc)}" alt="${esc(listImgAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="240" height="180" data-category="${esc(a.category)}" data-link="${esc(a.link)}">${videoPlayOverlay(a)}${videoBadge(a)}</a>`
     : `<a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="card-img-wrap card-img-wrap--list" tabindex="-1" aria-hidden="true"><img class="card-img card-img--list" src="${catFallbackSvg(a.category)}" alt="${esc(listImgAlt)}" loading="lazy" decoding="async" width="240" height="135"></a>`;
+  const ctaLabel = isVideo ? 'Watch →' : 'Read →';
   return `
-    <article class="card card-row ${catClass(a.category)}" data-card-idx="${i}" data-article-url="${esc(a.link)}" data-category="${esc(a.category)}">
+    <article class="card card-row ${catClass(a.category)}${isVideo ? ' card-video' : ''}" data-card-idx="${i}" data-article-url="${esc(a.link)}" data-category="${esc(a.category)}"${isVideo ? ` data-content-type="video"` : ''}>
       <span class="card-num">${num}</span>
       ${imgHtml}
       <div class="card-body">
@@ -121,15 +151,15 @@ export function listCard(a, i) {
         <div class="card-source">
           <span class="src-dot ${catClass(a.category)}"></span>
           <span>${esc(a.source)}</span>
-          <span class="card-read-time">${mins} min read</span>
+          ${!isVideo ? `<span class="card-read-time">${mins} min read</span>` : ''}
         </div>
       </div>
       <div class="card-actions" style="flex-direction:column;gap:6px;">
-        ${summaryBtn(a)}
+        ${isVideo ? '' : summaryBtn(a)}
         <button class="card-share-btn" data-share-url="${esc(a.link)}" data-share-title="${esc(a.title)}" title="Share" aria-label="Share article">
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         </button>
-        <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Read →</a>
+        <a class="card-link" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">${ctaLabel}</a>
       </div>
     </article>`;
 }

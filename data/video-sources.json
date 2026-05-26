@@ -1,0 +1,107 @@
+[
+  {
+    "id": "playstation-yt",
+    "displayName": "PlayStation",
+    "provider": "youtube",
+    "providerChannelId": "UCN2b0HJdBzfWi9bM_k14kdQ",
+    "homepage": "https://www.youtube.com/@PlayStation",
+    "sourceType": "official-platform",
+    "defaultTopics": ["PlayStation"],
+    "verified": true,
+    "enabled": true,
+    "priority": 1,
+    "accentColor": "#0070D1"
+  },
+  {
+    "id": "xbox-yt",
+    "displayName": "Xbox",
+    "provider": "youtube",
+    "providerChannelId": "UCc42OLmOr0sLmr82ckGLkLQ",
+    "homepage": "https://www.youtube.com/@Xbox",
+    "sourceType": "official-platform",
+    "defaultTopics": ["Xbox"],
+    "verified": true,
+    "enabled": true,
+    "priority": 1,
+    "accentColor": "#52B043"
+  },
+  {
+    "id": "nintendo-yt",
+    "displayName": "Nintendo",
+    "provider": "youtube",
+    "providerChannelId": "UCGIY_O-8vW4rfX98KlMkvRg",
+    "homepage": "https://www.youtube.com/@Nintendo",
+    "sourceType": "official-platform",
+    "defaultTopics": ["Nintendo"],
+    "verified": true,
+    "enabled": true,
+    "priority": 1,
+    "accentColor": "#E40012"
+  },
+  {
+    "id": "ign-yt",
+    "displayName": "IGN",
+    "provider": "youtube",
+    "providerChannelId": "UCKy1dAqELo0zrOtPkf0sMRQ",
+    "homepage": "https://www.youtube.com/@IGN",
+    "sourceType": "editorial",
+    "defaultTopics": ["Latest", "Reviews", "Trailers"],
+    "verified": true,
+    "enabled": true,
+    "priority": 2,
+    "accentColor": "#e80000"
+  },
+  {
+    "id": "gamespot-yt",
+    "displayName": "GameSpot",
+    "provider": "youtube",
+    "providerChannelId": "UCbu2SsF-Or3Rsn3NxqODImQ",
+    "homepage": "https://www.youtube.com/@GameSpot",
+    "sourceType": "editorial",
+    "defaultTopics": ["Latest", "Reviews", "Trailers"],
+    "verified": true,
+    "enabled": true,
+    "priority": 2,
+    "accentColor": "#f26722"
+  },
+  {
+    "id": "digital-foundry-yt",
+    "displayName": "Digital Foundry",
+    "provider": "youtube",
+    "providerChannelId": "UC9PBzalIcEQCsiIkq36PyUA",
+    "homepage": "https://www.youtube.com/@DigitalFoundry",
+    "sourceType": "editorial",
+    "defaultTopics": ["Hardware", "Reviews"],
+    "verified": true,
+    "enabled": true,
+    "priority": 2,
+    "accentColor": "#26e6ff"
+  },
+  {
+    "id": "the-game-awards-yt",
+    "displayName": "The Game Awards",
+    "provider": "youtube",
+    "providerChannelId": "UCXf-1j6wJqKBhmcBoXPjcaQ",
+    "homepage": "https://www.youtube.com/@TheGameAwards",
+    "sourceType": "event",
+    "defaultTopics": ["Latest", "Trailers", "Esports"],
+    "verified": true,
+    "enabled": true,
+    "priority": 2,
+    "accentColor": "#b7ff39"
+  },
+  {
+    "id": "summer-game-fest-yt",
+    "displayName": "Summer Game Fest",
+    "provider": "youtube",
+    "providerChannelId": "UCF_tnRqZJUFsONMNXlAuRSA",
+    "homepage": "https://www.youtube.com/@SummerGameFest",
+    "sourceType": "event",
+    "defaultTopics": ["Latest", "Trailers"],
+    "verified": true,
+    "enabled": true,
+    "priority": 2,
+    "accentColor": "#ff6b35"
+  }
+]
+
