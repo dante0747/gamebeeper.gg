@@ -17,8 +17,6 @@ export const BRAND = {
   tagline:       'All the games worth watching. One signal.',
   description:   'GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories in one fast, distraction-free feed.',
   canonicalUrl:  'https://GameBeeper.gg/',
-  supportEmail:  '',
-  socialHandle:  '',
 };
 
 // -- Paths ------------------------------------------------------------------
@@ -35,8 +33,8 @@ export const MAX_PER_FEED              = 15;
 export const MIN_PER_CATEGORY          = 10;
 export const MAX_PER_CATEGORY          = 100;
 export const MIN_SUMMARY_LEN           = 40;
-export const ARTICLE_TEXT_MAX_BYTES    = 512 * 1024;
-export const ARTICLE_TEXT_MAX_CHARS    = 3_000;
+export const ARTICLE_TEXT_MAX_BYTES    = 512 * 1024; // byte cap when streaming article HTML body
+export const ARTICLE_TEXT_MAX_CHARS    = 3_000;       // char cap on plain-text fed to the LLM (after HTML stripping)
 export const IMAGE_HEAD_MAX_BYTES      = 256 * 1024;
 export const USER_AGENT                = 'GameBeeper/1.0 (+https://GameBeeper.gg; feed-bot)';
 

@@ -10,10 +10,10 @@
  * Cache names are versioned so old caches are purged on SW update.
  */
 
-const SHELL_CACHE   = 'gp-shell-v1';
-const FEED_CACHE    = 'gp-feed-v1';
-const IMAGE_CACHE   = 'gp-images-v1';
-const RUNTIME_CACHE = 'gp-runtime-v1';
+const SHELL_CACHE   = 'gb-shell-v1';
+const FEED_CACHE    = 'gb-feed-v1';
+const IMAGE_CACHE   = 'gb-images-v1';
+const RUNTIME_CACHE = 'gb-runtime-v1';
 
 const ALL_CACHES = [SHELL_CACHE, FEED_CACHE, IMAGE_CACHE, RUNTIME_CACHE];
 
@@ -23,6 +23,8 @@ const SHELL_ASSETS = [
   '/index.html',
   '/styles.css',
   '/favicon.svg',
+  '/manifest.json',
+  '/og-image.png',
 ];
 
 // -- Install: precache shell ---------------------------------------

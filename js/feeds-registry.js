@@ -7,7 +7,7 @@ let _feeds = [];
 
 export async function loadFeedsRegistry() {
   try {
-    const resp = await fetch('/data/feeds.json', { signal: AbortSignal.timeout(5000) });
+    const resp = await fetch('/feeds.json', { signal: AbortSignal.timeout(5000) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     // Only include feeds that are not explicitly disabled (enabled: false)

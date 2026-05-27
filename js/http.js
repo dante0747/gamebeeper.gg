@@ -33,8 +33,8 @@ export function looksLikeUsableBody(text) {
       return false;
     }
   }
-  if (/temporarily rate limited|attention required|cloudflare/i.test(head) &&
-      /<title|<html/i.test(head) === false) {
+  // Reject Cloudflare/rate-limit pages — check for telltale text regardless of HTML structure
+  if (/temporarily rate limited|attention required|cloudflare/i.test(head)) {
     return false;
   }
   return true;

@@ -5,8 +5,6 @@
  * Handles data loading, rendering, filtering, and video player delegation.
  */
 
-'use strict';
-
 import {
   loadVideoCache, loadVideoSources, loadVideoHealth,
   filterVideos, getFeaturedVideo, getVideos, getVideoSources, getVideoHealth,
@@ -20,6 +18,8 @@ import { VideoFilters } from './video-filters.js';
 import { openVideoModal, initVideoPlayer } from './video-player.js';
 import { gaEvent } from './analytics.js';
 import { esc } from './utils.js';
+import { toggleBookmark, isBookmarked } from './storage.js';
+import { showBmToast } from './utils.js';
 
 // ── State ─────────────────────────────────────────────────────────────────────
 
@@ -93,30 +93,19 @@ function wireGridBookmarks(container) {
   container.querySelectorAll('.vc-bm-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
-      // Video bookmarks are handled via video-player delegation in storage.js
-      // This fires custom logic — but for simplicity we delegate to the player module:
       const id = btn.dataset.videoId;
       if (!id) return;
       const video = _allVideos.find(v => v.id === id);
       if (!video) return;
-      import('./video-player.js').then(({ closeVideoModal: _c }) => {
-        // trigger bookmark toggle inline
-        import('./storage.js').then(({ toggleBookmark, isBookmarked }) => {
-          import('./utils.js').then(({ showBmToast }) => {
-            import('./analytics.js').then(({ gaEvent }) => {
-              const key     = `video:${video.id}`;
-              const article = { link: key, title: video.title, source: video.sourceName, contentType: 'video', ...video };
-              const added   = toggleBookmark(article, key);
-              gaEvent(added ? 'bookmark_add' : 'bookmark_remove', { article_title: video.title, content_type: 'video' });
-              const svg = btn.querySelector('svg');
-              if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
-              btn.classList.toggle('bm-active', added);
-              btn.setAttribute('aria-label', added ? 'Remove bookmark' : `Bookmark this video: ${video.title}`);
-              showBmToast(added ? '📹 Video saved' : '🗑️ Removed from bookmarks');
-            });
-          });
-        });
-      });
+      const key     = `video:${video.id}`;
+      const article = { link: key, title: video.title, source: video.sourceName, contentType: 'video', ...video };
+      const added   = toggleBookmark(article);
+      gaEvent(added ? 'bookmark_add' : 'bookmark_remove', { article_title: video.title, content_type: 'video' });
+      const svg = btn.querySelector('svg');
+      if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
+      btn.classList.toggle('bm-active', added);
+      btn.setAttribute('aria-label', added ? 'Remove bookmark' : `Bookmark this video: ${video.title}`);
+      showBmToast(added ? '📹 Video saved' : '🗑️ Removed from bookmarks');
     });
   });
 }
@@ -388,18 +377,16 @@ async function initWatchSignal() {
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Start Watch Signal init (non-blocking, doesn't block the main feed)
-  initWatchSignal().catch(err => {
-    console.error('[GameBeeper] Watch Signal init error:', err);
-    const watchSection = $('watch');
-    if (watchSection) watchSection.style.display = '';
-    const error = $('watchError');
-    const errMsg = $('watchErrorMsg');
-    if (error && errMsg) {
-      errMsg.textContent = 'Video sources temporarily unavailable. The main feed continues to work normally.';
-      error.style.display = '';
-    }
-  });
+// ES modules are deferred — DOM is fully parsed by the time this runs.
+initWatchSignal().catch(err => {
+  console.error('[GameBeeper] Watch Signal init error:', err);
+  const watchSection = $('watch');
+  if (watchSection) watchSection.style.display = '';
+  const error = $('watchError');
+  const errMsg = $('watchErrorMsg');
+  if (error && errMsg) {
+    errMsg.textContent = 'Video sources temporarily unavailable. The main feed continues to work normally.';
+    error.style.display = '';
+  }
 });
 

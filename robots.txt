@@ -4,8 +4,8 @@
 # Allow all well-behaved crawlers
 User-agent: *
 Allow: /
-Disallow: /public/sw.js
-Disallow: /public/version.json
+Disallow: /sw.js
+Disallow: /version.json
 
 # Googlebot — allow everything; generous crawl budget hints
 User-agent: Googlebot

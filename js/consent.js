@@ -4,11 +4,11 @@
  * Manages cookie/analytics consent for GDPR compliance.
  * - Shows a dismissible banner on first visit.
  * - Dynamically loads GA4 only when the user accepts.
- * - Stores the decision in localStorage under 'gp:analytics:consent'.
+ * - Stores the decision in localStorage under 'gs:analytics:consent'.
  *   Value 'yes' = accepted, 'no' = declined.
  */
 
-const GA_ID          = 'G-M63R1H30X2';
+const GA_ID          = 'G-T8HTCPRNDN';
 const CONSENT_KEY    = 'gs:analytics:consent';
 const BANNER_SEEN_KEY = 'gs:consent:seen';
 

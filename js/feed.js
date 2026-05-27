@@ -144,7 +144,7 @@ export async function fetchFeed(feed) {
 // -- Static cache loader -------------------------------------------
 
 export async function loadFeedCache() {
-  const resp = await fetch('/public/feed.json', { cache: 'no-cache', signal: AbortSignal.timeout(8000) });
+  const resp = await fetch('/feed.json', { cache: 'no-cache', signal: AbortSignal.timeout(8000) });
   if (!resp.ok) throw new Error(`Cache ${resp.status}`);
   const data = await resp.json();
   if (!data.generatedAt || !Array.isArray(data.articles) || data.articles.length === 0) {

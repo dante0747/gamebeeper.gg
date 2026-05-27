@@ -15,7 +15,7 @@ let _loadedAt  = null;
 /** Load video sources registry from /data/video-sources.json */
 export async function loadVideoSources() {
   try {
-    const resp = await fetch('/data/video-sources.json', { signal: AbortSignal.timeout(5000) });
+    const resp = await fetch('/video-sources.json', { signal: AbortSignal.timeout(5000) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     _sources = Array.isArray(data) ? data.filter(s => s.enabled !== false) : [];
@@ -28,7 +28,7 @@ export async function loadVideoSources() {
 /** Load cached video entries from /public/videos.json */
 export async function loadVideoCache() {
   try {
-    const resp = await fetch('/public/videos.json', { cache: 'no-cache', signal: AbortSignal.timeout(8000) });
+    const resp = await fetch('/videos.json', { cache: 'no-cache', signal: AbortSignal.timeout(8000) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     _videos   = Array.isArray(data.videos) ? data.videos : [];
@@ -44,7 +44,7 @@ export async function loadVideoCache() {
 /** Load video source health from /public/video-health.json */
 export async function loadVideoHealth() {
   try {
-    const resp = await fetch('/public/video-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
+    const resp = await fetch('/video-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     _health = await resp.json();
     return _health;

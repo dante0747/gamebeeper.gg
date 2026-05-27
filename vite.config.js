@@ -34,6 +34,24 @@ export default defineConfig({
     // Local dev server – serves the static JSON files from public/
     port: 5173,
     open: true,
+    // Allow serving from data/ directory (for feeds.json, video-sources.json legacy paths)
+    fs: {
+      allow: ['.'],
+    },
+    plugins: [
+      // Rewrite legacy /public/* requests → /* so old bookmarks / SW dual-paths still resolve
+      {
+        name: 'public-prefix-rewrite',
+        configureServer(server) {
+          server.middlewares.use((req, _res, next) => {
+            if (req.url?.startsWith('/public/')) {
+              req.url = req.url.slice('/public'.length);
+            }
+            next();
+          });
+        },
+      },
+    ],
   },
 
   preview: {

@@ -47,7 +47,22 @@ function getModal() {
   document.getElementById('summaryBackdrop').addEventListener('click', closeSummaryModal);
   document.getElementById('summaryClose').addEventListener('click', closeSummaryModal);
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && _modal.classList.contains('open')) closeSummaryModal();
+    if (!_modal.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeSummaryModal(); return; }
+    // Focus trap — keep Tab/Shift+Tab inside the dialog
+    if (e.key === 'Tab') {
+      const focusable = Array.from(_modal.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      ));
+      if (!focusable.length) { e.preventDefault(); return; }
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
+    }
   });
 
   // Swipe-down-to-close (mobile bottom sheet)

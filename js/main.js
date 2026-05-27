@@ -1,5 +1,4 @@
-﻿'use strict';
-
+﻿
 import { categories, catMeta, REFRESH_OPTIONS, SPONSORED_RE, DAY_MS, CACHE_STALE_MS } from './config.js';
 import { loadFeedsRegistry, getFeeds } from './feeds-registry.js';
 import { gaEvent } from './analytics.js';
@@ -47,7 +46,6 @@ const listViewBtn    = $('listViewBtn');
 const sbFeeds        = $('sbFeeds');
 const sbUpdated      = $('sbUpdated');
 const sbFailed       = $('sbFailed');
-const statArticles   = null; // stat removed from UI
 
 // -- Preference-based filtering ------------------------------------
 
@@ -147,7 +145,6 @@ function render() {
   const seoFallback = document.getElementById('seoLatestFallback');
   if (seoFallback) seoFallback.style.display = 'none';
 
-  if (statArticles) statArticles.textContent = allArticles.length;
 
   announce(`${visible.length} stories shown.`);
   renderActivePulseSummary();
@@ -181,7 +178,6 @@ function setLive() {
   statusText.textContent = `${allArticles.length} fresh stories loaded · Updated at ${timeStr}`;
   if (navStatus) navStatus.textContent = `✓ ${allArticles.length} articles`;
   setRefreshBusy(false);
-  if (statArticles) animateCounter(statArticles, allArticles.length, 900);
   const statFeedsEl = document.getElementById('statFeeds');
   if (statFeedsEl) animateCounter(statFeedsEl, getFeeds().length, 700);
   const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
@@ -238,7 +234,7 @@ async function loadFeedHealthBanner() {
   const bar = document.getElementById('feedHealthBar');
   if (!bar) return;
   try {
-    const resp = await fetch('/public/feed-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
+    const resp = await fetch('/feed-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
     if (!resp.ok) return;
     const health = await resp.json();
     const total  = Array.isArray(health.feeds) ? health.feeds.length : getFeeds().length;
@@ -271,7 +267,7 @@ async function loadSiteVersion() {
   const el = document.getElementById('siteVersion');
   if (!el) return;
   try {
-    const resp = await fetch('/public/version.json', { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
+    const resp = await fetch('/version.json', { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
     if (!resp.ok) return;
     const v = await resp.json();
     el.textContent = `// ${v.version} · ${v.commit} · ${v.date}`;
@@ -941,6 +937,13 @@ async function init() {
   const searchInput = document.getElementById('articleSearch');
   const searchKbd   = document.getElementById('searchKbd');
   if (searchInput) {
+    // Pre-fill from ?q= URL parameter (supports the SearchAction schema)
+    const urlQ = new URLSearchParams(window.location.search).get('q');
+    if (urlQ) {
+      searchInput.value = urlQ;
+      searchQuery = urlQ.trim();
+    }
+
     let debounceTimer;
     searchInput.addEventListener('input', () => {
       clearTimeout(debounceTimer);
