@@ -1,44 +1,50 @@
 {
-  "generatedAt": "2026-05-28T10:24:25.950Z",
+  "generatedAt": "2026-05-28T10:34:20.481Z",
   "totalSources": 6,
-  "onlineSources": 6,
-  "failedSources": 0,
+  "onlineSources": 0,
+  "failedSources": 6,
   "sources": [
     {
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "fetch failed",
+      "videosFetched": 0
     },
     {
       "id": "gamespot-yt",
       "name": "GameSpot",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "fetch failed",
+      "videosFetched": 0
     },
     {
       "id": "ign-yt",
       "name": "IGN",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "fetch failed",
+      "videosFetched": 0
     },
     {
       "id": "nintendo-yt",
       "name": "Nintendo",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "fetch failed",
+      "videosFetched": 0
     },
     {
       "id": "playstation-yt",
       "name": "PlayStation",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "fetch failed",
+      "videosFetched": 0
     },
     {
       "id": "xbox-yt",
       "name": "Xbox",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "fetch failed",
+      "videosFetched": 0
     }
   ]
 }
