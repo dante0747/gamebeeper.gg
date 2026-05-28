@@ -337,15 +337,30 @@ function buildHeroFeaturedCard(articles) {
   const card = document.getElementById('heroFeaturedCard');
   if (!card || !articles.length) return;
 
+  const resolveHeroImageSrc = value => {
+    if (!value) return null;
+    const raw = String(value).trim();
+    if (!raw) return null;
+    if (raw.startsWith('/')) return raw;
+    const safe = safeUrl(raw);
+    return safe && safe !== '#' ? safe : null;
+  };
+
+  const heroFallbackSrc = article => {
+    const fallback = resolveHeroImageSrc(article?.fallbackImage);
+    return fallback || '/assets/fallbacks/general.svg';
+  };
+
   // Pick the most recent article with an image; fallback to first article
   const featured = articles.find(a => {
-    const src = safeUrl(a.image || a.fallbackImage || null);
-    return src && src !== '#';
+    const src = resolveHeroImageSrc(a.image || a.fallbackImage || null);
+    return !!src;
   }) || articles[0];
   if (!featured) return;
 
-  const imgSrc = safeUrl(featured.image || featured.fallbackImage || null);
-  const imgSrcSafe = (imgSrc && imgSrc !== '#') ? imgSrc : null;
+  const primaryImgSrc = resolveHeroImageSrc(featured.image);
+  const fallbackImgSrc = heroFallbackSrc(featured);
+  const imgSrcSafe = primaryImgSrc || fallbackImgSrc;
   const date     = relTime(featured.date);
   const bm       = isBookmarked(featured.link);
   const catCls   = catClass(featured.category || 'Latest');
@@ -354,7 +369,7 @@ function buildHeroFeaturedCard(articles) {
     ? `<a href="${esc(featured.link)}" target="_blank" rel="noopener noreferrer" class="hfc-img-wrap" tabindex="-1" aria-hidden="true">
          <img src="${esc(imgSrcSafe)}" alt="Article image for: ${esc(featured.title)}"
               loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer"
-              width="640" height="360">
+              width="640" height="360" data-fallback-src="${esc(fallbackImgSrc)}">
        </a>`
     : `<a href="${esc(featured.link)}" target="_blank" rel="noopener noreferrer" class="hfc-img-wrap hfc-img-placeholder" tabindex="-1" aria-hidden="true"></a>`;
 
@@ -422,6 +437,15 @@ function buildHeroFeaturedCard(articles) {
       gaEvent('share', { article_title: featured.title, article_url: featured.link });
       shareArticle(featured.title, featured.link);
     });
+  }
+
+  const heroImg = card.querySelector('.hfc-img-wrap img');
+  if (heroImg) {
+    heroImg.addEventListener('error', () => {
+      const fallbackSrc = heroImg.dataset.fallbackSrc;
+      if (!fallbackSrc || heroImg.src.endsWith(fallbackSrc)) return;
+      heroImg.src = fallbackSrc;
+    }, { once: true });
   }
 }
 
@@ -1061,4 +1085,3 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 });
-
