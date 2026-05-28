@@ -18,29 +18,38 @@
   </script>
   <!-- Primary SEO -->
   <title>GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed</title>
-  <meta name="description" content="GameBeeper brings together video game news, reveals, reviews, platform updates and industry stories from trusted gaming sources in one fast feed. No ads. No paywalls." />
+  <meta name="description" content="GameBeeper aggregates the latest video game news, reviews, reveals, trailers and industry stories from 34 trusted gaming sources — PlayStation, Xbox, Nintendo, PC, esports, indie — in one fast, ad-free feed. No paywalls." />
   <meta name="application-name" content="GameBeeper" />
   <meta name="rating" content="general" />
   <meta name="language" content="English" />
-  <link rel="canonical" href="https://GameBeeper.gg/" />
+  <meta name="author" content="GameBeeper" />
+  <meta name="keywords" content="video game news, gaming news, game reviews, game reveals, PlayStation news, Xbox news, Nintendo news, Switch news, PC gaming news, esports news, indie games, game trailers, gaming industry news, new game releases 2026, latest gaming news, best game reviews" />
+  <meta name="news_keywords" content="video games, gaming, PlayStation, Xbox, Nintendo Switch, PC gaming, esports, indie games, game reviews, game trailers" />
+  <meta name="category" content="Games, Entertainment" />
+  <meta name="classification" content="Gaming News Aggregator" />
+  <link rel="canonical" href="https://gamebeeper.gg/" />
+  <!-- JSON feed discovery for news readers and crawlers -->
+  <link rel="alternate" type="application/json" title="GameBeeper Gaming News Feed" href="https://gamebeeper.gg/feed.json" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://GameBeeper.gg/" />
+  <meta property="og:url" content="https://gamebeeper.gg/" />
   <meta property="og:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
-  <meta property="og:description" content="GameBeeper aggregates trusted gaming sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, and more — into one distraction-free feed. No ads. No paywalls." />
-  <meta property="og:image" content="https://GameBeeper.gg/og-image.png" />
+  <meta property="og:description" content="GameBeeper aggregates 34 trusted gaming sources — PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, IGN, Eurogamer, and more — into one fast, distraction-free feed. No ads. No paywalls." />
+  <meta property="og:image" content="https://gamebeeper.gg/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt" content="GameBeeper — Video Game News Aggregator" />
+  <meta property="og:image:alt" content="GameBeeper — Video Game News Aggregator covering PlayStation, Xbox, Nintendo, PC, and more" />
   <meta property="og:site_name" content="GameBeeper" />
   <meta property="og:locale" content="en_US" />
+  <meta property="article:publisher" content="https://github.com/dante0747/GameBeeper.gg" />
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://GameBeeper.gg/" />
+  <meta name="twitter:site" content="@GameBeeperGG" />
+  <meta name="twitter:url" content="https://gamebeeper.gg/" />
   <meta name="twitter:title" content="GameBeeper — Video Game News, Reviews &amp; Reveals in One Feed" />
-  <meta name="twitter:description" content="Your gaming signal. News, reviews, reveals and community picks from 19 trusted gaming sources." />
-  <meta name="twitter:image" content="https://GameBeeper.gg/og-image.png" />
+  <meta name="twitter:description" content="Your gaming signal. Latest news, reviews and reveals from PlayStation, Xbox, Nintendo, PC and more — 34 trusted sources, no ads, no paywalls." />
+  <meta name="twitter:image" content="https://gamebeeper.gg/og-image.png" />
   <meta name="twitter:image:alt" content="GameBeeper — Video Game News Aggregator" />
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -48,9 +57,10 @@
   <meta name="theme-color" content="#090B11" />
   <link rel="manifest" href="/manifest.json" />
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon-6Pg9osAL.svg" />
-  <link rel="shortcut icon" href="/assets/favicon-6Pg9osAL.svg" />
-  <link rel="sitemap" type="application/xml" href="data:text/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHVybHNldCB4bWxucz0iaHR0cDovL3d3dy5zaXRlbWFwcy5vcmcvc2NoZW1hcy9zaXRlbWFwLzAuOSIKICAgICAgICB4bWxuczppbWFnZT0iaHR0cDovL3d3dy5nb29nbGUuY29tL3NjaGVtYXMvc2l0ZW1hcC1pbWFnZS8xLjEiPgoKICA8IS0tIEhvbWVwYWdlIOKAlCBhZ2dyZWdhdGVzIGFsbCBjdXJhdGVkIFJTUyBmZWVkcyAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL0dhbWVCZWVwZXIuZ2cvPC9sb2M+CiAgICA8bGFzdG1vZD4yMDI2LTA1LTI1PC9sYXN0bW9kPgogICAgPGNoYW5nZWZyZXE+aG91cmx5PC9jaGFuZ2VmcmVxPgogICAgPHByaW9yaXR5PjEuMDwvcHJpb3JpdHk+CiAgICA8aW1hZ2U6aW1hZ2U+CiAgICAgIDxpbWFnZTpsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL29nLWltYWdlLnBuZzwvaW1hZ2U6bG9jPgogICAgICA8aW1hZ2U6dGl0bGU+R2FtZUJlZXBlciDvv70gVmlkZW8gR2FtZSBOZXdzIEFnZ3JlZ2F0b3I8L2ltYWdlOnRpdGxlPgogICAgICA8aW1hZ2U6Y2FwdGlvbj5WaWRlbyBnYW1lIG5ld3MsIHJldmlld3MsIHJldmVhbHMgYW5kIHBsYXRmb3JtIHVwZGF0ZXMgZnJvbSB0cnVzdGVkIGdhbWluZyBzb3VyY2VzLiBObyBhZHMsIG5vIHBheXdhbGxzLjwvaW1hZ2U6Y2FwdGlvbj4KICAgIDwvaW1hZ2U6aW1hZ2U+CiAgPC91cmw+CgogIDwhLS0gUHJpdmFjeSBQb2xpY3kgLS0+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL3ByaXZhY3kuaHRtbDwvbG9jPgogICAgPGxhc3Rtb2Q+MjAyNi0wNS0yNTwvbGFzdG1vZD4KICAgIDxjaGFuZ2VmcmVxPm1vbnRobHk8L2NoYW5nZWZyZXE+CiAgICA8cHJpb3JpdHk+MC4zPC9wcmlvcml0eT4KICA8L3VybD4KCiAgPCEtLSBUZXJtcyBvZiBVc2UgLS0+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly9HYW1lQmVlcGVyLmdnL3Rlcm1zLmh0bWw8L2xvYz4KICAgIDxsYXN0bW9kPjIwMjYtMDUtMjU8L2xhc3Rtb2Q+CiAgICA8Y2hhbmdlZnJlcT5tb250aGx5PC9jaGFuZ2VmcmVxPgogICAgPHByaW9yaXR5PjAuMzwvcHJpb3JpdHk+CiAgPC91cmw+Cgo8L3VybHNldD4K" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-DNtmISOy.svg" />
+  <link rel="shortcut icon" href="/assets/favicon-DNtmISOy.svg" />
+  <link rel="apple-touch-icon" href="/assets/og-image-BQ96HOra.png" />
+  <link rel="sitemap" type="application/xml" href="data:text/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHVybHNldCB4bWxucz0iaHR0cDovL3d3dy5zaXRlbWFwcy5vcmcvc2NoZW1hcy9zaXRlbWFwLzAuOSIKICAgICAgICB4bWxuczppbWFnZT0iaHR0cDovL3d3dy5nb29nbGUuY29tL3NjaGVtYXMvc2l0ZW1hcC1pbWFnZS8xLjEiPgoKICA8IS0tIEhvbWVwYWdlIOKAlCBhZ2dyZWdhdGVzIGFsbCBjdXJhdGVkIFJTUyBmZWVkcyAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL2dhbWViZWVwZXIuZ2cvPC9sb2M+CiAgICA8bGFzdG1vZD4yMDI2LTA1LTI4PC9sYXN0bW9kPgogICAgPGNoYW5nZWZyZXE+aG91cmx5PC9jaGFuZ2VmcmVxPgogICAgPHByaW9yaXR5PjEuMDwvcHJpb3JpdHk+CiAgICA8aW1hZ2U6aW1hZ2U+CiAgICAgIDxpbWFnZTpsb2M+aHR0cHM6Ly9nYW1lYmVlcGVyLmdnL29nLWltYWdlLnBuZzwvaW1hZ2U6bG9jPgogICAgICA8aW1hZ2U6dGl0bGU+R2FtZUJlZXBlciAmIzgyMTI7IFZpZGVvIEdhbWUgTmV3cyBBZ2dyZWdhdG9yPC9pbWFnZTp0aXRsZT4KICAgICAgPGltYWdlOmNhcHRpb24+VmlkZW8gZ2FtZSBuZXdzLCByZXZpZXdzLCByZXZlYWxzIGFuZCBwbGF0Zm9ybSB1cGRhdGVzIGZyb20gMzQgdHJ1c3RlZCBnYW1pbmcgc291cmNlcy4gUGxheVN0YXRpb24sIFhib3gsIE5pbnRlbmRvLCBQQywgZXNwb3J0cywgaW5kaWUuIE5vIGFkcywgbm8gcGF5d2FsbHMuPC9pbWFnZTpjYXB0aW9uPgogICAgPC9pbWFnZTppbWFnZT4KICA8L3VybD4KCiAgPCEtLSBQcml2YWN5IFBvbGljeSAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL2dhbWViZWVwZXIuZ2cvcHJpdmFjeS5odG1sPC9sb2M+CiAgICA8bGFzdG1vZD4yMDI2LTA1LTI4PC9sYXN0bW9kPgogICAgPGNoYW5nZWZyZXE+bW9udGhseTwvY2hhbmdlZnJlcT4KICAgIDxwcmlvcml0eT4wLjM8L3ByaW9yaXR5PgogIDwvdXJsPgoKICA8IS0tIFRlcm1zIG9mIFVzZSAtLT4KICA8dXJsPgogICAgPGxvYz5odHRwczovL2dhbWViZWVwZXIuZ2cvdGVybXMuaHRtbDwvbG9jPgogICAgPGxhc3Rtb2Q+MjAyNi0wNS0yODwvbGFzdG1vZD4KICAgIDxjaGFuZ2VmcmVxPm1vbnRobHk8L2NoYW5nZWZyZXE+CiAgICA8cHJpb3JpdHk+MC4zPC9wcmlvcml0eT4KICA8L3VybD4KCjwvdXJsc2V0Pgo=" />
   <!-- DNS prefetch -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -58,7 +68,8 @@
   <link rel="dns-prefetch" href="https://api.codetabs.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Space Grotesk (display), Inter (body), JetBrains Mono (utility) -->
+  <!-- Space Grotesk (display), Inter (body), JetBrains Mono (utility) — preloaded for LCP improvement -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -67,66 +78,167 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "GameBeeper",
-      "alternateName": "GameBeeper.gg",
-      "url": "https://GameBeeper.gg/",
-      "description": "GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories in one fast, distraction-free feed.",
+      "alternateName": ["GameBeeper.gg", "Game Beeper"],
+      "url": "https://gamebeeper.gg/",
+      "description": "GameBeeper collects the latest video game news, reveals, reviews, platform updates, and industry stories from 34 trusted gaming sources in one fast, distraction-free feed.",
       "inLanguage": "en-US",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "https://GameBeeper.gg/?q={search_term_string}" },
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://gamebeeper.gg/?q={search_term_string}" },
         "query-input": "required name=search_term_string"
       },
       "publisher": {
         "@type": "Organization",
         "name": "GameBeeper",
-        "url": "https://GameBeeper.gg/",
-        "logo": { "@type": "ImageObject", "url": "https://GameBeeper.gg/favicon.svg", "width": 512, "height": 512 }
+        "url": "https://gamebeeper.gg/",
+        "logo": { "@type": "ImageObject", "url": "https://gamebeeper.gg/favicon.svg", "width": 512, "height": 512 },
+        "sameAs": ["https://github.com/dante0747/GameBeeper.gg"]
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "GameBeeper — Video Game News Aggregator",
-      "url": "https://GameBeeper.gg/",
-      "description": "GameBeeper aggregates video game news from 19 trusted sources in one fast, ad-free feed.",
-      "isPartOf": { "@type": "WebSite", "url": "https://GameBeeper.gg/" },
-      "privacyPolicy": "https://GameBeeper.gg/privacy.html",
-      "dateModified": "2026-05-25"
+      "url": "https://gamebeeper.gg/",
+      "description": "GameBeeper aggregates video game news from 34 trusted sources — PlayStation, Xbox, Nintendo, PC, esports, indie — in one fast, ad-free feed.",
+      "isPartOf": { "@type": "WebSite", "url": "https://gamebeeper.gg/" },
+      "about": {
+        "@type": "Thing",
+        "name": "Video Game News",
+        "description": "Latest gaming news covering PlayStation, Xbox, Nintendo, PC gaming, esports, indie games, reviews, and trailers"
+      },
+      "privacyPolicy": "https://gamebeeper.gg/privacy.html",
+      "dateModified": "2026-05-28"
     }
   ]
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Video Game News Sources aggregated by GameBeeper",
-    "url": "https://GameBeeper.gg/",
-    "numberOfItems": 19,
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"VGC","url":"https://GameBeeper.gg/?source=VGC"},
-      {"@type":"ListItem","position":2,"name":"Gematsu","url":"https://GameBeeper.gg/?source=Gematsu"},
-      {"@type":"ListItem","position":3,"name":"PlayStation Blog","url":"https://GameBeeper.gg/?source=PlayStation+Blog"},
-      {"@type":"ListItem","position":4,"name":"Xbox Wire","url":"https://GameBeeper.gg/?source=Xbox+Wire"},
-      {"@type":"ListItem","position":5,"name":"Nintendo Life","url":"https://GameBeeper.gg/?source=Nintendo+Life"},
-      {"@type":"ListItem","position":6,"name":"Push Square","url":"https://GameBeeper.gg/?source=Push+Square"},
-      {"@type":"ListItem","position":7,"name":"Pure Xbox","url":"https://GameBeeper.gg/?source=Pure+Xbox"},
-      {"@type":"ListItem","position":8,"name":"Nintendo Everything","url":"https://GameBeeper.gg/?source=Nintendo+Everything"},
-      {"@type":"ListItem","position":9,"name":"PC Gamer","url":"https://GameBeeper.gg/?source=PC+Gamer"},
-      {"@type":"ListItem","position":10,"name":"Rock Paper Shotgun","url":"https://GameBeeper.gg/?source=Rock+Paper+Shotgun"},
-      {"@type":"ListItem","position":11,"name":"Eurogamer","url":"https://GameBeeper.gg/?source=Eurogamer"},
-      {"@type":"ListItem","position":12,"name":"GamesIndustry.biz","url":"https://GameBeeper.gg/?source=GamesIndustry.biz"},
-      {"@type":"ListItem","position":13,"name":"IGN","url":"https://GameBeeper.gg/?source=IGN"},
-      {"@type":"ListItem","position":14,"name":"GameSpot","url":"https://GameBeeper.gg/?source=GameSpot"},
-      {"@type":"ListItem","position":15,"name":"Destructoid","url":"https://GameBeeper.gg/?source=Destructoid"},
-      {"@type":"ListItem","position":16,"name":"Polygon","url":"https://GameBeeper.gg/?source=Polygon"},
-      {"@type":"ListItem","position":17,"name":"Kotaku","url":"https://GameBeeper.gg/?source=Kotaku"},
-      {"@type":"ListItem","position":18,"name":"PCGamesN","url":"https://GameBeeper.gg/?source=PCGamesN"},
-      {"@type":"ListItem","position":19,"name":"TheGamer","url":"https://GameBeeper.gg/?source=TheGamer"}
+    "@type": "NewsMediaOrganization",
+    "name": "GameBeeper",
+    "alternateName": "GameBeeper.gg",
+    "url": "https://gamebeeper.gg/",
+    "description": "GameBeeper is a free, open-source video game news aggregator covering PlayStation, Xbox, Nintendo, PC gaming, esports, indie games, hardware, and game industry news from 34 trusted sources.",
+    "foundingDate": "2026",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gamebeeper.gg/favicon.svg",
+      "width": 512,
+      "height": 512
+    },
+    "masthead": "https://gamebeeper.gg/",
+    "sameAs": ["https://github.com/dante0747/GameBeeper.gg"],
+    "publishingPrinciples": "https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md",
+    "actionableFeedbackPolicy": "https://github.com/dante0747/GameBeeper.gg/issues",
+    "diversityPolicy": "https://gamebeeper.gg/privacy.html",
+    "ethicsPolicy": "https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GameBeeper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper is a free, open-source video game news aggregator that gathers the latest gaming news, reviews, reveals and trailers from 34 trusted sources — including PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, IGN, GameSpot, Eurogamer, Polygon, Kotaku, GamesRadar, and more — into one fast, ad-free feed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GameBeeper free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, GameBeeper is completely free with no ads, no paywalls, and no subscription required. The project is open source and supported by optional user donations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What gaming platforms and topics does GameBeeper cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper covers all major gaming platforms and topics: PlayStation (PS5, PS4, PlayStation Blog), Xbox (Xbox Series X/S, Xbox Wire), Nintendo (Switch, Switch 2, Nintendo Life, Nintendo Everything), PC gaming (PC Gamer, Rock Paper Shotgun, PCGamesN), esports (Dot Esports), indie games (Siliconera, Indie Games Plus, itch.io Devlogs), game reviews (IGN Reviews, GameSpot Reviews, RPS Reviews), game trailers, gaming hardware (Digital Foundry, Tom's Hardware), and the games industry (GamesIndustry.biz)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does GameBeeper get its gaming news from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper aggregates RSS feeds from 34 hand-picked, trusted gaming publications: VGC, Gematsu, Eurogamer, IGN, GameSpot, Polygon, Kotaku, Destructoid, GamesRadar, Ars Technica Gaming, The Verge, PlayStation Blog, Push Square, Xbox Wire, Pure Xbox, Nintendo Life, Nintendo Everything, PC Gamer, Rock Paper Shotgun, PCGamesN, Dot Esports, GamesIndustry.biz, Digital Foundry, Tom's Hardware, Siliconera, Indie Games Plus, and itch.io Devlogs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GameBeeper show ads or track users?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. GameBeeper has zero advertising and no persistent tracking. Analytics only run with your explicit consent. The full source code is publicly available on GitHub for complete transparency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is GameBeeper's gaming news feed updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GameBeeper's feed is refreshed automatically every hour with the latest articles from all 34 gaming sources. You can also manually refresh the feed at any time using the refresh button."
+        }
+      }
     ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/index-CiGTJTWG.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DwfkkyF8.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Video Game News Sources aggregated by GameBeeper",
+    "description": "GameBeeper aggregates gaming news from these 34 trusted sources covering PlayStation, Xbox, Nintendo, PC gaming, esports, indie games, reviews, hardware, and industry news.",
+    "url": "https://gamebeeper.gg/",
+    "numberOfItems": 34,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"VGC","url":"https://gamebeeper.gg/?source=VGC"},
+      {"@type":"ListItem","position":2,"name":"Gematsu","url":"https://gamebeeper.gg/?source=Gematsu"},
+      {"@type":"ListItem","position":3,"name":"Eurogamer","url":"https://gamebeeper.gg/?source=Eurogamer"},
+      {"@type":"ListItem","position":4,"name":"IGN","url":"https://gamebeeper.gg/?source=IGN"},
+      {"@type":"ListItem","position":5,"name":"GameSpot","url":"https://gamebeeper.gg/?source=GameSpot"},
+      {"@type":"ListItem","position":6,"name":"Polygon","url":"https://gamebeeper.gg/?source=Polygon"},
+      {"@type":"ListItem","position":7,"name":"Kotaku","url":"https://gamebeeper.gg/?source=Kotaku"},
+      {"@type":"ListItem","position":8,"name":"Destructoid","url":"https://gamebeeper.gg/?source=Destructoid"},
+      {"@type":"ListItem","position":9,"name":"GamesRadar","url":"https://gamebeeper.gg/?source=GamesRadar"},
+      {"@type":"ListItem","position":10,"name":"Ars Technica Gaming","url":"https://gamebeeper.gg/?source=Ars+Technica+Gaming"},
+      {"@type":"ListItem","position":11,"name":"The Verge","url":"https://gamebeeper.gg/?source=The+Verge"},
+      {"@type":"ListItem","position":12,"name":"PlayStation Blog","url":"https://gamebeeper.gg/?source=PlayStation+Blog"},
+      {"@type":"ListItem","position":13,"name":"Push Square","url":"https://gamebeeper.gg/?source=Push+Square"},
+      {"@type":"ListItem","position":14,"name":"Xbox Wire","url":"https://gamebeeper.gg/?source=Xbox+Wire"},
+      {"@type":"ListItem","position":15,"name":"Pure Xbox","url":"https://gamebeeper.gg/?source=Pure+Xbox"},
+      {"@type":"ListItem","position":16,"name":"Nintendo Life","url":"https://gamebeeper.gg/?source=Nintendo+Life"},
+      {"@type":"ListItem","position":17,"name":"Nintendo Everything","url":"https://gamebeeper.gg/?source=Nintendo+Everything"},
+      {"@type":"ListItem","position":18,"name":"PC Gamer","url":"https://gamebeeper.gg/?source=PC+Gamer"},
+      {"@type":"ListItem","position":19,"name":"Rock Paper Shotgun","url":"https://gamebeeper.gg/?source=Rock+Paper+Shotgun"},
+      {"@type":"ListItem","position":20,"name":"PCGamesN","url":"https://gamebeeper.gg/?source=PCGamesN"},
+      {"@type":"ListItem","position":21,"name":"IGN Reviews","url":"https://gamebeeper.gg/?source=IGN+Reviews"},
+      {"@type":"ListItem","position":22,"name":"GameSpot Reviews","url":"https://gamebeeper.gg/?source=GameSpot+Reviews"},
+      {"@type":"ListItem","position":23,"name":"RPS Reviews","url":"https://gamebeeper.gg/?source=RPS+Reviews"},
+      {"@type":"ListItem","position":24,"name":"Nintendo Life Reviews","url":"https://gamebeeper.gg/?source=Nintendo+Life+Reviews"},
+      {"@type":"ListItem","position":25,"name":"Push Square Reviews","url":"https://gamebeeper.gg/?source=Push+Square+Reviews"},
+      {"@type":"ListItem","position":26,"name":"Pure Xbox Reviews","url":"https://gamebeeper.gg/?source=Pure+Xbox+Reviews"},
+      {"@type":"ListItem","position":27,"name":"Gematsu Trailers","url":"https://gamebeeper.gg/?source=Gematsu+Trailers"},
+      {"@type":"ListItem","position":28,"name":"Dot Esports","url":"https://gamebeeper.gg/?source=Dot+Esports"},
+      {"@type":"ListItem","position":29,"name":"GamesIndustry.biz","url":"https://gamebeeper.gg/?source=GamesIndustry.biz"},
+      {"@type":"ListItem","position":30,"name":"Digital Foundry","url":"https://gamebeeper.gg/?source=Digital+Foundry"},
+      {"@type":"ListItem","position":31,"name":"Tom's Hardware","url":"https://gamebeeper.gg/?source=Tom%27s+Hardware"},
+      {"@type":"ListItem","position":32,"name":"Siliconera","url":"https://gamebeeper.gg/?source=Siliconera"},
+      {"@type":"ListItem","position":33,"name":"Indie Games Plus","url":"https://gamebeeper.gg/?source=Indie+Games+Plus"},
+      {"@type":"ListItem","position":34,"name":"itch.io Devlogs","url":"https://gamebeeper.gg/?source=itch.io+Devlogs"}
+    ]
+  }
+  </script>
+  <script type="module" crossorigin src="/assets/index-DAu5VwdC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-v8fI3Tcl.css">
 </head>
 <body>
   <!-- Skip to main content (accessibility) -->
@@ -140,20 +252,32 @@
       <div class="nav-inner">
         <a href="/" class="logo" aria-label="GameBeeper home">
           <div class="logo-mark" aria-hidden="true">
+            <!--
+              Nav mark — signal arcs centred at (18, 27) in 36×36 viewBox
+              r= 9 → (10, 22) → (26, 22)
+              r=16 → ( 4, 18) → (32, 18)
+            -->
             <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
-              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+              <!-- Outer arc — subtle cyan tint -->
+              <path d="M 4,18 A 16,16 0 0,1 32,18"
+                    stroke="#A3FF3F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-opacity="0.52"/>
+              <!-- Inner arc — bold lime -->
+              <path d="M 10,22 A  9, 9 0 0,1 26,22"
+                    stroke="#A3FF3F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <!-- Centre dot -->
+              <circle cx="18" cy="27" r="3.6" fill="#A3FF3F"/>
             </svg>
           </div>
           <span class="logo-name">GameBeeper</span>
         </a>
         <div class="nav-links" aria-label="Site sections">
-          <a href="#latest" class="nav-link">Discover</a>
-          <a href="#latest" class="nav-link">Latest</a>
-          <a href="#latest" class="nav-link" data-filter-nav="Reviews">Reviews</a>
-          <a href="#latest" class="nav-link" data-filter-nav="Trailers">Releases</a>
-          <a href="#latest" class="nav-link" data-filter-nav="PlayStation">Platforms</a>
+          <a href="#latest"   class="nav-link">Feed</a>
+          <a href="#watch"    class="nav-link nav-link-watch" aria-label="Watch Signal — gaming videos">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch
+          </a>
+          <a href="#sources"  class="nav-link">Sources</a>
+          <a href="#about"    class="nav-link">About</a>
+          <a href="#feedback" class="nav-link">Feedback</a>
         </div>
         <div class="nav-actions">
           <button id="navSearchBtn" class="btn btn-ghost btn-sm" title="Search articles" aria-label="Open search" aria-expanded="false">
@@ -162,6 +286,10 @@
           <button id="savedStoriesBtn" class="btn btn-ghost btn-sm" title="View saved stories" aria-label="View saved stories" onclick="window.__setFilter&&window.__setFilter('Bookmarks');document.getElementById('latest').scrollIntoView({behavior:'smooth'})">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
             <span id="sbBmCount" class="nav-bm-count" aria-label="saved stories count">0</span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-support aria-label="Support GameBeeper via PayPal" title="Donate via PayPal" style="gap:5px;color:var(--color-accent-cyan);border-color:rgba(36,214,255,0.35)">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            <span class="btn-label">Donate</span>
           </button>
           <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
             <span class="nav-hamburger-bar"></span>
@@ -175,10 +303,10 @@
   <!-- Mobile nav drawer -->
   <div class="nav-drawer" id="navDrawer" aria-hidden="true" role="dialog" aria-label="Site navigation">
     <nav class="nav-drawer-links">
-      <a href="#latest"    class="nav-drawer-link">Discover</a>
-      <a href="#latest"    class="nav-drawer-link">Latest</a>
-      <a href="#latest"    class="nav-drawer-link" onclick="window.__setFilter&&window.__setFilter('Reviews')">Reviews</a>
-      <a href="#latest"    class="nav-drawer-link" onclick="window.__setFilter&&window.__setFilter('Trailers')">Releases</a>
+      <a href="#latest"    class="nav-drawer-link">Feed</a>
+      <a href="#watch"     class="nav-drawer-link">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch
+      </a>
       <a href="#sources"   class="nav-drawer-link">Sources</a>
       <a href="#about"     class="nav-drawer-link">About</a>
       <a href="#feedback"  class="nav-drawer-link">Feedback</a>
@@ -208,7 +336,7 @@
             </button>
           </div>
           <div class="hero-trust" role="list" aria-label="Platform promises">
-            <span role="listitem"><span id="heroFeedCount">19</span> trusted sources</span>
+            <span role="listitem"><span id="heroFeedCount">34</span> trusted sources</span>
             <span class="trust-dot" aria-hidden="true">·</span>
             <span role="listitem">No ads</span>
             <span class="trust-dot" aria-hidden="true">·</span>
@@ -216,7 +344,7 @@
           </div>
           <div class="hero-stats" aria-label="Live feed statistics">
             <div class="hero-stat">
-              <span class="val" id="statFeeds">19</span>
+              <span class="val" id="statFeeds">34</span>
               <span class="lbl">Sources</span>
             </div>
             <div class="hero-stat">
@@ -266,6 +394,51 @@
   </section>
 
 
+  <!-- ============== WATCH SIGNAL HOMEPAGE PREVIEW ============== -->
+  <section class="watch-preview-section" id="watchPreviewSection" aria-labelledby="watch-preview-heading" style="display:none">
+    <div class="watch-preview-bg-glow" aria-hidden="true"></div>
+    <div class="page-wrap" style="position:relative;z-index:1">
+      <div class="watch-preview-header">
+        <div class="watch-preview-eyebrow">
+          <span class="watch-preview-live-dot" aria-hidden="true"></span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          WATCH SIGNAL
+        </div>
+        <div class="watch-preview-heading-row">
+          <h2 id="watch-preview-heading" class="watch-preview-title">Latest videos <em>worth your time.</em></h2>
+          <a href="#watch" class="btn btn-sm watch-preview-cta">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            View all
+          </a>
+        </div>
+        <p class="watch-preview-desc">Official trailers, gameplay reveals and trusted video coverage — curated, not algorithmic.</p>
+        <div class="watch-preview-header-rule" aria-hidden="true"></div>
+      </div>
+
+      <!-- Carousel -->
+      <div class="watch-carousel-wrap" id="watchCarouselWrap">
+        <button id="watchCarouselPrev" class="watch-carousel-btn watch-carousel-btn--prev" aria-label="Previous videos" disabled>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="watch-preview-grid" id="watchPreviewGrid" aria-label="Latest gaming videos" role="region" aria-live="polite">
+          <!-- Populated by JS -->
+        </div>
+        <button id="watchCarouselNext" class="watch-carousel-btn watch-carousel-btn--next" aria-label="Next videos">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots + footer CTA -->
+      <div class="watch-carousel-footer">
+        <div id="watchCarouselDots" class="watch-carousel-dots" role="group" aria-label="Video carousel navigation"></div>
+        <a href="#watch" class="watch-preview-footer-cta">
+          Browse full library
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============== CATEGORY CHIPS (all screens) ============== -->
   <div class="mobile-filters-wrap">
     <div id="mobileFilters" class="mobile-filters" role="group" aria-label="Filter by category"></div>
@@ -314,216 +487,914 @@
       <!-- Noscript fallback -->
       <noscript>
         <section style="padding:2rem 0">
-          <h2 style="margin-bottom:1rem">Latest video game news</h2>
-          <p>GameBeeper aggregates video game news from 19 curated RSS feeds across PlayStation, Xbox, Nintendo, PC, indie, reviews, trailers, esports, hardware, and industry topics.</p>
-          <p>Enable JavaScript to browse the latest articles with search, category filters, and bookmarks.</p>
-          <p>Sources include: PlayStation Blog, Xbox Wire, Nintendo Life, PC Gamer, Eurogamer, IGN, Polygon, Kotaku, GamesIndustry.biz, and more — <a href="#sources">see the full list</a>.</p>
+          <h2 style="margin-bottom:1rem">Latest Video Game News — GameBeeper</h2>
+          <p>GameBeeper is a free video game news aggregator collecting the latest gaming news, reviews, reveals, game trailers, and industry stories from 34 trusted sources into one fast, ad-free feed.</p>
+          <p>Enable JavaScript to browse live articles with search, category filters, bookmarks, and AI summaries.</p>
+          <h3 style="margin:1.5rem 0 0.5rem">Gaming News Categories</h3>
+          <ul style="margin:0 0 1rem 1.5rem;line-height:2">
+            <li><strong>PlayStation News</strong> — PlayStation Blog (Official), Push Square</li>
+            <li><strong>Xbox News</strong> — Xbox Wire (Official), Pure Xbox</li>
+            <li><strong>Nintendo News</strong> — Nintendo Life, Nintendo Everything</li>
+            <li><strong>PC Gaming News</strong> — PC Gamer, Rock Paper Shotgun, PCGamesN</li>
+            <li><strong>Game Reviews</strong> — IGN Reviews, GameSpot Reviews, RPS Reviews, Nintendo Life Reviews, Push Square Reviews, Pure Xbox Reviews</li>
+            <li><strong>Game Trailers</strong> — Gematsu Trailers</li>
+            <li><strong>Esports News</strong> — Dot Esports</li>
+            <li><strong>Gaming Hardware</strong> — Digital Foundry, Tom's Hardware</li>
+            <li><strong>Indie Games</strong> — Siliconera, Indie Games Plus, itch.io Devlogs</li>
+            <li><strong>Gaming Industry</strong> — GamesIndustry.biz</li>
+            <li><strong>General Gaming</strong> — VGC, Gematsu, Eurogamer, IGN, GameSpot, Polygon, Kotaku, Destructoid, GamesRadar, Ars Technica, The Verge</li>
+          </ul>
+          <p><a href="#sources">See the full list of 34 gaming news sources</a>.</p>
         </section>
       </noscript>
       <!-- SEO static article fallback — injected by scripts/generate-seo-content.mjs -->
       <!-- GENERATED_LATEST_ARTICLES_START -->
 
-  <!-- Latest articles from 10 of 315 cached stories (generated May 25, 2026) -->
+  <!-- Latest articles from 20 of 377 cached stories (generated May 28, 2026) -->
+  <script type="application/ld+json">
+  [
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Valve allegedly had higher Steam Machine prices in mind before the Steam Deck hike, but I need you not to assume the worst",
+  "url": "https://www.gamesradar.com/hardware/valve-allegedly-had-higher-steam-machine-prices-in-mind-before-the-steam-deck-hike-but-i-need-you-not-to-assume-the-worst/",
+  "datePublished": "2026-05-28T09:04:10.000Z",
+  "description": "Leaks suggest that Valve was already planning to charge more for the Steam Machine than the Steam Deck OLED at its new, higher…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "GamesRadar",
+    "url": "https://www.gamesradar.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://cdn.mos.cms.futurecdn.net/SivFtkV682Y2WATVKGtsoh-1280-80.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "May Update - Art progress + Assassin Name Reveal!",
+  "url": "https://elseth.itch.io/jest-messters/devlog/1536664/may-update-art-progress-assassin-name-reveal",
+  "datePublished": "2026-05-28T08:58:57.000Z",
+  "description": "Hi everyone! We did it! We held on till May! I&#039;ve been focusing on Re:Curse this month, so writing progress for Jest Messters has been slow. However, we…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "itch.io Devlogs",
+    "url": "https://elseth.itch.io"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://img.itch.zone/aW1nLzI0Nzk3NDU5LnBuZw==/original/%2BS5f6d.png"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Path of Exile co-creator tells developers \"don't survey your players\" because \"'your audience is good at recognizing problems and bad at solving them'\"",
+  "url": "https://www.gamesradar.com/games/action-rpg/path-of-exile-co-creator-tells-developers-dont-survey-your-players-because-your-audience-is-good-at-recognizing-problems-and-bad-at-solving-them/",
+  "datePublished": "2026-05-28T00:43:46.000Z",
+  "description": "Chris Wilson says there's a \"real danger to asking players to tell you how to change your…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "GamesRadar",
+    "url": "https://www.gamesradar.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://cdn.mos.cms.futurecdn.net/v9sMmG7w9nkb9jvfKRHoCi-1280-80.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "007 First Light safe codes and door codes",
+  "url": "https://www.polygon.com/007-first-light-all-safe-door-codes-list/",
+  "datePublished": "2026-05-27T20:10:36.000Z",
+  "description": "If you explore off the beaten track, you'll find plenty of 007 First Light safe codes . The problem is, some of them are trickier to unlock than others. Most…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Polygon",
+    "url": "https://www.polygon.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/007-first-light-safe-codes-header.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Yes, 007 First Light's tutorial really is a whole 3 hours of training montage and agent bonding time",
+  "url": "https://www.pcgamer.com/games/action/007-first-light-tutorial-missions-how-long/",
+  "datePublished": "2026-05-27T20:00:00.000Z",
+  "description": "You can't have an origin story without a training montage. That's standard issue stuff even for future MI6 man James Bond. I was expecting the usual \"press the…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "PC Gamer",
+    "url": "https://www.pcgamer.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://cdn.mos.cms.futurecdn.net/pRXwfrLe4YteHf4j3bHfcS-1280-80.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "007 First Light Makes One Of The Most Boring Parts Of Video Games Fun",
+  "url": "https://kotaku.com/007-first-light-training-montage-scene-tutorial-james-bond-2000699914",
+  "datePublished": "2026-05-27T18:13:25.000Z",
+  "description": "James Bond has to learn the ropes, and so do…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Kotaku",
+    "url": "https://kotaku.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://kotaku.com/app/uploads/2026/05/IMG_3548.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Deer &#038; Boy launches on Nintendo Switch in June, new trailer",
+  "url": "https://nintendoeverything.com/deer-boy-launches-on-nintendo-switch-in-june-new-trailer/",
+  "datePublished": "2026-05-27T17:30:34.000Z",
+  "description": "Deer &#38; Boy is one step closer to its release date. The title is reaching Nintendo Switch in June, Dear Villagers and Lifeline Games confirmed today. A…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Nintendo Everything",
+    "url": "https://nintendoeverything.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://nintendoeverything.com/wp-content/uploads/Deer-Boy-release-date.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Leading charity calls for \"consistent, enforceable standards\" to make games accessible for visually impaired players",
+  "url": "https://www.gamesindustry.biz/leading-charity-calls-for-consistent-enforceable-standards-to-make-games-accessible-for-visually-impaired-players",
+  "datePublished": "2026-05-27T17:27:41.000Z",
+  "description": "The Royal National Institute of Blind People (RNIB) is calling for \"consistent, enforceable standards\" for ensuring video games are playable for visually…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "GamesIndustry.biz",
+    "url": "https://www.gamesindustry.biz"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://assetsio.gnwcdn.com/spectrum-shift(1).jpg?width=690&quality=85&format=jpg&auto=webp"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Italian council sets 200% tax on data center development in agricultural zones — aims to spur the use of old industrial areas instead and limit environmental impact",
+  "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/italian-council-sets-200-percent-tax-on-data-center-development-in-agricultural-zones-aims-to-spur-the-use-of-old-industrial-areas-instead-and-limit-environmental-impact",
+  "datePublished": "2026-05-27T16:40:27.000Z",
+  "description": "This 200% tax will make it more expensive to build in rural areas and is aimed at spurring data center development in disused industrial zones…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Tom's Hardware",
+    "url": "https://www.tomshardware.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://cdn.mos.cms.futurecdn.net/zJ9ZuTa8TZQqPgypFTN5Kf-1280-80.png"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Genshin Impact Codename KFC and Animate Merchandise Appears",
+  "url": "https://www.siliconera.com/genshin-impact-codename-kfc-and-animate-merchandise-appears/",
+  "datePublished": "2026-05-27T16:00:52.000Z",
+  "description": "miHoYo is working with multiple entities in Japan to promote the Genshin Impact characters Alhaitham and Kaveh with new Codename merchandise campaigns. KFC…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Siliconera",
+    "url": "https://www.siliconera.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "/assets/fallbacks/indie.svg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "N.E.O. founder Bertrand Amar breaks down the expensive reality of organizing esports events",
+  "url": "https://dotesports.com/league-of-legends/news/n-e-o-founder-bertrand-amar-breaks-down-the-expensive-reality-of-organizing-esports-events",
+  "datePublished": "2026-05-27T15:49:03.000Z",
+  "description": "Bertrand Amar, founder of French tournament organizer N.E.O. (NEW ESPORTS ORG.), has outlined the hefty financial challenges and costs involved in organizing…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Dot Esports",
+    "url": "https://dotesports.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://media.dotesports.com/wp-content/uploads/2026/05/image1-3.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Is Fortnite shutting down in 2026?",
+  "url": "https://www.pcgamesn.com/fortnite/shutting-down",
+  "datePublished": "2026-05-27T15:25:21.000Z",
+  "description": "Is Fortnite shutting down? With price increases to V-Bucks, internal layoffs at Epic, and reports of unmet financial expectations and projections, all of these…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "PCGamesN",
+    "url": "https://www.pcgamesn.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2025/04/fortnite-shutting-down-1.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Discord is adding Spatial Audio support so you can pretend you&#039;re in the same room",
+  "url": "https://www.pcgamesn.com/discord/spatial-audio-support",
+  "datePublished": "2026-05-27T14:25:52.000Z",
+  "description": "If you're like me, you've spent countless hours in Discord calls with your friends. Whether you're grinding games or just shooting the breeze, Discord has…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "PCGamesN",
+    "url": "https://www.pcgamesn.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/Discord-is-adding-Spatial-Audio-support-so-you-can-pretend-youre-in-the-same-room.jpg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Murder Duels codes (May 2026)",
+  "url": "https://www.pcgamesn.com/murder-duels/codes",
+  "datePublished": "2026-05-27T13:54:20.000Z",
+  "description": "Murder Duels codes are by far the cheapest way to get new drip for your knife and revolver, and we've listed them all here for you. After all, who cares how…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "PCGamesN",
+    "url": "https://www.pcgamesn.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/murder-duels-codes-header-pcgn.jpeg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Demo v0.12.0 - Localisations & New Spells",
+  "url": "https://kennymakesgames.itch.io/pin/devlog/1532954/demo-v0120-localisations-new-spells",
+  "datePublished": "2026-05-27T13:05:01.000Z",
+  "description": "Hi all, It’s been a hectic few weeks but I&#039;m fairly confident that as of now, Cult of PiN is effectively feature complete! For the next couple of month up…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "itch.io Devlogs",
+    "url": "https://kennymakesgames.itch.io"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://img.itch.zone/aW1nLzIyNzk4OTI3LnBuZw==/original/472AJ7.png"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Demo release date! - June 3rd",
+  "url": "https://big-stretch.itch.io/the-wells-blessing/devlog/1535841/demo-release-date-june-3rd",
+  "datePublished": "2026-05-27T10:46:34.000Z",
+  "description": "We&#039;re very excited to announce that The Well&#039;s Blessing&#039;s public demo is coming out on June 3rd! (yes, next week!) This demo includes the full…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "itch.io Devlogs",
+    "url": "https://big-stretch.itch.io"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://img.itch.zone/aW1nLzI3NTEyNTc0LnBuZw==/400x224%23c/R2RVtD.png"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Petit Planet Area Load Limit, Blueprint Sharing, and Cooking Changes in the Works",
+  "url": "https://www.siliconera.com/petit-planet-area-load-limit-blueprint-sharing-and-cooking-changes-in-the-works/",
+  "datePublished": "2026-05-26T19:00:00.000Z",
+  "description": "HoYoVerse shared a statement going over areas of Petit Planet feedback it will attempt to address following the Stardrift Test beta , and it confirmed area…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Siliconera",
+    "url": "https://www.siliconera.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "/assets/fallbacks/indie.svg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Review: 007 First Light Is A Technical Standout on PS5 and PS5 Pro",
+  "url": "https://www.digitalfoundry.net/reviews/007-first-light-is-a-technical-standout-on-ps5-and-ps5-pro",
+  "datePublished": "2026-05-26T17:59:00.000Z",
+  "description": "Despite some image quality concerns on base PS5. James Bond's latest outing in 007 First Light is by far the most technically accomplished release in the…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Digital Foundry",
+    "url": "https://www.digitalfoundry.net"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "/assets/fallbacks/hardware.svg"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "007 First Light Review &#8211; Youth In Revolt",
+  "url": "https://www.gamespot.com/reviews/007-first-light-review-youth-in-revolt/",
+  "datePublished": "2026-05-26T15:46:14.000Z",
+  "description": "When IO Interactive was first announced as developing a James Bond game, people connected the obvious dots: James Bond inspired Hitman, the series IO is best…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "GameSpot Reviews",
+    "url": "https://www.gamespot.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://www.gamespot.com/wp-content/uploads/2026/05/007FirstLight_Screenshots_07.jpg?w=1024"
+},
+  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "007 First Light Comparison Shows Difference Between Xbox Series X And Series S",
+  "url": "https://www.purexbox.com/news/2026/05/007-first-light-comparison-shows-difference-between-xbox-series-x-and-series-s",
+  "datePublished": "2026-05-26T14:03:00.000Z",
+  "description": "How the Xbox versions stack up. As you've probably seen, the embargo has officially lifted for 007 First Light content across the web today, which means we're…",
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "name": "Pure Xbox",
+    "url": "https://www.purexbox.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameBeeper",
+    "url": "https://gamebeeper.gg/"
+  },
+  "image": "https://images.purexbox.com/76aff83694bbb/large.jpg"
+}
+  ]
+  </script>
   <section id="seoLatestFallback" class="seo-latest-articles" aria-label="Latest video game news (SEO fallback)" style="margin-top:24px">
     <h2>
       Latest Video Game News
     </h2>
     <div class="seo-articles-grid">
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/grave-seasons.jpg" alt="Article image for: Grave Seasons is the terrifying Stardew Valley clones you&#39;ve been waiting for" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.polygon.com/grave-seasons-cozy-horror-farming-sim/" rel="noopener noreferrer">Grave Seasons is the terrifying Stardew Valley clones you&#39;ve been waiting for</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>&quot;I think this feeling of unease has always been lurking under the genre&#39;s surface as part of the natural tension of farming,&quot; Son, one of the studio&#39;s…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.gamesradar.com/hardware/valve-allegedly-had-higher-steam-machine-prices-in-mind-before-the-steam-deck-hike-but-i-need-you-not-to-assume-the-worst/" />
+      <meta itemprop="image" content="https://cdn.mos.cms.futurecdn.net/SivFtkV682Y2WATVKGtsoh-1280-80.jpg" />
+      <meta itemprop="datePublished" content="2026-05-28T09:04:10.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/SivFtkV682Y2WATVKGtsoh-1280-80.jpg" alt="Article image for: Valve allegedly had higher Steam Machine prices in mind before the Steam Deck hike, but I need you not to assume the worst" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.gamesradar.com/hardware/valve-allegedly-had-higher-steam-machine-prices-in-mind-before-the-steam-deck-hike-but-i-need-you-not-to-assume-the-worst/" rel="noopener noreferrer">Valve allegedly had higher Steam Machine prices in mind before the Steam Deck hike, but I need you not to assume the worst</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Leaks suggest that Valve was already planning to charge more for the Steam Machine than the Steam Deck OLED at its new, higher…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
-          <span class="src-dot cat-latest"></span>
-          <span>Polygon &middot; May 25, 2026</span>
+          <span class="src-dot cat-industry"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">GamesRadar</span> &middot; <time class="seo-card-date" datetime="2026-05-28T09:04:10.000Z">May 28, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.polygon.com/grave-seasons-cozy-horror-farming-sim/" data-share-title="Grave Seasons is the terrifying Stardew Valley clones you&#39;ve been waiting for" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://www.gamesradar.com/hardware/valve-allegedly-had-higher-steam-machine-prices-in-mind-before-the-steam-deck-hike-but-i-need-you-not-to-assume-the-worst/" data-share-title="Valve allegedly had higher Steam Machine prices in mind before the Steam Deck hike, but I need you not to assume the worst" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.polygon.com/grave-seasons-cozy-horror-farming-sim/" rel="noopener noreferrer" class="card-link">
+          <a href="https://www.gamesradar.com/hardware/valve-allegedly-had-higher-steam-machine-prices-in-mind-before-the-steam-deck-hike-but-i-need-you-not-to-assume-the-worst/" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
       </div>
     </article>
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd.jpg" alt="Article image for: Ultra-hard survival sandbox Kenshi passes 3 million copies sold, teases fans with &#39;Kenshi 2 When?&#39; website" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.pcgamer.com/games/survival-crafting/ultra-hard-survival-sandbox-kenshi-passes-3-million-copies-sold-teases-fans-with-kenshi-2-when-website/" rel="noopener noreferrer">Ultra-hard survival sandbox Kenshi passes 3 million copies sold, teases fans with &#39;Kenshi 2 When?&#39; website</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Kenshi&#39;s whole deal is best summed up with one of its game start conditions: &quot;rock bottom.&quot; When you start at rock bottom, you begin the game stranded in the…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://elseth.itch.io/jest-messters/devlog/1536664/may-update-art-progress-assassin-name-reveal" />
+      <meta itemprop="image" content="https://img.itch.zone/aW1nLzI0Nzk3NDU5LnBuZw==/original/%2BS5f6d.png" />
+      <meta itemprop="datePublished" content="2026-05-28T08:58:57.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzI0Nzk3NDU5LnBuZw==/original/%2BS5f6d.png" alt="Article image for: May Update - Art progress + Assassin Name Reveal!" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://elseth.itch.io/jest-messters/devlog/1536664/may-update-art-progress-assassin-name-reveal" rel="noopener noreferrer">May Update - Art progress + Assassin Name Reveal!</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Hi everyone! We did it! We held on till May! I&amp;#039;ve been focusing on Re:Curse this month, so writing progress for Jest Messters has been slow. However, we…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">itch.io Devlogs</span> &middot; <time class="seo-card-date" datetime="2026-05-28T08:58:57.000Z">May 28, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://elseth.itch.io/jest-messters/devlog/1536664/may-update-art-progress-assassin-name-reveal" data-share-title="May Update - Art progress + Assassin Name Reveal!" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://elseth.itch.io/jest-messters/devlog/1536664/may-update-art-progress-assassin-name-reveal" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.gamesradar.com/games/action-rpg/path-of-exile-co-creator-tells-developers-dont-survey-your-players-because-your-audience-is-good-at-recognizing-problems-and-bad-at-solving-them/" />
+      <meta itemprop="image" content="https://cdn.mos.cms.futurecdn.net/v9sMmG7w9nkb9jvfKRHoCi-1280-80.jpg" />
+      <meta itemprop="datePublished" content="2026-05-28T00:43:46.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/v9sMmG7w9nkb9jvfKRHoCi-1280-80.jpg" alt="Article image for: Path of Exile co-creator tells developers &quot;don&#39;t survey your players&quot; because &quot;&#39;your audience is good at recognizing problems and bad at solving them&#39;&quot;" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.gamesradar.com/games/action-rpg/path-of-exile-co-creator-tells-developers-dont-survey-your-players-because-your-audience-is-good-at-recognizing-problems-and-bad-at-solving-them/" rel="noopener noreferrer">Path of Exile co-creator tells developers &quot;don&#39;t survey your players&quot; because &quot;&#39;your audience is good at recognizing problems and bad at solving them&#39;&quot;</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Chris Wilson says there&#39;s a &quot;real danger to asking players to tell you how to change your…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-industry"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">GamesRadar</span> &middot; <time class="seo-card-date" datetime="2026-05-28T00:43:46.000Z">May 28, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.gamesradar.com/games/action-rpg/path-of-exile-co-creator-tells-developers-dont-survey-your-players-because-your-audience-is-good-at-recognizing-problems-and-bad-at-solving-them/" data-share-title="Path of Exile co-creator tells developers &quot;don&#39;t survey your players&quot; because &quot;&#39;your audience is good at recognizing problems and bad at solving them&#39;&quot;" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.gamesradar.com/games/action-rpg/path-of-exile-co-creator-tells-developers-dont-survey-your-players-because-your-audience-is-good-at-recognizing-problems-and-bad-at-solving-them/" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.polygon.com/007-first-light-all-safe-door-codes-list/" />
+      <meta itemprop="image" content="https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/007-first-light-safe-codes-header.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T20:10:36.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/007-first-light-safe-codes-header.jpg" alt="Article image for: 007 First Light safe codes and door codes" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.polygon.com/007-first-light-all-safe-door-codes-list/" rel="noopener noreferrer">007 First Light safe codes and door codes</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>If you explore off the beaten track, you&#39;ll find plenty of 007 First Light safe codes . The problem is, some of them are trickier to unlock than others. Most…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-industry"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Polygon</span> &middot; <time class="seo-card-date" datetime="2026-05-27T20:10:36.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.polygon.com/007-first-light-all-safe-door-codes-list/" data-share-title="007 First Light safe codes and door codes" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.polygon.com/007-first-light-all-safe-door-codes-list/" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.pcgamer.com/games/action/007-first-light-tutorial-missions-how-long/" />
+      <meta itemprop="image" content="https://cdn.mos.cms.futurecdn.net/pRXwfrLe4YteHf4j3bHfcS-1280-80.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T20:00:00.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/pRXwfrLe4YteHf4j3bHfcS-1280-80.jpg" alt="Article image for: Yes, 007 First Light&#39;s tutorial really is a whole 3 hours of training montage and agent bonding time" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.pcgamer.com/games/action/007-first-light-tutorial-missions-how-long/" rel="noopener noreferrer">Yes, 007 First Light&#39;s tutorial really is a whole 3 hours of training montage and agent bonding time</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>You can&#39;t have an origin story without a training montage. That&#39;s standard issue stuff even for future MI6 man James Bond. I was expecting the usual &quot;press the…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
           <span class="src-dot cat-pc"></span>
-          <span>PC Gamer &middot; May 25, 2026</span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">PC Gamer</span> &middot; <time class="seo-card-date" datetime="2026-05-27T20:00:00.000Z">May 27, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.pcgamer.com/games/survival-crafting/ultra-hard-survival-sandbox-kenshi-passes-3-million-copies-sold-teases-fans-with-kenshi-2-when-website/" data-share-title="Ultra-hard survival sandbox Kenshi passes 3 million copies sold, teases fans with &#39;Kenshi 2 When?&#39; website" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://www.pcgamer.com/games/action/007-first-light-tutorial-missions-how-long/" data-share-title="Yes, 007 First Light&#39;s tutorial really is a whole 3 hours of training montage and agent bonding time" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.pcgamer.com/games/survival-crafting/ultra-hard-survival-sandbox-kenshi-passes-3-million-copies-sold-teases-fans-with-kenshi-2-when-website/" rel="noopener noreferrer" class="card-link">
+          <a href="https://www.pcgamer.com/games/action/007-first-light-tutorial-missions-how-long/" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
       </div>
     </article>
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/vs-youtube-episode05haijo-kunmilkysubwaythegalacticlimitedexpress-0-52.jpg" alt="Article image for: Milky Subway is an overlooked sci-fi anime coming to Netflix on June 1" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.polygon.com/milky-subway-the-galactic-limited-express-coming-to-netflix-movie/" rel="noopener noreferrer">Milky Subway is an overlooked sci-fi anime coming to Netflix on June 1</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Netflix’s newly released summer anime slate has something for every anime enthusiast. You can choose to explore titles like My Dress-Up Darling , Shangri-La…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://kotaku.com/007-first-light-training-montage-scene-tutorial-james-bond-2000699914" />
+      <meta itemprop="image" content="https://kotaku.com/app/uploads/2026/05/IMG_3548.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T18:13:25.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://kotaku.com/app/uploads/2026/05/IMG_3548.jpg" alt="Article image for: 007 First Light Makes One Of The Most Boring Parts Of Video Games Fun" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://kotaku.com/007-first-light-training-montage-scene-tutorial-james-bond-2000699914" rel="noopener noreferrer">007 First Light Makes One Of The Most Boring Parts Of Video Games Fun</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>James Bond has to learn the ropes, and so do…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
-          <span class="src-dot cat-latest"></span>
-          <span>Polygon &middot; May 25, 2026</span>
+          <span class="src-dot cat-industry"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Kotaku</span> &middot; <time class="seo-card-date" datetime="2026-05-27T18:13:25.000Z">May 27, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.polygon.com/milky-subway-the-galactic-limited-express-coming-to-netflix-movie/" data-share-title="Milky Subway is an overlooked sci-fi anime coming to Netflix on June 1" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://kotaku.com/007-first-light-training-montage-scene-tutorial-james-bond-2000699914" data-share-title="007 First Light Makes One Of The Most Boring Parts Of Video Games Fun" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.polygon.com/milky-subway-the-galactic-limited-express-coming-to-netflix-movie/" rel="noopener noreferrer" class="card-link">
+          <a href="https://kotaku.com/007-first-light-training-montage-scene-tutorial-james-bond-2000699914" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
       </div>
     </article>
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/05/exodus_concept_007-1701804361-1.jpg" alt="Article image for: Exodus: The Helium Sea gets first chapter preview — read it" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.polygon.com/exodus-helium-sea-excerpt/" rel="noopener noreferrer">Exodus: The Helium Sea gets first chapter preview — read it</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Exodus , the forthcoming space RPG that some (hello) have described as the second coming of Mass Effect , is already so much more than a video game. Although…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-latest"></span>
-          <span>Polygon &middot; May 25, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.polygon.com/exodus-helium-sea-excerpt/" data-share-title="Exodus: The Helium Sea gets first chapter preview — read it" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.polygon.com/exodus-helium-sea-excerpt/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.dexerto.com/cdn-image/wp-content/uploads/2026/05/25/idiotlauracleary.jpg?width=1080&amp;quality=75&amp;format=auto" alt="Article image for: Comedian &amp; podcaster Laura Clery nearly dies after massive fridge falls on top of her" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.dexerto.com/youtube/comedian-podcaster-laura-clery-nearly-dies-after-massive-fridge-falls-on-top-of-her-3368007/" rel="noopener noreferrer">Comedian &amp; podcaster Laura Clery nearly dies after massive fridge falls on top of her</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Comedian and actor Laura Clery revealed that she was nearly crushed to death after a 600-pound refrigerator fell on top of…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-esports"></span>
-          <span>Dexerto &middot; May 25, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.dexerto.com/youtube/comedian-podcaster-laura-clery-nearly-dies-after-massive-fridge-falls-on-top-of-her-3368007/" data-share-title="Comedian &amp; podcaster Laura Clery nearly dies after massive fridge falls on top of her" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.dexerto.com/youtube/comedian-podcaster-laura-clery-nearly-dies-after-massive-fridge-falls-on-top-of-her-3368007/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/AckUZT5GJzEGAft5d56cR8.jpg" alt="Article image for: One Move Away is a great cosy packing game, even if it had me rage-flinging boxes into the back of a truck" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.pcgamer.com/games/sim/one-move-away-is-a-great-cosy-packing-game-even-if-it-had-me-rage-flinging-boxes-into-the-back-of-a-truck/" rel="noopener noreferrer">One Move Away is a great cosy packing game, even if it had me rage-flinging boxes into the back of a truck</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Like many others that have come before it, One Move Away derives its satisfaction from handing a bunch of stuff to players and asking them to neatly solve it.…</p></div>
-      <div class="seo-card-footer">
-        <div class="card-source">
-          <span class="src-dot cat-pc"></span>
-          <span>PC Gamer &middot; May 25, 2026</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.pcgamer.com/games/sim/one-move-away-is-a-great-cosy-packing-game-even-if-it-had-me-rage-flinging-boxes-into-the-back-of-a-truck/" data-share-title="One Move Away is a great cosy packing game, even if it had me rage-flinging boxes into the back of a truck" title="Share" aria-label="Share article">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <a href="https://www.pcgamer.com/games/sim/one-move-away-is-a-great-cosy-packing-game-even-if-it-had-me-rage-flinging-boxes-into-the-back-of-a-truck/" rel="noopener noreferrer" class="card-link">
-            Read →
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://nintendoeverything.com/wp-content/uploads/Yoshi-and-the-Mysterious-Book-overview.jpg" alt="Article image for: UK software sales chart for the week ending May 23, 2026 &amp;#8211; Yoshi and the Mysterious Book makes first appearance" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://nintendoeverything.com/uk-software-sales-chart-for-the-week-ending-may-23-2026-yoshi-and-the-mysterious-book-makes-first-appearance/" rel="noopener noreferrer">UK software sales chart for the week ending May 23, 2026 &amp;#8211; Yoshi and the Mysterious Book makes first appearance</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>The latest UK software sales chart for the week ending May 23, 2026 is now available. Yoshi and the Mysterious Book was a new release, but it settle for third.…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://nintendoeverything.com/deer-boy-launches-on-nintendo-switch-in-june-new-trailer/" />
+      <meta itemprop="image" content="https://nintendoeverything.com/wp-content/uploads/Deer-Boy-release-date.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T17:30:34.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://nintendoeverything.com/wp-content/uploads/Deer-Boy-release-date.jpg" alt="Article image for: Deer &amp;#038; Boy launches on Nintendo Switch in June, new trailer" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://nintendoeverything.com/deer-boy-launches-on-nintendo-switch-in-june-new-trailer/" rel="noopener noreferrer">Deer &amp;#038; Boy launches on Nintendo Switch in June, new trailer</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Deer &amp;#38; Boy is one step closer to its release date. The title is reaching Nintendo Switch in June, Dear Villagers and Lifeline Games confirmed today. A…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
           <span class="src-dot cat-nintendo"></span>
-          <span>Nintendo Everything &middot; May 25, 2026</span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Nintendo Everything</span> &middot; <time class="seo-card-date" datetime="2026-05-27T17:30:34.000Z">May 27, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://nintendoeverything.com/uk-software-sales-chart-for-the-week-ending-may-23-2026-yoshi-and-the-mysterious-book-makes-first-appearance/" data-share-title="UK software sales chart for the week ending May 23, 2026 &amp;#8211; Yoshi and the Mysterious Book makes first appearance" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://nintendoeverything.com/deer-boy-launches-on-nintendo-switch-in-june-new-trailer/" data-share-title="Deer &amp;#038; Boy launches on Nintendo Switch in June, new trailer" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://nintendoeverything.com/uk-software-sales-chart-for-the-week-ending-may-23-2026-yoshi-and-the-mysterious-book-makes-first-appearance/" rel="noopener noreferrer" class="card-link">
+          <a href="https://nintendoeverything.com/deer-boy-launches-on-nintendo-switch-in-june-new-trailer/" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
       </div>
     </article>
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2026/05/a-screenshot-from-paralives-showing-parents-putting-their-children-to-bed.jpg" alt="Article image for: Paralives Early Access Launches To 78,000 CCU And Positive Reviews" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.thegamer.com/paralives-launch-concurrent-players-reviews/" rel="noopener noreferrer">Paralives Early Access Launches To 78,000 CCU And Positive Reviews</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Paralives launched in early access today on Steam . This finally gives simulation game enthusiasts another alternative to The Sims 4 , after InZoi failed to…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.gamesindustry.biz/leading-charity-calls-for-consistent-enforceable-standards-to-make-games-accessible-for-visually-impaired-players" />
+      <meta itemprop="image" content="https://assetsio.gnwcdn.com/spectrum-shift(1).jpg?width=690&amp;quality=85&amp;format=jpg&amp;auto=webp" />
+      <meta itemprop="datePublished" content="2026-05-27T17:27:41.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://assetsio.gnwcdn.com/spectrum-shift(1).jpg?width=690&amp;quality=85&amp;format=jpg&amp;auto=webp" alt="Article image for: Leading charity calls for &quot;consistent, enforceable standards&quot; to make games accessible for visually impaired players" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.gamesindustry.biz/leading-charity-calls-for-consistent-enforceable-standards-to-make-games-accessible-for-visually-impaired-players" rel="noopener noreferrer">Leading charity calls for &quot;consistent, enforceable standards&quot; to make games accessible for visually impaired players</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>The Royal National Institute of Blind People (RNIB) is calling for &quot;consistent, enforceable standards&quot; for ensuring video games are playable for visually…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-industry"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">GamesIndustry.biz</span> &middot; <time class="seo-card-date" datetime="2026-05-27T17:27:41.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.gamesindustry.biz/leading-charity-calls-for-consistent-enforceable-standards-to-make-games-accessible-for-visually-impaired-players" data-share-title="Leading charity calls for &quot;consistent, enforceable standards&quot; to make games accessible for visually impaired players" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.gamesindustry.biz/leading-charity-calls-for-consistent-enforceable-standards-to-make-games-accessible-for-visually-impaired-players" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.tomshardware.com/tech-industry/artificial-intelligence/italian-council-sets-200-percent-tax-on-data-center-development-in-agricultural-zones-aims-to-spur-the-use-of-old-industrial-areas-instead-and-limit-environmental-impact" />
+      <meta itemprop="image" content="https://cdn.mos.cms.futurecdn.net/zJ9ZuTa8TZQqPgypFTN5Kf-1280-80.png" />
+      <meta itemprop="datePublished" content="2026-05-27T16:40:27.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://cdn.mos.cms.futurecdn.net/zJ9ZuTa8TZQqPgypFTN5Kf-1280-80.png" alt="Article image for: Italian council sets 200% tax on data center development in agricultural zones — aims to spur the use of old industrial areas instead and limit environmental impact" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/italian-council-sets-200-percent-tax-on-data-center-development-in-agricultural-zones-aims-to-spur-the-use-of-old-industrial-areas-instead-and-limit-environmental-impact" rel="noopener noreferrer">Italian council sets 200% tax on data center development in agricultural zones — aims to spur the use of old industrial areas instead and limit environmental impact</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>This 200% tax will make it more expensive to build in rural areas and is aimed at spurring data center development in disused industrial zones…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-hardware"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Tom&#39;s Hardware</span> &middot; <time class="seo-card-date" datetime="2026-05-27T16:40:27.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.tomshardware.com/tech-industry/artificial-intelligence/italian-council-sets-200-percent-tax-on-data-center-development-in-agricultural-zones-aims-to-spur-the-use-of-old-industrial-areas-instead-and-limit-environmental-impact" data-share-title="Italian council sets 200% tax on data center development in agricultural zones — aims to spur the use of old industrial areas instead and limit environmental impact" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/italian-council-sets-200-percent-tax-on-data-center-development-in-agricultural-zones-aims-to-spur-the-use-of-old-industrial-areas-instead-and-limit-environmental-impact" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.siliconera.com/genshin-impact-codename-kfc-and-animate-merchandise-appears/" />
+      <meta itemprop="image" content="/assets/fallbacks/indie.svg" />
+      <meta itemprop="datePublished" content="2026-05-27T16:00:52.000Z" />
+      <div class="seo-card-img-wrap"><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20360'%3e%3crect%20width='640'%20height='360'%20fill='%2310111a'/%3e%3ccircle%20cx='320'%20cy='180'%20r='120'%20fill='%23ff3abf10'/%3e%3csvg%20x='248'%20y='108'%20width='144'%20height='144'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23ff3abf'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M12%202l3.09%206.26L22%209.27l-5%204.87%201.18%206.88L12%2017.77l-6.18%203.25L7%2014.14%202%209.27l6.91-1.01L12%202z'/%3e%3c/svg%3e%3ccircle%20cx='320'%20cy='180'%20r='80'%20fill='none'%20stroke='%23ff3abf30'%20stroke-width='1'/%3e%3c/svg%3e" alt="Article image for: Genshin Impact Codename KFC and Animate Merchandise Appears" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.siliconera.com/genshin-impact-codename-kfc-and-animate-merchandise-appears/" rel="noopener noreferrer">Genshin Impact Codename KFC and Animate Merchandise Appears</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>miHoYo is working with multiple entities in Japan to promote the Genshin Impact characters Alhaitham and Kaveh with new Codename merchandise campaigns. KFC…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Siliconera</span> &middot; <time class="seo-card-date" datetime="2026-05-27T16:00:52.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.siliconera.com/genshin-impact-codename-kfc-and-animate-merchandise-appears/" data-share-title="Genshin Impact Codename KFC and Animate Merchandise Appears" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.siliconera.com/genshin-impact-codename-kfc-and-animate-merchandise-appears/" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://dotesports.com/league-of-legends/news/n-e-o-founder-bertrand-amar-breaks-down-the-expensive-reality-of-organizing-esports-events" />
+      <meta itemprop="image" content="https://media.dotesports.com/wp-content/uploads/2026/05/image1-3.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T15:49:03.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://media.dotesports.com/wp-content/uploads/2026/05/image1-3.jpg" alt="Article image for: N.E.O. founder Bertrand Amar breaks down the expensive reality of organizing esports events" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://dotesports.com/league-of-legends/news/n-e-o-founder-bertrand-amar-breaks-down-the-expensive-reality-of-organizing-esports-events" rel="noopener noreferrer">N.E.O. founder Bertrand Amar breaks down the expensive reality of organizing esports events</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Bertrand Amar, founder of French tournament organizer N.E.O. (NEW ESPORTS ORG.), has outlined the hefty financial challenges and costs involved in organizing…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-esports"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Dot Esports</span> &middot; <time class="seo-card-date" datetime="2026-05-27T15:49:03.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://dotesports.com/league-of-legends/news/n-e-o-founder-bertrand-amar-breaks-down-the-expensive-reality-of-organizing-esports-events" data-share-title="N.E.O. founder Bertrand Amar breaks down the expensive reality of organizing esports events" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://dotesports.com/league-of-legends/news/n-e-o-founder-bertrand-amar-breaks-down-the-expensive-reality-of-organizing-esports-events" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.pcgamesn.com/fortnite/shutting-down" />
+      <meta itemprop="image" content="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2025/04/fortnite-shutting-down-1.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T15:25:21.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2025/04/fortnite-shutting-down-1.jpg" alt="Article image for: Is Fortnite shutting down in 2026?" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.pcgamesn.com/fortnite/shutting-down" rel="noopener noreferrer">Is Fortnite shutting down in 2026?</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Is Fortnite shutting down? With price increases to V-Bucks, internal layoffs at Epic, and reports of unmet financial expectations and projections, all of these…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
           <span class="src-dot cat-pc"></span>
-          <span>TheGamer &middot; May 25, 2026</span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">PCGamesN</span> &middot; <time class="seo-card-date" datetime="2026-05-27T15:25:21.000Z">May 27, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.thegamer.com/paralives-launch-concurrent-players-reviews/" data-share-title="Paralives Early Access Launches To 78,000 CCU And Positive Reviews" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://www.pcgamesn.com/fortnite/shutting-down" data-share-title="Is Fortnite shutting down in 2026?" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.thegamer.com/paralives-launch-concurrent-players-reviews/" rel="noopener noreferrer" class="card-link">
+          <a href="https://www.pcgamesn.com/fortnite/shutting-down" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
       </div>
     </article>
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://kotaku.com/app/uploads/2026/05/Kotaku_SummerPreview_Frame-1@2x.jpg" alt="Article image for: CALX Is The Journey-Looking Action-RPG Soulslike I Never Knew I Needed Until I Played It" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://kotaku.com/calx-is-the-journey-looking-action-rpg-soulslike-i-never-knew-i-needed-until-i-played-it-2000699178" rel="noopener noreferrer">CALX Is The Journey-Looking Action-RPG Soulslike I Never Knew I Needed Until I Played It</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>&#39;Hyper Light Sable&#39; is shaping up to be one of this summer&#39;s most evocative-looking role-playing…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.pcgamesn.com/discord/spatial-audio-support" />
+      <meta itemprop="image" content="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/Discord-is-adding-Spatial-Audio-support-so-you-can-pretend-youre-in-the-same-room.jpg" />
+      <meta itemprop="datePublished" content="2026-05-27T14:25:52.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/Discord-is-adding-Spatial-Audio-support-so-you-can-pretend-youre-in-the-same-room.jpg" alt="Article image for: Discord is adding Spatial Audio support so you can pretend you&amp;#039;re in the same room" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.pcgamesn.com/discord/spatial-audio-support" rel="noopener noreferrer">Discord is adding Spatial Audio support so you can pretend you&amp;#039;re in the same room</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>If you&#39;re like me, you&#39;ve spent countless hours in Discord calls with your friends. Whether you&#39;re grinding games or just shooting the breeze, Discord has…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
-          <span class="src-dot cat-latest"></span>
-          <span>Kotaku &middot; May 25, 2026</span>
+          <span class="src-dot cat-pc"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">PCGamesN</span> &middot; <time class="seo-card-date" datetime="2026-05-27T14:25:52.000Z">May 27, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://kotaku.com/calx-is-the-journey-looking-action-rpg-soulslike-i-never-knew-i-needed-until-i-played-it-2000699178" data-share-title="CALX Is The Journey-Looking Action-RPG Soulslike I Never Knew I Needed Until I Played It" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://www.pcgamesn.com/discord/spatial-audio-support" data-share-title="Discord is adding Spatial Audio support so you can pretend you&amp;#039;re in the same room" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://kotaku.com/calx-is-the-journey-looking-action-rpg-soulslike-i-never-knew-i-needed-until-i-played-it-2000699178" rel="noopener noreferrer" class="card-link">
+          <a href="https://www.pcgamesn.com/discord/spatial-audio-support" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
       </div>
     </article>
 
-    <article class="seo-card">
-      <div class="seo-card-img-wrap"><img src="https://www.destructoid.com/wp-content/uploads/2026/05/Forza-horizon-6-red.jpg?quality=75" alt="Article image for: Forza Horizon 6 somehow has an online villain everyone fears: meet bowie Knife99" loading="lazy" decoding="async" width="640" height="360" /></div>
-      <h3><a href="https://www.destructoid.com/forza-horizon-6-somehow-has-an-online-villain-everyone-fears-meet-bowie-knife99/" rel="noopener noreferrer">Forza Horizon 6 somehow has an online villain everyone fears: meet bowie Knife99</a></h3>
-      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Did you recently buy Forza Horizon 6 to drive around its beautiful wilderness free from fear? Well, I have bad news for you. More and more players have been…</p></div>
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.pcgamesn.com/murder-duels/codes" />
+      <meta itemprop="image" content="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/murder-duels-codes-header-pcgn.jpeg" />
+      <meta itemprop="datePublished" content="2026-05-27T13:54:20.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/05/murder-duels-codes-header-pcgn.jpeg" alt="Article image for: Murder Duels codes (May 2026)" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.pcgamesn.com/murder-duels/codes" rel="noopener noreferrer">Murder Duels codes (May 2026)</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Murder Duels codes are by far the cheapest way to get new drip for your knife and revolver, and we&#39;ve listed them all here for you. After all, who cares how…</p></div>
       <div class="seo-card-footer">
         <div class="card-source">
-          <span class="src-dot cat-latest"></span>
-          <span>Destructoid &middot; May 25, 2026</span>
+          <span class="src-dot cat-pc"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">PCGamesN</span> &middot; <time class="seo-card-date" datetime="2026-05-27T13:54:20.000Z">May 27, 2026</time>
+          </span>
         </div>
         <div class="card-actions">
-          <button class="card-share-btn" data-share-url="https://www.destructoid.com/forza-horizon-6-somehow-has-an-online-villain-everyone-fears-meet-bowie-knife99/" data-share-title="Forza Horizon 6 somehow has an online villain everyone fears: meet bowie Knife99" title="Share" aria-label="Share article">
+          <button class="card-share-btn" data-share-url="https://www.pcgamesn.com/murder-duels/codes" data-share-title="Murder Duels codes (May 2026)" title="Share" aria-label="Share article">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
-          <a href="https://www.destructoid.com/forza-horizon-6-somehow-has-an-online-villain-everyone-fears-meet-bowie-knife99/" rel="noopener noreferrer" class="card-link">
+          <a href="https://www.pcgamesn.com/murder-duels/codes" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://kennymakesgames.itch.io/pin/devlog/1532954/demo-v0120-localisations-new-spells" />
+      <meta itemprop="image" content="https://img.itch.zone/aW1nLzIyNzk4OTI3LnBuZw==/original/472AJ7.png" />
+      <meta itemprop="datePublished" content="2026-05-27T13:05:01.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzIyNzk4OTI3LnBuZw==/original/472AJ7.png" alt="Article image for: Demo v0.12.0 - Localisations &amp; New Spells" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://kennymakesgames.itch.io/pin/devlog/1532954/demo-v0120-localisations-new-spells" rel="noopener noreferrer">Demo v0.12.0 - Localisations &amp; New Spells</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Hi all, It’s been a hectic few weeks but I&amp;#039;m fairly confident that as of now, Cult of PiN is effectively feature complete! For the next couple of month up…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">itch.io Devlogs</span> &middot; <time class="seo-card-date" datetime="2026-05-27T13:05:01.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://kennymakesgames.itch.io/pin/devlog/1532954/demo-v0120-localisations-new-spells" data-share-title="Demo v0.12.0 - Localisations &amp; New Spells" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://kennymakesgames.itch.io/pin/devlog/1532954/demo-v0120-localisations-new-spells" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://big-stretch.itch.io/the-wells-blessing/devlog/1535841/demo-release-date-june-3rd" />
+      <meta itemprop="image" content="https://img.itch.zone/aW1nLzI3NTEyNTc0LnBuZw==/400x224%23c/R2RVtD.png" />
+      <meta itemprop="datePublished" content="2026-05-27T10:46:34.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://img.itch.zone/aW1nLzI3NTEyNTc0LnBuZw==/400x224%23c/R2RVtD.png" alt="Article image for: Demo release date! - June 3rd" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://big-stretch.itch.io/the-wells-blessing/devlog/1535841/demo-release-date-june-3rd" rel="noopener noreferrer">Demo release date! - June 3rd</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>We&amp;#039;re very excited to announce that The Well&amp;#039;s Blessing&amp;#039;s public demo is coming out on June 3rd! (yes, next week!) This demo includes the full…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">itch.io Devlogs</span> &middot; <time class="seo-card-date" datetime="2026-05-27T10:46:34.000Z">May 27, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://big-stretch.itch.io/the-wells-blessing/devlog/1535841/demo-release-date-june-3rd" data-share-title="Demo release date! - June 3rd" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://big-stretch.itch.io/the-wells-blessing/devlog/1535841/demo-release-date-june-3rd" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.siliconera.com/petit-planet-area-load-limit-blueprint-sharing-and-cooking-changes-in-the-works/" />
+      <meta itemprop="image" content="/assets/fallbacks/indie.svg" />
+      <meta itemprop="datePublished" content="2026-05-26T19:00:00.000Z" />
+      <div class="seo-card-img-wrap"><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20360'%3e%3crect%20width='640'%20height='360'%20fill='%2310111a'/%3e%3ccircle%20cx='320'%20cy='180'%20r='120'%20fill='%23ff3abf10'/%3e%3csvg%20x='248'%20y='108'%20width='144'%20height='144'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23ff3abf'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M12%202l3.09%206.26L22%209.27l-5%204.87%201.18%206.88L12%2017.77l-6.18%203.25L7%2014.14%202%209.27l6.91-1.01L12%202z'/%3e%3c/svg%3e%3ccircle%20cx='320'%20cy='180'%20r='80'%20fill='none'%20stroke='%23ff3abf30'%20stroke-width='1'/%3e%3c/svg%3e" alt="Article image for: Petit Planet Area Load Limit, Blueprint Sharing, and Cooking Changes in the Works" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.siliconera.com/petit-planet-area-load-limit-blueprint-sharing-and-cooking-changes-in-the-works/" rel="noopener noreferrer">Petit Planet Area Load Limit, Blueprint Sharing, and Cooking Changes in the Works</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>HoYoVerse shared a statement going over areas of Petit Planet feedback it will attempt to address following the Stardrift Test beta , and it confirmed area…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-indie"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Siliconera</span> &middot; <time class="seo-card-date" datetime="2026-05-26T19:00:00.000Z">May 26, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.siliconera.com/petit-planet-area-load-limit-blueprint-sharing-and-cooking-changes-in-the-works/" data-share-title="Petit Planet Area Load Limit, Blueprint Sharing, and Cooking Changes in the Works" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.siliconera.com/petit-planet-area-load-limit-blueprint-sharing-and-cooking-changes-in-the-works/" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.digitalfoundry.net/reviews/007-first-light-is-a-technical-standout-on-ps5-and-ps5-pro" />
+      <meta itemprop="image" content="/assets/fallbacks/hardware.svg" />
+      <meta itemprop="datePublished" content="2026-05-26T17:59:00.000Z" />
+      <div class="seo-card-img-wrap"><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20360'%3e%3crect%20width='640'%20height='360'%20fill='%2310111a'/%3e%3ccircle%20cx='320'%20cy='180'%20r='120'%20fill='%2326e6ff10'/%3e%3csvg%20x='248'%20y='108'%20width='144'%20height='144'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%2326e6ff'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3crect%20x='4'%20y='4'%20width='16'%20height='16'%20rx='2'/%3e%3crect%20x='9'%20y='9'%20width='6'%20height='6'/%3e%3cpath%20d='M15%202v2M15%2020v2M2%2015h2M20%2015h2M2%209h2M20%209h2M9%202v2M9%2020v2'/%3e%3c/svg%3e%3ccircle%20cx='320'%20cy='180'%20r='80'%20fill='none'%20stroke='%2326e6ff30'%20stroke-width='1'/%3e%3c/svg%3e" alt="Article image for: Review: 007 First Light Is A Technical Standout on PS5 and PS5 Pro" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.digitalfoundry.net/reviews/007-first-light-is-a-technical-standout-on-ps5-and-ps5-pro" rel="noopener noreferrer">Review: 007 First Light Is A Technical Standout on PS5 and PS5 Pro</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>Despite some image quality concerns on base PS5. James Bond&#39;s latest outing in 007 First Light is by far the most technically accomplished release in the…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-hardware"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Digital Foundry</span> &middot; <time class="seo-card-date" datetime="2026-05-26T17:59:00.000Z">May 26, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.digitalfoundry.net/reviews/007-first-light-is-a-technical-standout-on-ps5-and-ps5-pro" data-share-title="Review: 007 First Light Is A Technical Standout on PS5 and PS5 Pro" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.digitalfoundry.net/reviews/007-first-light-is-a-technical-standout-on-ps5-and-ps5-pro" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.gamespot.com/reviews/007-first-light-review-youth-in-revolt/" />
+      <meta itemprop="image" content="https://www.gamespot.com/wp-content/uploads/2026/05/007FirstLight_Screenshots_07.jpg?w=1024" />
+      <meta itemprop="datePublished" content="2026-05-26T15:46:14.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://www.gamespot.com/wp-content/uploads/2026/05/007FirstLight_Screenshots_07.jpg?w=1024" alt="Article image for: 007 First Light Review &amp;#8211; Youth In Revolt" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.gamespot.com/reviews/007-first-light-review-youth-in-revolt/" rel="noopener noreferrer">007 First Light Review &amp;#8211; Youth In Revolt</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>When IO Interactive was first announced as developing a James Bond game, people connected the obvious dots: James Bond inspired Hitman, the series IO is best…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-reviews"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">GameSpot Reviews</span> &middot; <time class="seo-card-date" datetime="2026-05-26T15:46:14.000Z">May 26, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.gamespot.com/reviews/007-first-light-review-youth-in-revolt/" data-share-title="007 First Light Review &amp;#8211; Youth In Revolt" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.gamespot.com/reviews/007-first-light-review-youth-in-revolt/" rel="noopener noreferrer" class="card-link">
+            Read →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="seo-card" itemscope itemtype="https://schema.org/NewsArticle">
+      <meta itemprop="url" content="https://www.purexbox.com/news/2026/05/007-first-light-comparison-shows-difference-between-xbox-series-x-and-series-s" />
+      <meta itemprop="image" content="https://images.purexbox.com/76aff83694bbb/large.jpg" />
+      <meta itemprop="datePublished" content="2026-05-26T14:03:00.000Z" />
+      <div class="seo-card-img-wrap"><img src="https://images.purexbox.com/76aff83694bbb/large.jpg" alt="Article image for: 007 First Light Comparison Shows Difference Between Xbox Series X And Series S" loading="lazy" decoding="async" width="640" height="360" /></div>
+      <h3 itemprop="headline"><a href="https://www.purexbox.com/news/2026/05/007-first-light-comparison-shows-difference-between-xbox-series-x-and-series-s" rel="noopener noreferrer">007 First Light Comparison Shows Difference Between Xbox Series X And Series S</a></h3>
+      <div class="seo-card-summary"><span class="seo-ai-badge">AI Summary</span><p>How the Xbox versions stack up. As you&#39;ve probably seen, the embargo has officially lifted for 007 First Light content across the web today, which means we&#39;re…</p></div>
+      <div class="seo-card-footer">
+        <div class="card-source">
+          <span class="src-dot cat-xbox"></span>
+          <span itemprop="publisher" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+            <span itemprop="name">Pure Xbox</span> &middot; <time class="seo-card-date" datetime="2026-05-26T14:03:00.000Z">May 26, 2026</time>
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="card-share-btn" data-share-url="https://www.purexbox.com/news/2026/05/007-first-light-comparison-shows-difference-between-xbox-series-x-and-series-s" data-share-title="007 First Light Comparison Shows Difference Between Xbox Series X And Series S" title="Share" aria-label="Share article">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <a href="https://www.purexbox.com/news/2026/05/007-first-light-comparison-shows-difference-between-xbox-series-x-and-series-s" rel="noopener noreferrer" class="card-link">
             Read →
           </a>
         </div>
@@ -579,7 +1450,7 @@
           <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Source Transparency
         </div>
         <p class="rail-card-subtitle">Stories come from hand-picked publishers — no algorithmic ranking, no promoted content.</p>
-        <a href="#sources" class="rail-sources-link">View all 19 sources <svg aria-hidden="true" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="#sources" class="rail-sources-link">View all 34 sources <svg aria-hidden="true" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" class="rail-sources-link" style="font-size:11px;color:var(--ink3);margin-top:2px">Editorial policy →</a>
       </div>
     </aside>
@@ -591,6 +1462,67 @@
     <nav id="sidebarFilters" class="filter-nav" aria-label="Category filters (hidden js compat)"></nav>
   </div>
 
+
+  <!-- ============== WATCH SIGNAL PAGE ============== -->
+  <section class="watch-section" id="watch" aria-labelledby="watch-heading" style="display:none">
+    <div class="page-wrap">
+
+      <!-- A. Hero header -->
+      <header class="watch-hero">
+        <div class="watch-hero-eyebrow">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px;margin-right:5px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          WATCH SIGNAL
+        </div>
+        <h2 id="watch-heading" class="watch-hero-title">See what's next.</h2>
+        <p class="watch-hero-sub">Official trailers, gameplay reveals and trusted gaming video coverage in one clean feed.</p>
+        <p class="watch-hero-status" id="watchStatus" aria-live="polite"></p>
+      </header>
+
+      <!-- B. Featured spotlight -->
+      <div class="watch-featured-wrap" id="watchFeatured" aria-label="Featured video">
+        <!-- populated by JS -->
+      </div>
+
+      <!-- C. Filter controls -->
+      <div class="watch-filters-wrap" id="watchFiltersWrap">
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Type</span>
+          <div class="watch-filter-chips" id="watchFilterGenre" role="group" aria-label="Filter by video type"></div>
+        </div>
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Platform</span>
+          <div class="watch-filter-chips" id="watchFilterTopic" role="group" aria-label="Filter by platform"></div>
+        </div>
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Source</span>
+          <div class="watch-filter-chips" id="watchFilterTrust" role="group" aria-label="Filter by source trust"></div>
+        </div>
+        <div class="watch-filters-section">
+          <span class="watch-filter-label">Sort</span>
+          <div class="watch-filter-chips" id="watchFilterSort" role="group" aria-label="Sort order"></div>
+        </div>
+      </div>
+
+      <!-- D. Video grid -->
+      <div class="watch-grid-wrap">
+        <div class="watch-grid" id="watchGrid" aria-label="Video results" aria-live="polite">
+          <!-- populated by JS -->
+        </div>
+        <!-- Empty / error states -->
+        <div class="watch-empty" id="watchEmpty" style="display:none" role="status">
+          <div class="watch-empty-art">[ WATCH SIGNAL ]<br>// no signal found</div>
+          <div class="watch-empty-title">No video signal found.</div>
+          <div class="watch-empty-sub">Try another platform or video type.</div>
+          <button class="btn btn-ghost btn-sm" id="watchEmptyReset">Clear filters</button>
+        </div>
+        <div class="watch-error" id="watchError" style="display:none" role="alert">
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1.5L1 14h14z"/><line x1="8" y1="6.5" x2="8" y2="10"/><circle cx="8" cy="12" r=".6" fill="currentColor" stroke="none"/></svg>
+          <span id="watchErrorMsg">Video sources temporarily unavailable. The main feed continues to work normally.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ============== TRUST SECTION ============== -->
   <section class="trust-section" aria-labelledby="trust-heading">
@@ -614,7 +1546,7 @@
           <div class="trust-badge" style="--tb-color:var(--color-accent-cyan)">
             <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="trust-badge-title">Trusted Sources</div>
-            <p class="trust-badge-desc">19 hand-picked publishers — official platform blogs, leading independents and industry reporters.</p>
+            <p class="trust-badge-desc">34 hand-picked publishers — official platform blogs, leading independents and industry reporters.</p>
           </div>
           <div class="trust-badge" style="--tb-color:var(--color-accent-cyan)">
             <div class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
@@ -673,7 +1605,7 @@
             About this project
           </div>
           <h2 id="about-heading" class="contribute-title">Behind<br /><em>GameBeeper.</em></h2>
-          <p class="contribute-desc">GameBeeper is an open-source video game news aggregator. It collects RSS feeds from 19 trusted gaming sources — official platform publishers, independent outlets, and industry reporters — into one fast, clean, distraction-free feed. No ads, no paywalls, no tracking without consent.</p>
+          <p class="contribute-desc">GameBeeper is an open-source video game news aggregator. It collects RSS feeds from 34 trusted gaming sources — official platform publishers, independent outlets, and industry reporters — into one fast, clean, distraction-free feed. No ads, no paywalls, no tracking without consent.</p>
           <ul class="contribute-ways" style="margin-bottom:1.25rem">
             <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>Open source — <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-cyan)">view on GitHub</a></span></li>
             <li><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM1 6h14"/></svg><span>Editorial policy: <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-cyan)">Feed selection criteria</a></span></li>
@@ -688,6 +1620,60 @@
     </div>
   </section>
 
+  <!-- ============== SEO CONTENT SECTION ============== -->
+  <section class="seo-text-section" aria-label="About GameBeeper gaming news aggregator">
+    <div class="page-wrap">
+      <div class="seo-text-inner">
+        <h2>Your Free Video Game News Hub</h2>
+        <p>GameBeeper is the go-to destination for gamers who want to stay up to date with the latest video game news, game reviews, new game releases, and gaming industry developments — all in one place. Instead of visiting dozens of websites separately, GameBeeper pulls the best gaming stories from <strong>34 trusted sources</strong> into a single, clean, distraction-free feed.</p>
+        <div class="seo-text-grid">
+          <div>
+            <h3>PlayStation News &amp; Reviews</h3>
+            <p>Get the latest PS5 and PlayStation news directly from the <strong>PlayStation Blog</strong> alongside expert coverage from <strong>Push Square</strong>. From new PlayStation exclusives and firmware updates to PS5 game reviews and PlayStation Store deals — all curated in real-time.</p>
+          </div>
+          <div>
+            <h3>Xbox News &amp; Game Pass Updates</h3>
+            <p>Stay on top of everything Xbox with official updates from <strong>Xbox Wire</strong> and in-depth coverage from <strong>Pure Xbox</strong>. Never miss an Xbox Game Pass addition, Xbox Series X/S release, or major Xbox first-party game announcement.</p>
+          </div>
+          <div>
+            <h3>Nintendo Switch &amp; Switch 2 News</h3>
+            <p>Follow every Nintendo Switch and Nintendo Switch 2 announcement with stories from <strong>Nintendo Life</strong> and <strong>Nintendo Everything</strong> — covering Nintendo Direct events, new Switch games, eShop deals, and more.</p>
+          </div>
+          <div>
+            <h3>PC Gaming News</h3>
+            <p>Stay current with the PC gaming world through <strong>PC Gamer</strong>, <strong>Rock Paper Shotgun</strong>, and <strong>PCGamesN</strong> — covering Steam new releases, PC game reviews, graphics card benchmarks, and gaming hardware news.</p>
+          </div>
+          <div>
+            <h3>Game Reviews from Top Critics</h3>
+            <p>Read the latest game reviews from <strong>IGN</strong>, <strong>GameSpot</strong>, <strong>Rock Paper Shotgun</strong>, <strong>Nintendo Life</strong>, <strong>Push Square</strong>, and <strong>Pure Xbox</strong> — covering new games across all platforms as soon as reviews go live.</p>
+          </div>
+          <div>
+            <h3>Esports &amp; Competitive Gaming</h3>
+            <p>Follow the competitive gaming scene with the latest esports news, tournament results, and player moves from <strong>Dot Esports</strong> — covering League of Legends, Valorant, Counter-Strike, and the wider esports world.</p>
+          </div>
+          <div>
+            <h3>Indie Games &amp; Developer Logs</h3>
+            <p>Discover the best upcoming and newly released indie games through <strong>Siliconera</strong>, <strong>Indie Games Plus</strong>, and live developer updates from <strong>itch.io Devlogs</strong> — the freshest indie game news direct from the creators.</p>
+          </div>
+          <div>
+            <h3>Gaming Industry &amp; Hardware News</h3>
+            <p>Follow the business side of gaming and the latest hardware technology with <strong>GamesIndustry.biz</strong>, <strong>Digital Foundry</strong>, and <strong>Tom's Hardware</strong> — covering GPU benchmarks, game sales data, studio acquisitions, and console technology deep-dives.</p>
+          </div>
+        </div>
+        <h3>Why Gamers Choose GameBeeper</h3>
+        <ul class="seo-why-list">
+          <li><strong>No ads, no paywalls</strong> — completely free, always</li>
+          <li><strong>34 trusted gaming sources</strong> — hand-picked for quality and reliability</li>
+          <li><strong>Hourly updates</strong> — never miss breaking gaming news</li>
+          <li><strong>All platforms covered</strong> — PlayStation, Xbox, Nintendo, PC, mobile, and VR</li>
+          <li><strong>Search and filter</strong> — instantly find news about any game, platform, or topic</li>
+          <li><strong>Open source</strong> — built in public for transparency and community trust</li>
+          <li><strong>Privacy-first</strong> — no tracking without consent, no data selling</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- ============== FOOTER ============== -->
   <footer class="site-footer">
     <div class="page-wrap">
@@ -695,29 +1681,66 @@
       <section class="footer-sources" id="sources" aria-labelledby="sources-heading">
         <div class="footer-sources-title" id="sources-heading">Feed sources</div>
         <ul class="footer-sources-list">
-          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Latest')">Latest</a>: <a href="https://www.videogameschronicle.com/" target="_blank" rel="noopener noreferrer">VGC</a>, <a href="https://www.gematsu.com/" target="_blank" rel="noopener noreferrer">Gematsu</a>, <a href="https://www.eurogamer.net/" target="_blank" rel="noopener noreferrer">Eurogamer</a>, <a href="https://www.ign.com/" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/" target="_blank" rel="noopener noreferrer">GameSpot</a>, <a href="https://www.destructoid.com/" target="_blank" rel="noopener noreferrer">Destructoid</a>, <a href="https://www.polygon.com/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://kotaku.com/" target="_blank" rel="noopener noreferrer">Kotaku</a>, <a href="https://www.thegamer.com/" target="_blank" rel="noopener noreferrer">TheGamer</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Latest')">General</a>: <a href="https://www.videogameschronicle.com/" target="_blank" rel="noopener noreferrer">VGC</a>, <a href="https://www.gematsu.com/" target="_blank" rel="noopener noreferrer">Gematsu</a>, <a href="https://www.eurogamer.net/" target="_blank" rel="noopener noreferrer">Eurogamer</a>, <a href="https://www.ign.com/" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/" target="_blank" rel="noopener noreferrer">GameSpot</a>, <a href="https://www.destructoid.com/" target="_blank" rel="noopener noreferrer">Destructoid</a>, <a href="https://www.polygon.com/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://kotaku.com/" target="_blank" rel="noopener noreferrer">Kotaku</a>, <a href="https://www.gamesradar.com/" target="_blank" rel="noopener noreferrer">GamesRadar</a>, <a href="https://arstechnica.com/gaming/" target="_blank" rel="noopener noreferrer">Ars Technica</a>, <a href="https://www.theverge.com/games" target="_blank" rel="noopener noreferrer">The Verge</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Reviews')">Reviews</a>: <a href="https://www.ign.com/reviews" target="_blank" rel="noopener noreferrer">IGN Reviews</a>, <a href="https://www.gamespot.com/reviews/" target="_blank" rel="noopener noreferrer">GameSpot Reviews</a>, <a href="https://www.rockpapershotgun.com/reviews" target="_blank" rel="noopener noreferrer">RPS Reviews</a>, <a href="https://www.nintendolife.com/reviews" target="_blank" rel="noopener noreferrer">Nintendo Life Reviews</a>, <a href="https://www.pushsquare.com/reviews" target="_blank" rel="noopener noreferrer">Push Square Reviews</a>, <a href="https://www.purexbox.com/reviews" target="_blank" rel="noopener noreferrer">Pure Xbox Reviews</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Trailers')">Trailers</a>: <a href="https://www.gematsu.com/category/trailers" target="_blank" rel="noopener noreferrer">Gematsu Trailers</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('PlayStation')">PlayStation</a>: <a href="https://blog.playstation.com/" target="_blank" rel="noopener noreferrer">PlayStation Blog</a> <span class="official-badge">Official</span>, <a href="https://www.pushsquare.com/" target="_blank" rel="noopener noreferrer">Push Square</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Xbox')">Xbox</a>: <a href="https://news.xbox.com/" target="_blank" rel="noopener noreferrer">Xbox Wire</a> <span class="official-badge">Official</span>, <a href="https://www.purexbox.com/" target="_blank" rel="noopener noreferrer">Pure Xbox</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Nintendo')">Nintendo</a>: <a href="https://www.nintendolife.com/" target="_blank" rel="noopener noreferrer">Nintendo Life</a>, <a href="https://nintendoeverything.com/" target="_blank" rel="noopener noreferrer">Nintendo Everything</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('PC')">PC Gaming</a>: <a href="https://www.pcgamer.com/" target="_blank" rel="noopener noreferrer">PC Gamer</a>, <a href="https://www.rockpapershotgun.com/" target="_blank" rel="noopener noreferrer">Rock Paper Shotgun</a>, <a href="https://www.pcgamesn.com/" target="_blank" rel="noopener noreferrer">PCGamesN</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Esports')">Esports</a>: <a href="https://dotesports.com/" target="_blank" rel="noopener noreferrer">Dot Esports</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Hardware')">Hardware</a>: <a href="https://www.digitalfoundry.net" target="_blank" rel="noopener noreferrer">Digital Foundry</a>, <a href="https://www.tomshardware.com/" target="_blank" rel="noopener noreferrer">Tom's Hardware</a></li>
+          <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Indie')">Indie</a>: <a href="https://www.siliconera.com/" target="_blank" rel="noopener noreferrer">Siliconera</a>, <a href="https://indiegamesplus.com/" target="_blank" rel="noopener noreferrer">Indie Games Plus</a>, <a href="https://itch.io/devlogs" target="_blank" rel="noopener noreferrer">itch.io Devlogs</a></li>
           <li><a href="#" onclick="event.preventDefault();window.__setFilter&&window.__setFilter('Industry')">Industry</a>: <a href="https://www.gamesindustry.biz/" target="_blank" rel="noopener noreferrer">GamesIndustry.biz</a></li>
         </ul>
+
+        <!-- Video Sources subsection -->
+        <div class="footer-video-sources" id="videoSourcesSection">
+          <div class="footer-sources-title" style="margin-top:1.5rem">Video sources</div>
+          <p class="footer-video-sources-desc">Videos are selected from official publisher channels, platform owners and trusted editorial creators. No sponsored placements. No paid ranking.</p>
+          <div class="footer-video-source-groups" id="footerVideoSourceGroups">
+            <!-- populated dynamically by JS from data/video-sources.json -->
+            <div class="footer-video-source-group">
+              <strong class="fvsg-label">Official Platforms</strong>
+              <ul class="footer-sources-list">
+                <li><a href="https://www.youtube.com/@PlayStation" target="_blank" rel="noopener noreferrer">PlayStation</a> <span class="official-badge">Official</span> — PlayStation, Trailers, Showcases</li>
+                <li><a href="https://www.youtube.com/@Xbox" target="_blank" rel="noopener noreferrer">Xbox</a> <span class="official-badge">Official</span> — Xbox, Trailers, Showcases</li>
+                <li><a href="https://www.youtube.com/@Nintendo" target="_blank" rel="noopener noreferrer">Nintendo</a> <span class="official-badge">Official</span> — Nintendo, Trailers, Showcases</li>
+              </ul>
+            </div>
+            <div class="footer-video-source-group">
+              <strong class="fvsg-label">Trusted Editorial</strong>
+              <ul class="footer-sources-list">
+                <li><a href="https://www.youtube.com/@IGN" target="_blank" rel="noopener noreferrer">IGN</a> — Reviews, Trailers, General</li>
+                <li><a href="https://www.youtube.com/@GameSpot" target="_blank" rel="noopener noreferrer">GameSpot</a> — Reviews, Trailers, General</li>
+                <li><a href="https://www.youtube.com/@DigitalFoundry" target="_blank" rel="noopener noreferrer">Digital Foundry</a> — Hardware, Reviews</li>
+              </ul>
+            </div>
+            <div class="footer-video-source-group">
+              <strong class="fvsg-label">Events &amp; Showcases</strong>
+              <ul class="footer-sources-list">
+                <li><a href="https://www.youtube.com/@TheGameAwards" target="_blank" rel="noopener noreferrer">The Game Awards</a> — Trailers, Esports, Awards</li>
+                <li><a href="https://www.youtube.com/@SummerGameFest" target="_blank" rel="noopener noreferrer">Summer Game Fest</a> — Trailers, Showcases</li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:0.78rem;color:var(--ink3);margin-top:0.75rem">Official trailers and showcases may be featured because of freshness and relevance — never because of payment. <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-cyan)">Editorial policy →</a></p>
+        </div>
       </section>
       <!-- Footer grid -->
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-brand-logo">
             <svg viewBox="0 0 36 36" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="10" width="3" height="16" rx="1.5" fill="#A3FF3F"/>
-              <path d="M11 13 Q20 13 20 18 Q20 23 11 23" stroke="#A3FF3F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 10 Q26 10 26 18 Q26 26 11 26" stroke="#A3FF3F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.45"/>
+              <path d="M 4,18 A 16,16 0 0,1 32,18"
+                    stroke="#A3FF3F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-opacity="0.52"/>
+              <path d="M 10,22 A  9, 9 0 0,1 26,22"
+                    stroke="#A3FF3F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <circle cx="18" cy="27" r="3.6" fill="#A3FF3F"/>
             </svg>
             <span class="footer-brand-name">GameBeeper</span>
           </div>
           <p class="footer-mission">GameBeeper brings trusted gaming stories together in one player-first signal. Independent. Open source. No ads. No paywalls.</p>
-          <div class="footer-community-cta">
-            <a href="#community" class="btn btn-community btn-sm">Join the Community</a>
-          </div>
         </div>
         <div>
           <div class="footer-col-title">Feed</div>
@@ -740,6 +1763,9 @@
             <a href="#feedback">Feedback</a>
             <a href="https://github.com/dante0747/GameBeeper.gg" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://github.com/dante0747/GameBeeper.gg/blob/main/docs/feed-selection-criteria.md" target="_blank" rel="noopener noreferrer">Editorial Policy</a>
+            <a href="#" data-support style="color:var(--color-accent-cyan)">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="vertical-align:-1px;margin-right:4px"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>Donate via PayPal
+            </a>
           </div>
         </div>
         <div>
