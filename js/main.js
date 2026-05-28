@@ -341,7 +341,7 @@ function buildHeroFeaturedCard(articles) {
     if (!value) return null;
     const raw = String(value).trim();
     if (!raw) return null;
-    if (raw.startsWith('/')) return raw;
+    if (raw.startsWith('/') && !raw.startsWith('//')) return raw;
     const safe = safeUrl(raw);
     return safe && safe !== '#' ? safe : null;
   };
@@ -443,8 +443,10 @@ function buildHeroFeaturedCard(articles) {
   if (heroImg) {
     heroImg.addEventListener('error', () => {
       const fallbackSrc = heroImg.dataset.fallbackSrc;
-      if (!fallbackSrc || heroImg.src.endsWith(fallbackSrc)) return;
-      heroImg.src = fallbackSrc;
+      if (!fallbackSrc) return;
+      const resolvedFallback = new URL(fallbackSrc, window.location.href).href;
+      if (heroImg.currentSrc === resolvedFallback || heroImg.src === resolvedFallback) return;
+      heroImg.src = resolvedFallback;
     }, { once: true });
   }
 }
