@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-28T16:15:59.623Z",
-  "totalSources": 6,
-  "onlineSources": 6,
-  "failedSources": 0,
+  "generatedAt": "2026-05-28T17:17:57.328Z",
+  "totalSources": 8,
+  "onlineSources": 2,
+  "failedSources": 6,
   "sources": [
     {
       "id": "digital-foundry-yt",
@@ -13,14 +13,16 @@
     {
       "id": "gamespot-yt",
       "name": "GameSpot",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
     },
     {
       "id": "ign-yt",
       "name": "IGN",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
     },
     {
       "id": "nintendo-yt",
@@ -31,14 +33,30 @@
     {
       "id": "playstation-yt",
       "name": "PlayStation",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
+    },
+    {
+      "id": "summer-game-fest-yt",
+      "name": "Summer Game Fest",
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
+    },
+    {
+      "id": "the-game-awards-yt",
+      "name": "The Game Awards",
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
     },
     {
       "id": "xbox-yt",
       "name": "Xbox",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
     }
   ]
 }
