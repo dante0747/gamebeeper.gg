@@ -12,12 +12,35 @@ let _sources   = [];
 let _health    = null;
 let _loadedAt  = null;
 
+function buildFetchOpts(cache = 'no-cache', timeoutMs = 0) {
+  const opts = { cache };
+  if (timeoutMs > 0 && typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+    opts.signal = AbortSignal.timeout(timeoutMs);
+  }
+  return opts;
+}
+
+async function fetchJsonWithFallback(paths, { cache = 'no-cache', timeoutMs = 0 } = {}) {
+  let lastError = null;
+  for (const path of paths) {
+    try {
+      const resp = await fetch(path, buildFetchOpts(cache, timeoutMs));
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      return await resp.json();
+    } catch (e) {
+      lastError = e;
+    }
+  }
+  throw lastError || new Error('All fetch attempts failed');
+}
+
 /** Load video sources registry from /data/video-sources.json */
 export async function loadVideoSources() {
   try {
-    const resp = await fetch('/video-sources.json', { signal: AbortSignal.timeout(5000) });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
+    const data = await fetchJsonWithFallback(
+      ['/video-sources.json', '/public/video-sources.json'],
+      { timeoutMs: 5000 },
+    );
     _sources = Array.isArray(data) ? data.filter(s => s.enabled !== false) : [];
   } catch (e) {
     console.warn('[GameBeeper] Could not load video sources:', e.message);
@@ -28,9 +51,10 @@ export async function loadVideoSources() {
 /** Load cached video entries from /public/videos.json */
 export async function loadVideoCache() {
   try {
-    const resp = await fetch('/videos.json', { cache: 'no-cache', signal: AbortSignal.timeout(8000) });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
+    const data = await fetchJsonWithFallback(
+      ['/videos.json', '/public/videos.json'],
+      { cache: 'no-cache', timeoutMs: 8000 },
+    );
     _videos   = Array.isArray(data.videos) ? data.videos : [];
     _loadedAt = data.generatedAt || null;
     return { videos: _videos, generatedAt: _loadedAt, sourceCount: data.sourceCount || 0 };
@@ -44,9 +68,10 @@ export async function loadVideoCache() {
 /** Load video source health from /public/video-health.json */
 export async function loadVideoHealth() {
   try {
-    const resp = await fetch('/video-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    _health = await resp.json();
+    _health = await fetchJsonWithFallback(
+      ['/video-health.json', '/public/video-health.json'],
+      { cache: 'no-cache', timeoutMs: 5000 },
+    );
     return _health;
   } catch (e) {
     console.debug('[GameBeeper] video-health.json unavailable:', e.message);
@@ -170,4 +195,3 @@ export const SOURCE_TYPE_LABEL = {
   'editorial':          'Trusted Editorial',
   'event':              'Event',
 };
-

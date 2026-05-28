@@ -107,4 +107,21 @@ describe('loadVideoCache', () => {
     expect(result.videos).toHaveLength(1);
     expect(result.videos[0].id).toBe('v1');
   });
+
+  it('falls back to /public/videos.json when /videos.json is unavailable', async () => {
+    const mockVideos = [{ id: 'v2', title: 'Fallback Video' }];
+    global.fetch = vi.fn()
+      .mockResolvedValueOnce({ ok: false, status: 404 })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ videos: mockVideos, generatedAt: '2026-05-28T00:00:00Z' }),
+      });
+
+    const result = await loadVideoCache();
+
+    expect(result.videos).toHaveLength(1);
+    expect(result.videos[0].id).toBe('v2');
+    expect(global.fetch).toHaveBeenNthCalledWith(1, '/videos.json', expect.any(Object));
+    expect(global.fetch).toHaveBeenNthCalledWith(2, '/public/videos.json', expect.any(Object));
+  });
 });
