@@ -330,11 +330,11 @@ async function initWatchSignal() {
   updateWatchStatus();
 
   if (videos.length === 0) {
-    // No videos yet — show empty state but not error
+    // No videos yet — show a user-friendly empty state
     const error = $('watchError');
     const errMsg = $('watchErrorMsg');
     if (error && errMsg) {
-      errMsg.textContent = 'No videos cached yet. Run `node scripts/build-videos.mjs` to populate the video feed.';
+      errMsg.textContent = 'No videos available right now. The video feed is refreshed automatically — check back soon.';
       error.style.display = '';
     }
     const previewSection = $('watchPreviewSection');

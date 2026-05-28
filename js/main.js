@@ -1020,14 +1020,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialise cookie/analytics consent (GDPR)
   initConsent();
 
+  // Load the version badge immediately — don't wait for the full feed fetch
+  loadSiteVersion();
+
   init();
 
   // Populate "last updated" in About section from version.json
   const aboutUpdated = document.getElementById('aboutLastUpdated');
   if (aboutUpdated) {
     fetch('/version.json').then(r => r.ok ? r.json() : null).then(v => {
-      if (v && v.buildDate) {
-        const d = new Date(v.buildDate);
+      if (v && v.date) {
+        const d = new Date(v.date);
         const label = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
         aboutUpdated.textContent = `// last updated ${label}`;
       }
