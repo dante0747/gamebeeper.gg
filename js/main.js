@@ -238,7 +238,7 @@ async function loadFeedHealthBanner() {
   const bar = document.getElementById('feedHealthBar');
   if (!bar) return;
   try {
-    const resp = await fetch('/public/feed-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
+    const resp = await fetch('/feed-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
     if (!resp.ok) return;
     const health = await resp.json();
     const total  = Array.isArray(health.feeds) ? health.feeds.length : getFeeds().length;
@@ -271,7 +271,7 @@ async function loadSiteVersion() {
   const el = document.getElementById('siteVersion');
   if (!el) return;
   try {
-    const resp = await fetch('/public/version.json', { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
+    const resp = await fetch('/version.json', { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
     if (!resp.ok) return;
     const v = await resp.json();
     el.textContent = `// ${v.version} · ${v.commit} · ${v.date}`;
