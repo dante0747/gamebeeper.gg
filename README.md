@@ -227,21 +227,43 @@ tests/
 
 ### CI pipeline
 
+Two workflows live in `.github/workflows/`:
+
+#### `deploy.yml` — runs on push to `main`, every hour, and manually
+
 ```
-push / schedule
-    |
+push / schedule / manual
+    │
     ▼
- test job  — npm test (Vitest)
-    |  needs: test
+ test job  ── npm test (Vitest unit + integration)
+    │  needs: test
     ▼
- build job — Ollama LLM classification + feed data + GitHub Pages deploy
-    |  needs: build  (main branch only)
+ build job ── Install & start Ollama (llama3.2:1b)
+           ── build:feed  (LLM classification, USE_LLM=1)
+           ── build:videos  (YouTube Atom RSS + optional API key)
+           ── generate-sitemap + generate-seo-content
+           ── git commit updated cache back to main  [skip ci]
+           ── vite build → dist/
+           ── peaceiris/actions-gh-pages → deploys dist/ to gh-pages branch
+    │  needs: build  (main branch only)
     ▼
- e2e job   — npm run test:e2e (Playwright smoke tests)
-              +- report uploaded as CI artifact (7-day retention)
+ e2e job   ── Playwright smoke tests against live gamebeeper.gg
+           ── Playwright report uploaded as CI artifact (7-day retention)
 ```
 
-A failing unit or integration test **blocks the entire pipeline** — no bad code can reach production.
+#### `pr-check.yml` — runs on every pull request to `main`
+
+```
+pull_request → main
+    │
+    ▼
+ audit-and-build ── npm audit (blocks on moderate+ vulnerabilities)
+                 ── npm test
+                 ── npm run build:data  (no LLM / no YouTube API)
+                 ── npm run build:app
+```
+
+A failing test or audit in either workflow **blocks the pipeline** — no broken or vulnerable code can reach production.
 
 ---
 
@@ -304,7 +326,6 @@ GameBeeper.gg/
 +-- terms.html               Terms of use
 +-- favicon.svg              Signal-wave emblem
 +-- og-image.png             1200×630 social preview
-+-- CNAME                    GameBeeper.gg
 |
 +-- js/                      Browser ES modules
 |   +-- main.js              App entry-point
@@ -347,7 +368,7 @@ GameBeeper.gg/
 |   +-- feeds.json           34 enabled gaming RSS sources
 |   +-- video-sources.json   8 YouTube video sources for Watch Signal
 |
-+-- public/                  Generated + static assets
++-- public/                  Generated + static assets (copied verbatim into dist/)
 |   +-- feed.json            Pre-built article cache
 |   +-- feed-health.json     Feed status metadata
 |   +-- videos.json          Pre-built video cache (Watch Signal)
@@ -355,13 +376,16 @@ GameBeeper.gg/
 |   +-- version.json         Build timestamp
 |   +-- manifest.json        PWA manifest
 |   +-- sw.js                Service worker
+|   +-- sitemap.xml          Generated sitemap (updated by build:sitemap)
+|   +-- robots.txt           Crawler directives
+|   +-- CNAME                GameBeeper.gg (custom domain for GitHub Pages)
 |
 +-- assets/fallbacks/        Animated SVG category placeholders (gaming only)
 |
 +-- tests/                   Full test suite (Vitest + Playwright)
 +-- .github/workflows/
-    +-- build-feed.yml       Hourly feed refresh + Pages deploy
-    +-- ci.yml               PR/push build + audit gate
+    +-- deploy.yml           Hourly + on-push: test → LLM feed build → video build → commit cache → Vite build → gh-pages deploy → E2E smoke
+    +-- pr-check.yml         PR gate: security audit + tests + build check (no deploy)
 ```
 
 ---
