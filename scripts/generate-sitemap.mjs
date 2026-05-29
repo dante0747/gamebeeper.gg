@@ -56,8 +56,8 @@ async function main() {
 </urlset>
 `;
 
-  await fs.writeFile(path.join(ROOT, 'sitemap.xml'), xml, 'utf8');
-  console.log(`[generate-sitemap] ✓ sitemap.xml written — homepage only (${TODAY}).`);
+  await fs.writeFile(path.join(ROOT, 'public', 'sitemap.xml'), xml, 'utf8');
+  console.log(`[generate-sitemap] ✓ public/sitemap.xml written — homepage only (${TODAY}).`);
 }
 
 main().catch(err => { console.error('[generate-sitemap] ✗', err); process.exit(1); });

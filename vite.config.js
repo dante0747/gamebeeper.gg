@@ -4,6 +4,10 @@ export default defineConfig({
   // Serve from project root; index.html at root is the entry point
   root: '.',
 
+  // Use relative paths so dist/index.html works when opened as a local file
+  // and when deployed to GitHub Pages at the domain root.
+  base: './',
+
   // 'public/' is already used for feed.json / feed-health.json / version.json –
   // Vite treats this directory as static assets served verbatim.
   publicDir: 'public',
