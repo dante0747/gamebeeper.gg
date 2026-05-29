@@ -351,6 +351,7 @@ GameBeeper.gg/
 |
 +-- scripts/                 Node.js build pipeline
 |   +-- build-feed.mjs       Main feed builder
+|   +-- build-videos.mjs     YouTube video cache builder (Watch Signal)
 |   +-- generate-sitemap.mjs Sitemap generator
 |   +-- generate-seo-content.mjs SEO fallback injector
 |   +-- generate-version.mjs public/version.json writer
@@ -361,6 +362,7 @@ GameBeeper.gg/
 |       +-- pipeline.mjs     Dedup, sort, cap
 |       +-- images.mjs       Image extraction + validation
 |       +-- summarizer.mjs   AI snippet/summary generation
+|       +-- ai.mjs           Shared AI/LLM helpers (Ollama wrapper)
 |       +-- sponsored.mjs    Sponsored-post filter
 |       +-- utils.mjs        Shared utilities
 |
