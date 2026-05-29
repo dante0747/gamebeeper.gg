@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage — aggregates all curated RSS feeds -->
+  <url>
+    <loc>https://gamebeeper.gg/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gamebeeper.gg/og-image.png</image:loc>
+      <image:title>GameBeeper &#8212; Video Game News Aggregator</image:title>
+      <image:caption>Video game news, reviews, reveals and platform updates from 34 trusted gaming sources. PlayStation, Xbox, Nintendo, PC, esports, indie. No ads, no paywalls.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://gamebeeper.gg/privacy.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Use -->
+  <url>
+    <loc>https://gamebeeper.gg/terms.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

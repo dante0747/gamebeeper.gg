@@ -1,0 +1,68 @@
+﻿# robots.txt — GameBeeper (https://gamebeeper.gg/)
+# Updated: 2026-05-26
+
+# Allow all well-behaved crawlers
+User-agent: *
+Allow: /
+Disallow: /public/sw.js
+Disallow: /public/version.json
+
+# Googlebot — allow everything; generous crawl budget hints
+User-agent: Googlebot
+Allow: /
+Allow: /public/feed.json
+Crawl-delay: 1
+
+# Google News crawler — allow full access
+User-agent: Googlebot-News
+Allow: /
+
+# Bing crawler
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# AI/LLM crawlers — allow training on public content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Social media crawlers — allow previews
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block known malicious or abusive scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://gamebeeper.gg/sitemap.xml
