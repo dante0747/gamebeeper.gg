@@ -16,9 +16,44 @@ export default defineConfig({
   },
 
   projects: [
+    // ── Functional test suite (smoke + feature specs) ──────────────────────────
     {
       name: 'chromium',
+      testMatch: /(?<!visual)\.spec\.js$/,
       use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      testMatch: /(?<!visual)\.spec\.js$/,
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      testMatch: /(?<!visual)\.spec\.js$/,
+      use: { ...devices['Desktop Safari'] },
+    },
+
+    // ── Mobile viewports ────────────────────────────────────────────────────────
+    {
+      name: 'mobile-chrome',
+      testMatch: /smoke\.spec\.js$/,
+      use: { ...devices['Pixel 5'] },
+    },
+    {
+      name: 'mobile-safari',
+      testMatch: /smoke\.spec\.js$/,
+      use: { ...devices['iPhone 13'] },
+    },
+
+    // ── Visual regression (Chromium only for deterministic snapshots) ────────────
+    {
+      name: 'visual',
+      testMatch: /visual\.spec\.js$/,
+      use: {
+        ...devices['Desktop Chrome'],
+        // Disable animations for stable screenshots
+        launchOptions: { args: ['--disable-gpu', '--disable-lcd-text'] },
+      },
     },
   ],
 
