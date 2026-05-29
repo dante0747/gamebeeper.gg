@@ -22,6 +22,7 @@ let viewMode       = PREF.get('view')        || 'grid';
 let autoRefreshMin = parseInt(PREF.get('autorefresh') || '0', 10);
 let isLoading      = false;
 let failedFeeds    = 0;
+let cachedFeedCount = 0;
 let autoTimer      = null;
 let countdownSecs  = 0;
 let countdownTimer = null;
@@ -183,7 +184,8 @@ function setLive() {
   setRefreshBusy(false);
   if (statArticles) animateCounter(statArticles, allArticles.length, 900);
   const statFeedsEl = document.getElementById('statFeeds');
-  if (statFeedsEl) animateCounter(statFeedsEl, getFeeds().length, 700);
+  const feedCount = cachedFeedCount || getFeeds().length;
+  if (statFeedsEl) animateCounter(statFeedsEl, feedCount, 700);
   const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
   const todayCount = allArticles.filter(a => { try { return new Date(a.date) >= todayStart; } catch { return false; } }).length;
   const statTodayEl = document.getElementById('statToday');
@@ -192,7 +194,7 @@ function setLive() {
   const statSourcesEl = document.getElementById('statSources');
   if (statSourcesEl) animateCounter(statSourcesEl, activeSourceCount, 850);
   const nlFeedCount = document.getElementById('newsletterFeedCount');
-  if (nlFeedCount) nlFeedCount.textContent = getFeeds().length - failedFeeds;
+  if (nlFeedCount) nlFeedCount.textContent = feedCount - failedFeeds;
 }
 
 function setRefreshBusy(busy) {
@@ -689,7 +691,7 @@ async function fetchAll() {
     allArticles = data.articles.map(normaliseCachedArticle).filter(a => a.link && a.link !== '#');
     failedFeeds = data.failedFeeds || 0;
     cacheGeneratedAt = data.generatedAt || null;
-    if (data.feedCount) updateFeedCountSpans(data.feedCount);
+    if (data.feedCount) { cachedFeedCount = data.feedCount; updateFeedCountSpans(data.feedCount); }
     console.info(`[GameBeeper] Loaded ${allArticles.length} articles from cache (generated ${data.generatedAt}).`);
     // Warn if the cache is older than the stale threshold
     if (cacheGeneratedAt) {
