@@ -99,6 +99,9 @@ jobs:
 
       # ── Build feed with LLM classification ──────────────────────────────
       - name: Build feed data
+        # continue-on-error: a failing feed build (e.g. Ollama not ready,
+        # network hiccup) must NOT block the video feed or deploy steps.
+        continue-on-error: true
         env:
           USE_LLM: '1'
           OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'llama3.2:1b' }}
@@ -106,15 +109,19 @@ jobs:
 
       # ── Build video feed (YouTube Atom RSS) ──────────────────────────────
       - name: Build video feed
+        # if: always() ensures this step runs even when "Build feed data" fails.
+        if: always()
         run: node scripts/build-videos.mjs
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       - name: Generate sitemap & SEO content
+        if: always()
         run: node scripts/generate-sitemap.mjs && node scripts/generate-seo-content.mjs
 
       # ── Commit updated AI cache back to repo ────────────────────────────
       - name: Commit updated data & AI cache
+        if: always()
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -133,11 +140,13 @@ jobs:
           git commit -m "chore: refresh feed + videos + update AI classification cache [skip ci]"
           git push origin HEAD:main
 
-      # ── Build & deploy to GitHub Pages ──────────────────────────────────
+      # ── Build & deploy to GitHub Pages ──────────────────────────────
       - name: Build Vite app
+        if: always()
         run: npm run build:app
 
       - name: Deploy to GitHub Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
