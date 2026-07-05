@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-07-05T22:24:56.689Z",
+  "generatedAt": "2026-07-05T23:27:46.882Z",
   "feeds": [
     {
       "id": "vgc",
       "name": "VGC",
       "category": "Latest",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 10,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "gematsu",
       "name": "Gematsu",
       "category": "Latest",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "eurogamer",
@@ -26,7 +26,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "ign",
@@ -35,7 +35,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "gamespot",
@@ -44,7 +44,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "polygon",
@@ -53,7 +53,7 @@
       "ok": true,
       "error": null,
       "count": 10,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "kotaku",
@@ -62,7 +62,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "destructoid",
@@ -71,7 +71,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "gamesradar",
@@ -80,7 +80,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "ars-technica",
@@ -89,7 +89,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "the-verge-gaming",
@@ -98,7 +98,7 @@
       "ok": true,
       "error": null,
       "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "playstation-blog",
@@ -107,25 +107,25 @@
       "ok": true,
       "error": null,
       "count": 10,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "push-square",
       "name": "Push Square",
       "category": "PlayStation",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "push-square-reviews",
       "name": "Push Square Reviews",
       "category": "Reviews",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "xbox-wire",
@@ -134,43 +134,43 @@
       "ok": true,
       "error": null,
       "count": 10,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "pure-xbox",
       "name": "Pure Xbox",
       "category": "Xbox",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "pure-xbox-reviews",
       "name": "Pure Xbox Reviews",
       "category": "Reviews",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "nintendo-life",
       "name": "Nintendo Life",
       "category": "Nintendo",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "nintendo-life-reviews",
       "name": "Nintendo Life Reviews",
       "category": "Reviews",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "nintendo-everything",
@@ -179,7 +179,7 @@
       "ok": true,
       "error": null,
       "count": 10,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "pc-gamer",
@@ -188,7 +188,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "rock-paper-shotgun",
@@ -197,7 +197,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "rps-reviews",
@@ -206,7 +206,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "pcgamesn",
@@ -215,7 +215,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "ign-reviews",
@@ -224,7 +224,7 @@
       "ok": true,
       "error": null,
       "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "gamespot-reviews",
@@ -233,16 +233,16 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "gematsu-trailers",
       "name": "Gematsu Trailers",
       "category": "Trailers",
-      "ok": false,
-      "error": "HTTP 403",
+      "ok": true,
+      "error": null,
       "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "dot-esports",
@@ -251,7 +251,7 @@
       "ok": true,
       "error": null,
       "count": 10,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "gamesindustry",
@@ -260,16 +260,16 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "digital-foundry",
       "name": "Digital Foundry",
       "category": "Hardware",
-      "ok": false,
-      "error": "HTTP 403",
-      "count": 0,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "ok": true,
+      "error": null,
+      "count": 15,
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "toms-hardware",
@@ -278,7 +278,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "siliconera",
@@ -287,7 +287,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "indie-games-plus",
@@ -296,7 +296,7 @@
       "ok": true,
       "error": null,
       "count": 10,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     },
     {
       "id": "itch-io-blog",
@@ -305,7 +305,7 @@
       "ok": true,
       "error": null,
       "count": 15,
-      "fetchedAt": "2026-07-05T22:24:35.242Z"
+      "fetchedAt": "2026-07-05T23:27:38.937Z"
     }
   ]
 }
