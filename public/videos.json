@@ -1,8 +1,36 @@
 {
-  "generatedAt": "2026-07-06T13:23:07.674Z",
+  "generatedAt": "2026-07-06T15:11:31.353Z",
   "sourceCount": 8,
   "videoCount": 24,
   "videos": [
+    {
+      "id": "yt-vcpjiMcAyoU",
+      "contentType": "video",
+      "provider": "youtube",
+      "providerVideoId": "vcpjiMcAyoU",
+      "sourceId": "digital-foundry-yt",
+      "sourceName": "Digital Foundry",
+      "sourceType": "editorial",
+      "title": "DF Direct Weekly #271: The End Of PlayStation Physical Media & True Game Ownership",
+      "description": "Thanks to Alienware for sponsoring DF Direct. To learn more about the Alienware AREA-51 Gaming Desktop, check out: http://aw.gg/digitalfoundry\n\nSony announces the end of PlayStation game discs via a three paragraph blog post - bringing to an end the era of physical media and actually owning the game",
+      "publishedAt": "2026-07-06T14:58:12+00:00",
+      "thumbnail": "https://i.ytimg.com/vi/vcpjiMcAyoU/hqdefault.jpg",
+      "thumbnailFallback": "https://i.ytimg.com/vi/vcpjiMcAyoU/mqdefault.jpg",
+      "duration": null,
+      "liveStatus": "none",
+      "topics": [
+        "Hardware",
+        "Reviews",
+        "PlayStation",
+        "Xbox"
+      ],
+      "videoGenre": "review",
+      "official": false,
+      "externalUrl": "https://www.youtube.com/watch?v=vcpjiMcAyoU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/vcpjiMcAyoU",
+      "bookmarked": false,
+      "accentColor": "#26e6ff"
+    },
     {
       "id": "yt-fJt04-EKemE",
       "contentType": "video",
@@ -603,33 +631,6 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/YZ7usmY4xzc",
       "bookmarked": false,
       "accentColor": "#E40012"
-    },
-    {
-      "id": "yt-OqBmDmVmX5g",
-      "contentType": "video",
-      "provider": "youtube",
-      "providerVideoId": "OqBmDmVmX5g",
-      "sourceId": "digital-foundry-yt",
-      "sourceName": "Digital Foundry",
-      "sourceType": "editorial",
-      "title": "007 First Light PC Review - DLSS Finally Fixed, But Other Issues Still Need Fixing",
-      "description": "Thanks to Alienware for sponsoring DF PC performance reviews. To learn more about the Alienware AREA-51 Gaming Desktop, check out: http://aw.gg/digitalfoundry\n\nThis video was late, then delayed again as IO Interactive launched a DLSS fix, then unlaunched it owing to offline mode bugs, then launched ",
-      "publishedAt": "2026-06-18T14:00:14+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/OqBmDmVmX5g/hqdefault.jpg",
-      "thumbnailFallback": "https://i.ytimg.com/vi/OqBmDmVmX5g/mqdefault.jpg",
-      "duration": null,
-      "liveStatus": "none",
-      "topics": [
-        "Hardware",
-        "Reviews",
-        "PC"
-      ],
-      "videoGenre": "review",
-      "official": false,
-      "externalUrl": "https://www.youtube.com/watch?v=OqBmDmVmX5g",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/OqBmDmVmX5g",
-      "bookmarked": false,
-      "accentColor": "#26e6ff"
     }
   ]
 }
