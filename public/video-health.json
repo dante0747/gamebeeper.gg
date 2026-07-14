@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-14T03:07:38.154Z",
+  "generatedAt": "2026-07-14T05:05:56.454Z",
   "totalSources": 8,
-  "onlineSources": 1,
-  "failedSources": 7,
+  "onlineSources": 0,
+  "failedSources": 8,
   "sources": [
     {
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 500",
       "videosFetched": 0
     },
     {
@@ -28,8 +28,9 @@
     {
       "id": "nintendo-yt",
       "name": "Nintendo",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 500",
+      "videosFetched": 0
     },
     {
       "id": "playstation-yt",
