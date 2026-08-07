@@ -1,15 +1,14 @@
 {
-  "generatedAt": "2026-08-07T03:06:44.527Z",
+  "generatedAt": "2026-08-07T04:44:09.478Z",
   "totalSources": 8,
-  "onlineSources": 0,
-  "failedSources": 8,
+  "onlineSources": 1,
+  "failedSources": 7,
   "sources": [
     {
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
-      "ok": false,
-      "error": "HTTP 404",
-      "videosFetched": 0
+      "ok": true,
+      "videosFetched": 12
     },
     {
       "id": "gamespot-yt",
