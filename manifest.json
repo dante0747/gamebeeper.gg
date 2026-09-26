@@ -1,33 +1,27 @@
 {
   "name": "GameBeeper",
   "short_name": "GameBeeper",
-  "description": "All the games worth watching. One signal. Video game news, reviews, reveals, and platform updates in one fast feed.",
+  "description": "Gaming news, minus the noise. News, reviews, reveals and trailers from trusted gaming sources in one fast, ad-free feed.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#07070c",
-  "theme_color": "#07070c",
+  "background_color": "#0A0B0E",
+  "theme_color": "#0A0B0E",
   "lang": "en-US",
   "categories": ["news", "games", "entertainment"],
   "icons": [
-    {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/og-image.png",
-      "sizes": "1200x630",
-      "type": "image/png"
-    }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "screenshots": [
     {
       "src": "/og-image.png",
       "sizes": "1200x630",
       "type": "image/png",
-      "label": "GameBeeper — video game news aggregator"
+      "form_factor": "wide",
+      "label": "GameBeeper — gaming news, minus the noise"
     }
   ]
 }
