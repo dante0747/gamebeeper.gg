@@ -1,19 +1,11 @@
 ﻿<div align="center">
 
-```
- ██████+  █████+ ███+   ███+███████+██████+ ███████+███████+██████+ ███████+██████+ 
-██+====+ ██+==██+████+ ████|██+====+██+==██+██+====+██+====+██+==██+██+====+██+==██+
-██|  ███+███████|██+████+██|█████+  ██████++█████+  █████+  ██████++█████+  ██████++
-██|   ██|██+==██|██|+██++██|██+==+  ██+==██+██+==+  ██+==+  ██+===+ ██+==+  ██+==██+
-+██████++██|  ██|██| +=+ ██|███████+██████++███████+███████+██|     ███████+██|  ██|
- +=====+ +=+  +=++=+     +=++======++=====+ +======++======++=+     +======++=+  +=+
-```
+<img src="public/brand/wordmark.svg" alt="GameBeeper" width="460" />
 
-**All the games worth watching. One signal.**
+**Gaming news, minus the noise.**
 
 [![Live](https://img.shields.io/badge/status-live-39d353?style=flat-square&logo=statuspage&logoColor=black)](https://GameBeeper.gg)
 [![Feeds](https://img.shields.io/badge/RSS_feeds-34-58c8ff?style=flat-square&logo=rss&logoColor=black)](https://GameBeeper.gg)
-[![Paywalls](https://img.shields.io/badge/paywalls-0-39d353?style=flat-square)](https://GameBeeper.gg)
 [![No Ad Trackers](https://img.shields.io/badge/ad_trackers-none-ff5555?style=flat-square)](https://GameBeeper.gg)
 [![No Ads](https://img.shields.io/badge/ads-nope-bc8cff?style=flat-square)](https://GameBeeper.gg)
 [![Tests](https://img.shields.io/badge/tests-passing-39d353?style=flat-square&logo=vitest&logoColor=black)](./tests)
@@ -21,6 +13,8 @@
 > *Video game news aggregated from 27 trusted gaming sources (34 RSS feeds) — one fast, clean, distraction-free feed.*
 
 </div>
+
+Logo, social artwork, launch copy and asset rebuild instructions: [Brand and marketing kit](docs/BRANDING.md).
 
 ---
 
@@ -325,7 +319,7 @@ GameBeeper.gg/
 +-- privacy.html             Privacy policy
 +-- terms.html               Terms of use
 +-- favicon.svg              Signal mark (lime tile)
-+-- public/og-image.png      1200×630 social preview (plus icon-192/512 and apple-touch-icon)
++-- public/og-image-v2.png      1200×630 social preview (plus icon-192/512 and apple-touch-icon)
 |
 +-- js/                      Browser ES modules
 |   +-- main.js              App entry-point

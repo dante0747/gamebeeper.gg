@@ -420,7 +420,7 @@ kbd {
 .nav-inner { display: flex; align-items: center; gap: var(--s-6); height: 100%; }
 
 .logo { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.logo-mark { border-radius: 6px; transition: transform var(--t-3) var(--ease); }
+.logo-mark { display: block; flex-shrink: 0; width: 34px; height: 34px; transition: transform var(--t-3) var(--ease); }
 .logo:hover .logo-mark { transform: rotate(-8deg) scale(1.06); }
 .logo-name {
   font-stretch: 125%;
@@ -430,6 +430,7 @@ kbd {
   text-transform: uppercase;
   color: var(--text-1);
 }
+.logo-name-accent { color: var(--signal); }
 
 .nav-links { display: flex; align-items: center; gap: 4px; margin-left: var(--s-4); }
 .nav-link {

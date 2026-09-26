@@ -31,7 +31,7 @@ async function main() {
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>${BASE_URL}/og-image.png</image:loc>
+      <image:loc>${BASE_URL}/og-image-v2.png</image:loc>
     </image:image>
   </url>
 

@@ -7,6 +7,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "build:app": "vite build",
+    "build:brand": "node scripts/generate-brand-assets.mjs",
     "build:data": "node scripts/generate-version.mjs && node scripts/build-feed.mjs && node scripts/build-videos.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-seo-content.mjs",
     "build": "npm run build:data && npm run build:app",
     "build:videos": "node scripts/build-videos.mjs",
@@ -26,6 +27,7 @@
     "@vitest/coverage-v8": "^4.1.6",
     "happy-dom": "^20.9.0",
     "msw": "^2.14.6",
+    "sharp": "^0.35.4",
     "vite": "^6.4.2",
     "vitest": "^4.1.6"
   }
