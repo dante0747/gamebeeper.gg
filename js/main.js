@@ -1,14 +1,14 @@
-﻿'use strict';
+'use strict';
 
-import { categories, catMeta, REFRESH_OPTIONS, SPONSORED_RE, DAY_MS, CACHE_STALE_MS } from './config.js';
+import { categories, catMeta, SPONSORED_RE, DAY_MS, CACHE_STALE_MS, FEED_PAGE_SIZE } from './config.js';
 import { loadFeedsRegistry, getFeeds } from './feeds-registry.js';
 import { gaEvent } from './analytics.js';
 import { initConsent } from './consent.js';
-import { PREF, loadPreferences, savePreferences, resetPreferences, hasActivePreferences, loadBookmarks, saveBookmarks, isBookmarked, toggleBookmark } from './storage.js';
-import { esc, randomMsg, announce, animateCounter, showBmToast, shareArticle, safeUrl, catClass, relTime } from './utils.js';
-import { progressivelyResolveMissingImages, resolveArticleMetadataImage, updateCardImage, getCachedImage } from './images.js';
+import { PREF, loadPreferences, resetPreferences, hasActivePreferences, loadBookmarks, isBookmarked, toggleBookmark, BOOKMARKS_EVENT } from './storage.js';
+import { esc, randomMsg, announce, animateCounter, showBmToast, shareArticle, catClass, publisherHost, relTime } from './utils.js';
+import { progressivelyResolveMissingImages, resolveArticleMetadataImage, updateCardImage } from './images.js';
 import { loadFeedCache, fetchAllFromRSS, normaliseCachedArticle } from './feed.js';
-import { gridCard, listCard, buildSkeletons, cardPlaceholder } from './cards.js';
+import { gridCard, listCard, buildSkeletons, cardPlaceholder, heroMarkup, pickLeadStory } from './cards.js';
 import { initSettings } from './settings-panel.js';
 import { initMyPulse } from './pulse-panel.js';
 import { initPayPalModal } from './paypal-modal.js';
@@ -28,12 +28,16 @@ let countdownSecs  = 0;
 let countdownTimer = null;
 let searchQuery    = '';
 let focusedCardIdx = -1;
+let renderLimit    = FEED_PAGE_SIZE;   // stories currently rendered ("Show more" raises it)
+let visibleList    = [];               // result of the last render(), for "Show more"
+let hasRendered    = false;            // first render swaps in over the pre-rendered cards
+let hasCountedUp   = false;
+let lastGeneratedAt = null;            // build time of the data currently on screen
 
 // -- DOM refs ------------------------------------------------------
 
 const $  = id => document.getElementById(id);
 const feedGrid       = $('feedGrid');
-const sidebarFilters = $('sidebarFilters');
 const mobileFilters  = $('mobileFilters');
 const statusDot      = $('statusDot');
 const statusText     = $('statusText');
@@ -42,13 +46,18 @@ const errorBanner    = $('errorBanner');
 const errorMessage   = $('errorMessage');
 const refreshBtnHero = $('refreshBtnHero');
 const refreshIcon    = $('refreshIcon');
-const navStatus      = $('navStatus');
 const gridViewBtn    = $('gridViewBtn');
 const listViewBtn    = $('listViewBtn');
 const sbFeeds        = $('sbFeeds');
 const sbUpdated      = $('sbUpdated');
 const sbFailed       = $('sbFailed');
-const statArticles   = null; // stat removed from UI
+const feedMore       = $('feedMore');
+const feedMoreBtn    = $('feedMoreBtn');
+const feedMoreCount  = $('feedMoreCount');
+const newStoriesPill = $('newStoriesPill');
+const feedSection    = $('latest');
+
+const timeFmt = d => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
 // -- Preference-based filtering ------------------------------------
 
@@ -84,12 +93,76 @@ function applyPreferencesFilter(articles, prefs) {
   });
 }
 
+/** Saved videos are stored with a "video:<id>" link and no category — give them card fields. */
+function normaliseBookmark(b) {
+  if (b.contentType !== 'video') return b;
+  return {
+    ...b,
+    category: b.category || b.topics?.[0] || 'Trailers',
+    image:    b.image || b.thumbnail || null,
+    date:     b.date || b.publishedAt || null,
+    source:   b.source || b.sourceName || '',
+  };
+}
+
 // -- Render --------------------------------------------------------
 
+const EMPTY_ART = {
+  noSignal:  '<div class="empty-art--nosignal" aria-hidden="true"><span>NO SIGNAL</span></div>',
+  inventory: '<div class="empty-art--inventory" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>',
+  search:    '<div class="empty-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>',
+};
+
+function emptyStateHtml() {
+  const isBookmarkView = activeFilter === 'Bookmarks';
+  const pulseFiltered  = !isBookmarkView && allArticles.length > 0 && hasActivePreferences(loadPreferences());
+  let art = EMPTY_ART.noSignal, title, sub, action = '';
+  if (searchQuery) {
+    art = EMPTY_ART.search;
+    title = `No match for “${esc(searchQuery)}”`;
+    sub = isBookmarkView ? 'Try another word, or search all stories.' : 'Try another word or a different topic.';
+    action = '<button class="btn btn-ghost btn-sm" type="button" data-empty-action="clear-search">Clear search</button>';
+  } else if (isBookmarkView) {
+    art = EMPTY_ART.inventory;
+    title = 'Inventory empty';
+    sub = 'Your saved stories will appear here. Tap the bookmark on any story to stash it — saves stay on this device.';
+    action = '<button class="btn btn-ghost btn-sm" type="button" data-empty-action="all">Browse all stories</button>';
+  } else if (pulseFiltered) {
+    title = 'Everything’s muted';
+    sub = 'Your filters are hiding every story here. Show more topics or sources in Customize, or reset.';
+    action = '<button class="btn btn-ghost btn-sm" type="button" data-empty-action="reset-pulse">Reset filters</button>';
+  } else if (allArticles.length === 0) {
+    title = 'No signal';
+    sub = 'We couldn’t load the feed. Give it a moment and try again.';
+    action = '<button class="btn btn-ghost btn-sm" type="button" data-empty-action="retry">Try again</button>';
+  } else {
+    title = 'Nothing on this channel';
+    sub = 'No stories in this topic right now. New ones land every hour.';
+    action = '<button class="btn btn-ghost btn-sm" type="button" data-empty-action="all">Show all stories</button>';
+  }
+  return `
+    <div class="empty-state" role="status">
+      ${art}
+      <p class="empty-title">${title}</p>
+      <p class="empty-sub">${sub}</p>
+      ${action}
+    </div>`;
+}
+
+function cardHtml(a, i) {
+  return viewMode === 'list' ? listCard(a, i) : gridCard(a, i);
+}
+
 function render() {
+  hideNewStoriesPill();
+  // Entrance animation only for renders the reader triggers — not for the
+  // first swap over identical pre-rendered cards.
+  feedGrid.classList.toggle('can-animate', hasRendered);
+  hasRendered = true;
+
   let visible;
   if (activeFilter === 'Bookmarks') {
-    visible = loadBookmarks();
+    visible = loadBookmarks().map(normaliseBookmark);
   } else {
     visible = activeFilter === 'All'
       ? allArticles
@@ -109,158 +182,184 @@ function render() {
     visible = applyPreferencesFilter(visible, loadPreferences());
   }
 
-  feedGrid.innerHTML = '';
+  visibleList = visible;
+  focusedCardIdx = -1;
   feedGrid.classList.toggle('feed-filtered', activeFilter !== 'All');
 
-  if (visible.length === 0 && !isLoading) {
-    const isBookmarkView = activeFilter === 'Bookmarks';
-    const pulseFiltered  = !isBookmarkView && allArticles.length > 0 && hasActivePreferences(loadPreferences());
-    feedGrid.innerHTML = `
-      <div class="empty-state visible">
-        <div class="empty-art">${pulseFiltered ? '  [ My Pulse ]\n  // filtered everything' : (isBookmarkView ? '  [ GameBeeper bookmarks ]\n  // folder is empty' : '  ¯\\_(ツ)_/¯\n  404: news not found')}</div>
-        <div class="empty-title">${pulseFiltered ? 'No stories match your current Pulse.' : (isBookmarkView ? 'No saved stories yet.' : 'No articles for this filter.')}</div>
-        <div class="empty-sub">${pulseFiltered
-          ? `// try enabling more topics or <button class="empty-pulse-reset" onclick="window.__pulseReset()">resetting your filters</button>`
-          : (isBookmarkView ? '// click the bookmark icon on any article to save it here' : '// try another category or refresh the feeds')
-        }</div>
-      </div>`;
+  if (visible.length === 0) {
+    feedGrid.innerHTML = isLoading && allArticles.length === 0 ? buildSkeletons(6) : emptyStateHtml();
     articleCount.style.display = 'none';
+    updateFeedMore();
     renderActivePulseSummary();
+    if (!isLoading) announce(searchQuery ? `No stories match ${searchQuery}.` : 'No stories to show.');
     return;
   }
 
+  const shown = visible.slice(0, renderLimit);
+  feedGrid.innerHTML = shown.map(cardHtml).join('');
+  feedGrid.querySelectorAll('.card').forEach((el, i) => el.style.setProperty('--i', i));
+
   articleCount.style.display = '';
-  const totalUnfiltered = activeFilter === 'All'
-    ? allArticles.length
-    : (activeFilter === 'Bookmarks' ? loadBookmarks().length : allArticles.filter(a => a.category === activeFilter).length);
-  const showingOf = (visible.length < totalUnfiltered && activeFilter !== 'Bookmarks')
-    ? `<strong>${visible.length}</strong> of ${totalUnfiltered} stories`
-    : `<strong>${visible.length}</strong> stories`;
-  articleCount.innerHTML = showingOf;
+  const label = activeFilter === 'All' ? '' : ` · ${esc(catMeta[activeFilter]?.label ?? activeFilter)}`;
+  articleCount.innerHTML = `<strong>${visible.length}</strong> ${visible.length === 1 ? 'story' : 'stories'}${label}${searchQuery ? ` matching “${esc(searchQuery)}”` : ''}`;
+  updateFeedMore();
 
-  const isListMode = feedGrid.classList.contains('list-view');
-  feedGrid.innerHTML = visible.map((a, i) => isListMode ? listCard(a, i) : gridCard(a, i)).join('');
-
-  feedGrid.querySelectorAll('.card').forEach((el, i) => {
-    el.style.setProperty('--i', Math.min(i, 20));
-  });
-
-  const seoFallback = document.getElementById('seoLatestFallback');
-  if (seoFallback) seoFallback.style.display = 'none';
-
-  if (statArticles) statArticles.textContent = allArticles.length;
-
-  announce(`${visible.length} stories shown.`);
+  announce(`${visible.length} ${visible.length === 1 ? 'story' : 'stories'} shown.`);
   renderActivePulseSummary();
   setTimeout(progressivelyResolveMissingImages, 100);
 }
 
-// -- Skeleton ------------------------------------------------------
-
-function showSkeletons(n = 8) {
-  feedGrid.innerHTML = buildSkeletons(n);
+/** Append the next page without re-rendering what the reader has already seen. */
+function showMore() {
+  const start = feedGrid.querySelectorAll('.card').length;
+  renderLimit += FEED_PAGE_SIZE;
+  const next = visibleList.slice(start, renderLimit);
+  if (!next.length) return;
+  feedGrid.insertAdjacentHTML('beforeend', next.map((a, j) => cardHtml(a, start + j)).join(''));
+  const cards = feedGrid.querySelectorAll('.card');
+  cards.forEach((el, i) => { if (i >= start) el.style.setProperty('--i', i - start); });
+  cards[start]?.querySelector('.card-title a')?.focus({ preventScroll: true });
+  updateFeedMore();
+  gaEvent('feed_show_more', { shown: Math.min(renderLimit, visibleList.length) });
+  setTimeout(progressivelyResolveMissingImages, 100);
 }
+
+function updateFeedMore() {
+  if (!feedMore) return;
+  const remaining = visibleList.length - Math.min(renderLimit, visibleList.length);
+  feedMore.hidden = remaining <= 0;
+  if (remaining > 0) {
+    feedMoreBtn.textContent = `Show ${Math.min(remaining, FEED_PAGE_SIZE)} more stories`;
+    feedMoreCount.textContent = `Showing ${Math.min(renderLimit, visibleList.length)} of ${visibleList.length}`;
+  }
+}
+
+function resetPaging() { renderLimit = FEED_PAGE_SIZE; }
 
 // -- State setters -------------------------------------------------
 
 function setLoading() {
   statusDot.className = 'status-dot loading';
   statusText.textContent = randomMsg();
-  if (navStatus) navStatus.textContent = 'GameBeeper --fetch';
-  articleCount.style.display = 'none';
   setRefreshBusy(true);
-  showSkeletons();
   hideError();
-  const seoFallback = document.getElementById('seoLatestFallback');
-  if (seoFallback) seoFallback.style.display = '';
+  // First visit: keep the pre-rendered stories on screen until live data lands;
+  // only show skeletons when there is nothing to look at yet.
+  if (!allArticles.length && !feedGrid.querySelector('.card')) {
+    feedGrid.innerHTML = buildSkeletons(6);
+    articleCount.style.display = 'none';
+  }
 }
 
-function setLive() {
-  const now = new Date();
-  const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  statusDot.className = 'status-dot live';
-  statusText.textContent = `${allArticles.length} fresh stories loaded · Updated at ${timeStr}`;
-  if (navStatus) navStatus.textContent = `✓ ${allArticles.length} articles`;
+function setLive(generatedAt) {
+  const updated = generatedAt ? new Date(generatedAt) : null;
+  const validUpdated = updated && !isNaN(updated) ? updated : null;
+  statusDot.className = allArticles.length ? 'status-dot live' : 'status-dot error';
+  statusText.textContent = allArticles.length
+    ? (validUpdated ? `Updated ${timeFmt(validUpdated)}` : 'Live')
+    : 'Feed unavailable';
+  if (validUpdated) statusText.title = validUpdated.toLocaleString();
   setRefreshBusy(false);
-  if (statArticles) animateCounter(statArticles, allArticles.length, 900);
-  const statFeedsEl = document.getElementById('statFeeds');
-  const feedCount = cachedFeedCount || getFeeds().length;
-  if (statFeedsEl) animateCounter(statFeedsEl, feedCount, 700);
-  const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
-  const todayCount = allArticles.filter(a => { try { return new Date(a.date) >= todayStart; } catch { return false; } }).length;
-  const statTodayEl = document.getElementById('statToday');
-  if (statTodayEl) animateCounter(statTodayEl, todayCount, 800);
-  const activeSourceCount = new Set(allArticles.map(a => a.source).filter(Boolean)).size;
-  const statSourcesEl = document.getElementById('statSources');
-  if (statSourcesEl) animateCounter(statSourcesEl, activeSourceCount, 850);
-  const nlFeedCount = document.getElementById('newsletterFeedCount');
-  if (nlFeedCount) nlFeedCount.textContent = feedCount - failedFeeds;
+
+  // "Stories today" counts stories published since local midnight. With no data
+  // we show a dash rather than a misleading zero.
+  const statTodayEl = $('statToday');
+  if (statTodayEl) {
+    if (!allArticles.length) {
+      statTodayEl.textContent = '—';
+    } else {
+      const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
+      const todayCount = allArticles.filter(a => { const d = new Date(a.date); return !isNaN(d) && d >= todayStart; }).length;
+      if (hasCountedUp) statTodayEl.textContent = todayCount;
+      else animateCounter(statTodayEl, todayCount, 700);
+      hasCountedUp = true;
+    }
+  }
+  const heroUpdated = $('heroUpdated');
+  if (heroUpdated) {
+    heroUpdated.textContent = validUpdated ? timeFmt(validUpdated) : '—';
+    if (validUpdated) heroUpdated.title = validUpdated.toLocaleString();
+  }
 }
 
 function setRefreshBusy(busy) {
-  if (refreshBtnHero) refreshBtnHero.disabled = busy;
+  if (refreshBtnHero) {
+    refreshBtnHero.disabled = busy;
+    refreshBtnHero.setAttribute('aria-busy', String(busy));
+  }
   if (refreshIcon) refreshIcon.classList.toggle('spin', busy);
+  feedSection?.classList.toggle('is-refreshing', busy);
 }
 
 function showError(msg) { errorMessage.textContent = msg; errorBanner.classList.add('visible'); }
 function hideError()    { errorBanner.classList.remove('visible'); }
 
-// -- Sidebar stats -------------------------------------------------
+// -- Counts --------------------------------------------------------
 
-function updateFeedCountSpans(count) {
-  ['heroFeedCount', 'termFeedCount'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = count;
-  });
-  const sf = document.getElementById('statFeeds');
-  if (sf) sf.textContent = count;
+/** Distinct publishers (IGN + IGN Reviews = 1 source). */
+function sourceCount() {
+  return new Set(getFeeds().map(f => publisherHost(f.homepage || f.url)).filter(Boolean)).size;
+}
+
+function updateSourceCountSpans() {
+  const count = sourceCount();
+  if (!count) return; // registry unavailable — keep the build-time number
+  ['heroFeedCount', 'statFeeds'].forEach(id => { const el = $(id); if (el) el.textContent = count; });
+}
+
+function updateBookmarkCount() {
+  const count = loadBookmarks().length;
+  const badge = $('sbBmCount');
+  if (badge) badge.textContent = count;
+  const btn = $('savedStoriesBtn');
+  if (btn) {
+    btn.classList.toggle('has-saved', count > 0);
+    btn.setAttribute('aria-label', `Saved stories (${count})`);
+  }
 }
 
 function updateSidebarStats(cacheGeneratedAt) {
-  if (sbFeeds)   sbFeeds.textContent   = getFeeds().length - failedFeeds;
+  const total = cachedFeedCount || getFeeds().length;
+  if (sbFeeds) sbFeeds.textContent = total ? Math.max(0, total - failedFeeds) : '—';
   if (sbUpdated) {
-    if (cacheGeneratedAt) {
-      try {
-        const d = new Date(cacheGeneratedAt);
-        sbUpdated.textContent = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        sbUpdated.title = d.toLocaleString();
-      } catch { sbUpdated.textContent = '--'; }
+    const d = cacheGeneratedAt ? new Date(cacheGeneratedAt) : null;
+    if (d && !isNaN(d)) {
+      sbUpdated.textContent = timeFmt(d);
+      sbUpdated.title = d.toLocaleString();
     } else {
-      sbUpdated.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      sbUpdated.textContent = '—';
     }
   }
-  if (sbFailed) sbFailed.textContent = failedFeeds;
-  const sbBmCount = document.getElementById('sbBmCount');
-  if (sbBmCount) sbBmCount.textContent = loadBookmarks().length;
+  if (sbFailed) {
+    sbFailed.textContent = failedFeeds;
+    sbFailed.classList.toggle('has-errors', failedFeeds > 0);
+  }
+  // Feed health drawn as a game HP bar
+  const hp = $('sbHpFill');
+  if (hp && total) {
+    const ratio = Math.max(0, total - failedFeeds) / total;
+    hp.style.setProperty('--hp', `${Math.round(ratio * 100)}%`);
+    hp.style.setProperty('--hp-color', ratio >= 0.95 ? '#3DDC97' : ratio >= 0.7 ? '#FFD23D' : '#FF5C6C');
+  }
+  updateBookmarkCount();
 }
 
-// -- Feed-health banner --------------------------------------------
+// -- Feed-health notice --------------------------------------------
+// Only shown when some source feeds failed this hour. Error details stay in
+// the console; readers just see which sources are temporarily missing.
 
 async function loadFeedHealthBanner() {
-  const bar = document.getElementById('feedHealthBar');
+  const bar = $('feedHealthBar');
   if (!bar) return;
   try {
     const resp = await fetch('/feed-health.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
     if (!resp.ok) return;
     const health = await resp.json();
-    const total  = Array.isArray(health.feeds) ? health.feeds.length : getFeeds().length;
-    const ok     = Array.isArray(health.feeds) ? health.feeds.filter(f => f.ok).length : (total - failedFeeds);
-    const failed = total - ok;
-    const failed_list = Array.isArray(health.feeds) ? health.feeds.filter(f => !f.ok) : [];
-    let updatedStr = '';
-    if (health.generatedAt) {
-      try {
-        const d = new Date(health.generatedAt);
-        updatedStr = `Last updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}, ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} · `;
-      } catch { /* skip */ }
-    }
-    const statusEmoji = failed === 0 ? '🟢' : '🟡';
-    let html = `<span class="fhb-info">${statusEmoji} ${updatedStr}${ok}/${total} feeds online</span>`;
-    if (failed > 0 && failed_list.length > 0) {
-      const items = failed_list.map(f => `<li>${esc(f.name)}${f.error ? ' – ' + esc(f.error.slice(0, 60)) : ''}</li>`).join('');
-      html += `<details class="fhb-details"><summary>${failed} feed${failed > 1 ? 's' : ''} need${failed === 1 ? 's' : ''} attention</summary><ul>${items}</ul></details>`;
-    }
-    bar.innerHTML = html;
+    const failedList = Array.isArray(health.feeds) ? health.feeds.filter(f => !f.ok) : [];
+    if (!failedList.length) { bar.style.display = 'none'; return; }
+    failedList.forEach(f => console.debug(`[GameBeeper] Feed "${f.name}" failed: ${f.error || 'unknown error'}`));
+    const names = failedList.map(f => esc(f.name)).join(', ');
+    bar.innerHTML = `<span class="fhb-info"><span class="status-dot loading" aria-hidden="true"></span>${failedList.length} source feed${failedList.length === 1 ? '' : 's'} couldn’t be reached this hour.</span><span class="fhb-names">Missing for now: ${names}</span>`;
     bar.style.display = '';
   } catch (e) {
     console.debug('[GameBeeper] feed-health.json unavailable:', e.message);
@@ -270,16 +369,16 @@ async function loadFeedHealthBanner() {
 // -- Site version badge --------------------------------------------
 
 async function loadSiteVersion() {
-  const el = document.getElementById('siteVersion');
+  const el = $('siteVersion');
   if (!el) return;
   try {
     const resp = await fetch('/version.json', { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
     if (!resp.ok) return;
     const v = await resp.json();
-    el.textContent = `// ${v.version} · ${v.commit} · ${v.date}`;
-    el.title = `Build #${v.build} – click to view changelog`;
+    el.textContent = `${v.version} · ${v.commit}`;
+    el.title = `Build #${v.build} (${v.date}) – view changelog`;
   } catch {
-    el.textContent = '// version unavailable';
+    el.textContent = 'Changelog';
   }
 }
 
@@ -295,176 +394,140 @@ function buildFilters() {
     return (counts[c.id] || 0) > 0;
   });
 
-  sidebarFilters.innerHTML = visibleCategories.map(c => {
-    let count;
-    if (c.id === 'All') count = allArticles.length;
-    else if (c.id === 'Bookmarks') count = bmCount;
-    else count = counts[c.id] || 0;
-    const isActive = c.id === activeFilter;
-    return `
-      <button class="filter-item${isActive ? ' active' : ''}" data-cat="${esc(c.id)}" aria-pressed="${isActive}">
-        <span class="fi-icon" style="color:${c.color}">${c.icon}</span>
-        <span class="fi-label">${esc(c.label)}</span>
-        <span class="fi-count">${count}</span>
-      </button>`;
+  mobileFilters.innerHTML = visibleCategories.map(c => {
+    const active = c.id === activeFilter;
+    const lead = c.id === 'Bookmarks'
+      ? `<span class="chip-icon" aria-hidden="true">${c.icon.replace(/width="\d+" height="\d+"/, 'width="13" height="13"')}</span>`
+      : (c.id === 'All' ? '' : `<span class="chip-tick" aria-hidden="true"></span>`);
+    const count = c.id === 'Bookmarks' ? `<span class="chip-count">${bmCount}</span>` : '';
+    return `<button type="button" class="chip ${catClass(c.id)}${active ? ' active' : ''}" data-cat="${esc(c.id)}" aria-pressed="${active}">${lead}${esc(c.label)}${count}</button>`;
   }).join('');
-
-  mobileFilters.innerHTML = visibleCategories.map(c => `
-    <button class="chip${c.id === activeFilter ? ' active' : ''}" data-cat="${esc(c.id)}">
-      <span style="color:${c.color};display:inline-flex;vertical-align:middle;margin-right:4px">${c.icon}</span>${esc(c.label)}
-    </button>`).join('');
-
-  // Add "x Clear" chip when a non-All filter is active
-  if (activeFilter !== 'All') {
-    const clearChip = document.createElement('button');
-    clearChip.className = 'chip chip-clear';
-    clearChip.textContent = 'x Clear';
-    clearChip.setAttribute('aria-label', 'Clear filter');
-    clearChip.addEventListener('click', () => setFilter('All'));
-    mobileFilters.appendChild(clearChip);
-  }
 
   if (typeof window.__updateFiltersMask === 'function') {
     setTimeout(window.__updateFiltersMask, 50);
   }
-
-  [sidebarFilters, mobileFilters].forEach(el => {
-    el.addEventListener('click', e => {
-      const btn = e.target.closest('[data-cat]');
-      if (!btn) return;
-      setFilter(btn.dataset.cat);
-    });
-  });
+  revealActiveChip('auto');
+  updateBookmarkCount();
 }
 
-// -- Hero Featured Card --------------------------------------------------------
+/** Scroll the topic bar sideways so the selected chip is visible. */
+function revealActiveChip(behavior = 'smooth') {
+  const chip = mobileFilters.querySelector('.chip.active');
+  if (!chip) return;
+  const c = chip.getBoundingClientRect();
+  const r = mobileFilters.getBoundingClientRect();
+  if (c.left < r.left || c.right > r.right) {
+    mobileFilters.scrollBy({ left: c.left - r.left - 24, behavior });
+  }
+}
+
+// -- Hero lead story ------------------------------------------------
 
 function buildHeroFeaturedCard(articles) {
-  const card = document.getElementById('heroFeaturedCard');
+  const card = $('heroFeaturedCard');
   if (!card || !articles.length) return;
-
-  // Pick the most recent article with an image; fallback to first article
-  const featured = articles.find(a => {
-    const src = safeUrl(a.image || a.fallbackImage || null);
-    return src && src !== '#';
-  }) || articles[0];
+  const featured = pickLeadStory(articles);
   if (!featured) return;
 
-  const imgSrc = safeUrl(featured.image || featured.fallbackImage || null);
-  const imgSrcSafe = (imgSrc && imgSrc !== '#') ? imgSrc : null;
-  const date     = relTime(featured.date);
-  const bm       = isBookmarked(featured.link);
-  const catCls   = catClass(featured.category || 'Latest');
-
-  const imgHtml = imgSrcSafe
-    ? `<a href="${esc(featured.link)}" target="_blank" rel="noopener noreferrer" class="hfc-img-wrap" tabindex="-1" aria-hidden="true">
-         <img src="${esc(imgSrcSafe)}" alt="Article image for: ${esc(featured.title)}"
-              loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer"
-              width="640" height="360">
-       </a>`
-    : `<a href="${esc(featured.link)}" target="_blank" rel="noopener noreferrer" class="hfc-img-wrap hfc-img-placeholder" tabindex="-1" aria-hidden="true"></a>`;
-
-  card.innerHTML = `
-    <div class="hfc-inner">
-      ${imgHtml}
-      <div class="hfc-body">
-        <div class="hfc-meta">
-          <span class="hfc-badge-today">Today's Signal</span>
-          <span class="hfc-badge ${catCls}">${esc(catMeta[featured.category]?.label ?? featured.category ?? 'General')}</span>
-          ${date ? `<span class="hfc-date">${esc(date)}</span>` : ''}
-        </div>
-        <h3 class="hfc-title">
-          <a href="${esc(featured.link)}" target="_blank" rel="noopener noreferrer">${esc(featured.title)}</a>
-        </h3>
-        ${featured.snippet ? `<p class="hfc-snippet">${esc(featured.snippet)}</p>` : ''}
-        <div class="hfc-footer">
-          <div class="hfc-source">
-            <span class="src-dot ${catCls}"></span>
-            <span>${esc(featured.source || '')}</span>
-          </div>
-          <div class="card-actions">
-            <button class="bm-btn${bm ? ' bm-active' : ''}" data-bm-link="${esc(featured.link)}"
-              title="${bm ? 'Remove bookmark' : 'Save story'}"
-              aria-label="${bm ? 'Remove bookmark' : 'Bookmark this article'}"
-              id="heroFeaturedBmBtn">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="${bm ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-            </button>
-            <button class="card-share-btn" data-share-url="${esc(featured.link)}"
-              data-share-title="${esc(featured.title)}" title="Share" aria-label="Share article"
-              id="heroFeaturedShareBtn">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            </button>
-            <a class="btn btn-ghost btn-sm hfc-read" href="${esc(featured.link)}" target="_blank" rel="noopener noreferrer">Read story →</a>
-          </div>
-        </div>
-      </div>
-    </div>`;
-
-  // Wire up bookmark button in the hero featured card
-  const bmBtn = document.getElementById('heroFeaturedBmBtn');
-  if (bmBtn) {
-    bmBtn.addEventListener('click', e => {
-      e.preventDefault(); e.stopPropagation();
-      const added = toggleBookmark(featured);
-      gaEvent(added ? 'bookmark_add' : 'bookmark_remove', {
-        article_title: featured.title, article_source: featured.source, article_url: featured.link,
-      });
-      const svg = bmBtn.querySelector('svg');
-      if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
-      bmBtn.classList.toggle('bm-active', added);
-      bmBtn.title = added ? 'Remove bookmark' : 'Save story';
-      bmBtn.setAttribute('aria-label', added ? 'Remove bookmark' : 'Bookmark this article');
-      showBmToast(added ? '📖 Saved to GameBeeper bookmarks' : '🗑️ Removed from bookmarks');
-      buildFilters();
-      if (activeFilter === 'Bookmarks') render();
-    });
-  }
-
-  // Wire up share button in hero featured card
-  const shareBtn = document.getElementById('heroFeaturedShareBtn');
-  if (shareBtn) {
-    shareBtn.addEventListener('click', e => {
-      e.preventDefault(); e.stopPropagation();
-      gaEvent('share', { article_title: featured.title, article_url: featured.link });
-      shareArticle(featured.title, featured.link);
-    });
+  const current = card.querySelector('.lead-card');
+  if (current?.dataset.articleUrl === featured.link) {
+    // Same lead as the pre-rendered one: update in place so the LCP image is untouched.
+    const time = current.querySelector('.lead-date');
+    if (time) time.textContent = relTime(featured.date);
+    syncBookmarkButtons(featured.link, isBookmarked(featured.link), featured.title);
+  } else {
+    card.innerHTML = heroMarkup(articles);
   }
 }
 
-// -- Trending Topics from real feed data --------------------------------------
-
-function updateTrendingTopics(articles) {
-  const trendingGrid = document.getElementById('trendingTopicsGrid');
-  if (!trendingGrid || !articles.length) return;
-
-  // Count categories (excluding meta-categories)
-  const catCounts = {};
-  articles.forEach(a => {
-    const cat = a.category;
-    if (cat && cat !== 'All' && cat !== 'Bookmarks') {
-      catCounts[cat] = (catCounts[cat] || 0) + 1;
+/** One delegated listener for the hero lead (its markup is replaced on refresh). */
+function initHeroCard() {
+  const card = $('heroFeaturedCard');
+  if (!card) return;
+  const leadArticle = () => {
+    const link = card.querySelector('.lead-card')?.dataset.articleUrl;
+    return allArticles.find(a => a.link === link) || null;
+  };
+  card.addEventListener('click', e => {
+    const bmBtn = e.target.closest('#heroFeaturedBmBtn');
+    const shareBtn = e.target.closest('#heroFeaturedShareBtn');
+    const titleLink = e.target.closest('.lead-title a');
+    if (!bmBtn && !shareBtn && !titleLink) return;
+    const featured = leadArticle();
+    if (bmBtn || shareBtn) { e.preventDefault(); e.stopPropagation(); }
+    if (!featured) {
+      if (shareBtn) shareArticle(shareBtn.dataset.shareTitle, shareBtn.dataset.shareUrl);
+      return;
+    }
+    if (bmBtn) {
+      handleBookmarkToggle(bmBtn, featured);
+    } else if (shareBtn) {
+      gaEvent('share', { article_title: featured.title, article_url: featured.link });
+      shareArticle(featured.title, featured.link);
+    } else {
+      gaEvent('select_content', { content_type: 'article', item_id: featured.link, article_title: featured.title, article_source: featured.source, placement: 'hero' });
     }
   });
+}
 
-  const topCats = Object.entries(catCounts)
-    .sort(([, a], [, b]) => b - a)
-    .slice(0, 8);
+// -- Headline ticker -------------------------------------------------
 
-  if (!topCats.length) return;
+const TICKER_COUNT = 12;
+const TICKER_SPEED = 70; // px per second
 
-  trendingGrid.innerHTML = topCats.map(([cat, count]) =>
-    `<button class="trending-topic" data-trending-cat="${esc(cat)}">${esc(cat)}<span class="trending-topic-count">${count}</span></button>`
-  ).join('');
+function tickerItems(articles, focusable) {
+  return articles.slice(0, TICKER_COUNT).map(a => `
+    <a class="ticker-item ${catClass(a.category)}" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer"${focusable ? '' : ' tabindex="-1"'}><b>${esc(a.source)}</b><span>${esc(a.title)}</span></a><span class="ticker-sep" aria-hidden="true">&#9670;</span>`).join('');
+}
 
-  trendingGrid.querySelectorAll('.trending-topic').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.trendingCat;
-      if (cat && window.__setFilter) {
-        window.__setFilter(cat);
-        document.getElementById('latest')?.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+/** Broadcast-style lower third with the newest headlines (two copies for a seamless loop). */
+function buildTicker(articles) {
+  const ticker = $('ticker');
+  const track = $('tickerTrack');
+  if (!ticker || !track || !articles.length) return;
+  track.innerHTML = `<span class="ticker-set">${tickerItems(articles, true)}</span><span class="ticker-set" aria-hidden="true">${tickerItems(articles, false)}</span>`;
+  const half = track.scrollWidth / 2;
+  track.style.setProperty('--ticker-dur', `${Math.max(30, Math.round(half / TICKER_SPEED))}s`);
+  ticker.classList.add('is-running');
+}
+
+function initTicker() {
+  const ticker = $('ticker');
+  const toggle = $('tickerToggle');
+  if (!ticker) return;
+  toggle?.addEventListener('click', () => {
+    const paused = ticker.classList.toggle('is-paused');
+    toggle.setAttribute('aria-pressed', String(paused));
+    toggle.setAttribute('aria-label', paused ? 'Play headline ticker' : 'Pause headline ticker');
+    toggle.title = paused ? 'Play' : 'Pause';
   });
+  ticker.addEventListener('click', e => {
+    const link = e.target.closest('a.ticker-item');
+    if (link) gaEvent('select_content', { content_type: 'article', item_id: link.href, placement: 'ticker' });
+  });
+}
+
+// -- Topics in the feed (rail) ---------------------------------------
+
+function updateTrendingTopics(articles) {
+  const grid = $('trendingTopicsGrid');
+  if (!grid || !articles.length) return;
+
+  const catCounts = {};
+  articles.forEach(a => {
+    if (a.category && a.category !== 'All' && a.category !== 'Bookmarks') {
+      catCounts[a.category] = (catCounts[a.category] || 0) + 1;
+    }
+  });
+  const topCats = Object.entries(catCounts).sort(([, a], [, b]) => b - a).slice(0, 8);
+  if (!topCats.length) return;
+  const max = topCats[0][1];
+
+  grid.innerHTML = topCats.map(([cat, count]) => `
+    <button type="button" class="trending-topic ${catClass(cat)}${cat === activeFilter ? ' active' : ''}" data-trending-cat="${esc(cat)}" style="--share:${(count / max).toFixed(3)}" aria-label="${esc(catMeta[cat]?.label ?? cat)}: ${count} stories">
+      <span>${esc(catMeta[cat]?.label ?? cat)}</span><span class="trending-topic-count">${count}</span>
+      <span class="trending-topic-bar" aria-hidden="true"></span>
+    </button>`).join('');
 }
 
 // -- Set filter (exposed globally) ---------------------------------------------
@@ -473,14 +536,33 @@ function setFilter(cat) {
   activeFilter = cat;
   PREF.set('filter', cat);
   gaEvent('filter_category', { category: cat });
-  [sidebarFilters, mobileFilters].forEach(container => {
-    container.querySelectorAll('[data-cat]').forEach(btn => {
-      const active = btn.dataset.cat === cat;
-      btn.classList.toggle('active', active);
-      if (btn.hasAttribute('aria-pressed')) btn.setAttribute('aria-pressed', String(active));
-    });
+  mobileFilters.querySelectorAll('[data-cat]').forEach(btn => {
+    const active = btn.dataset.cat === cat;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', String(active));
   });
+  document.querySelectorAll('.trending-topic').forEach(btn => btn.classList.toggle('active', btn.dataset.trendingCat === cat));
+  revealActiveChip();
+  resetPaging();
   render();
+}
+
+/** Move to the previous/next topic tab, like a console menu's shoulder buttons. */
+function stepTopic(step) {
+  const tabs = [...mobileFilters.querySelectorAll('[data-cat]')];
+  if (!tabs.length) return;
+  const i = Math.max(0, tabs.findIndex(t => t.dataset.cat === activeFilter));
+  const next = tabs[(i + step + tabs.length) % tabs.length];
+  setFilter(next.dataset.cat);
+  next.focus({ preventScroll: true });
+}
+
+/** Bring the top of the feed section into view below the sticky header. */
+function scrollToFeed() {
+  if (!feedSection) return;
+  const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 64;
+  const top = feedSection.getBoundingClientRect().top + window.scrollY - navH;
+  window.scrollTo({ top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 }
 
 // -- View mode -----------------------------------------------------
@@ -493,20 +575,70 @@ function applyView() {
   listViewBtn.setAttribute('aria-pressed', String(viewMode === 'list'));
 }
 
-// -- Nav scroll effect + hamburger menu ---------------------------
+// -- Bookmarks -----------------------------------------------------
+
+/** Toggle a bookmark and mirror the new state on every button for that story. */
+function handleBookmarkToggle(btn, article) {
+  const added = toggleBookmark(article);
+  gaEvent(added ? 'bookmark_add' : 'bookmark_remove', {
+    article_title: article.title, article_source: article.source, article_url: article.link,
+  });
+  syncBookmarkButtons(article.link, added, article.title);
+  showBmToast(added ? (unlockAchievement('firstsave') ? 'Achievement unlocked: First save' : 'Saved for later') : 'Removed from saved');
+  if (activeFilter === 'Bookmarks') render();
+}
+
+function syncBookmarkButtons(link, added, title = '') {
+  document.querySelectorAll(`[data-bm-link="${CSS.escape(link)}"]`).forEach(el => {
+    el.querySelector('svg')?.setAttribute('fill', added ? 'currentColor' : 'none');
+    el.classList.toggle('bm-active', added);
+    el.setAttribute('aria-pressed', String(added));
+    el.title = added ? 'Remove from saved' : 'Save story';
+    if (el.classList.contains('bm-btn') && !el.classList.contains('vp-bm-btn')) {
+      el.setAttribute('aria-label', `${added ? 'Remove from saved stories' : 'Save story'}${title ? ': ' + title : ''}`);
+    }
+  });
+}
+
+/** One-time achievements. Returns true the first time an id is unlocked. */
+function unlockAchievement(id) {
+  try {
+    const key = `gs:ach:${id}`;
+    if (localStorage.getItem(key)) return false;
+    localStorage.setItem(key, '1');
+    return true;
+  } catch { return false; }
+}
+
+// -- Konami code -----------------------------------------------------
+// Up Up Down Down Left Right Left Right B A: a few seconds of party mode.
+
+const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiPos = 0;
+
+function trackKonami(e) {
+  const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  konamiPos = key === KONAMI[konamiPos] ? konamiPos + 1 : (key === KONAMI[0] ? 1 : 0);
+  if (konamiPos < KONAMI.length) return;
+  konamiPos = 0;
+  document.body.classList.add('cheat-mode');
+  showBmToast(unlockAchievement('konami') ? 'Achievement unlocked: +30 lives' : 'Cheat activated: +30 lives');
+  gaEvent('easter_egg', { name: 'konami' });
+  setTimeout(() => document.body.classList.remove('cheat-mode'), 6000);
+}
+
+// -- Nav scroll effect + mobile menu ---------------------------
 
 function initNav() {
   const nav = document.querySelector('.top-nav');
   if (!nav) return;
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-
-  // Hamburger menu
-  const hamburger = document.getElementById('navHamburger');
-  const drawer    = document.getElementById('navDrawer');
-  const backdrop  = document.getElementById('navDrawerBackdrop');
+  const hamburger = $('navHamburger');
+  const drawer    = $('navDrawer');
+  const backdrop  = $('navDrawerBackdrop');
   if (!hamburger || !drawer || !backdrop) return;
 
   function openDrawer() {
@@ -514,37 +646,41 @@ function initNav() {
     drawer.classList.add('open');
     backdrop.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.setAttribute('aria-label', 'Close menu');
     drawer.removeAttribute('aria-hidden');
-    // Focus trap: focus first link
     const firstLink = drawer.querySelector('.nav-drawer-link');
     if (firstLink) setTimeout(() => firstLink.focus(), 50);
     document.body.style.overflow = 'hidden';
   }
 
-  function closeDrawer() {
+  function closeDrawer({ restoreFocus = true } = {}) {
     hamburger.classList.remove('open');
     drawer.classList.remove('open');
     backdrop.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Open menu');
     drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    hamburger.focus();
+    if (restoreFocus) hamburger.focus();
   }
 
   hamburger.addEventListener('click', () => {
     if (drawer.classList.contains('open')) closeDrawer(); else openDrawer();
   });
+  backdrop.addEventListener('click', () => closeDrawer());
 
-  backdrop.addEventListener('click', closeDrawer);
-
-  // Close when a link is tapped
+  // Close when a link is tapped (focus moves to the destination instead)
   drawer.querySelectorAll('.nav-drawer-link').forEach(link => {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', () => closeDrawer({ restoreFocus: false }));
   });
 
-  // Close on Escape
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+  });
+
+  // Close if the viewport grows past the mobile breakpoint
+  matchMedia('(min-width: 960px)').addEventListener?.('change', e => {
+    if (e.matches && drawer.classList.contains('open')) closeDrawer({ restoreFocus: false });
   });
 
   // Focus trap within drawer
@@ -562,10 +698,10 @@ function initNav() {
   });
 }
 
-// -- Mobile filter chip mask ---------------------------------------
+// -- Topic chip scroll mask ---------------------------------------
 
 function initMobileFiltersMask() {
-  const el = document.getElementById('mobileFilters');
+  const el = mobileFilters;
   if (!el) return;
   function updateMask() {
     const atLeft  = el.scrollLeft <= 2;
@@ -576,7 +712,6 @@ function initMobileFiltersMask() {
     else if (!atRight) el.classList.add('mask-right');
   }
   el.addEventListener('scroll', updateMask, { passive: true });
-  // re-check after filters build
   window.addEventListener('resize', updateMask, { passive: true });
   setTimeout(updateMask, 100);
   window.__updateFiltersMask = updateMask;
@@ -585,12 +720,13 @@ function initMobileFiltersMask() {
 // -- Auto-refresh --------------------------------------------------
 
 function updateCountdownUI(secs) {
-  const el = document.getElementById('autoRefreshCountdown');
+  const el = $('autoRefreshCountdown');
   if (!el) return;
   if (!secs || secs <= 0) { el.textContent = ''; el.style.display = 'none'; return; }
   const m = Math.floor(secs / 60);
   const s = secs % 60;
-  el.textContent = `~ ${m}:${String(s).padStart(2, '0')}`;
+  el.textContent = `Next ${m}:${String(s).padStart(2, '0')}`;
+  el.title = 'Time until the next automatic refresh';
   el.style.display = '';
 }
 
@@ -609,36 +745,57 @@ function startAutoRefresh(minutes) {
     if (countdownSecs <= 0) clearInterval(countdownTimer);
   }, 1000);
   autoTimer = setInterval(() => {
-    fetchAll().then(() => startAutoRefresh(autoRefreshMin));
+    fetchAll({ silent: true }).then(() => startAutoRefresh(autoRefreshMin));
   }, minutes * 60 * 1000);
 }
 
-// -- My Pulse summary bar ------------------------------------------
+// -- "N new stories" pill --------------------------------------------
+
+function showNewStoriesPill(count) {
+  if (!newStoriesPill) return;
+  newStoriesPill.innerHTML = `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>${count} new ${count === 1 ? 'story' : 'stories'}`;
+  newStoriesPill.hidden = false;
+  announce(`${count} new ${count === 1 ? 'story' : 'stories'} available.`);
+}
+
+function hideNewStoriesPill() {
+  if (newStoriesPill) newStoriesPill.hidden = true;
+}
+
+/** True when the reader has scrolled into the feed (re-rendering would move what they're reading). */
+function isReadingFeed() {
+  return feedGrid.getBoundingClientRect().top < 0;
+}
+
+// -- My Signal summary bar ------------------------------------------
 
 function renderActivePulseSummary() {
-  const bar = document.getElementById('pulseSummaryBar');
-  if (!bar) return;
+  const bar = $('pulseSummaryBar');
+  const btn = $('myPulseBtn');
   const prefs = loadPreferences();
-  if (!hasActivePreferences(prefs)) { bar.style.display = 'none'; return; }
+  const active = hasActivePreferences(prefs);
+  btn?.classList.toggle('has-prefs', active);
+  if (!bar) return;
+  if (!active) { bar.style.display = 'none'; return; }
   bar.style.display = '';
   const parts = [];
   if (prefs.blockedCategories.length) parts.push(`${prefs.blockedCategories.length} topic${prefs.blockedCategories.length === 1 ? '' : 's'} hidden`);
   if (prefs.mutedSources.length) parts.push(`${prefs.mutedSources.length} source${prefs.mutedSources.length === 1 ? '' : 's'} muted`);
   if (prefs.hideSponsored) parts.push('Sponsored hidden');
   if (prefs.maxAge !== 'any') {
-    const ageLabels = { '24h': 'Last 24h', '7d': 'Last 7 days', '30d': 'Last 30 days' };
+    const ageLabels = { '24h': 'Last 24 hours', '7d': 'Last 7 days', '30d': 'Last 30 days' };
     parts.push(ageLabels[prefs.maxAge] || prefs.maxAge);
   }
   bar.innerHTML = `
-    <span class="psb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg></span>
-    <span class="psb-label">// My Pulse:</span>
+    <span class="psb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg></span>
+    <span class="psb-label">My Signal:</span>
     ${parts.map(p => `<span class="psb-pill">${esc(p)}</span>`).join('')}
-    <button class="psb-reset" id="pulseSummaryReset" aria-label="Reset My Pulse filters">Reset</button>
-    <button class="psb-edit" id="pulseSummaryEdit" aria-label="Edit My Pulse filters">Edit -></button>`;
-  document.getElementById('pulseSummaryReset')?.addEventListener('click', () => {
-    resetPreferences(); render(); syncMyPulsePanelIfOpen();
+    <button class="psb-reset" id="pulseSummaryReset" type="button" aria-label="Reset My Signal filters">Reset</button>
+    <button class="psb-edit" id="pulseSummaryEdit" type="button" aria-label="Edit My Signal filters">Edit</button>`;
+  $('pulseSummaryReset')?.addEventListener('click', () => {
+    resetPreferences(); resetPaging(); render(); syncMyPulsePanelIfOpen();
   });
-  document.getElementById('pulseSummaryEdit')?.addEventListener('click', openMyPulsePanel);
+  $('pulseSummaryEdit')?.addEventListener('click', openMyPulsePanel);
 }
 
 function openMyPulsePanel() {
@@ -652,11 +809,12 @@ function syncMyPulsePanelIfOpen() {
 // -- Stale cache banner --------------------------------------------
 
 function showStaleCacheBanner(generatedAt) {
-  let bar = document.getElementById('staleCacheBar');
+  let bar = $('staleCacheBar');
   if (!bar) {
     bar = document.createElement('div');
     bar.id = 'staleCacheBar';
     bar.className = 'stale-cache-bar';
+    bar.setAttribute('role', 'status');
     const grid = feedGrid?.parentNode;
     if (grid) grid.insertBefore(bar, feedGrid);
   }
@@ -664,62 +822,77 @@ function showStaleCacheBanner(generatedAt) {
     const ageMs = Date.now() - new Date(generatedAt).getTime();
     const hoursAgo = Math.round(ageMs / 3_600_000);
     bar.innerHTML =
-      `⚠️ Feed data is <strong>${hoursAgo}h old</strong> – consider refreshing.` +
-      `<button class="stale-cache-bar__refresh" id="staleCacheRefresh">Refresh now</button>`;
+      `<span>These stories were last updated <strong>${hoursAgo} hours ago</strong>. The next update should land soon.</span>` +
+      `<button class="stale-cache-bar__refresh" id="staleCacheRefresh" type="button">Check now</button>`;
     bar.classList.add('visible');
-    document.getElementById('staleCacheRefresh')
-      ?.addEventListener('click', () => { bar.classList.remove('visible'); fetchAll(); });
+    $('staleCacheRefresh')?.addEventListener('click', () => { bar.classList.remove('visible'); fetchAll(); });
   } catch { /* bad date – skip */ }
 }
 
 function hideStaleCacheBanner() {
-  document.getElementById('staleCacheBar')?.classList.remove('visible');
+  $('staleCacheBar')?.classList.remove('visible');
 }
 
 // -- Primary data loader -------------------------------------------
 
-async function fetchAll() {
+/**
+ * Load the feed. Existing stories stay on screen while refreshing.
+ * `silent` (auto-refresh): if the reader is mid-feed and new stories arrived,
+ * offer them via the "N new stories" pill instead of moving the page.
+ */
+async function fetchAll({ silent = false } = {}) {
   if (isLoading) return;
   isLoading = true;
+  const previous = allArticles;
+  const previousLinks = new Set(previous.map(a => a.link));
+  const prevFailed = failedFeeds;
+  // Pre-rendered stories from the HTML (first visit, before live data arrives)
+  const hasStaticCards = !previous.length && !!feedGrid.querySelector('.card');
   failedFeeds = 0;
   setLoading();
 
   let cacheGeneratedAt = null;
+  let loadFailed = false;
 
   try {
     const data = await loadFeedCache();
     allArticles = data.articles.map(normaliseCachedArticle).filter(a => a.link && a.link !== '#');
     failedFeeds = data.failedFeeds || 0;
     cacheGeneratedAt = data.generatedAt || null;
-    if (data.feedCount) { cachedFeedCount = data.feedCount; updateFeedCountSpans(data.feedCount); }
+    if (data.feedCount) cachedFeedCount = data.feedCount;
     console.info(`[GameBeeper] Loaded ${allArticles.length} articles from cache (generated ${data.generatedAt}).`);
-    // Warn if the cache is older than the stale threshold
     if (cacheGeneratedAt) {
       const ageMs = Date.now() - new Date(cacheGeneratedAt).getTime();
-      if (ageMs > CACHE_STALE_MS) {
-        showStaleCacheBanner(cacheGeneratedAt);
-      } else {
-        hideStaleCacheBanner();
-      }
+      if (ageMs > CACHE_STALE_MS) showStaleCacheBanner(cacheGeneratedAt);
+      else hideStaleCacheBanner();
     }
   } catch (cacheErr) {
     console.warn('[GameBeeper] Feed cache unavailable, attempting emergency RSS fallback…', cacheErr.message);
     try {
       const result = await fetchAllFromRSS();
+      if (!result.articles.length) throw new Error('RSS fallback returned no articles');
       allArticles = result.articles;
       failedFeeds = result.failedCount;
     } catch (rssErr) {
       console.error('[GameBeeper] Emergency RSS fallback also failed:', rssErr.message);
-      allArticles = [];
-      showError('Unable to load articles. Please try refreshing the page or check back later.');
+      loadFailed = true;
+      // Keep whatever the reader already had rather than blanking the page.
+      allArticles = previous;
+      failedFeeds = prevFailed;
+      showError(previous.length
+        ? 'We couldn’t refresh the signal right now. Your current stories are still here.'
+        : hasStaticCards
+          ? 'We couldn’t refresh the signal right now. The stories below may be a little out of date.'
+          : 'We couldn’t reach the signal right now. Please try again in a moment.');
     }
   }
 
   isLoading = false;
-  setLive();
-  updateSidebarStats(cacheGeneratedAt);
+  if (!loadFailed) lastGeneratedAt = cacheGeneratedAt;
+  setLive(lastGeneratedAt);
+  if (loadFailed && previous.length) statusText.textContent = 'Refresh failed';
+  updateSidebarStats(lastGeneratedAt);
   loadFeedHealthBanner();
-  loadSiteVersion();
 
   // If the active filter no longer has articles, reset to 'All'
   if (activeFilter !== 'All' && activeFilter !== 'Bookmarks') {
@@ -731,37 +904,36 @@ async function fetchAll() {
   }
 
   buildFilters();
-  render();
-
-  // Hero featured card + trending topics from real data
   buildHeroFeaturedCard(allArticles);
+  buildTicker(allArticles);
   updateTrendingTopics(allArticles);
 
-  if (allArticles.length > 0) hideError();
-}
+  const newCount = previous.length ? allArticles.filter(a => !previousLinks.has(a.link)).length : 0;
+  if (loadFailed && (previous.length || hasStaticCards)) {
+    // Nothing new to show: keep what is on screen.
+  } else if (silent && previous.length) {
+    if (newCount === 0) {
+      // Nothing new: leave the page exactly as it is.
+    } else if (isReadingFeed()) {
+      showNewStoriesPill(newCount);
+    } else {
+      render();
+    }
+  } else {
+    render();
+    if (previous.length && !loadFailed) {
+      showBmToast(newCount ? `${newCount} new ${newCount === 1 ? 'story' : 'stories'}` : 'You’re up to date');
+    }
+  }
 
-// -- Newsletter form -----------------------------------------------
-
-function showNlMsg(msg, type) {
-  const el = document.getElementById('newsletterMsg');
-  if (!el) return;
-  el.textContent = msg;
-  el.style.display = '';
-  el.className = 'newsletter-msg ' + (type === 'ok' ? 'newsletter-msg--ok' : 'newsletter-msg--err');
+  if (allArticles.length > 0 && !loadFailed) hideError();
 }
 
 // -- Init ----------------------------------------------------------
 
 async function init() {
   await loadFeedsRegistry();
-
-
-  ['heroFeedCount', 'termFeedCount'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = getFeeds().length;
-  });
-  const statFeedsEl = document.getElementById('statFeeds');
-  if (statFeedsEl) statFeedsEl.textContent = getFeeds().length;
+  updateSourceCountSpans();
 
   initNav();
   initMobileFiltersMask();
@@ -774,9 +946,11 @@ async function init() {
     render,
     startAutoRefresh,
   });
-  initMyPulse({ render, buildFilters });
+  initMyPulse({ render: () => { resetPaging(); render(); }, buildFilters });
   initPayPalModal();
   initSummaryModal();
+  initHeroCard();
+  initTicker();
   applyView();
   buildFilters();
 
@@ -784,19 +958,45 @@ async function init() {
   window.__setFilter    = setFilter;
   window.resetPreferences = resetPreferences;
   window.syncMyPulsePanelIfOpen = syncMyPulsePanelIfOpen;
-  window.__pulseReset   = () => { resetPreferences(); render(); syncMyPulsePanelIfOpen(); };
+  window.__pulseReset   = () => { resetPreferences(); resetPaging(); render(); syncMyPulsePanelIfOpen(); };
 
-  // Nav search button — scrolls to and focuses the search field
-  const navSearchBtn = document.getElementById('navSearchBtn');
-  if (navSearchBtn) {
-    const searchInput = document.getElementById('articleSearch');
-    navSearchBtn.addEventListener('click', () => {
-      const latest = document.getElementById('latest');
-      if (latest) latest.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => searchInput?.focus(), 400);
-      gaEvent('search_open', { trigger: 'nav_search_btn' });
-    });
+  // Topic chips (one delegated listener; the chips are rebuilt on every load)
+  mobileFilters.addEventListener('click', e => {
+    const btn = e.target.closest('[data-cat]');
+    if (btn) setFilter(btn.dataset.cat);
+  });
+
+  // Shoulder-button keycaps beside the topic tabs
+  document.querySelectorAll('.tab-key').forEach(btn => {
+    btn.addEventListener('click', () => stepTopic(Number(btn.dataset.tabStep) || 1));
+  });
+
+  // Topics rail
+  $('trendingTopicsGrid')?.addEventListener('click', e => {
+    const btn = e.target.closest('[data-trending-cat]');
+    if (!btn) return;
+    setFilter(btn.dataset.trendingCat);
+    scrollToFeed();
+  });
+
+  // Any link or button with data-set-filter (nav "Saved", footer, source groups)
+  document.addEventListener('click', e => {
+    const el = e.target.closest('[data-set-filter]');
+    if (!el) return;
+    e.preventDefault();
+    setFilter(el.dataset.setFilter);
+    scrollToFeed();
+  });
+
+  // Search: nav button, "/" and Ctrl/⌘+K all land in the feed search field
+  const searchInput = $('articleSearch');
+  const searchKbd   = $('searchKbd');
+  function focusSearch(trigger) {
+    scrollToFeed();
+    setTimeout(() => { searchInput?.focus({ preventScroll: true }); searchInput?.select(); }, matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 350);
+    gaEvent('search_open', { trigger });
   }
+  $('navSearchBtn')?.addEventListener('click', () => focusSearch('nav_search_btn'));
 
   gridViewBtn.addEventListener('click', () => {
     viewMode = 'grid'; PREF.set('view', viewMode); applyView(); render();
@@ -805,12 +1005,32 @@ async function init() {
     viewMode = 'list'; PREF.set('view', viewMode); applyView(); render();
   });
 
-  if (refreshBtnHero) refreshBtnHero.addEventListener('click', () => {
+  refreshBtnHero?.addEventListener('click', () => {
     gaEvent('refresh_feeds', { trigger: 'refreshBtnHero' });
     fetchAll();
   });
+  $('errorRetry')?.addEventListener('click', () => fetchAll());
+  feedMoreBtn?.addEventListener('click', showMore);
+  newStoriesPill?.addEventListener('click', () => {
+    resetPaging();
+    render();
+    scrollToFeed();
+    gaEvent('new_stories_shown', {});
+  });
+
+  // Empty-state actions
+  feedGrid.addEventListener('click', e => {
+    const btn = e.target.closest('[data-empty-action]');
+    if (!btn) return;
+    const action = btn.dataset.emptyAction;
+    if (action === 'clear-search') { searchInput.value = ''; searchQuery = ''; resetPaging(); render(); searchInput.focus(); }
+    else if (action === 'all') setFilter('All');
+    else if (action === 'reset-pulse') window.__pulseReset();
+    else if (action === 'retry') fetchAll();
+  });
 
   fetchAll().then(() => startAutoRefresh(autoRefreshMin));
+  loadSiteVersion();
 
   // Register Service Worker for offline support
   if ('serviceWorker' in navigator) {
@@ -821,20 +1041,13 @@ async function init() {
     });
   }
 
-  // Clear bookmarks
-  const clearBmBtn = document.getElementById('clearBookmarksBtn');
-  if (clearBmBtn) {
-    clearBmBtn.addEventListener('click', () => {
-      if (loadBookmarks().length === 0) return;
-      saveBookmarks([]);
-      buildFilters();
-      updateSidebarStats();
-      if (activeFilter === 'Bookmarks') render();
-      showBmToast('🗑️ All bookmarks cleared');
-    });
-  }
-
   updateSidebarStats();
+
+  // Keep counters, chips and the Saved view in step with bookmarks changed
+  // anywhere (feed cards, hero, Watch videos, video player).
+  window.addEventListener(BOOKMARKS_EVENT, () => {
+    buildFilters();
+  });
 
   // Image load quality guard – replace upscaled images with placeholder
   feedGrid.addEventListener('load', async event => {
@@ -845,7 +1058,7 @@ async function init() {
     if (nW === 0 || nH === 0) return;
     const wrap = img.closest('.card-img-wrap');
     const card = img.closest('.card');
-    if (!wrap || !card) return;
+    if (!wrap || !card || wrap.classList.contains('card-placeholder')) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const rect = wrap.getBoundingClientRect();
     const targetW = (rect.width  || Number(img.getAttribute('width'))  || 0) * dpr;
@@ -865,7 +1078,8 @@ async function init() {
     if (!(img instanceof HTMLImageElement) || !img.classList.contains('card-img')) return;
     const card = img.closest('.card');
     const wrap = img.closest('.card-img-wrap');
-    if (!card || !wrap) return;
+    // A failing placeholder must not be replaced by itself again (error loop)
+    if (!card || !wrap || wrap.classList.contains('card-placeholder')) return;
     const category = card.dataset.category || img.dataset.category || 'General';
     const link     = card.dataset.articleUrl || img.dataset.link || '#';
     wrap.outerHTML = cardPlaceholder(category, link);
@@ -886,18 +1100,7 @@ async function init() {
     const link = btn.dataset.bmLink;
     const article = allArticles.find(a => a.link === link) || loadBookmarks().find(a => a.link === link);
     if (!article) return;
-    const added = toggleBookmark(article);
-    gaEvent(added ? 'bookmark_add' : 'bookmark_remove', {
-      article_title: article.title, article_source: article.source, article_url: article.link,
-    });
-    const svg = btn.querySelector('svg');
-    if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
-    btn.classList.toggle('bm-active', added);
-    btn.title = added ? 'Remove bookmark' : 'Save to GameBeeper bookmarks';
-    btn.setAttribute('aria-label', added ? 'Remove bookmark' : 'Bookmark this article');
-    showBmToast(added ? '📖 Saved to GameBeeper bookmarks' : '🗑️ Removed from bookmarks');
-    buildFilters();
-    if (activeFilter === 'Bookmarks') render();
+    handleBookmarkToggle(btn, article);
   });
 
   // Share delegation
@@ -939,9 +1142,7 @@ async function init() {
     });
   });
 
-  // Search
-  const searchInput = document.getElementById('articleSearch');
-  const searchKbd   = document.getElementById('searchKbd');
+  // Search input
   if (searchInput) {
     let debounceTimer;
     searchInput.addEventListener('input', () => {
@@ -949,6 +1150,7 @@ async function init() {
       debounceTimer = setTimeout(() => {
         searchQuery = searchInput.value.trim();
         if (searchQuery.length >= 3) gaEvent('search', { search_term: searchQuery });
+        resetPaging();
         render();
       }, 180);
     });
@@ -960,14 +1162,22 @@ async function init() {
   document.addEventListener('keydown', e => {
     const tag = document.activeElement?.tagName?.toLowerCase();
     const inInput = tag === 'input' || tag === 'textarea' || tag === 'select';
+    if (!inInput) trackKonami(e);
 
-    if (e.key === '/' && !inInput) {
-      e.preventDefault(); searchInput?.focus(); searchInput?.select();
-    } else if (e.key === 'Escape' && inInput) {
-      searchInput?.blur();
-      if (searchInput) { searchInput.value = ''; searchQuery = ''; render(); }
-    } else if (e.key === 'r' && !inInput && !e.ctrlKey && !e.metaKey) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault(); focusSearch('shortcut_mod_k');
+    } else if (e.ctrlKey || e.metaKey || e.altKey) {
+      return;
+    } else if (e.key === '/' && !inInput) {
+      e.preventDefault(); focusSearch('shortcut_slash');
+    } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+      searchInput.blur();
+      if (searchInput.value) { searchInput.value = ''; searchQuery = ''; resetPaging(); render(); }
+    } else if (e.key === 'r' && !inInput) {
       fetchAll();
+    } else if ((e.key === '[' || e.key === ']') && !inInput) {
+      e.preventDefault();
+      stepTopic(e.key === ']' ? 1 : -1);
     } else if ((e.key === 'j' || e.key === 'k') && !inInput) {
       const cards = Array.from(feedGrid.querySelectorAll('.card'));
       if (!cards.length) return;
@@ -976,41 +1186,13 @@ async function init() {
         ? Math.min(focusedCardIdx + 1, cards.length - 1)
         : Math.max(focusedCardIdx - 1, 0);
       cards[focusedCardIdx]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      cards[focusedCardIdx]?.querySelector('a')?.focus();
+      cards[focusedCardIdx]?.querySelector('.card-title a')?.focus({ preventScroll: true });
     } else if (e.key === 'o' && !inInput && focusedCardIdx >= 0) {
       const cards = Array.from(feedGrid.querySelectorAll('.card'));
       const link = cards[focusedCardIdx]?.querySelector('.card-title a');
       if (link) window.open(link.href, '_blank', 'noopener,noreferrer');
     }
   });
-
-  // Newsletter form
-  const nlForm = document.getElementById('newsletterForm');
-  const nlBtn  = document.getElementById('newsletterSubmit');
-  if (nlForm) {
-    nlForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      const email = document.getElementById('newsletterEmail')?.value?.trim();
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showNlMsg('Please enter a valid email address.', 'error');
-        return;
-      }
-      if (nlBtn) { nlBtn.disabled = true; nlBtn.textContent = 'Sending…'; }
-      try {
-        const res = await fetch(nlForm.action, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams({ email, _subject: 'New GameBeeper subscriber' }),
-        });
-        if (res.ok) { showNlMsg('🎉 You\'re subscribed! Check your inbox.', 'ok'); nlForm.reset(); }
-        else showNlMsg('Something went wrong. Try again.', 'error');
-      } catch {
-        showNlMsg('Network error. Please try again.', 'error');
-      } finally {
-        if (nlBtn) { nlBtn.disabled = false; nlBtn.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/></svg> Subscribe free'; }
-      }
-    });
-  }
 }
 
 // -- Bootstrap -----------------------------------------------------
@@ -1021,26 +1203,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   init();
 
-  // Populate "last updated" in About section from version.json
-  const aboutUpdated = document.getElementById('aboutLastUpdated');
-  if (aboutUpdated) {
-    fetch('/version.json').then(r => r.ok ? r.json() : null).then(v => {
-      if (v && v.buildDate) {
-        const d = new Date(v.buildDate);
-        const label = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-        aboutUpdated.textContent = `// last updated ${label}`;
-      }
-    }).catch(() => {});
-  }
-
   // Back to top button
-  const btn = document.getElementById('backToTop');
+  const btn = $('backToTop');
   if (!btn) return;
   let visible = false;
   let hideTimer = null;
 
   function onScroll() {
-    const shouldShow = window.scrollY > 300;
+    const shouldShow = window.scrollY > 900;
     if (shouldShow && !visible) {
       visible = true;
       clearTimeout(hideTimer);
@@ -1055,6 +1225,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    document.querySelector('.logo')?.focus({ preventScroll: true });
+  });
 });
-

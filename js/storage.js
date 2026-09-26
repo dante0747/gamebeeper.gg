@@ -83,15 +83,24 @@ export function loadBookmarks() {
   catch { return []; }
 }
 
+/** Fired on window after every bookmark write so counters and views stay in sync. */
+export const BOOKMARKS_EVENT = 'gb:bookmarks-changed';
+
+function notifyBookmarksChanged() {
+  try { window.dispatchEvent(new CustomEvent(BOOKMARKS_EVENT)); } catch { /* non-browser */ }
+}
+
 export function saveBookmarks(bms) {
   const capped = bms.length > BOOKMARK_MAX ? bms.slice(0, BOOKMARK_MAX) : bms;
   try {
     localStorage.setItem(BOOKMARK_KEY, JSON.stringify(capped));
+    notifyBookmarksChanged();
   } catch (e) {
     if (e instanceof DOMException && (e.name === 'QuotaExceededError' || e.code === 22)) {
       try {
         const pruned = capped.slice(0, Math.floor(capped.length / 2));
         localStorage.setItem(BOOKMARK_KEY, JSON.stringify(pruned));
+        notifyBookmarksChanged();
         console.warn(`[GameBeeper] localStorage quota exceeded – bookmarks pruned to ${pruned.length}.`);
       } catch {
         console.error('[GameBeeper] Cannot save bookmarks: storage quota full even after pruning.');

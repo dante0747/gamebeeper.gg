@@ -1,4 +1,33 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'vitest/config';
+import { siteStats } from './scripts/lib/site-stats.mjs';
+
+// -- GameBeeper build plugin ----------------------------------------------------
+// 1. Replaces {{SOURCE_COUNT}} / {{FEED_COUNT}} tokens in every HTML entry so the
+//    "N trusted sources" copy, meta descriptions and JSON-LD all derive from
+//    data/feeds.json — the single source of truth.
+// 2. Publishes the runtime registries (data/*.json) that the browser fetches at
+//    /data/…; they live outside public/ because the Node pipeline reads them too.
+function gamebeeper() {
+  const stats = siteStats();
+  return {
+    name: 'gamebeeper',
+    transformIndexHtml(html) {
+      return html
+        .replaceAll('{{SOURCE_COUNT}}', String(stats.sourceCount))
+        .replaceAll('{{FEED_COUNT}}', String(stats.feedCount));
+    },
+    generateBundle() {
+      for (const file of ['feeds.json', 'video-sources.json']) {
+        this.emitFile({
+          type: 'asset',
+          fileName: `data/${file}`,
+          source: readFileSync(new URL(`./data/${file}`, import.meta.url)),
+        });
+      }
+    },
+  };
+}
 
 export default defineConfig({
   // Serve from project root; index.html at root is the entry point
@@ -12,6 +41,8 @@ export default defineConfig({
   // Vite treats this directory as static assets served verbatim.
   publicDir: 'public',
 
+  plugins: [gamebeeper()],
+
   build: {
     // Output bundled app to dist/ for production deploy.
     // When deploying to GitHub Pages, point the deploy action at dist/.
@@ -19,11 +50,12 @@ export default defineConfig({
     emptyOutDir: true,
 
     rollupOptions: {
-      // Vite auto-discovers <script type="module"> in index.html, no manual
-      // entry configuration needed. Explicitly list output chunking strategy.
-      output: {
-        // Chunk vendor-like code (none here, but future-proof)
-        manualChunks: undefined,
+      // Every page is an explicit entry so the legal pages ship with the site
+      // (and get the bundled stylesheet) instead of 404-ing in production.
+      input: {
+        main:    'index.html',
+        privacy: 'privacy.html',
+        terms:   'terms.html',
       },
     },
 
@@ -92,4 +124,3 @@ export default defineConfig({
     },
   },
 });
-

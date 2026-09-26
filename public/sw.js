@@ -2,27 +2,29 @@
  * GameBeeper Service Worker
  *
  * Strategies:
- *   - Static shell (HTML, CSS, JS bundles)  → Cache-first, updated on each SW install
- *   - feed.json / feed-health.json          → Stale-while-revalidate (serve cache, refresh in bg)
+ *   - Page navigations (HTML)               → Network-first, cached copy when offline
+ *   - Hashed JS/CSS bundles                  → Cache-first (file names change per build)
+ *   - feed.json / feed-health.json          → Network-first (Refresh must show fresh data;
+ *                                             the cached copy keeps the feed readable offline)
  *   - Article images                        → Cache-first with network fallback (images are immutable)
  *   - Everything else                       → Network-first with cache fallback
  *
  * Cache names are versioned so old caches are purged on SW update.
  */
 
-const SHELL_CACHE   = 'gp-shell-v1';
-const FEED_CACHE    = 'gp-feed-v1';
-const IMAGE_CACHE   = 'gp-images-v1';
-const RUNTIME_CACHE = 'gp-runtime-v1';
+const SHELL_CACHE   = 'gp-shell-v2';
+const FEED_CACHE    = 'gp-feed-v2';
+const IMAGE_CACHE   = 'gp-images-v2';
+const RUNTIME_CACHE = 'gp-runtime-v2';
 
 const ALL_CACHES = [SHELL_CACHE, FEED_CACHE, IMAGE_CACHE, RUNTIME_CACHE];
 
-// Static shell assets to precache on install
+// Static shell assets to precache on install. Only list files that exist in
+// dist/ — a single 404 makes cache.addAll() reject and the SW never installs.
 const SHELL_ASSETS = [
   '/',
-  '/index.html',
-  '/styles.css',
   '/favicon.svg',
+  '/manifest.json',
 ];
 
 // -- Install: precache shell ---------------------------------------
@@ -57,10 +59,9 @@ self.addEventListener('fetch', event => {
 
   const path = url.pathname;
 
-  // feed.json and feed-health.json → stale-while-revalidate
-  if (path === '/public/feed.json' || path === '/public/feed-health.json' ||
-      path === '/feed.json'        || path === '/feed-health.json') {
-    event.respondWith(staleWhileRevalidate(request, FEED_CACHE));
+  // feed.json and feed-health.json → network-first, cache as offline fallback
+  if (path === '/feed.json' || path === '/feed-health.json') {
+    event.respondWith(networkFirst(request, FEED_CACHE));
     return;
   }
 
@@ -70,9 +71,10 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Shell assets → cache-first (already in SHELL_CACHE)
-  if (SHELL_ASSETS.includes(path) || path === '/') {
-    event.respondWith(cacheFirst(request, SHELL_CACHE));
+  // Page navigations → network-first so a new deploy is picked up immediately;
+  // the cached shell is only used when offline.
+  if (request.mode === 'navigate') {
+    event.respondWith(networkFirst(request, SHELL_CACHE));
     return;
   }
 
@@ -102,19 +104,6 @@ async function cacheFirst(request, cacheName, { maxEntries } = {}) {
   } catch {
     return new Response('Offline — asset unavailable', { status: 503 });
   }
-}
-
-async function staleWhileRevalidate(request, cacheName) {
-  const cache  = await caches.open(cacheName);
-  const cached = await cache.match(request);
-  // Kick off background revalidation regardless
-  const networkPromise = fetch(request).then(response => {
-    if (response.ok) cache.put(request, response.clone());
-    return response;
-  }).catch(() => null);
-  // Serve cache immediately if available, otherwise await network
-  return cached ?? (await networkPromise) ??
-    new Response('Offline — feed unavailable', { status: 503 });
 }
 
 async function networkFirst(request, cacheName) {

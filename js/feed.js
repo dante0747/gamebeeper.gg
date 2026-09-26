@@ -1,9 +1,9 @@
 ﻿import { RSS2JSON, MAX_PER_FEED } from './config.js';
 import { getFeeds } from './feeds-registry.js';
-import { truncate, stripHtml, getText, safeUrl } from './utils.js';
+import { truncate, stripHtml, getText, safeUrl, cleanText } from './utils.js';
 import {
   normalizeImageUrl, isProbablyBadImageUrl,
-  extractImageCandidatesFromHtml, extractImageCandidatesFromFeedItem,
+  extractImageCandidatesFromHtml,
   pickBestImageCandidate, extractImage,
 } from './images.js';
 import { fetchViaCorsProxy } from './http.js';
@@ -158,9 +158,9 @@ export function normaliseCachedArticle(a) {
   const safeImg = rawImg && rawImg !== '#' ? normalizeImageUrl(rawImg, a.link) : null;
   const fallback = a.fallbackImage || null;
   return {
-    title:         stripHtml(a.title || 'Untitled'),
+    title:         cleanText(a.title) || 'Untitled',
     link:          safeUrl(a.link),
-    snippet:       a.summary      || '',
+    snippet:       cleanText(a.summary),
     summaryType:   a.summaryType  || '',
     image:         safeImg,
     fallbackImage: fallback,

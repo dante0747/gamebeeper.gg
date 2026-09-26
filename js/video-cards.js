@@ -15,24 +15,24 @@ import { catMeta } from './config.js';
 // ── Topic → accent color ──────────────────────────────────────────────────────
 
 const TOPIC_COLOR = {
-  PlayStation: '#0070D1',
-  Xbox:        '#52B043',
-  Nintendo:    '#E40012',
-  PC:          '#7c5cff',
-  Indie:       '#ff3abf',
-  Reviews:     '#ffca3a',
-  Trailers:    '#b7ff39',
-  Esports:     '#ff6b35',
-  Hardware:    '#26e6ff',
-  Industry:    '#a3a6bd',
-  Latest:      '#26e6ff',
+  PlayStation: '#4C8DFF',
+  Xbox:        '#5BC94A',
+  Nintendo:    '#FF5563',
+  PC:          '#A28BFF',
+  Indie:       '#FF7AD9',
+  Reviews:     '#FFC53D',
+  Trailers:    '#5EEAD4',
+  Esports:     '#FF8F4D',
+  Hardware:    '#45D6FF',
+  Industry:    '#AEB4C2',
+  Latest:      '#C8CDD6',
 };
 
 export function topicColor(topics = []) {
   for (const t of topics) {
     if (TOPIC_COLOR[t]) return TOPIC_COLOR[t];
   }
-  return '#26e6ff';
+  return '#C8CDD6';
 }
 
 // ── Genre badge HTML ──────────────────────────────────────────────────────────
@@ -73,12 +73,13 @@ const PLAY_ICON = `<svg aria-hidden="true" viewBox="0 0 24 24" width="28" height
 
 function bmButton(video) {
   const bm = isBookmarked(`video:${video.id}`);
-  return `<button class="bm-btn vc-bm-btn${bm ? ' bm-active' : ''}"
+  return `<button type="button" class="icon-btn bm-btn vc-bm-btn${bm ? ' bm-active' : ''}"
     data-bm-link="video:${esc(video.id)}"
     data-video-id="${esc(video.id)}"
-    title="${bm ? 'Remove bookmark' : 'Save video'}"
-    aria-label="${bm ? 'Remove bookmark' : 'Bookmark this video: ' + esc(video.title)}">
-    <svg viewBox="0 0 24 24" width="13" height="13" fill="${bm ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+    title="${bm ? 'Remove from saved' : 'Save video'}"
+    aria-pressed="${bm}"
+    aria-label="Save video: ${esc(video.title)}">
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="${bm ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
   </button>`;
 }
 
@@ -95,7 +96,7 @@ function topicChip(video) {
 
 function sourceDot(video) {
   const color = topicColor(video.topics || []);
-  return `<span class="vc-src-dot" style="background:${esc(color)};box-shadow:0 0 5px ${esc(color)}88"></span>`;
+  return `<span class="vc-src-dot" style="background:${esc(color)}" aria-hidden="true"></span>`;
 }
 
 // ── Standard grid card ────────────────────────────────────────────────────────
@@ -124,7 +125,7 @@ export function videoGridCard(video, index = 0) {
     <div class="vc-thumb-overlay" aria-hidden="true"></div>
     ${genreBadge(video.videoGenre)}
     ${durationBadge(video.duration)}
-    <button class="vc-play-btn"
+    <button type="button" class="vc-play-btn"
       data-video-id="${esc(video.id)}"
       aria-label="Play ${esc(GENRE_LABEL[video.videoGenre] || 'video').toLowerCase()}: ${esc(video.title)}">
       ${PLAY_ICON}
@@ -133,7 +134,7 @@ export function videoGridCard(video, index = 0) {
   <div class="vc-body">
     <div class="vc-title-row">
       <h3 class="vc-title">
-        <button class="vc-title-btn" data-video-id="${esc(video.id)}">${esc(video.title)}</button>
+        <button type="button" class="vc-title-btn" data-video-id="${esc(video.id)}">${esc(video.title)}</button>
       </h3>
     </div>
     <div class="vc-meta">
@@ -152,8 +153,8 @@ export function videoGridCard(video, index = 0) {
           href="${esc(video.externalUrl || '#')}"
           target="_blank" rel="noopener noreferrer"
           aria-label="Open on YouTube: ${esc(video.title)}">
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Watch →
+          YouTube
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
         </a>
       </div>
     </div>
@@ -197,10 +198,10 @@ export function videoFeaturedCard(video) {
       <span class="vc-dot-sep" aria-hidden="true">·</span>
       <span class="vc-time">${esc(time)}</span>
     </div>
-    <h2 class="vc-featured-title">${esc(video.title)}</h2>
+    <h3 class="vc-featured-title">${esc(video.title)}</h3>
     ${video.description ? `<p class="vc-featured-desc">${esc(video.description.slice(0, 160))}${video.description.length > 160 ? '…' : ''}</p>` : ''}
     <div class="vc-featured-actions">
-      <button class="btn btn-primary vc-watch-btn"
+      <button type="button" class="btn btn-primary vc-watch-btn"
         data-video-id="${esc(video.id)}"
         aria-label="Watch now: ${esc(video.title)}">
         <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
@@ -210,8 +211,8 @@ export function videoFeaturedCard(video) {
       <a class="btn btn-ghost btn-sm"
         href="${esc(video.externalUrl || '#')}"
         target="_blank" rel="noopener noreferrer"
-        aria-label="Open source for: ${esc(video.title)}">
-        Open source
+        aria-label="Open on YouTube: ${esc(video.title)}">
+        Open on YouTube
         <svg aria-hidden="true" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       </a>
     </div>
@@ -249,9 +250,9 @@ export function videoPreviewCard(video, index = 0, isFeatured = false) {
     </button>
   </div>
   <div class="vc-preview-body">
-    <h4 class="vc-preview-title">
-      <button class="vc-title-btn" data-video-id="${esc(video.id)}">${esc(video.title)}</button>
-    </h4>
+    <h3 class="vc-preview-title">
+      <button type="button" class="vc-title-btn" data-video-id="${esc(video.id)}">${esc(video.title)}</button>
+    </h3>
     <div class="vc-preview-meta">
       <span class="vc-source-name">${esc(video.sourceName || '')}</span>
       <span class="vc-dot-sep" aria-hidden="true">·</span>

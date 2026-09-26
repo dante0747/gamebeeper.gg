@@ -20,7 +20,9 @@ export function normalizeImageUrl(url, baseUrl) {
   if (url.startsWith('data:')) return null;
   try {
     const abs = new URL(url, baseUrl || location.href);
-    if (abs.protocol === 'http:' && location.protocol === 'https:') {
+    // Upgrade to https on the live site — and at build time (no `location`),
+    // so pre-rendered markup matches what the browser renders.
+    if (abs.protocol === 'http:' && (typeof location === 'undefined' || location.protocol === 'https:')) {
       abs.protocol = 'https:';
     }
     return abs.href;

@@ -32,8 +32,6 @@ async function main() {
     <priority>1.0</priority>
     <image:image>
       <image:loc>${BASE_URL}/og-image.png</image:loc>
-      <image:title>GameBeeper &#8212; Video Game News Aggregator</image:title>
-      <image:caption>Video game news, reviews, reveals and platform updates from 34 trusted gaming sources. PlayStation, Xbox, Nintendo, PC, esports, indie. No ads, no paywalls.</image:caption>
     </image:image>
   </url>
 

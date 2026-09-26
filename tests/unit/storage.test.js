@@ -4,7 +4,7 @@
  * Unit tests for js/storage.js (requires happy-dom for localStorage)
  */
 
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   PREF,
   PULSE_PREF_KEY,
@@ -19,6 +19,7 @@ import {
   saveBookmarks,
   isBookmarked,
   toggleBookmark,
+  BOOKMARKS_EVENT,
 } from '../../js/storage.js';
 
 beforeEach(() => {
@@ -170,3 +171,51 @@ describe('BOOKMARK_MAX cap', () => {
 });
 
 
+
+// -- Change notifications -------------------------------------------------------
+
+describe('bookmark change event', () => {
+  it('fires after every save so counters can update', () => {
+    const listener = vi.fn();
+    window.addEventListener(BOOKMARKS_EVENT, listener);
+    toggleBookmark({ link: 'https://example.com/a', title: 'A' });
+    toggleBookmark({ link: 'https://example.com/a', title: 'A' });
+    window.removeEventListener(BOOKMARKS_EVENT, listener);
+    expect(listener).toHaveBeenCalledTimes(2);
+  });
+
+  it('prunes to half and still notifies when storage is full', () => {
+    const listener = vi.fn();
+    window.addEventListener(BOOKMARKS_EVENT, listener);
+    const original = localStorage.setItem.bind(localStorage);
+    let calls = 0;
+    const spy = vi.spyOn(localStorage, 'setItem').mockImplementation((k, v) => {
+      calls++;
+      if (calls === 1) throw new DOMException('full', 'QuotaExceededError');
+      return original(k, v);
+    });
+    const bms = Array.from({ length: 10 }, (_, i) => ({ link: `https://example.com/${i}` }));
+    saveBookmarks(bms);
+    spy.mockRestore();
+    window.removeEventListener(BOOKMARKS_EVENT, listener);
+    expect(loadBookmarks()).toHaveLength(5);
+    expect(listener).toHaveBeenCalledTimes(1);
+  });
+});
+
+// -- Legacy namespace migration ---------------------------------------------------
+
+describe('legacy key migration', () => {
+  it('removes old geeksup_/gp: keys once on first import', async () => {
+    localStorage.clear();
+    localStorage.setItem('geeksup_filter', 'JavaScript');
+    localStorage.setItem('gp:view', 'list');
+    localStorage.setItem('gs:keep', '1');
+    vi.resetModules();
+    await import('../../js/storage.js');
+    expect(localStorage.getItem('geeksup_filter')).toBeNull();
+    expect(localStorage.getItem('gp:view')).toBeNull();
+    expect(localStorage.getItem('gs:keep')).toBe('1');
+    expect(localStorage.getItem('gs:migrated:v1')).toBe('1');
+  });
+});

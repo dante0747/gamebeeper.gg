@@ -26,7 +26,21 @@ export function safeUrl(value) {
 // -- String / date helpers -----------------------------------------
 
 export function catClass(cat) {
-  return 'cat-' + cat.toLowerCase().replace(/\s+/g, '-');
+  return 'cat-' + String(cat || 'general').toLowerCase().replace(/\s+/g, '-');
+}
+
+/** Publisher identity for a feed/article URL: hostname without "www." */
+export function publisherHost(url) {
+  try { return new URL(url).hostname.replace(/^www\./, '').toLowerCase(); }
+  catch { return ''; }
+}
+
+/** Absolute, locale-stable date label ("Sep 26") for statically rendered markup. */
+export function absDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d)) return '';
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 }
 
 export function relTime(dateStr) {
@@ -43,11 +57,38 @@ export function relTime(dateStr) {
   } catch { return ''; }
 }
 
+// DOMParser documents are inert: no scripts run and no images load, so this is
+// safe for untrusted feed HTML (unlike assigning innerHTML on a live element).
 export function stripHtml(html) {
   if (!html) return '';
-  const d = document.createElement('div');
-  d.innerHTML = html;
-  return d.textContent || d.innerText || '';
+  return new DOMParser().parseFromString(String(html), 'text/html').body.textContent || '';
+}
+
+const NAMED_ENTITIES = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', hellip: '…',
+  mdash: '—', ndash: '–', lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”',
+  eacute: 'é', egrave: 'è', aacute: 'á', oacute: 'ó', uuml: 'ü', ouml: 'ö',
+  trade: '™', reg: '®', copy: '©', times: '×', deg: '°', middot: '·',
+};
+
+/**
+ * Plain text from feed-supplied HTML, without touching the DOM: strips tags,
+ * decodes entities (numeric + common named) and collapses whitespace. Works
+ * identically in the browser and in the Node build scripts.
+ */
+export function cleanText(value) {
+  if (!value) return '';
+  return String(value)
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
+      if (e[0] === '#') {
+        const code = e[1].toLowerCase() === 'x' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10);
+        return Number.isFinite(code) && code > 0 && code <= 0x10FFFF ? String.fromCodePoint(code) : m;
+      }
+      return NAMED_ENTITIES[e.toLowerCase()] ?? m;
+    })
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 export function truncate(str, n = 160) {
@@ -80,7 +121,7 @@ export async function shareArticle(title, url) {
   }
   try {
     await navigator.clipboard.writeText(url);
-    showBmToast('🔗 Link copied to clipboard!');
+    showBmToast('Link copied');
   } catch {
     showBmToast('Copy: ' + url);
   }
@@ -117,6 +158,8 @@ export function showBmToast(msg) {
     toast = document.createElement('div');
     toast.id = 'bmToast';
     toast.className = 'bm-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
     document.body.appendChild(toast);
   }
   toast.textContent = msg;

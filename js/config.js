@@ -20,6 +20,8 @@ export const CORS_PROXY = 'https://api.codetabs.com/v1/proxy/?quest=';
 export const RSS2JSON   = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
 export const MAX_PER_FEED   = 15;
+/** Stories rendered per page of the feed ("Show more" adds another page). */
+export const FEED_PAGE_SIZE = 24;
 export const DAY_MS         = 86_400_000;
 export const CACHE_STALE_MS = 2 * 60 * 60 * 1_000;
 
@@ -61,20 +63,22 @@ export const CAT_SVG = {
     `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg>`,
 };
 
+// Order = chip order in the feed bar. Colours are tuned for the dark UI and
+// mirrored as --cat in styles.css (.cat-*), so keep the two in sync.
 export const categories = [
-  { id: 'All',          label: 'All news',        color: '#26e6ff', icon: CAT_SVG['All']          },
-  { id: 'Latest',       label: 'General',          color: '#26e6ff', icon: CAT_SVG['Latest']       },
-  { id: 'PlayStation',  label: 'PlayStation',      color: '#0070D1', icon: CAT_SVG['PlayStation']  },
-  { id: 'Xbox',         label: 'Xbox',             color: '#52B043', icon: CAT_SVG['Xbox']         },
-  { id: 'Nintendo',     label: 'Nintendo',         color: '#E40012', icon: CAT_SVG['Nintendo']     },
-  { id: 'PC',           label: 'PC Gaming',        color: '#7c5cff', icon: CAT_SVG['PC']           },
-  { id: 'Indie',        label: 'Indie',            color: '#ff3abf', icon: CAT_SVG['Indie']        },
-  { id: 'Reviews',      label: 'Reviews',          color: '#ffca3a', icon: CAT_SVG['Reviews']      },
-  { id: 'Trailers',     label: 'Trailers & Reveals',color: '#b7ff39',icon: CAT_SVG['Trailers']     },
-  { id: 'Esports',      label: 'Esports',          color: '#ff6b35', icon: CAT_SVG['Esports']      },
-  { id: 'Industry',     label: 'Industry',         color: '#a3a6bd', icon: CAT_SVG['Industry']     },
-  { id: 'Hardware',     label: 'Hardware',         color: '#26e6ff', icon: CAT_SVG['Hardware']     },
-  { id: 'Bookmarks',    label: 'Saved',            color: '#ff3abf',
+  { id: 'All',          label: 'All',          color: '#F3F4F6', icon: CAT_SVG['All']          },
+  { id: 'PlayStation',  label: 'PlayStation',  color: '#4C8DFF', icon: CAT_SVG['PlayStation']  },
+  { id: 'Xbox',         label: 'Xbox',         color: '#5BC94A', icon: CAT_SVG['Xbox']         },
+  { id: 'Nintendo',     label: 'Nintendo',     color: '#FF5563', icon: CAT_SVG['Nintendo']     },
+  { id: 'PC',           label: 'PC',           color: '#A28BFF', icon: CAT_SVG['PC']           },
+  { id: 'Reviews',      label: 'Reviews',      color: '#FFC53D', icon: CAT_SVG['Reviews']      },
+  { id: 'Indie',        label: 'Indie',        color: '#FF7AD9', icon: CAT_SVG['Indie']        },
+  { id: 'Trailers',     label: 'Trailers',     color: '#5EEAD4', icon: CAT_SVG['Trailers']     },
+  { id: 'Esports',      label: 'Esports',      color: '#FF8F4D', icon: CAT_SVG['Esports']      },
+  { id: 'Industry',     label: 'Industry',     color: '#AEB4C2', icon: CAT_SVG['Industry']     },
+  { id: 'Hardware',     label: 'Hardware',     color: '#45D6FF', icon: CAT_SVG['Hardware']     },
+  { id: 'Latest',       label: 'General',      color: '#C8CDD6', icon: CAT_SVG['Latest']       },
+  { id: 'Bookmarks',    label: 'Saved',        color: '#C8FF3D',
     icon: `<svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>` },
 ];
 
@@ -82,15 +86,12 @@ export const categories = [
 export const catMeta = Object.fromEntries(categories.map(c => [c.id, { icon: c.icon, color: c.color, label: c.label }]));
 
 export const loadingMessages = [
-  'Tuning into the latest game stories\u2026',
-  'Scanning official channels\u2026',
-  'New stories incoming\u2026',
-  'Downloading today\'s game news\u2026',
+  'Blowing on the cartridge\u2026',
+  'Inserting coin\u2026',
+  'Loading next level\u2026',
+  'Syncing save data\u2026',
+  'Scanning the sources\u2026',
   'Locking onto the signal\u2026',
-  'Loading the latest from gaming\'s finest sources\u2026',
-  'Your daily briefing is loading\u2026',
-  'Aggregating news from across gaming\u2026',
-  'Checking in with all platforms\u2026',
 ];
 
 // Runtime sponsored-content regex \u2014 used for live-fetched articles

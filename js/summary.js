@@ -10,6 +10,7 @@
 // -- Modal DOM ------------------------------------------------------
 
 let _modal = null;
+let _trigger = null;
 
 function getModal() {
   if (_modal) return _modal;
@@ -37,7 +38,7 @@ function getModal() {
         <p class="summary-error" id="summaryError" hidden></p>
       </div>
       <div class="summary-dialog__footer">
-        <a class="card-link" id="summaryReadLink" href="#" target="_blank" rel="noopener noreferrer">Read full article -></a>
+        <a class="card-link" id="summaryReadLink" href="#" target="_blank" rel="noopener noreferrer">Read the full story</a>
         <span class="summary-source" id="summarySource"></span>
       </div>
     </div>`;
@@ -86,13 +87,14 @@ export function initSummaryModal() {
 
 export function openSummaryModal({ title, snippet, summaryType, link, source }) {
   const modal = getModal();
+  _trigger = document.activeElement;
 
   document.getElementById('summaryModalTitle').textContent = title || '';
   document.getElementById('summaryText').textContent = '';
   document.getElementById('summaryError').hidden = true;
   document.getElementById('summaryError').textContent = '';
   document.getElementById('summaryReadLink').href = link || '#';
-  document.getElementById('summarySource').textContent = source ? `// ${source}` : '';
+  document.getElementById('summarySource').textContent = source || '';
 
   // Differentiate badge label + icon based on summary origin
   const badgeLabel = document.getElementById('summaryBadgeLabel');
@@ -131,5 +133,7 @@ function closeSummaryModal() {
   if (!_modal) return;
   _modal.classList.remove('open');
   document.body.style.overflow = '';
+  _trigger?.focus?.();
+  _trigger = null;
 }
 

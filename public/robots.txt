@@ -1,17 +1,13 @@
-﻿# robots.txt — GameBeeper (https://gamebeeper.gg/)
-# Updated: 2026-05-26
+# robots.txt — GameBeeper (https://gamebeeper.gg/)
+# Updated: 2026-09-26
 
 # Allow all well-behaved crawlers
 User-agent: *
 Allow: /
-Disallow: /public/sw.js
-Disallow: /public/version.json
 
-# Googlebot — allow everything; generous crawl budget hints
+# Googlebot — allow everything (Google ignores Crawl-delay)
 User-agent: Googlebot
 Allow: /
-Allow: /public/feed.json
-Crawl-delay: 1
 
 # Google News crawler — allow full access
 User-agent: Googlebot-News

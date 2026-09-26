@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#C8FF3D" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#C8FF3D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="#13151A"/>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-opacity=".06">
+    <circle cx="320" cy="180" r="72"/>
+    <circle cx="320" cy="180" r="124"/>
+    <circle cx="320" cy="180" r="176"/>
+    <circle cx="320" cy="180" r="228"/>
+  </g>
+  <path d="M263.3 122.1A80 80 0 0 1 376.7 122.1" fill="none" stroke="#C8FF3D" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+  <g opacity=".85"><svg color="#C8FF3D" viewBox="0 0 24 24" x="290" y="150" width="60" height="60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></g>
+</svg>

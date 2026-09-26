@@ -20,14 +20,14 @@ import { gaEvent } from './analytics.js';
 
 // Topic → accent color (duplicated here to avoid circular import with video-cards.js)
 const TOPIC_COLOR = {
-  PlayStation: '#0070D1', Xbox: '#52B043', Nintendo: '#E40012',
-  PC: '#7c5cff', Indie: '#ff3abf', Reviews: '#ffca3a',
-  Trailers: '#b7ff39', Esports: '#ff6b35', Hardware: '#26e6ff',
-  Industry: '#a3a6bd', Latest: '#26e6ff',
+  PlayStation: '#4C8DFF', Xbox: '#5BC94A', Nintendo: '#FF5563',
+  PC: '#A28BFF', Indie: '#FF7AD9', Reviews: '#FFC53D',
+  Trailers: '#5EEAD4', Esports: '#FF8F4D', Hardware: '#45D6FF',
+  Industry: '#AEB4C2', Latest: '#C8CDD6',
 };
 function topicColor(topics = []) {
   for (const t of topics) if (TOPIC_COLOR[t]) return TOPIC_COLOR[t];
-  return '#26e6ff';
+  return '#C8CDD6';
 }
 
 // ── State ─────────────────────────────────────────────────────────────────────
@@ -65,7 +65,7 @@ function ensureModal() {
           </div>
           <p class="vp-privacy-note" aria-live="polite" id="vpPrivacyNote">
             <svg aria-hidden="true" viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14s5-2.5 5-6.25V3.5L8 1.5 3 3.5v4.25C3 11.5 8 14 8 14z"/></svg>
-            Tap play to load video · Uses youtube-nocookie.com · No trackers
+            Nothing loads from YouTube until you press play · privacy-enhanced mode
           </p>
         </div>
         <aside class="vp-info-col" id="vpInfoCol">
@@ -107,7 +107,7 @@ function populateInfoPanel(video) {
       </div>
       <h2 class="vp-info-title" id="vpInfoTitle">${esc(video.title)}</h2>
       <div class="vp-info-source">
-        <span class="vc-src-dot" style="background:${esc(accentCol)};box-shadow:0 0 5px ${esc(accentCol)}88"></span>
+        <span class="vc-src-dot" style="background:${esc(accentCol)}" aria-hidden="true"></span>
         <span class="vp-source-name">${esc(video.sourceName || '')}</span>
       </div>
       <div class="vp-info-meta">
@@ -117,7 +117,7 @@ function populateInfoPanel(video) {
       </div>
       ${video.description ? `<p class="vp-info-desc">${esc(video.description.slice(0, 280))}${video.description.length > 280 ? '…' : ''}</p>` : ''}
       <div class="vp-info-actions">
-        <button class="bm-btn vp-bm-btn${bm ? ' bm-active' : ''}"
+        <button type="button" class="bm-btn vp-bm-btn${bm ? ' bm-active' : ''}"
           id="vpBmBtn"
           data-video-id="${esc(video.id)}"
           data-bm-link="video:${esc(video.id)}"
@@ -155,7 +155,7 @@ function populateInfoPanel(video) {
       btn.setAttribute('aria-label', added ? 'Remove bookmark' : 'Save this video');
       btn.innerHTML = btn.innerHTML.replace(/Saved|Save/, added ? 'Saved' : 'Save');
     }
-    showBmToast(added ? '📹 Video saved' : '🗑️ Removed from bookmarks');
+    showBmToast(added ? 'Video saved' : 'Removed from saved');
     // update any matching bm buttons in the page
     document.querySelectorAll(`[data-bm-link="${CSS.escape(key)}"]`).forEach(el => {
       if (el === btn) return;

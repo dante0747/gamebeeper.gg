@@ -9,7 +9,7 @@
 
 import {
   loadVideoCache, loadVideoSources, loadVideoHealth,
-  filterVideos, getFeaturedVideo, getVideos, getVideoSources, getVideoHealth,
+  filterVideos, getFeaturedVideo,
   getVideoCacheDate, videoRelTime,
 } from './videos.js';
 import {
@@ -19,7 +19,8 @@ import {
 import { VideoFilters } from './video-filters.js';
 import { openVideoModal, initVideoPlayer } from './video-player.js';
 import { gaEvent } from './analytics.js';
-import { esc } from './utils.js';
+import { showBmToast } from './utils.js';
+import { toggleBookmark } from './storage.js';
 
 // ── State ─────────────────────────────────────────────────────────────────────
 
@@ -34,17 +35,15 @@ const $ = id => document.getElementById(id);
 
 // ── Render helpers ────────────────────────────────────────────────────────────
 
-/** Update the Watch page status line */
+/** Update the Watch status line: what is actually on offer, and how fresh it is */
 function updateWatchStatus() {
   const el = $('watchStatus');
   if (!el) return;
-  const sources = getVideoSources();
-  const health  = getVideoHealth();
-  const date    = getVideoCacheDate();
-  const online  = health ? health.onlineSources : sources.length;
-  const total   = health ? health.totalSources  : sources.length;
-  const dateStr = date ? videoRelTime(date) : '';
-  el.textContent = `${online} video source${online === 1 ? '' : 's'} online${dateStr ? ' · Updated ' + dateStr : ''}`;
+  const date     = getVideoCacheDate();
+  const channels = new Set(_allVideos.map(v => v.sourceName).filter(Boolean)).size;
+  const dateStr  = date ? videoRelTime(date) : '';
+  if (!_allVideos.length) { el.textContent = dateStr ? `Updated ${dateStr}` : ''; return; }
+  el.textContent = `${_allVideos.length} videos · ${channels} channel${channels === 1 ? '' : 's'}${dateStr ? ' · updated ' + dateStr : ''}`;
 }
 
 /** Render the featured spotlight on the Watch page */
@@ -63,6 +62,7 @@ function renderFeatured(videos) {
       el.addEventListener('click', () => openVideoModal(video, el));
     }
   });
+  wireGridBookmarks(wrap);
 }
 
 /** Render the Watch page grid */
@@ -93,30 +93,22 @@ function wireGridBookmarks(container) {
   container.querySelectorAll('.vc-bm-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
-      // Video bookmarks are handled via video-player delegation in storage.js
-      // This fires custom logic — but for simplicity we delegate to the player module:
       const id = btn.dataset.videoId;
       if (!id) return;
       const video = _allVideos.find(v => v.id === id);
       if (!video) return;
-      import('./video-player.js').then(({ closeVideoModal: _c }) => {
-        // trigger bookmark toggle inline
-        import('./storage.js').then(({ toggleBookmark, isBookmarked }) => {
-          import('./utils.js').then(({ showBmToast }) => {
-            import('./analytics.js').then(({ gaEvent }) => {
-              const key     = `video:${video.id}`;
-              const article = { link: key, title: video.title, source: video.sourceName, contentType: 'video', ...video };
-              const added   = toggleBookmark(article, key);
-              gaEvent(added ? 'bookmark_add' : 'bookmark_remove', { article_title: video.title, content_type: 'video' });
-              const svg = btn.querySelector('svg');
-              if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
-              btn.classList.toggle('bm-active', added);
-              btn.setAttribute('aria-label', added ? 'Remove bookmark' : `Bookmark this video: ${video.title}`);
-              showBmToast(added ? '📹 Video saved' : '🗑️ Removed from bookmarks');
-            });
-          });
-        });
+      const key     = `video:${video.id}`;
+      const article = { link: key, title: video.title, source: video.sourceName, contentType: 'video', ...video };
+      const added   = toggleBookmark(article);
+      gaEvent(added ? 'bookmark_add' : 'bookmark_remove', { article_title: video.title, content_type: 'video' });
+      // Mirror the state on every button for this video (grid, spotlight, carousel)
+      document.querySelectorAll(`.vc-bm-btn[data-video-id="${CSS.escape(id)}"]`).forEach(b => {
+        b.querySelector('svg')?.setAttribute('fill', added ? 'currentColor' : 'none');
+        b.classList.toggle('bm-active', added);
+        b.setAttribute('aria-pressed', String(added));
+        b.title = added ? 'Remove from saved' : 'Save video';
       });
+      showBmToast(added ? 'Video saved' : 'Removed from saved');
     });
   });
 }
@@ -165,6 +157,9 @@ function initPreviewCarousel() {
   const INTERVAL = 4500; // ms between auto-advances
   let autoTimer  = null;
   let isPaused   = false;
+  let inView     = false;
+  // No auto-advance for visitors who ask for less motion
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   // ── Helpers ──────────────────────────────────────────────
 
@@ -249,7 +244,7 @@ function initPreviewCarousel() {
   // ── Auto-advance ──────────────────────────────────────────
 
   function startAuto() {
-    if (isPaused) return;
+    if (isPaused || reducedMotion || !inView) return;
     clearInterval(autoTimer);
     autoTimer = setInterval(() => {
       const idx = currentIndex();
@@ -300,11 +295,41 @@ function initPreviewCarousel() {
     if (Math.abs(dx) > 40) { scrollTo(currentIndex() + (dx < 0 ? 1 : -1)); resetAuto(); }
   }, { passive: true });
 
+  // Only advance while the carousel is actually on screen
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      inView = entries.some(e => e.isIntersecting);
+      if (inView) startAuto(); else stopAuto();
+    }, { threshold: 0.35 }).observe(track);
+  } else {
+    inView = true;
+  }
+
   // ── Init ──────────────────────────────────────────────────
 
   buildDots();
   updateNav();
   startAuto();
+}
+
+// ── Full library toggle ───────────────────────────────────────────────────────
+
+function initLibraryToggle() {
+  const btn = $('watchLibraryToggle');
+  const lib = $('watchLibrary');
+  if (!btn || !lib) return;
+  const label = () => `Browse all ${_allVideos.length} videos`;
+  btn.textContent = label();
+  btn.addEventListener('click', () => {
+    const opening = lib.hidden;
+    lib.hidden = !opening;
+    btn.setAttribute('aria-expanded', String(opening));
+    btn.textContent = opening ? 'Hide the library' : label();
+    if (opening) {
+      gaEvent('video_library_open', { videos: _allVideos.length });
+      lib.scrollIntoView({ behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    }
+  });
 }
 
 // ── Filter application ────────────────────────────────────────────────────────
@@ -345,7 +370,7 @@ async function initWatchSignal() {
     const error = $('watchError');
     const errMsg = $('watchErrorMsg');
     if (error && errMsg) {
-      errMsg.textContent = 'No videos cached yet. Run `node scripts/build-videos.mjs` to populate the video feed.';
+      errMsg.textContent = 'No videos yet — check back soon. The news feed above works as normal.';
       error.style.display = '';
     }
     const previewSection = $('watchPreviewSection');
@@ -367,6 +392,7 @@ async function initWatchSignal() {
   renderFeatured(videos);
   renderWatchGrid(videos);
   renderPreview(videos);
+  initLibraryToggle();
 
   // Empty state reset button
   $('watchEmptyReset')?.addEventListener('click', () => {
@@ -374,16 +400,6 @@ async function initWatchSignal() {
     document.getElementById('watchFilterGenre')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
-  // Bookmark delegation on Watch page (outside grid — e.g., featured card)
-  const watchSection2 = $('watch');
-  watchSection2?.addEventListener('click', e => {
-    const btn = e.target.closest('.bm-btn');
-    if (!btn || btn.closest('#watchGrid')) return; // grid handles its own
-    e.stopPropagation();
-    const id = btn.dataset.videoId;
-    if (!id) return;
-    // let the click bubble to the vc-watch-btn handler is enough; featured bm is wired in renderFeatured
-  });
 }
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
@@ -397,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const error = $('watchError');
     const errMsg = $('watchErrorMsg');
     if (error && errMsg) {
-      errMsg.textContent = 'Video sources temporarily unavailable. The main feed continues to work normally.';
+      errMsg.textContent = 'Videos are taking a break. The news feed above works as normal.';
       error.style.display = '';
     }
   });

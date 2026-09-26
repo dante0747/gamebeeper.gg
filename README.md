@@ -50,14 +50,14 @@ It covers **PlayStation, Xbox, Nintendo, PC Gaming, Indie, Reviews, Trailers & R
 | 🤖 **AI Summaries** | On-demand article summaries via pre-cached snippets or local Ollama fallback |
 | ⚡ **Static Cache** | Articles pre-built by a Node.js pipeline; browser loads JSON instantly |
 | 🔄 **Auto-Refresh** | Configurable: 1m · 5m · 10m · 15m · 30m · 1h |
-| 🃏 **Grid & List View** | Toggle between layouts, preference saved locally |
+| 🃏 **Grid & List View** | Toggle between layouts, preference saved locally; stories load 24 at a time with *Show more* |
 | 💾 **localStorage Prefs** | Filter, view mode & refresh interval persist across sessions (`gs:` namespace) |
 | 💀 **Skeleton Loaders** | Shimmer placeholders while feeds are loading |
-| 🎮 **Gaming Editorial UI** | Dark theme, neon glows, animated signal indicator, Chakra Petch display font |
-| ♿ **Accessible** | ARIA roles, labels, `aria-pressed`, keyboard navigation, `prefers-reduced-motion` |
+| 🎮 **Arcade Broadcast UI** | Poster-style Archivo display type, LED scoreboard stats (Handjet), pixel HUD labels (Tiny5), headline ticker, console-style topic tabs, HUD selection brackets, pixel sprites, RGB accents |
+| ♿ **Accessible** | ARIA roles, labels, `aria-pressed`, keyboard navigation, focus-trapped dialogs, pausable ticker, `prefers-reduced-motion`; axe-core clean at desktop and mobile widths |
 | 📱 **Responsive** | Mobile-first with chip filters and a hamburger drawer on small screens |
 | 🔖 **Bookmarks** | Save articles to localStorage for later reading |
-| ⌨️ **Keyboard Shortcuts** | `/` search · `j/k` navigate · `o` open · `r` refresh · `Esc` clear |
+| ⌨️ **Keyboard Shortcuts** | `/` or `Ctrl/⌘+K` search · `[` `]` switch topic · `j/k` navigate · `o` open · `r` refresh · `Esc` clear (plus one classic cheat code) |
 | 🏥 **Feed Health Panel** | Live status: last updated time, online/failed feed counts |
 | ⏱️ **Reading Time** | Estimated read time displayed on every article card |
 | 🔗 **Share Articles** | Web Share API with automatic clipboard fallback |
@@ -276,13 +276,13 @@ const architecture = {
   styles:       "Vanilla CSS",     // custom properties, animations, grid
   logic:        "Vanilla JS",      // ES2022+ native ES modules
   modules:      "js/ — focused ES modules loaded via <script type=\"module\">",
-  fonts:        ["Chakra Petch", "Oxanium", "Inter", "JetBrains Mono"],
+  fonts:        ["Archivo (variable width)", "Handjet", "Tiny5"],
   feedPipeline: "Node.js (scripts/build-feed.mjs + scripts/lib/*.mjs)",
   bundler:      "Vite 6",          // dev server + production build
   storage:      "localStorage",   // preferences & bookmarks  (gs: namespace)
   deps:         ["fast-xml-parser", "ollama"], // build-time only
   devDeps:      ["vite", "vitest", "happy-dom", "@playwright/test", "@vitest/coverage-v8"],
-  analytics:    "Google Analytics (consent-gated, anonymised IP)",
+  analytics:    "Google Analytics 4 — one property, loaded only after consent (js/consent.js); revocable in Settings",
 };
 ```
 
@@ -324,8 +324,8 @@ GameBeeper.gg/
 +-- styles.css               GameBeeper design system
 +-- privacy.html             Privacy policy
 +-- terms.html               Terms of use
-+-- favicon.svg              Signal-wave emblem
-+-- og-image.png             1200×630 social preview
++-- favicon.svg              Signal mark (lime tile)
++-- public/og-image.png      1200×630 social preview (plus icon-192/512 and apple-touch-icon)
 |
 +-- js/                      Browser ES modules
 |   +-- main.js              App entry-point
@@ -353,7 +353,7 @@ GameBeeper.gg/
 |   +-- build-feed.mjs       Main feed builder
 |   +-- build-videos.mjs     YouTube video cache builder (Watch Signal)
 |   +-- generate-sitemap.mjs Sitemap generator
-|   +-- generate-seo-content.mjs SEO fallback injector
+|   +-- generate-seo-content.mjs Pre-renders the hero + first feed page into index.html (same templates as the browser)
 |   +-- generate-version.mjs public/version.json writer
 |   +-- lib/
 |       +-- config.mjs       Gaming categories, keywords, USER_AGENT
@@ -365,6 +365,7 @@ GameBeeper.gg/
 |       +-- ai.mjs           Shared AI/LLM helpers (Ollama wrapper)
 |       +-- sponsored.mjs    Sponsored-post filter
 |       +-- utils.mjs        Shared utilities
+|       +-- site-stats.mjs   Source/feed counts derived from data/feeds.json
 |
 +-- data/
 |   +-- feeds.json           34 enabled gaming RSS sources
@@ -382,7 +383,7 @@ GameBeeper.gg/
 |   +-- robots.txt           Crawler directives
 |   +-- CNAME                GameBeeper.gg (custom domain for GitHub Pages)
 |
-+-- assets/fallbacks/        Animated SVG category placeholders (gaming only)
++-- public/assets/fallbacks/ Category placeholder art (served at /assets/fallbacks/)
 |
 +-- tests/                   Full test suite (Vitest + Playwright)
 +-- .github/workflows/
