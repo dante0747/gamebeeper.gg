@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T01:34:53.552Z",
+  "generatedAt": "2026-10-07T02:30:00.353Z",
   "totalSources": 8,
   "onlineSources": 1,
   "failedSources": 7,
@@ -7,8 +7,9 @@
     {
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 404",
+      "videosFetched": 0
     },
     {
       "id": "gamespot-yt",
@@ -27,9 +28,8 @@
     {
       "id": "nintendo-yt",
       "name": "Nintendo",
-      "ok": false,
-      "error": "HTTP 500",
-      "videosFetched": 0
+      "ok": true,
+      "videosFetched": 12
     },
     {
       "id": "playstation-yt",
