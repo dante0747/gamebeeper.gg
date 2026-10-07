@@ -1,8 +1,34 @@
 {
-  "generatedAt": "2026-10-07T13:21:36.488Z",
+  "generatedAt": "2026-10-07T14:16:06.267Z",
   "sourceCount": 8,
   "videoCount": 24,
   "videos": [
+    {
+      "id": "yt-EIPgivtETng",
+      "contentType": "video",
+      "provider": "youtube",
+      "providerVideoId": "EIPgivtETng",
+      "sourceId": "digital-foundry-yt",
+      "sourceName": "Digital Foundry",
+      "sourceType": "editorial",
+      "title": "Inside STAR WARS: Galactic Racer: The Tech Behind The Big Arcade Racing Revival [Sponsored]",
+      "description": "Content sponsored by Secret Mode. In a massive Digital Foundry deep dive, we go behind the scenes at Fuse Games to discuss the vision and ambition behind STAR WARS: Galactic Racer. The development team discuss the origins of the studio, the journey from pitch to production, why they chose Unreal Eng",
+      "publishedAt": "2026-10-07T14:03:48+00:00",
+      "thumbnail": "https://i.ytimg.com/vi/EIPgivtETng/hqdefault.jpg",
+      "thumbnailFallback": "https://i.ytimg.com/vi/EIPgivtETng/mqdefault.jpg",
+      "duration": null,
+      "liveStatus": "none",
+      "topics": [
+        "Hardware",
+        "Reviews"
+      ],
+      "videoGenre": "developer-diary",
+      "official": false,
+      "externalUrl": "https://www.youtube.com/watch?v=EIPgivtETng",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/EIPgivtETng",
+      "bookmarked": false,
+      "accentColor": "#26e6ff"
+    },
     {
       "id": "yt-UNDCEDpMxVw",
       "contentType": "video",
@@ -600,34 +626,6 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/RZLiR7EmvCs",
       "bookmarked": false,
       "accentColor": "#E40012"
-    },
-    {
-      "id": "yt-WNh70jJBfPk",
-      "contentType": "video",
-      "provider": "youtube",
-      "providerVideoId": "WNh70jJBfPk",
-      "sourceId": "digital-foundry-yt",
-      "sourceName": "Digital Foundry",
-      "sourceType": "editorial",
-      "title": "DF Direct Q+A: Switch 2 60FPS Frame-Gen - How Good/Bad Is It? Should Next-Gen Be Delayed?",
-      "description": "Digital Foundry is now fully independent! Join the DF Supporter Program and support the team: https://bit.ly/3jEGjvx\n\nNote: Stellar Blade's developer has now confirmed that a frame-gen toggle will be added: https://x.com/StellarBlade/status/2102744804018753748?s=20\n\nStellar Blade on Switch 2 uses fr",
-      "publishedAt": "2026-09-23T13:58:42+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/WNh70jJBfPk/hqdefault.jpg",
-      "thumbnailFallback": "https://i.ytimg.com/vi/WNh70jJBfPk/mqdefault.jpg",
-      "duration": null,
-      "liveStatus": "none",
-      "topics": [
-        "Hardware",
-        "Reviews",
-        "Nintendo",
-        "PC"
-      ],
-      "videoGenre": "review",
-      "official": false,
-      "externalUrl": "https://www.youtube.com/watch?v=WNh70jJBfPk",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/WNh70jJBfPk",
-      "bookmarked": false,
-      "accentColor": "#26e6ff"
     }
   ]
 }
