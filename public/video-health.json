@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-10T01:33:54.296Z",
+  "generatedAt": "2026-10-10T02:27:07.677Z",
   "totalSources": 8,
-  "onlineSources": 1,
-  "failedSources": 7,
+  "onlineSources": 2,
+  "failedSources": 6,
   "sources": [
     {
       "id": "digital-foundry-yt",
@@ -27,9 +27,8 @@
     {
       "id": "nintendo-yt",
       "name": "Nintendo",
-      "ok": false,
-      "error": "HTTP 500",
-      "videosFetched": 0
+      "ok": true,
+      "videosFetched": 12
     },
     {
       "id": "playstation-yt",
