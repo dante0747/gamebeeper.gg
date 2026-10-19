@@ -1,24 +1,263 @@
 {
-  "generatedAt": "2026-10-19T21:13:09.570Z",
+  "generatedAt": "2026-10-19T22:14:34.037Z",
   "feedCount": 34,
-  "articleCount": 365,
+  "articleCount": 364,
   "successFeeds": 34,
   "failedFeeds": 0,
   "articles": [
     {
-      "id": "17caeb23bcc2",
-      "title": "Neo Forge MTG 1.0.28 (PC, Mac, Linux and Android): best of three, a turn stats panel and easier blocking",
-      "link": "https://dokkodolabs.itch.io/neo-forge/devlog/1717333/neo-forge-mtg-1028-pc-mac-linux-and-android-best-of-three-a-turn-stats-panel-and-easier-blocking",
+      "id": "3dc16d700d36",
+      "title": "Xodus Nexus successfully brings Game Pass games to Linux",
+      "link": "https://www.digitalfoundry.net/news/2026/10/xodus-nexus-successfully-brings-game-pass-games-to-linux",
+      "source": "Digital Foundry",
+      "sourceId": "digital-foundry",
+      "category": "Hardware",
+      "publishedAt": "2026-10-19T22:03:00.000Z",
+      "summary": "Building on foundational work we reported on two months prior. Just two months ago we reported on Xodus , a community project to bring Xbox Game Pass games to Linux and macOS. It sounded promising, but lead Pawel Lidwin …",
+      "summaryType": "snippet",
+      "image": "https://images.digitalfoundry.net/3f3cd3cb9f136/large.jpg",
+      "fallbackImage": "/assets/fallbacks/hardware.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
+      "sponsored": true
+    },
+    {
+      "id": "ab7d0123f5a1",
+      "title": "One Of Japan&#8217;s Premier Visual Novel Writers Enters Palliative Care For Throat Cancer",
+      "link": "https://kotaku.com/one-of-japans-premier-visual-novel-writers-enters-palliative-care-for-throat-cancer-2000747620",
+      "source": "Kotaku",
+      "sourceId": "kotaku",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T22:00:36.000Z",
+      "summary": "Jun Maeda is the guy who made you bawl your eyes out playing Clannad and Air",
+      "summaryType": "snippet",
+      "image": "https://kotaku.com/app/uploads/2026/10/airjunmaeda-1280x721.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.681Z",
+      "sponsored": true
+    },
+    {
+      "id": "abc651d8e95c",
+      "title": "Stupid Never Dies Is Easily the Worst Game of 2026",
+      "link": "https://www.polygon.com/stupid-never-dies-review/",
+      "source": "Polygon",
+      "sourceId": "polygon",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T22:00:17.000Z",
+      "summary": "Dated doesn’t begin to describe the debut action RPG from GPTRACK50, a new studio founded by former Capcom producer Hiroyuki Kobayashi. Style points only count for so much in a downright regressive action game that’s sad…",
+      "summaryType": "snippet",
+      "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/stupid-never-dies-golem-fight.png",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.955Z"
+    },
+    {
+      "id": "16c107e6f288",
+      "title": "Stupid Never Dies review: \"This pop punk zombie action RPG oozes personality, but ends up dead on arrival\"",
+      "link": "https://www.gamesradar.com/games/action-rpg/stupid-never-dies-review/",
+      "source": "GamesRadar",
+      "sourceId": "gamesradar",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T22:00:00.000Z",
+      "summary": "Malls, in pop culture at least, are inhabited by three main groups. Zombies, the monster-battling kids from Stranger Things , and teenagers in Avril Lavigne music videos. Stupid Never Dies’ Davy is somehow all three at o…",
+      "summaryType": "snippet",
+      "image": "https://cdn.mos.cms.futurecdn.net/Q2ipAqUmCWGJxso9CUmPJk-1920-80.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.743Z",
+      "sponsored": true
+    },
+    {
+      "id": "88410dd7c0b1",
+      "title": "Review: Stupid Never Dies (PS5) - Toilet-Flushing, Monster-Munching Roguelite Stands Out in a Stacked Genre",
+      "link": "https://www.pushsquare.com/reviews/ps5/stupid-never-dies",
+      "source": "Push Square",
+      "sourceId": "push-square",
+      "category": "PlayStation",
+      "publishedAt": "2026-10-19T22:00:00.000Z",
+      "summary": "Basket case. With a scribblecore aesthetic and a story so unhinged it’d make even Suda51 smile, Stupid Never Dies is not your average roguelite. I think that’s important, because this debut action effort from Japanese de…",
+      "summaryType": "snippet",
+      "image": "https://images.pushsquare.com/reviews/ps5/stupid-never-dies/large.jpg",
+      "fallbackImage": "/assets/fallbacks/playstation.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
+      "sponsored": true
+    },
+    {
+      "id": "1ac510bbb041",
+      "title": "Swedish town flexes its survival game royalty by enshrining Valheim and V Rising into its roads",
+      "link": "https://www.gamesradar.com/games/survival/tiny-swedish-town-flexes-its-survival-game-royalty-by-enshrining-valheim-raft-and-v-rising-into-its-roads/",
+      "source": "GamesRadar",
+      "sourceId": "gamesradar",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T21:58:06.000Z",
+      "summary": "You might not have heard of the town of Skövde, Sweden, but if you spend much time staying abreast of Steam's biggest hits, you've probably heard of some of the titles its improbably large game development community has …",
+      "summaryType": "snippet",
+      "image": "https://cdn.mos.cms.futurecdn.net/5vPyYebGnniNHiekTZAw4g-1920-80.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.744Z",
+      "sponsored": true
+    },
+    {
+      "id": "14316e4d3926",
+      "title": "Star Wars Zero Company adds new difficulty options that can bring it closer to XCOM",
+      "link": "https://www.pcgamer.com/games/strategy/star-wars-zero-company-adds-new-difficulty-options-that-can-bring-it-closer-to-xcom/",
+      "source": "PC Gamer",
+      "sourceId": "pc-gamer",
+      "category": "PC",
+      "publishedAt": "2026-10-19T21:47:17.000Z",
+      "summary": "Star Wars Zero Company's 1.2 patch introduces a new granular difficulty system in addition to the usual bugfixes and tweaks. These new options exist alongside the original difficulty levels (easy, normal, hard, ironman b…",
+      "summaryType": "snippet",
+      "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
+      "fallbackImage": "/assets/fallbacks/pc.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.393Z",
+      "sponsored": true
+    },
+    {
+      "id": "29af54cb470b",
+      "title": "Steam Page Is On",
+      "link": "https://yofiasi.itch.io/barista/devlog/1717384/steam-page-is-on",
       "source": "itch.io Devlogs",
       "sourceId": "itch-io-blog",
       "category": "Indie",
-      "publishedAt": "2026-10-19T21:11:35.000Z",
-      "summary": "Neo Forge 1.0.28 is out for Windows, Mac, Linux and Android. This one is packed with things you asked for on Discord and here on itch.io: best of three with sideboarding, a turn stats panel, Storm cou...",
+      "publishedAt": "2026-10-19T21:46:27.000Z",
+      "summary": "Hi! I created a new Steam page for the upcoming full game! If you&#039;re interested in the game make sure to wishlist it on steam",
       "summaryType": "snippet",
-      "image": "https://img.itch.zone/aW1nLzMwOTg2NTg1LmdpZg==/original/U7JpR0.gif",
+      "image": "https://img.itch.zone/aW1nLzMxMDczNzk0LnBuZw==/original/T8hNO4.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
+      "sponsored": true
+    },
+    {
+      "id": "0edfc6547b7d",
+      "title": "Lucasfilm wants to do more Star Wars games like Zero Company and Galactic Racer: 'We’ve tried to be more flexible about who we’re willing to take pitches from'",
+      "link": "https://www.pcgamer.com/gaming-industry/lucasfilm-wants-to-do-more-star-wars-games-like-zero-company-and-galactic-racer-weve-tried-to-be-more-flexible-about-who-were-willing-to-take-pitches-from/",
+      "source": "PC Gamer",
+      "sourceId": "pc-gamer",
+      "category": "PC",
+      "publishedAt": "2026-10-19T21:46:23.000Z",
+      "summary": "We've had two Star Wars games in 2026, both of them quite good and neither of them quite what you might expect from the Star Wars mould: Zero Company , an XCOM-style tactics game, and Galactic Racer , an arcade racing ga…",
+      "summaryType": "snippet",
+      "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
+      "fallbackImage": "/assets/fallbacks/pc.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.393Z",
+      "sponsored": true
+    },
+    {
+      "id": "2c06a46d8f6d",
+      "title": "PSVR2 Darling Synth Riders Dances Away with a Spooky Free Song for Halloween",
+      "link": "https://www.pushsquare.com/news/2026/10/psvr2-darling-synth-riders-dances-away-with-a-spooky-free-song-for-halloween",
+      "source": "Push Square",
+      "sourceId": "push-square",
+      "category": "PlayStation",
+      "publishedAt": "2026-10-19T21:45:00.000Z",
+      "summary": "Can't find a better price than free. In what's become something of a tradition for PSVR2 rhythm darling Synth Riders , the looming arrival of Halloween means Kluge Interactive is giving the game an update with a free new…",
+      "summaryType": "snippet",
+      "image": "https://images.pushsquare.com/924127c900f0d/large.jpg",
+      "fallbackImage": "/assets/fallbacks/playstation.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
+      "sponsored": true
+    },
+    {
+      "id": "85eb8e2f6421",
+      "title": "Demo 0.0.16: no more slowdown in the browser",
+      "link": "https://shishkin-blog.itch.io/therapist-simulator/devlog/1717380/demo-0016-no-more-slowdown-in-the-browser",
+      "source": "itch.io Devlogs",
+      "sourceId": "itch-io-blog",
+      "category": "Indie",
+      "publishedAt": "2026-10-19T21:44:54.000Z",
+      "summary": "What changed Browser version. The longer the tab stayed open, the slower the game got. The cause: every sound — a click, the stamp, the stethoscope, the printer — was synthesized anew, and the bro...",
+      "summaryType": "snippet",
+      "image": "https://img.itch.zone/aW1nLzI4NDk3MzczLnBuZw==/original/pIMEUU.png",
+      "fallbackImage": "/assets/fallbacks/indie.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
+      "sponsored": true
+    },
+    {
+      "id": "07b4adbaf86e",
+      "title": "James Gunn officially confirms Mister Miracle casting with a new look at the DCU animated series",
+      "link": "https://www.gamesradar.com/entertainment/dc-tv-shows/james-gunn-officially-confirms-mister-miracle-casting-with-a-new-look-at-the-dcu-animated-series/",
+      "source": "GamesRadar",
+      "sourceId": "gamesradar",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T21:42:33.000Z",
+      "summary": "James Gunn has released a new look at DCU's upcoming Mister Miracle show after DC Studios co-CEO Peter Safran broke the news that Josh Hutcherson was set to voice Mister Miracle, with Mackenzie Davis as Big Barda. \"Welco…",
+      "summaryType": "snippet",
+      "image": "https://cdn.mos.cms.futurecdn.net/Fnwm6UANZc8rkW6DyumgAR-1920-80.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.744Z",
+      "sponsored": true
+    },
+    {
+      "id": "9edf8f8b983c",
+      "title": "Street Fighter Officially Sets a New Franchise Box Office Record",
+      "link": "https://www.polygon.com/street-fighter-movie-2026-box-office-success/",
+      "source": "Polygon",
+      "sourceId": "polygon",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T21:31:57.000Z",
+      "summary": "For nearly 40 years and across six mainline entries — plus dozens of spinoffs and rereleases — Street Fighter has been one of gaming's most enduring franchises. But adaptations of the magical martial arts source material…",
+      "summaryType": "snippet",
+      "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/04/street-fighter-movie-akuma.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
+      "sponsored": true
+    },
+    {
+      "id": "b40b49a8db34",
+      "title": "Voice Of Goku Responds To AI Stealing Her Voice: &#8216;I can’t Forgive Them&#8230;It Makes Me Really Angry, It’s No Different Than Theft&#8217;",
+      "link": "https://kotaku.com/voice-of-goku-responds-to-ai-stealing-her-voice-i-cant-forgive-them-it-makes-me-really-angry-its-no-different-than-theft-2000747356",
+      "source": "Kotaku",
+      "sourceId": "kotaku",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T21:30:50.000Z",
+      "summary": "A union representing gaming and anime voice actors has issued guidance on the issue after many high-profile voice actors spoke out against generative AI",
+      "summaryType": "snippet",
+      "image": "https://kotaku.com/app/uploads/2026/10/Dragon-Ball-Z-Goku-1280x853.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.681Z",
+      "sponsored": true
+    },
+    {
+      "id": "21918ed938b2",
+      "title": "After Beating Castlevania: Belmont&#8217;s Curse, Help Dracula Rebuild In This Awesome Roguelike",
+      "link": "https://www.gamespot.com/articles/after-beating-castlevania-belmonts-curse-help-dracula-rebuild-in-this-awesome-roguelike/",
+      "source": "GameSpot",
+      "sourceId": "gamespot",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T21:20:06.000Z",
+      "summary": "Let’s face it, if you are a Castlevania fan or just love metroidvania games in general, you’re probably sinking your teeth into Belmont’s Curse . And why not? After all, it just got a glowing review from our own Steve Wa…",
+      "summaryType": "snippet",
+      "image": "https://www.gamespot.com/wp-content/uploads/2026/10/1_920672.jpg?w=636",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.179Z",
+      "sponsored": true
+    },
+    {
+      "id": "b3843a4890b4",
+      "title": "I've been covering MMOs for 13 years, and this is by far the most disgusting grind I've ever seen",
+      "link": "https://www.gamesradar.com/games/mmo/ive-been-covering-mmos-for-13-years-and-this-is-by-far-the-most-disgusting-grind-ive-ever-seen-someone-complete/",
+      "source": "GamesRadar",
+      "sourceId": "gamesradar",
+      "category": "Industry",
+      "publishedAt": "2026-10-19T21:18:05.000Z",
+      "summary": "In January 2023, one Old School RuneScape player made history by rocketing to 200 million experience in the MMO's laborious Agility skill in under one minute by cashing in eight years worth of collected minigame tickets.…",
+      "summaryType": "snippet",
+      "image": "https://cdn.mos.cms.futurecdn.net/qowBXT8GtN84qjuPxiGN3F-1920-80.jpg",
+      "fallbackImage": "/assets/fallbacks/industry.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.744Z",
       "sponsored": true
     },
     {
@@ -34,7 +273,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/04/image-2026-04-03T164915.861.jpg?quality=75&",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.519Z",
+      "fetchedAt": "2026-10-19T22:13:54.231Z",
       "sponsored": true
     },
     {
@@ -50,7 +289,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/oyRBdfyyheCZvEAUzEwteC-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.048Z",
+      "fetchedAt": "2026-10-19T22:13:54.744Z",
       "sponsored": true
     },
     {
@@ -66,7 +305,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/ycse3-1280x720.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z"
+      "fetchedAt": "2026-10-19T22:13:54.682Z"
     },
     {
       "id": "5ede9f30f77e",
@@ -81,7 +320,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/visual-arts-announced-jun-maeda-diagnosed-with-pharyngeal-cancer.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z",
+      "fetchedAt": "2026-10-19T22:13:54.608Z",
       "sponsored": true
     },
     {
@@ -97,7 +336,7 @@
       "image": "https://img.itch.zone/aW1nLzMxMDk4MTEzLnBuZw==/400x224%23c/GSK6HC.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -113,7 +352,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/04/rocket.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -129,7 +368,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/HyQAH24GGYP5k67uDZwqDg-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.048Z",
+      "fetchedAt": "2026-10-19T22:13:54.744Z",
       "sponsored": true
     },
     {
@@ -145,7 +384,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/PAmZ8zuigfcxi3fTpPXctP-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.811Z",
+      "fetchedAt": "2026-10-19T22:13:54.393Z",
       "sponsored": true
     },
     {
@@ -161,7 +400,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/podcasts-1280x649.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -177,7 +416,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/chorus/uploads/chorus_asset/file/8347277/SWBFII_Reveal_Screenshot_7_MP.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -193,7 +432,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/PoGo-Minior.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.313Z",
+      "fetchedAt": "2026-10-19T22:13:54.179Z",
       "sponsored": true
     },
     {
@@ -209,7 +448,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/p5xXjN4jhguPenWLzWb6rh-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.048Z"
+      "fetchedAt": "2026-10-19T22:13:54.744Z"
     },
     {
       "id": "2d07e16fc6c6",
@@ -224,23 +463,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/eEUyLjQddAFWukLgrE7DbH-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.048Z",
-      "sponsored": true
-    },
-    {
-      "id": "143635f5464f",
-      "title": "Interloper Demo Update!",
-      "link": "https://funday-games.itch.io/booster-pack-heroes/devlog/1717236/interloper-demo-update",
-      "source": "itch.io Devlogs",
-      "sourceId": "itch-io-blog",
-      "category": "Indie",
-      "publishedAt": "2026-10-19T20:16:45.000Z",
-      "summary": "To celebrate the just-started Steam Next Fest and that we&#039;ve reached 70k wishlists on Steam, we&#039;ve updated the demo build with some extra goodies for you. The most notable of these are the new Interlo...",
-      "summaryType": "snippet",
-      "image": "https://img.itch.zone/aW1nLzMxMDk1NTMzLnBuZw==/400x224%23c/%2FOHG34.png",
-      "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.744Z",
       "sponsored": true
     },
     {
@@ -256,7 +479,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Zelda-Ocarina-of-Time-remake-improvements-changes-and-additions-list.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.778Z",
+      "fetchedAt": "2026-10-19T22:13:54.357Z",
       "sponsored": true
     },
     {
@@ -272,7 +495,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/dark-sun-illustration-warrior.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z"
+      "fetchedAt": "2026-10-19T22:13:54.955Z"
     },
     {
       "id": "146ac7328e12",
@@ -287,7 +510,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/hu-oud-awaaoniu.jpg?resize=768%2C1024",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z"
+      "fetchedAt": "2026-10-19T22:13:54.608Z"
     },
     {
       "id": "8798a2e66274",
@@ -302,7 +525,7 @@
       "image": "https://assetsio.gnwcdn.com/Revamp-Dracula.png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.402Z",
+      "fetchedAt": "2026-10-19T22:13:54.068Z",
       "sponsored": true
     },
     {
@@ -318,7 +541,7 @@
       "image": "https://img.itch.zone/aW1nLzQxMjQ3MDcucG5n/original/999GRB.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.990Z",
       "sponsored": true
     },
     {
@@ -334,7 +557,7 @@
       "image": "http://assets1.ignimgs.com/2009/06/22/tekken-6-20090622114521975-2901750.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.469Z",
+      "fetchedAt": "2026-10-19T22:13:54.208Z",
       "sponsored": true
     },
     {
@@ -350,7 +573,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/mcafee-protection-blogroll-1-1792437215944.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.469Z",
+      "fetchedAt": "2026-10-19T22:13:54.209Z",
       "sponsored": true
     },
     {
@@ -366,7 +589,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/MW4-RFL-OPS-WEAPONS-010.webp?quality=75&",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.519Z",
+      "fetchedAt": "2026-10-19T22:13:54.231Z",
       "sponsored": true
     },
     {
@@ -382,7 +605,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/ARC-Raiders-Scrappy1.jpg?quality=75&",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.520Z"
+      "fetchedAt": "2026-10-19T22:13:54.231Z"
     },
     {
       "id": "e16e25c516cd",
@@ -397,7 +620,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/WoW-Midnight-patch-1215.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.315Z",
+      "fetchedAt": "2026-10-19T22:13:54.179Z",
       "sponsored": true
     },
     {
@@ -413,7 +636,7 @@
       "image": null,
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:26.895Z",
+      "fetchedAt": "2026-10-19T22:13:54.495Z",
       "sponsored": true
     },
     {
@@ -429,7 +652,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/COD1_98947f.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.316Z",
+      "fetchedAt": "2026-10-19T22:13:54.180Z",
       "sponsored": true
     },
     {
@@ -445,7 +668,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/screen-shot-2026-10-19-at-102059-am.png?resize=1012%2C1006",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z",
+      "fetchedAt": "2026-10-19T22:13:54.609Z",
       "sponsored": true
     },
     {
@@ -461,7 +684,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/revamp-key-art-dracula.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -477,7 +700,7 @@
       "image": "https://images.pushsquare.com/ae75bfb9dd508/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.919Z",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
       "sponsored": true
     },
     {
@@ -493,7 +716,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/steelseriesnova7prowirelessps5-1792433802405.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.469Z",
+      "fetchedAt": "2026-10-19T22:13:54.209Z",
       "sponsored": true
     },
     {
@@ -509,7 +732,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/hundreds-of-psa-graded-trading-cards-stolen-from-fedex-truck-1792435194146.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.470Z",
+      "fetchedAt": "2026-10-19T22:13:54.209Z",
       "sponsored": true
     },
     {
@@ -525,7 +748,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/03/wm_unit_11666_r.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -541,7 +764,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/mister-miracle-promo-image.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -557,7 +780,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/Penguin-Colony-1280x720.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -573,7 +796,7 @@
       "image": "https://images.purexbox.com/1ca0c522d297f/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.115Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -589,7 +812,7 @@
       "image": "https://assetsio.gnwcdn.com/final-fantasy-7-revelation-sephiroth.png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.402Z",
+      "fetchedAt": "2026-10-19T22:13:54.070Z",
       "sponsored": true
     },
     {
@@ -605,7 +828,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2025/06/Best-cards-for-Assault-in-Battlefront-2.jpg?quality=75&",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.520Z",
+      "fetchedAt": "2026-10-19T22:13:54.232Z",
       "sponsored": true
     },
     {
@@ -621,7 +844,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Souls-of-Bombarika.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.357Z",
       "sponsored": true
     },
     {
@@ -637,7 +860,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/derpy-1792431905841.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.470Z",
+      "fetchedAt": "2026-10-19T22:13:54.210Z",
       "sponsored": true
     },
     {
@@ -653,7 +876,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/daranpowerstationsolarpanel-1792432490457.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.470Z",
+      "fetchedAt": "2026-10-19T22:13:54.210Z",
       "sponsored": true
     },
     {
@@ -669,7 +892,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/dumpster-gang-raccoon-group.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -685,7 +908,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/Passing-79-41.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.520Z",
+      "fetchedAt": "2026-10-19T22:13:54.232Z",
       "sponsored": true
     },
     {
@@ -701,39 +924,7 @@
       "image": "https://img.itch.zone/aW1nLzMwODQ4MzcxLnBuZw==/original/JAhjjw.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
-      "sponsored": true
-    },
-    {
-      "id": "8eac0cc716ab",
-      "title": "First Final Fantasy Series 40th Anniversary 2027 Calendar Art Shared",
-      "link": "https://www.siliconera.com/first-final-fantasy-series-40th-anniversary-2027-calendar-art-shared/",
-      "source": "Siliconera",
-      "sourceId": "siliconera",
-      "category": "Indie",
-      "publishedAt": "2026-10-19T18:00:00.000Z",
-      "summary": "Square Enix announced its Final Fantasy series 40th anniversary 2027 calendar and shared the art that will appear for the first three months in it. Pre-orders for the item only appeared in Japan so far on the e-Store . I…",
-      "summaryType": "snippet",
-      "image": "https://www.siliconera.com/wp-content/uploads/2026/10/hu-kashamaadtgt.jpg?resize=724%2C1024",
-      "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z",
-      "sponsored": true
-    },
-    {
-      "id": "88bb14348ec3",
-      "title": "Talking Point: How Did You First Encounter Zelda: Ocarina Of Time?",
-      "link": "https://www.nintendolife.com/news/2026/10/talking-point-how-did-you-first-encounter-zelda-ocarina-of-time",
-      "source": "Nintendo Life",
-      "sourceId": "nintendo-life",
-      "category": "Nintendo",
-      "publishedAt": "2026-10-19T18:00:00.000Z",
-      "summary": "Fairy Tales. In case you haven't noticed, another chance to play The Legend of Zelda: Ocarina of Time is on the horizon. The coming 5th November release date for the Switch 2 remake has got us diving into our OoT memory …",
-      "summaryType": "snippet",
-      "image": "https://images.nintendolife.com/17264a33a3720/large.jpg",
-      "fallbackImage": "/assets/fallbacks/nintendo.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.084Z",
+      "fetchedAt": "2026-10-19T22:13:54.990Z",
       "sponsored": true
     },
     {
@@ -749,7 +940,39 @@
       "image": "https://images.pushsquare.com/f58e3ea1178aa/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.919Z"
+      "fetchedAt": "2026-10-19T22:13:54.725Z"
+    },
+    {
+      "id": "8eac0cc716ab",
+      "title": "First Final Fantasy Series 40th Anniversary 2027 Calendar Art Shared",
+      "link": "https://www.siliconera.com/first-final-fantasy-series-40th-anniversary-2027-calendar-art-shared/",
+      "source": "Siliconera",
+      "sourceId": "siliconera",
+      "category": "Indie",
+      "publishedAt": "2026-10-19T18:00:00.000Z",
+      "summary": "Square Enix announced its Final Fantasy series 40th anniversary 2027 calendar and shared the art that will appear for the first three months in it. Pre-orders for the item only appeared in Japan so far on the e-Store . I…",
+      "summaryType": "snippet",
+      "image": "https://www.siliconera.com/wp-content/uploads/2026/10/hu-kashamaadtgt.jpg?resize=724%2C1024",
+      "fallbackImage": "/assets/fallbacks/indie.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.609Z",
+      "sponsored": true
+    },
+    {
+      "id": "88bb14348ec3",
+      "title": "Talking Point: How Did You First Encounter Zelda: Ocarina Of Time?",
+      "link": "https://www.nintendolife.com/news/2026/10/talking-point-how-did-you-first-encounter-zelda-ocarina-of-time",
+      "source": "Nintendo Life",
+      "sourceId": "nintendo-life",
+      "category": "Nintendo",
+      "publishedAt": "2026-10-19T18:00:00.000Z",
+      "summary": "Fairy Tales. In case you haven't noticed, another chance to play The Legend of Zelda: Ocarina of Time is on the horizon. The coming 5th November release date for the Switch 2 remake has got us diving into our OoT memory …",
+      "summaryType": "snippet",
+      "image": "https://images.nintendolife.com/17264a33a3720/large.jpg",
+      "fallbackImage": "/assets/fallbacks/nintendo.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.761Z",
+      "sponsored": true
     },
     {
       "id": "3c9b2b2d6586",
@@ -764,7 +987,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/MW4-RFL-OPS-WEAPONS-TOUT-2343b867635ca44979bc.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.721Z",
+      "fetchedAt": "2026-10-19T22:13:54.345Z",
       "sponsored": true
     },
     {
@@ -780,7 +1003,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/05/hideo-kojima-cameo-1791239209795.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.470Z",
+      "fetchedAt": "2026-10-19T22:13:54.210Z",
       "sponsored": true
     },
     {
@@ -796,23 +1019,7 @@
       "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/vintage_vice_city_pack_exclusive_looks_01-1.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
-      "sponsored": true
-    },
-    {
-      "id": "cfe037f26f6b",
-      "title": "How to make goo in Enshrouded",
-      "link": "https://www.polygon.com/enshrouded-goo-crafting-recipe-how-to-make/",
-      "source": "Polygon",
-      "sourceId": "polygon",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T17:50:54.000Z",
-      "summary": "To craft goo in Enshrouded , you must summon the right craftsman and slay a bunch of critters. As it increases your attributes and allows you to spend more time in the Shroud, it's very important to strengthen the flame …",
-      "summaryType": "snippet",
-      "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/10/enshrouded-how-to-make-goo-1.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.955Z",
       "sponsored": true
     },
     {
@@ -828,7 +1035,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/lego-arcade-machine-blogroll-1792431558651.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.471Z",
+      "fetchedAt": "2026-10-19T22:13:54.210Z",
       "sponsored": true
     },
     {
@@ -844,23 +1051,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/LANoire_ece858.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.316Z",
-      "sponsored": true
-    },
-    {
-      "id": "24f94abd05c2",
-      "title": "Resident Evil 7 Dev Reveals the Game’s Last of Us Inspiration and Troubled Development",
-      "link": "https://www.polygon.com/resident-evil-7-capcom-development-last-of-us/",
-      "source": "Polygon",
-      "sourceId": "polygon",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T17:46:20.000Z",
-      "summary": "It's hard to believe that it has almost been a decade since Capcom reinvented Resident Evil with the seventh mainline game in the series. In the fallout of Resident Evil 6 , it seemed like the once great horror franchise…",
-      "summaryType": "snippet",
-      "image": "https://static0.polygonimages.com/wordpress/wp-content/uploads/chorus/uploads/chorus_asset/file/7611491/resident_evil_7b.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.125Z",
+      "fetchedAt": "2026-10-19T22:13:54.180Z",
       "sponsored": true
     },
     {
@@ -876,7 +1067,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/peter-jackson-1792426165569.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.471Z",
+      "fetchedAt": "2026-10-19T22:13:54.210Z",
       "sponsored": true
     },
     {
@@ -892,7 +1083,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/hideo-kojima-cyberpunk-edgerunners-2-1792430384764.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.471Z",
+      "fetchedAt": "2026-10-19T22:13:54.210Z",
       "sponsored": true
     },
     {
@@ -908,7 +1099,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/09/Passing-79.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.520Z",
+      "fetchedAt": "2026-10-19T22:13:54.232Z",
       "sponsored": true
     },
     {
@@ -924,7 +1115,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/pokemon-skateboard.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -940,7 +1131,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/f1-25-1792417655042.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.472Z",
+      "fetchedAt": "2026-10-19T22:13:54.211Z",
       "sponsored": true
     },
     {
@@ -956,7 +1147,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/image-2026-10-19T131752.847.jpg?resize=1024%2C576",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.521Z",
+      "fetchedAt": "2026-10-19T22:13:54.232Z",
       "sponsored": true
     },
     {
@@ -972,7 +1163,7 @@
       "image": "https://assetsio.gnwcdn.com/arc-raiders-headline.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.403Z",
+      "fetchedAt": "2026-10-19T22:13:54.070Z",
       "sponsored": true
     },
     {
@@ -988,7 +1179,7 @@
       "image": "https://img.itch.zone/aW1nLzMxMDg5MjkzLnBuZw==/400x224%23c/dJHyjp.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -1004,7 +1195,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/ecoflowpowerbank-1792429382769.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.472Z",
+      "fetchedAt": "2026-10-19T22:13:54.211Z",
       "sponsored": true
     },
     {
@@ -1020,7 +1211,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/19/lgc6-1792426327101.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.472Z",
+      "fetchedAt": "2026-10-19T22:13:54.211Z",
       "sponsored": true
     },
     {
@@ -1036,7 +1227,7 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/RPG-Maker-U2U-Demo_10-19-26.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z"
+      "fetchedAt": "2026-10-19T22:13:54.156Z"
     },
     {
       "id": "62c98218f8f5",
@@ -1051,7 +1242,7 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/PAYDAY-VR-Date_10-19-26.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z"
+      "fetchedAt": "2026-10-19T22:13:54.157Z"
     },
     {
       "id": "d3f2a3ac9ef4",
@@ -1066,7 +1257,7 @@
       "image": "https://assetsio.gnwcdn.com/revamp_WenWzly.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
+      "fetchedAt": "2026-10-19T22:13:54.434Z",
       "sponsored": true
     },
     {
@@ -1082,7 +1273,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Vixen-357.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.357Z",
       "sponsored": true
     },
     {
@@ -1098,7 +1289,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/image-2026-10-19T123528.401.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.521Z",
+      "fetchedAt": "2026-10-19T22:13:54.232Z",
       "sponsored": true
     },
     {
@@ -1114,7 +1305,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/ZF5ZJsyvbhJRVSDmd9H3jA-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.812Z",
+      "fetchedAt": "2026-10-19T22:13:54.394Z",
       "sponsored": true
     },
     {
@@ -1130,7 +1321,7 @@
       "image": "https://images.purexbox.com/121a835e485cd/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.115Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -1146,7 +1337,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/hovhmsiasaa2fd0.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z",
+      "fetchedAt": "2026-10-19T22:13:54.609Z",
       "sponsored": true
     },
     {
@@ -1162,7 +1353,7 @@
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/ss_c6067e139d8dd2cbf79c41a9c4e41e3bb088c95a.1920x1080-1152x648.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.486Z",
+      "fetchedAt": "2026-10-19T22:13:54.145Z",
       "sponsored": true
     },
     {
@@ -1178,7 +1369,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/925L6o9Ro3uNx7HgBCZWyn-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.049Z",
+      "fetchedAt": "2026-10-19T22:13:54.745Z",
       "sponsored": true
     },
     {
@@ -1194,7 +1385,7 @@
       "image": "https://images.pushsquare.com/d3d5028352d76/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.919Z",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
       "sponsored": true
     },
     {
@@ -1210,7 +1401,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/dSWCEmPxVwjxHWFLeDsjUc-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.049Z",
+      "fetchedAt": "2026-10-19T22:13:54.745Z",
       "sponsored": true
     },
     {
@@ -1226,7 +1417,7 @@
       "image": "https://assetsio.gnwcdn.com/Wizards_CWA.webp?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.895Z",
+      "fetchedAt": "2026-10-19T22:13:54.495Z",
       "sponsored": true
     },
     {
@@ -1242,7 +1433,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/QNVatxvoB2rVnWCVRQCLeT-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.049Z",
+      "fetchedAt": "2026-10-19T22:13:54.745Z",
       "sponsored": true
     },
     {
@@ -1258,7 +1449,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/YFFrf4eYE3Q6QpkEfGBua5-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.078Z"
+      "fetchedAt": "2026-10-19T22:13:54.651Z"
     },
     {
       "id": "63423694c844",
@@ -1273,7 +1464,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/youcanseeeverything-1280x953.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -1289,7 +1480,7 @@
       "image": "https://assetsio.gnwcdn.com/grand-theft-auto-london.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
+      "fetchedAt": "2026-10-19T22:13:54.434Z",
       "sponsored": true
     },
     {
@@ -1305,7 +1496,7 @@
       "image": "https://assets-prd.ignimgs.com/2026/10/13/talixpowerbank-1791923088372.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.473Z",
+      "fetchedAt": "2026-10-19T22:13:54.211Z",
       "sponsored": true
     },
     {
@@ -1321,7 +1512,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/bqexXcXncjtqi9CMqKWMFT-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.049Z",
+      "fetchedAt": "2026-10-19T22:13:54.745Z",
       "sponsored": true
     },
     {
@@ -1337,7 +1528,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/s7cA7XMMSNzVSpiuFLgQmZ-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.049Z",
+      "fetchedAt": "2026-10-19T22:13:54.745Z",
       "sponsored": true
     },
     {
@@ -1353,7 +1544,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/dXkKjius9p9pDo9jJw8vmj-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.050Z",
+      "fetchedAt": "2026-10-19T22:13:54.746Z",
       "sponsored": true
     },
     {
@@ -1369,7 +1560,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Industria.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.357Z",
       "sponsored": true
     },
     {
@@ -1385,7 +1576,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/Saros-Zenith.webp?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.317Z",
+      "fetchedAt": "2026-10-19T22:13:54.180Z",
       "sponsored": true
     },
     {
@@ -1401,7 +1592,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/Biddy-Blas-Crowley.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.317Z",
+      "fetchedAt": "2026-10-19T22:13:54.181Z",
       "sponsored": true
     },
     {
@@ -1417,23 +1608,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/CJAftkCrSyitfLrARKE2RK-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.812Z",
-      "sponsored": true
-    },
-    {
-      "id": "676aa3b45706",
-      "title": "The Witcher 3 Remastered&#039;s Latest Update Is Now Live, Here Are The Full Patch Notes",
-      "link": "https://www.nintendolife.com/news/2026/10/the-witcher-3-remastereds-latest-update-is-now-live-here-are-the-full-patch-notes",
-      "source": "Nintendo Life",
-      "sourceId": "nintendo-life",
-      "category": "Nintendo",
-      "publishedAt": "2026-10-19T16:15:00.000Z",
-      "summary": "A Switch 2 special. After being announced earlier this month, CD Projekt Red has today released its latest update for The Witcher 3: Wild Hunt - Remastered , and it even packs in some console-specific changes for Switch …",
-      "summaryType": "snippet",
-      "image": "https://images.nintendolife.com/ae56544fa9b3d/large.jpg",
-      "fallbackImage": "/assets/fallbacks/nintendo.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.084Z",
+      "fetchedAt": "2026-10-19T22:13:54.394Z",
       "sponsored": true
     },
     {
@@ -1449,7 +1624,23 @@
       "image": "https://images.pushsquare.com/aba9167b03606/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.919Z",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
+      "sponsored": true
+    },
+    {
+      "id": "676aa3b45706",
+      "title": "The Witcher 3 Remastered&#039;s Latest Update Is Now Live, Here Are The Full Patch Notes",
+      "link": "https://www.nintendolife.com/news/2026/10/the-witcher-3-remastereds-latest-update-is-now-live-here-are-the-full-patch-notes",
+      "source": "Nintendo Life",
+      "sourceId": "nintendo-life",
+      "category": "Nintendo",
+      "publishedAt": "2026-10-19T16:15:00.000Z",
+      "summary": "A Switch 2 special. After being announced earlier this month, CD Projekt Red has today released its latest update for The Witcher 3: Wild Hunt - Remastered , and it even packs in some console-specific changes for Switch …",
+      "summaryType": "snippet",
+      "image": "https://images.nintendolife.com/ae56544fa9b3d/large.jpg",
+      "fallbackImage": "/assets/fallbacks/nintendo.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.761Z",
       "sponsored": true
     },
     {
@@ -1465,7 +1656,7 @@
       "image": "https://assetsio.gnwcdn.com/ken-kutaragi-playstation_Jl1uSYR.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.403Z",
+      "fetchedAt": "2026-10-19T22:13:54.070Z",
       "sponsored": true
     },
     {
@@ -1481,7 +1672,7 @@
       "image": "https://assetsio.gnwcdn.com/dragon-age-origins-e3-2004.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
+      "fetchedAt": "2026-10-19T22:13:54.434Z",
       "sponsored": true
     },
     {
@@ -1497,23 +1688,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/the-finals-dynamic-commentary.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
-      "sponsored": true
-    },
-    {
-      "id": "7bd104257d3f",
-      "title": "Cat Battles codes (October 2026)",
-      "link": "https://www.pcgamesn.com/roblox/cat-battles-codes",
-      "source": "PCGamesN",
-      "sourceId": "pcgamesn",
-      "category": "PC",
-      "publishedAt": "2026-10-19T16:00:00.000Z",
-      "summary": "Rake in the cash with our Cat Battles codes. These unique passwords are great for filling your pockets with coins to spend on hatching eggs for a new look, so you can flex on your opponents with your style as well as you…",
-      "summaryType": "snippet",
-      "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/cat-battles-codes-header-pcgn.jpeg",
-      "fallbackImage": "/assets/fallbacks/pc.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.507Z",
       "sponsored": true
     },
     {
@@ -1529,7 +1704,23 @@
       "image": "https://images.pushsquare.com/15f44109bb58e/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.919Z",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
+      "sponsored": true
+    },
+    {
+      "id": "7bd104257d3f",
+      "title": "Cat Battles codes (October 2026)",
+      "link": "https://www.pcgamesn.com/roblox/cat-battles-codes",
+      "source": "PCGamesN",
+      "sourceId": "pcgamesn",
+      "category": "PC",
+      "publishedAt": "2026-10-19T16:00:00.000Z",
+      "summary": "Rake in the cash with our Cat Battles codes. These unique passwords are great for filling your pockets with coins to spend on hatching eggs for a new look, so you can flex on your opponents with your style as well as you…",
+      "summaryType": "snippet",
+      "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/cat-battles-codes-header-pcgn.jpeg",
+      "fallbackImage": "/assets/fallbacks/pc.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.507Z",
       "sponsored": true
     },
     {
@@ -1545,7 +1736,7 @@
       "image": "https://images.purexbox.com/54317be4f0a92/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.115Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -1561,7 +1752,7 @@
       "image": null,
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:26.473Z",
+      "fetchedAt": "2026-10-19T22:13:54.211Z",
       "sponsored": true
     },
     {
@@ -1577,7 +1768,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/nioh2.png?w=1024&",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z",
+      "fetchedAt": "2026-10-19T22:13:54.609Z",
       "sponsored": true
     },
     {
@@ -1593,7 +1784,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/PRJ8wSUzTLKscTeNFrUoG6-1920-80.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.050Z",
+      "fetchedAt": "2026-10-19T22:13:54.746Z",
       "sponsored": true
     },
     {
@@ -1609,23 +1800,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/Screenshot-2026-10-19-210609.png?quality=75&",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.521Z",
-      "sponsored": true
-    },
-    {
-      "id": "ff8b36964873",
-      "title": "Grand Theft Auto 4 got much darker because San Andreas took the \"pop energy as far as it could go\"",
-      "link": "https://www.gamesradar.com/games/grand-theft-auto/for-gta-to-stay-relevant-it-had-to-reinvent-itself-grand-theft-auto-4-got-much-darker-because-san-andreas-took-the-pop-energy-as-far-as-it-could-go-says-rockstars-dan-houser/",
-      "source": "GamesRadar",
-      "sourceId": "gamesradar",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T15:51:13.000Z",
-      "summary": "Dan Houser – former writer and creative director of the Grand Theft Auto series – says GTA 4 was so tonally different from what came before because Rockstar Games felt that doing the same old thing risked obsolescence. G…",
-      "summaryType": "snippet",
-      "image": "https://cdn.mos.cms.futurecdn.net/EzQhiQa7sRNxBvydEdQLwR-1920-80.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.050Z",
+      "fetchedAt": "2026-10-19T22:13:54.232Z",
       "sponsored": true
     },
     {
@@ -1641,7 +1816,7 @@
       "image": "https://img.itch.zone/aW1nLzEwNDIwMjY4LmdpZg==/original/KFZP3d.gif",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -1657,39 +1832,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/cdefd1ce2a4b5b86d94eb02569ec8842.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.521Z",
-      "sponsored": true
-    },
-    {
-      "id": "31eb8e058a8a",
-      "title": "New Kojima x Casetify collection paints Death Stranding all over your EDC, but my favorite design has already sold out",
-      "link": "https://www.gamesradar.com/hardware/new-hideo-kojima-x-casetify-collection-paints-death-stranding-2-all-over-your-edc-but-my-favorite-design-has-already-sold-out/",
-      "source": "GamesRadar",
-      "sourceId": "gamesradar",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T15:43:27.000Z",
-      "summary": "Casetify doesn't shy away from a collab, and neither does Hideo Kojima, so it's a wonder it's taken this long for the two to come together. Taking on the iPhone 18 Pro Max (with a few iPhone 18 Pro options mixed in), the…",
-      "summaryType": "snippet",
-      "image": "https://cdn.mos.cms.futurecdn.net/qzhaLDYMHToqwJXyNk7zKD-1920-80.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.050Z",
-      "sponsored": true
-    },
-    {
-      "id": "0df6bd20630b",
-      "title": "Ex-Marathon director says Bungie had \"a lot of disagreements\" about what to do with the game",
-      "link": "https://www.gamesradar.com/games/fps/former-marathon-director-says-bungie-had-a-lot-of-disagreements-about-what-to-do-with-the-game-which-it-is-now-trying-to-salvage-after-a-soft-launch/",
-      "source": "GamesRadar",
-      "sourceId": "gamesradar",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T15:42:36.000Z",
-      "summary": "This hasn't been the strongest year for Bungie . On the back of ending updates for Destiny 2 , the studio released Marathon to a more muted and mixed response than anyone would've liked. Layoffs followed, and an ex-lead …",
-      "summaryType": "snippet",
-      "image": "https://cdn.mos.cms.futurecdn.net/CN5qbJZS7mD6JZMVo5i5uT-1920-80.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.050Z",
+      "fetchedAt": "2026-10-19T22:13:54.233Z",
       "sponsored": true
     },
     {
@@ -1705,7 +1848,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/image-2026-10-19T114740.265.jpg?resize=1024%2C576",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.521Z",
+      "fetchedAt": "2026-10-19T22:13:54.233Z",
       "sponsored": true
     },
     {
@@ -1721,23 +1864,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/A7Q3HWnLkUvNjuKTfUNdPA-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.078Z",
-      "sponsored": true
-    },
-    {
-      "id": "343dcf492fe1",
-      "title": "Street Fighter's Chun-Li star loves Dead by Daylight and wants to audition for the Blumhouse movie",
-      "link": "https://www.gamesradar.com/entertainment/live-action-movies/street-fighters-chun-li-star-loves-dead-by-daylight-and-wants-to-audition-for-the-blumhouse-movie-guys-just-call-me/",
-      "source": "GamesRadar",
-      "sourceId": "gamesradar",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T15:32:21.000Z",
-      "summary": "Street Fighter actor Callina Liang wants to star in Blumhouse-Atomic Monster's upcoming Dead by Daylight movie. \"I'm also a huge gamer. I have a PC setup at home... Right now, I'm playing a lot of Dead by Daylight,\" Lian…",
-      "summaryType": "snippet",
-      "image": "https://cdn.mos.cms.futurecdn.net/5KCnSN4Vk7LzBmPQLuxpr4-1920-80.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.050Z",
+      "fetchedAt": "2026-10-19T22:13:54.651Z",
       "sponsored": true
     },
     {
@@ -1753,23 +1880,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/revamp1-1280x720.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
-      "sponsored": true
-    },
-    {
-      "id": "9203c858a3a8",
-      "title": "Review: Trails In The Sky 2nd Chapter - Nintendo Switch 2 Edition (Switch 2) - Another Triumphant RPG Experience From The Trails Remake Saga",
-      "link": "https://www.nintendolife.com/reviews/nintendo-switch-2/trails-in-the-sky-2nd-chapter-nintendo-switch-2-edition",
-      "source": "Nintendo Life",
-      "sourceId": "nintendo-life",
-      "category": "Nintendo",
-      "publishedAt": "2026-10-19T15:30:00.000Z",
-      "summary": "Not Trailing Behind. Trails in the Sky 1st Chapter released last year to near-universal acclaim from critics and fans. It was a lovingly crafted, ground-up remake of the first game in the Legend of Heroes franchise, orig…",
-      "summaryType": "snippet",
-      "image": "https://images.nintendolife.com/f2ad61c662be8/large.jpg",
-      "fallbackImage": "/assets/fallbacks/nintendo.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.084Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -1785,7 +1896,23 @@
       "image": "https://images.pushsquare.com/caaa972b85401/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.919Z",
+      "fetchedAt": "2026-10-19T22:13:54.725Z",
+      "sponsored": true
+    },
+    {
+      "id": "9203c858a3a8",
+      "title": "Review: Trails In The Sky 2nd Chapter - Nintendo Switch 2 Edition (Switch 2) - Another Triumphant RPG Experience From The Trails Remake Saga",
+      "link": "https://www.nintendolife.com/reviews/nintendo-switch-2/trails-in-the-sky-2nd-chapter-nintendo-switch-2-edition",
+      "source": "Nintendo Life",
+      "sourceId": "nintendo-life",
+      "category": "Nintendo",
+      "publishedAt": "2026-10-19T15:30:00.000Z",
+      "summary": "Not Trailing Behind. Trails in the Sky 1st Chapter released last year to near-universal acclaim from critics and fans. It was a lovingly crafted, ground-up remake of the first game in the Legend of Heroes franchise, orig…",
+      "summaryType": "snippet",
+      "image": "https://images.nintendolife.com/f2ad61c662be8/large.jpg",
+      "fallbackImage": "/assets/fallbacks/nintendo.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.761Z",
       "sponsored": true
     },
     {
@@ -1801,7 +1928,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Faraway.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.357Z",
       "sponsored": true
     },
     {
@@ -1817,7 +1944,7 @@
       "image": "https://images.digitalfoundry.net/d4dbd1d818098/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.562Z",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
       "sponsored": true
     },
     {
@@ -1833,7 +1960,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/Galactic-Racer-2.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.318Z",
+      "fetchedAt": "2026-10-19T22:13:54.181Z",
       "sponsored": true
     },
     {
@@ -1849,7 +1976,7 @@
       "image": "https://www.videogameschronicle.com/files/2026/10/star-warrs-interview.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.420Z",
+      "fetchedAt": "2026-10-19T22:13:54.128Z",
       "sponsored": true
     },
     {
@@ -1865,7 +1992,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/samsonnew.png?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.318Z",
+      "fetchedAt": "2026-10-19T22:13:54.181Z",
       "sponsored": true
     },
     {
@@ -1881,7 +2008,7 @@
       "image": "https://assetsio.gnwcdn.com/binary-domain-robot-face.webp?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.403Z",
+      "fetchedAt": "2026-10-19T22:13:54.071Z",
       "sponsored": true
     },
     {
@@ -1897,7 +2024,7 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/Faraway-Date_10-19-26.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z"
+      "fetchedAt": "2026-10-19T22:13:54.157Z"
     },
     {
       "id": "7c4ee9b21328",
@@ -1912,7 +2039,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/9sKhLHASqsy6MGHqS9vbgS-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.813Z",
+      "fetchedAt": "2026-10-19T22:13:54.395Z",
       "sponsored": true
     },
     {
@@ -1928,7 +2055,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/rXBYmgL4yDHbnu2Wm4Q7sL-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.813Z",
+      "fetchedAt": "2026-10-19T22:13:54.396Z",
       "sponsored": true
     },
     {
@@ -1944,7 +2071,7 @@
       "image": "https://kotaku.com/app/uploads/2026/09/cidred-1280x767.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -1960,7 +2087,7 @@
       "image": "https://images.pushsquare.com/fbfd7d11a12e0/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
+      "fetchedAt": "2026-10-19T22:13:54.726Z",
       "sponsored": true
     },
     {
@@ -1976,7 +2103,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/fiqkcuyneqw7pqfkbnqtztoqiq.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.056Z",
+      "fetchedAt": "2026-10-19T22:13:54.609Z",
       "sponsored": true
     },
     {
@@ -1992,7 +2119,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/3577026-darling.webp?w=636",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.319Z",
+      "fetchedAt": "2026-10-19T22:13:54.182Z",
       "sponsored": true
     },
     {
@@ -2008,7 +2135,7 @@
       "image": "https://assetsio.gnwcdn.com/crusader-kings-3-silk-and-silver-release-date-01.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
+      "fetchedAt": "2026-10-19T22:13:54.434Z",
       "sponsored": true
     },
     {
@@ -2024,7 +2151,23 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/Directive-8020-A-Dark-Pictures-Game_2026_10-19-26_002.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z",
+      "fetchedAt": "2026-10-19T22:13:54.157Z",
+      "sponsored": true
+    },
+    {
+      "id": "34fbc96e0a81",
+      "title": "Mole Boss is ready to destroy everything!",
+      "link": "https://atomicrealm.itch.io/mine-tileset/devlog/1716661/mole-boss-is-ready-to-destroy-everything",
+      "source": "itch.io Devlogs",
+      "sourceId": "itch-io-blog",
+      "category": "Indie",
+      "publishedAt": "2026-10-19T14:43:44.000Z",
+      "summary": "Boss is here! Coming in 16p and 32p with two color variants - yellow and teal! Plus, we&#039;ve added some rocks as well...",
+      "summaryType": "snippet",
+      "image": "https://img.itch.zone/aW1nLzMxMDgzNTYwLmdpZg==/original/h1aPRc.gif",
+      "fallbackImage": "/assets/fallbacks/indie.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -2040,7 +2183,7 @@
       "image": "https://img.itch.zone/aW1nLzI5Mjk2OTQ3LmpwZw==/original/pueJLH.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -2056,7 +2199,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/kyliecammy.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.062Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -2072,7 +2215,7 @@
       "image": "https://images.pushsquare.com/2877079cf81b1/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z"
+      "fetchedAt": "2026-10-19T22:13:54.726Z"
     },
     {
       "id": "70c73f519a06",
@@ -2087,7 +2230,7 @@
       "image": "https://images.purexbox.com/9d16f50e2aeff/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.115Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -2103,7 +2246,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/BF6.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.320Z",
+      "fetchedAt": "2026-10-19T22:13:54.182Z",
       "sponsored": true
     },
     {
@@ -2119,7 +2262,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/Kojima-Cyberpunk.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.320Z",
+      "fetchedAt": "2026-10-19T22:13:54.182Z",
       "sponsored": true
     },
     {
@@ -2135,7 +2278,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/runescape-community-plugins.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.507Z",
       "sponsored": true
     },
     {
@@ -2151,7 +2294,7 @@
       "image": "https://images.nintendolife.com/4fb8b932252f0/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.084Z",
+      "fetchedAt": "2026-10-19T22:13:54.761Z",
       "sponsored": true
     },
     {
@@ -2167,7 +2310,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Castlevania-Belmonts-Curse-sales.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.358Z",
       "sponsored": true
     },
     {
@@ -2183,7 +2326,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/shueisha-games-at-jump-festa-2027.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.057Z",
+      "fetchedAt": "2026-10-19T22:13:54.610Z",
       "sponsored": true
     },
     {
@@ -2199,7 +2342,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/Umamusume-Pretty-Derby-1280x711.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.063Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -2215,7 +2358,7 @@
       "image": "https://images.pushsquare.com/984925dabbb87/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
+      "fetchedAt": "2026-10-19T22:13:54.726Z",
       "sponsored": true
     },
     {
@@ -2231,7 +2374,7 @@
       "image": "https://assetsio.gnwcdn.com/saros-screenshot-01-en-14feb25.webp?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.403Z",
+      "fetchedAt": "2026-10-19T22:13:54.071Z",
       "sponsored": true
     },
     {
@@ -2247,7 +2390,7 @@
       "image": "https://www.videogameschronicle.com/files/2026/01/Screenshot-2026-01-26-133923.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.420Z",
+      "fetchedAt": "2026-10-19T22:13:54.128Z",
       "sponsored": true
     },
     {
@@ -2263,7 +2406,7 @@
       "image": "https://kotaku.com/app/uploads/2026/04/IMG_3282-1280x720.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.063Z",
+      "fetchedAt": "2026-10-19T22:13:54.682Z",
       "sponsored": true
     },
     {
@@ -2279,7 +2422,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/6hjhRxi7uiQjAYTCrxbcnK-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.078Z"
+      "fetchedAt": "2026-10-19T22:13:54.651Z"
     },
     {
       "id": "eb5f5e8edb59",
@@ -2294,7 +2437,7 @@
       "image": "https://images.pushsquare.com/cbb9e2581f2e3/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
+      "fetchedAt": "2026-10-19T22:13:54.726Z",
       "sponsored": true
     },
     {
@@ -2310,7 +2453,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/anime-mysterious-ashura.png?resize=90%2C90",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.523Z",
+      "fetchedAt": "2026-10-19T22:13:54.235Z",
       "sponsored": true
     },
     {
@@ -2326,7 +2469,7 @@
       "image": "https://kotaku.com/app/uploads/2026/10/rioters-1280x708.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.063Z"
+      "fetchedAt": "2026-10-19T22:13:54.682Z"
     },
     {
       "id": "e4e20e58ad55",
@@ -2341,7 +2484,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/COD-Large.jpeg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.317Z",
+      "fetchedAt": "2026-10-19T22:13:54.180Z",
       "sponsored": true
     },
     {
@@ -2357,7 +2500,7 @@
       "image": "https://assetsio.gnwcdn.com/needle-in-a-haystack-01.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
+      "fetchedAt": "2026-10-19T22:13:54.434Z",
       "sponsored": true
     },
     {
@@ -2373,7 +2516,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/1_36b4a0.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.326Z",
+      "fetchedAt": "2026-10-19T22:13:54.188Z",
       "sponsored": true
     },
     {
@@ -2389,7 +2532,7 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/Super-Meat-Boy-MOUSE-Update_10-19-26.png",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z",
+      "fetchedAt": "2026-10-19T22:13:54.157Z",
       "sponsored": true
     },
     {
@@ -2405,7 +2548,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Super-Meat-Boy-3D-Mouse-P.I.-For-Hire-update.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.358Z",
       "sponsored": true
     },
     {
@@ -2421,7 +2564,7 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/Littlelands-EA-Date_10-19-26.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z",
+      "fetchedAt": "2026-10-19T22:13:54.157Z",
       "sponsored": true
     },
     {
@@ -2437,7 +2580,7 @@
       "image": "https://images.purexbox.com/d3a57e7efbcad/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.115Z"
+      "fetchedAt": "2026-10-19T22:13:54.665Z"
     },
     {
       "id": "c4fc51b2a10b",
@@ -2452,7 +2595,7 @@
       "image": "https://assetsio.gnwcdn.com/star-wars-galactic-racer-biddy-blas-capture-1.png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.403Z",
+      "fetchedAt": "2026-10-19T22:13:54.071Z",
       "sponsored": true
     },
     {
@@ -2468,7 +2611,7 @@
       "image": "https://assetsio.gnwcdn.com/star-wars-zero-company-review-4.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.403Z",
+      "fetchedAt": "2026-10-19T22:13:54.072Z",
       "sponsored": true
     },
     {
@@ -2484,7 +2627,7 @@
       "image": "https://www.gematsu.com/wp-content/uploads/2026/10/Cleaner-Company-Date_10-19-26.jpg",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z",
+      "fetchedAt": "2026-10-19T22:13:54.157Z",
       "sponsored": true
     },
     {
@@ -2500,39 +2643,7 @@
       "image": "https://www.destructoid.com/wp-content/uploads/2026/10/anime-zero-void-arbiter.png?resize=90%2C90",
       "fallbackImage": "/assets/fallbacks/industry.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.523Z",
-      "sponsored": true
-    },
-    {
-      "id": "971c740523fd",
-      "title": "Dumpster Gang launches December 3",
-      "link": "https://www.gematsu.com/2026/10/dumpster-gang-launches-december-3",
-      "source": "Gematsu",
-      "sourceId": "gematsu",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T13:00:23.000Z",
-      "summary": "Dumpster Gang, a cooperative sandbox game with mischievous raccoons for up to four players. will … Source",
-      "summaryType": "snippet",
-      "image": "https://www.gematsu.com/wp-content/uploads/2026/10/Dumpster-Gang-Date_10-19-26.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.441Z",
-      "sponsored": true
-    },
-    {
-      "id": "946dd810ed53",
-      "title": "After 16 Years, Chill Sci-Fi Game Faraway Has A Release Date",
-      "link": "https://www.gamespot.com/articles/after-16-years-chill-sci-fi-game-faraway-has-a-release-date/",
-      "source": "GameSpot",
-      "sourceId": "gamespot",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T13:00:00.000Z",
-      "summary": "After more than a decade of development, developer Steph Thirion's chill sci-fi game has a release date of locked in. GameSpot can exclusively reveal that Faraway will launch on November 5 for PC, PS5, Xbox Series X|S, a…",
-      "summaryType": "snippet",
-      "image": "https://www.gamespot.com/wp-content/uploads/2026/10/Faraway.jpg?w=300",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.327Z",
+      "fetchedAt": "2026-10-19T22:13:54.236Z",
       "sponsored": true
     },
     {
@@ -2548,7 +2659,7 @@
       "image": "https://images.pushsquare.com/fc28cb6b45c95/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
+      "fetchedAt": "2026-10-19T22:13:54.726Z",
       "sponsored": true
     },
     {
@@ -2564,7 +2675,7 @@
       "image": "https://images.nintendolife.com/40f26631ddfb1/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.761Z",
       "sponsored": true
     },
     {
@@ -2580,7 +2691,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/ss-856a126b7ae1b47fdf7df9cc7cd7c7af76e244231920x1080.jpg?resize=1200%2C668",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.057Z"
+      "fetchedAt": "2026-10-19T22:13:54.610Z"
     },
     {
       "id": "cf8b46925dc8",
@@ -2595,7 +2706,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/10/18184437/Purchasing-coupons-in-Super-Coupon-Club.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.861Z"
+      "fetchedAt": "2026-10-19T22:13:55.687Z"
     },
     {
       "id": "57ed4e10e414",
@@ -2610,23 +2721,7 @@
       "image": "https://assetsio.gnwcdn.com/Stupid-Never-Dies_eU3iMSb.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
-      "sponsored": true
-    },
-    {
-      "id": "9970fc69b477",
-      "title": "Edgerunners Season 2 Brings Back Hideo Kojima&#8217;s Cyberpunk 2077 Character",
-      "link": "https://kotaku.com/cyberpunk-edgerunners-season-2-hideo-kojima-cameo-character-2000747537",
-      "source": "Kotaku",
-      "sourceId": "kotaku",
-      "category": "Industry",
-      "publishedAt": "2026-10-19T12:46:33.000Z",
-      "summary": "You will see at least one familiar face in the new Netflix anime",
-      "summaryType": "snippet",
-      "image": "https://kotaku.com/app/uploads/2026/10/kojimacyber-1280x720.jpg",
-      "fallbackImage": "/assets/fallbacks/industry.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.063Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -2639,10 +2734,10 @@
       "publishedAt": "2026-10-19T12:31:39.000Z",
       "summary": "Both Demo and Early Access version needs some extra days to pass Steam rewiew, i&#039;ll publish the demo as soon it becomes avaiable meanwhile i&#039;m using the extra time to further polish the launch version...",
       "summaryType": "snippet",
-      "image": null,
+      "image": "https://img.itch.zone/aW1nLzI3MjI2NzUxLmpwZw==/original/XoUa7j.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -2658,7 +2753,7 @@
       "image": "https://images.pushsquare.com/9ee7f21c34c0d/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
+      "fetchedAt": "2026-10-19T22:13:54.726Z",
       "sponsored": true
     },
     {
@@ -2674,7 +2769,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/GPKBhsmjD7H3HLGG7cGhmb-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.078Z"
+      "fetchedAt": "2026-10-19T22:13:54.651Z"
     },
     {
       "id": "60da71a30058",
@@ -2689,7 +2784,7 @@
       "image": "https://blog.playstation.com/tachyon/2026/10/82ca8188b5a63d9c0d1590043959bcddf9b607bc-scaled.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.603Z",
+      "fetchedAt": "2026-10-19T22:13:54.768Z",
       "sponsored": true
     },
     {
@@ -2705,7 +2800,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/B2cB9Ri4vM2s7a8D32UMvK-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.079Z",
+      "fetchedAt": "2026-10-19T22:13:54.652Z",
       "sponsored": true
     },
     {
@@ -2721,7 +2816,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/xhQmSwMGCL3T3ANrTdHzYb-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.813Z",
+      "fetchedAt": "2026-10-19T22:13:54.396Z",
       "sponsored": true
     },
     {
@@ -2737,7 +2832,7 @@
       "image": "https://images.purexbox.com/ec35e5b3b2b70/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -2753,7 +2848,7 @@
       "image": "https://images.pushsquare.com/3394c557415d1/large.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
+      "fetchedAt": "2026-10-19T22:13:54.726Z",
       "sponsored": true
     },
     {
@@ -2769,7 +2864,7 @@
       "image": "https://images.nintendolife.com/7520d42cdb4f6/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -2785,7 +2880,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/QNNat83JqoZDqE7W9nvJfd-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.079Z"
+      "fetchedAt": "2026-10-19T22:13:54.652Z"
     },
     {
       "id": "865ea327aa25",
@@ -2800,24 +2895,23 @@
       "image": "https://cdn.mos.cms.futurecdn.net/v8ZttZKedGeJNykywStPfZ-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.814Z",
+      "fetchedAt": "2026-10-19T22:13:54.396Z",
       "sponsored": true
     },
     {
-      "id": "57d1eb052002",
-      "title": "Guide: These 35+ PS5 and PS Plus Games Are Coming Out This Week (19th-25th October)",
-      "link": "https://www.pushsquare.com/guides/these-35plus-ps5-and-ps-plus-games-are-coming-out-this-week-19th-25th-october",
-      "source": "Push Square",
-      "sourceId": "push-square",
-      "category": "PlayStation",
-      "publishedAt": "2026-10-19T11:30:00.000Z",
-      "summary": "Call of Duty: Modern Warfare 4! Final Fantasy Resonance! BeamNG.drive! Between all the new releases and PS Plus update, PS5 owners have an eye-watering 35+ new games to look forward to this week. This includes some real …",
+      "id": "25ab3635d70d",
+      "title": "Sharpest Spear Devlog #5: More controller support!",
+      "link": "https://npjarcade.itch.io/sharpest-spear/devlog/1716308/sharpest-spear-devlog-5-more-controller-support",
+      "source": "itch.io Devlogs",
+      "sourceId": "itch-io-blog",
+      "category": "Indie",
+      "publishedAt": "2026-10-19T11:23:05.000Z",
+      "summary": "USING ITEMS WITH A CONTROLLER Nothing very exciting for this devlog but I&#039;ve been making steady progress on properly implementing controller support for the player status screen. When using keyboard a...",
       "summaryType": "snippet",
-      "image": "https://images.pushsquare.com/a263231257133/large.jpg",
-      "fallbackImage": "/assets/fallbacks/playstation.svg",
+      "image": "https://img.itch.zone/aW1nLzMxMDc3MDM3LmdpZg==/original/HCJtq8.gif",
+      "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
-      "sponsored": true
+      "fetchedAt": "2026-10-19T22:13:54.991Z"
     },
     {
       "id": "364255362374",
@@ -2832,7 +2926,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/The-Witcher-3-Remastered-5.0.1-update.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.358Z",
       "sponsored": true
     },
     {
@@ -2848,7 +2942,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Momolitos.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.358Z",
       "sponsored": true
     },
     {
@@ -2864,7 +2958,7 @@
       "image": "https://assetsio.gnwcdn.com/athanasia.png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.770Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -2880,23 +2974,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/dbyMS2G9kvcew8wvqTVruE-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.814Z",
-      "sponsored": true
-    },
-    {
-      "id": "a719968174ab",
-      "title": "Xbox Appears To Be Ditching Security Seals From New Physical Releases",
-      "link": "https://www.purexbox.com/news/2026/10/xbox-appears-to-be-ditching-security-seals-from-new-physical-releases",
-      "source": "Pure Xbox",
-      "sourceId": "pure-xbox",
-      "category": "Xbox",
-      "publishedAt": "2026-10-19T11:00:00.000Z",
-      "summary": "Signed, not sealed, delivered. If you've bought a physical Xbox game lately, you may have noticed the security sticker seal has vanished. Well, this appears to be a new packaging initiative, with reports suggesting that …",
-      "summaryType": "snippet",
-      "image": "https://images.purexbox.com/f36709f21042e/large.jpg",
-      "fallbackImage": "/assets/fallbacks/xbox.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.396Z",
       "sponsored": true
     },
     {
@@ -2912,7 +2990,23 @@
       "image": "https://cdn.mos.cms.futurecdn.net/WZWmFdfwr99E5o9CwZc6nM-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.079Z",
+      "fetchedAt": "2026-10-19T22:13:54.652Z",
+      "sponsored": true
+    },
+    {
+      "id": "a719968174ab",
+      "title": "Xbox Appears To Be Ditching Security Seals From New Physical Releases",
+      "link": "https://www.purexbox.com/news/2026/10/xbox-appears-to-be-ditching-security-seals-from-new-physical-releases",
+      "source": "Pure Xbox",
+      "sourceId": "pure-xbox",
+      "category": "Xbox",
+      "publishedAt": "2026-10-19T11:00:00.000Z",
+      "summary": "Signed, not sealed, delivered. If you've bought a physical Xbox game lately, you may have noticed the security sticker seal has vanished. Well, this appears to be a new packaging initiative, with reports suggesting that …",
+      "summaryType": "snippet",
+      "image": "https://images.purexbox.com/f36709f21042e/large.jpg",
+      "fallbackImage": "/assets/fallbacks/xbox.svg",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -2928,7 +3022,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/hKwU7wrZGL9z9ZrEaYkLe8-1920-80.png",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.079Z",
+      "fetchedAt": "2026-10-19T22:13:54.653Z",
       "sponsored": true
     },
     {
@@ -2944,7 +3038,7 @@
       "image": "https://assetsio.gnwcdn.com/vampire-the-masquerade-bloodlines-remaster-rumours-01.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -2960,7 +3054,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/CQjdrTPfqyvmKCShXA4AJ5-1920-80.png",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.079Z"
+      "fetchedAt": "2026-10-19T22:13:54.653Z"
     },
     {
       "id": "0909ec6549e5",
@@ -2975,7 +3069,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/y3tCnBX4r9nqQAkWjfTPe3-1920-80.png",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.814Z",
+      "fetchedAt": "2026-10-19T22:13:54.397Z",
       "sponsored": true
     },
     {
@@ -2991,7 +3085,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/league-of-legends-kda-back-firestarter-new-song.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.507Z",
       "sponsored": true
     },
     {
@@ -3007,7 +3101,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/nWNfBbcyVCiRNbgUDDztpi-1920-80.webp",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.080Z",
+      "fetchedAt": "2026-10-19T22:13:54.653Z",
       "sponsored": true
     },
     {
@@ -3023,23 +3117,7 @@
       "image": "https://images.purexbox.com/5b2220eb9064e/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z"
-    },
-    {
-      "id": "f01d6106f216",
-      "title": "Feature: Last Chance to Buy These 60+ PS5, PS4 Games in the PS Store Player&#039;s Choice Sale",
-      "link": "https://www.pushsquare.com/features/last-chance-to-buy-these-60plus-ps5-ps4-games-in-the-ps-store-players-choice-sale",
-      "source": "Push Square",
-      "sourceId": "push-square",
-      "category": "PlayStation",
-      "publishedAt": "2026-10-19T10:00:00.000Z",
-      "summary": "PS5 and PS4 games going cheap we recommend. PS Store's latest offer is the Player's Choice sale, and it's almost finished, running until 21st October 2026. As always, there are thousands of PS5 and PS4 games going cheap,…",
-      "summaryType": "snippet",
-      "image": "https://images.pushsquare.com/f410b53e5b401/large.jpg",
-      "fallbackImage": "/assets/fallbacks/playstation.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.920Z",
-      "sponsored": true
+      "fetchedAt": "2026-10-19T22:13:54.665Z"
     },
     {
       "id": "cd86acb2edf4",
@@ -3054,7 +3132,7 @@
       "image": "https://images.nintendolife.com/862c498927ae8/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -3070,7 +3148,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/hDYHoCwU9K6yfsUBaurBzf-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.080Z",
+      "fetchedAt": "2026-10-19T22:13:54.653Z",
       "sponsored": true
     },
     {
@@ -3086,7 +3164,7 @@
       "image": "https://img.itch.zone/aW1nLzMwNzg3OTc4LnBuZw==/original/E5laVT.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.990Z",
       "sponsored": true
     },
     {
@@ -3102,7 +3180,7 @@
       "image": "https://nintendoeverything.com/wp-content/uploads/Metroid-Ravenous.png",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.779Z",
+      "fetchedAt": "2026-10-19T22:13:54.358Z",
       "sponsored": true
     },
     {
@@ -3118,23 +3196,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/qw8JH8RFZA9Sj3X65CekQY-1920-80.png",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.814Z",
-      "sponsored": true
-    },
-    {
-      "id": "81a3e00e6ca1",
-      "title": "🍋 Lumiterra Dev Log #157 · Squad Names, What Comes Next",
-      "link": "https://lumiterra.itch.io/game/devlog/1713810/-lumiterra-dev-log-157-squad-names-what-comes-next",
-      "source": "itch.io Devlogs",
-      "sourceId": "itch-io-blog",
-      "category": "Indie",
-      "publishedAt": "2026-10-19T02:44:07.000Z",
-      "summary": "Summary A quiet week with a lot of leaning forward. The team asked players what they call their squad, then posted a picture of small agents lining up at a Monad portal and asked what comes next. Arou...",
-      "summaryType": "snippet",
-      "image": "https://img.itch.zone/aW1nLzMxMDEyNjM4LmpwZWc=/400x224%23c/QLhuiT.jpeg",
-      "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "fetchedAt": "2026-10-19T22:13:54.397Z",
       "sponsored": true
     },
     {
@@ -3150,7 +3212,7 @@
       "image": "https://img.itch.zone/aW1nLzIyOTk0ODUyLnBuZw==/original/uFzekb.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z"
+      "fetchedAt": "2026-10-19T22:13:54.991Z"
     },
     {
       "id": "367b56c8b0e2",
@@ -3165,7 +3227,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.815Z",
+      "fetchedAt": "2026-10-19T22:13:54.398Z",
       "sponsored": true
     },
     {
@@ -3181,7 +3243,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/91yxzwemcml-sl1500.jpg?resize=1000%2C1500",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.057Z",
+      "fetchedAt": "2026-10-19T22:13:54.610Z",
       "sponsored": true
     },
     {
@@ -3197,7 +3259,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.815Z"
+      "fetchedAt": "2026-10-19T22:13:54.398Z"
     },
     {
       "id": "ac2b6dddeb18",
@@ -3212,54 +3274,8 @@
       "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.815Z",
+      "fetchedAt": "2026-10-19T22:13:54.398Z",
       "sponsored": true
-    },
-    {
-      "id": "aee874d263d6",
-      "title": "Kero Kero Cowboy, Now On Nintendo Switch!",
-      "link": "https://metagamemike.itch.io/kero-kero-cowboy/devlog/1715064/kero-kero-cowboy-now-on-nintendo-switch",
-      "source": "itch.io Devlogs",
-      "sourceId": "itch-io-blog",
-      "category": "Indie",
-      "publishedAt": "2026-10-18T18:30:04.000Z",
-      "summary": "Howdy, folks! Great news, Kero Kero Cowboy is out now on Nintendo Switch!! 🐸🤠🎉 ...Actually it released in August and I forgot to message about it here. But if you didn&#039;t know before, surprise...",
-      "summaryType": "snippet",
-      "image": "https://img.itch.zone/aW1nLzIxMDcwMzc3LmpwZw==/original/scwExI.jpg",
-      "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.682Z"
-    },
-    {
-      "id": "bd61218bdc9a",
-      "title": "The Outlast Trials' initial playtests went poorly: Designer says 6-year development took 'a f**king long time' and 'a s**t-ton of prototypes'",
-      "link": "https://www.pcgamer.com/games/horror/the-outlast-trials-initial-playtests-went-poorly-designer-says-6-year-development-took-a-f-king-long-time-and-a-s-t-ton-of-prototypes/",
-      "source": "PC Gamer",
-      "sourceId": "pc-gamer",
-      "category": "PC",
-      "publishedAt": "2026-10-18T17:18:53.000Z",
-      "summary": "Gamedev may as well be conducted in a black box as far as many players are concerned, so it can be easy to think of a good game as one where development went smoothly and a bad game as one where things went terribly awry…",
-      "summaryType": "snippet",
-      "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
-      "fallbackImage": "/assets/fallbacks/pc.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.815Z",
-      "sponsored": true
-    },
-    {
-      "id": "fb5a1d452ec4",
-      "title": "No soundtrack does it like Hades 2",
-      "link": "https://www.pcgamer.com/games/roguelike/no-soundtrack-does-it-like-hades-2/",
-      "source": "PC Gamer",
-      "sourceId": "pc-gamer",
-      "category": "PC",
-      "publishedAt": "2026-10-18T17:00:00.000Z",
-      "summary": "Critical Hit Welcome to Critical Hit , where I (or someone else on the PC Gamer team) celebrate and lament all things videogame music, audio design, and the ways our favourite games make our ears tingle. I have not playe…",
-      "summaryType": "snippet",
-      "image": "https://cdn.mos.cms.futurecdn.net/6offQUY4CXebir2TC27dMd-1920-80.jpg",
-      "fallbackImage": "/assets/fallbacks/pc.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.815Z"
     },
     {
       "id": "521f38c12537",
@@ -3274,7 +3290,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/dead-cells-developer-evil-empire-interview-future-projects-dream-collaboration.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3290,7 +3306,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/BeW2F22fUfKmgBpAPSsk2m-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.080Z",
+      "fetchedAt": "2026-10-19T22:13:54.653Z",
       "sponsored": true
     },
     {
@@ -3306,7 +3322,7 @@
       "image": "https://images.purexbox.com/180b24fe9f559/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -3322,7 +3338,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/7X9faxffEZaYBYPTsTUxAM-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.080Z",
+      "fetchedAt": "2026-10-19T22:13:54.653Z",
       "sponsored": true
     },
     {
@@ -3338,7 +3354,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/anime-ball-battles-codes-header-pcgn.jpeg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z"
+      "fetchedAt": "2026-10-19T22:13:54.508Z"
     },
     {
       "id": "be8eb6d792f6",
@@ -3350,10 +3366,10 @@
       "publishedAt": "2026-10-18T15:04:36.000Z",
       "summary": "a small update to fix a few errors and bugs!...",
       "summaryType": "snippet",
-      "image": null,
+      "image": "https://img.itch.zone/aW1nLzI5ODA1MjU1LnBuZw==/original/pReo2y.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -3369,7 +3385,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/L7BkiwxuV26xQsmk9K7L5C-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.080Z",
+      "fetchedAt": "2026-10-19T22:13:54.654Z",
       "sponsored": true
     },
     {
@@ -3385,7 +3401,7 @@
       "image": "https://images.nintendolife.com/7dbfd53cad531/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -3401,7 +3417,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/no-rest-for-the-wicked-class-system-thomas-mahler-moon-studios.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3417,7 +3433,7 @@
       "image": "https://cdn.mos.cms.futurecdn.net/o5FErKasMEKniiGMtgBT5m-1920-80.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.080Z",
+      "fetchedAt": "2026-10-19T22:13:54.654Z",
       "sponsored": true
     },
     {
@@ -3433,7 +3449,7 @@
       "image": "https://images.purexbox.com/eb569e43b76a2/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -3449,7 +3465,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/screenshot6.jpg?resize=1200%2C675",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.057Z",
+      "fetchedAt": "2026-10-19T22:13:54.611Z",
       "sponsored": true
     },
     {
@@ -3465,7 +3481,7 @@
       "image": "https://images.purexbox.com/2d1406ecd977e/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -3481,7 +3497,7 @@
       "image": "https://images.nintendolife.com/88293d6e52fff/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -3497,7 +3513,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/world-of-warcraft-forever-pvp-podcast-horde-vs-alliance-blizzard-interview.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3513,7 +3529,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/call-of-duty-modern-warfare-4-steam-reviews-cast-responds-cod-mw4.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3529,7 +3545,7 @@
       "image": "https://assetsio.gnwcdn.com/the-sunday-papers-big.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -3545,7 +3561,7 @@
       "image": "https://images.purexbox.com/dd0ba2c575657/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -3561,7 +3577,7 @@
       "image": "https://images.nintendolife.com/bb4d331d3b257/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -3577,7 +3593,7 @@
       "image": "https://images.nintendolife.com/b8f510922d359/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -3593,7 +3609,7 @@
       "image": "https://images.nintendolife.com/c2f45db6d2d3f/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.085Z",
+      "fetchedAt": "2026-10-19T22:13:54.762Z",
       "sponsored": true
     },
     {
@@ -3609,7 +3625,7 @@
       "image": "https://images.nintendolife.com/567b8097e717a/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.086Z",
+      "fetchedAt": "2026-10-19T22:13:54.763Z",
       "sponsored": true
     },
     {
@@ -3622,10 +3638,10 @@
       "publishedAt": "2026-10-18T02:08:16.000Z",
       "summary": "THE REVAMPED DEMO IS OUT LET&#039;S GOOOOOOOOOOOO!!!! The demo is a revamped version of the previous demo! The game is now in a state I&#039;m happy with and I feel like it&#039;s true to my vision and what will be...",
       "summaryType": "snippet",
-      "image": null,
+      "image": "https://img.itch.zone/aW1nLzIwMDQ4MzYxLmpwZw==/original/TIeF4m.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
-      "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:27.682Z",
+      "imageType": "real",
+      "fetchedAt": "2026-10-19T22:13:54.991Z",
       "sponsored": true
     },
     {
@@ -3641,7 +3657,7 @@
       "image": "https://assetsio.gnwcdn.com/rain98.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -3657,7 +3673,7 @@
       "image": "https://assetsio.gnwcdn.com/black-and-white_irNHIDY.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -3673,7 +3689,7 @@
       "image": "https://assetsio.gnwcdn.com/trailblazers-into-the-march.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.435Z",
       "sponsored": true
     },
     {
@@ -3689,7 +3705,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/the-apothecary-diaries-xiaolans-story-focuses-on-her-strengths-a.jpeg?resize=1052%2C1500",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.057Z",
+      "fetchedAt": "2026-10-19T22:13:54.612Z",
       "sponsored": true
     },
     {
@@ -3705,7 +3721,7 @@
       "image": "https://assetsio.gnwcdn.com/silent-hill-2-remake-review-6.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.436Z",
       "sponsored": true
     },
     {
@@ -3721,7 +3737,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/steam-bundle-playforeverychild-charity-deal-blue-prince.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3737,7 +3753,7 @@
       "image": "https://images.nintendolife.com/078adce76eb88/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.086Z",
+      "fetchedAt": "2026-10-19T22:13:54.763Z",
       "sponsored": true
     },
     {
@@ -3753,7 +3769,7 @@
       "image": "https://assetsio.gnwcdn.com/samson-liquid-swords-debt-racer-brawler-01.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.436Z",
       "sponsored": true
     },
     {
@@ -3769,7 +3785,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/evil-empire-interview-indie-games-castlevania-belmonts-curse-dev.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3785,7 +3801,7 @@
       "image": "https://images.purexbox.com/daf1b6e46d152/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -3801,7 +3817,7 @@
       "image": "https://images.purexbox.com/1827be611027f/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.665Z",
       "sponsored": true
     },
     {
@@ -3817,7 +3833,7 @@
       "image": "https://images.nintendolife.com/781dc8909e3f5/large.jpg",
       "fallbackImage": "/assets/fallbacks/nintendo.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.086Z",
+      "fetchedAt": "2026-10-19T22:13:54.763Z",
       "sponsored": true
     },
     {
@@ -3833,7 +3849,7 @@
       "image": "https://images.digitalfoundry.net/cefdcc2df2b59/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.562Z",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
       "sponsored": true
     },
     {
@@ -3849,7 +3865,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/ot-4.jpg?resize=1024%2C576",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.058Z",
+      "fetchedAt": "2026-10-19T22:13:54.612Z",
       "sponsored": true
     },
     {
@@ -3865,7 +3881,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/wardogs-season-3-early-start-bulkhead-multiplayer-fps-game.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.908Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3881,7 +3897,7 @@
       "image": "https://images.purexbox.com/6cfd6f70ca793/large.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.116Z",
+      "fetchedAt": "2026-10-19T22:13:54.666Z",
       "sponsored": true
     },
     {
@@ -3897,7 +3913,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/ravenswatch-free-weekend-coop-roguelike-arpg-steam.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.909Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3913,7 +3929,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/deadlock-violet-abilities-painter-character-valve-hero-shooter-moba.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.909Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3929,7 +3945,7 @@
       "image": "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2026/10/phantom-blade-zero-girl-1-1.jpg",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.909Z",
+      "fetchedAt": "2026-10-19T22:13:54.508Z",
       "sponsored": true
     },
     {
@@ -3945,7 +3961,7 @@
       "image": "https://assetsio.gnwcdn.com/weekend-magic.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/pc.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.771Z",
+      "fetchedAt": "2026-10-19T22:13:54.436Z",
       "sponsored": true
     },
     {
@@ -3961,7 +3977,7 @@
       "image": "https://www.siliconera.com/wp-content/uploads/2026/10/ffvii-revelation-great-glacier-section-still-involves-stamina-management.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.058Z"
+      "fetchedAt": "2026-10-19T22:13:54.612Z"
     },
     {
       "id": "7232cf865970",
@@ -3976,7 +3992,7 @@
       "image": null,
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:27.058Z",
+      "fetchedAt": "2026-10-19T22:13:54.613Z",
       "sponsored": true
     },
     {
@@ -3992,7 +4008,7 @@
       "image": null,
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "fallback",
-      "fetchedAt": "2026-10-19T21:12:26.445Z",
+      "fetchedAt": "2026-10-19T22:13:54.157Z",
       "sponsored": true
     },
     {
@@ -4008,7 +4024,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/MW4-CAMPAIGNLIVE-TOUT-6e9f9a71214002c2cfd5.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.721Z",
+      "fetchedAt": "2026-10-19T22:13:54.345Z",
       "sponsored": true
     },
     {
@@ -4024,7 +4040,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/mw4-2.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.831Z",
+      "fetchedAt": "2026-10-19T22:13:54.536Z",
       "sponsored": true
     },
     {
@@ -4040,7 +4056,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/MW4-DMZ-FOB-TOUT-85c1fe26fbda0def29b6.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.721Z",
+      "fetchedAt": "2026-10-19T22:13:54.345Z",
       "sponsored": true
     },
     {
@@ -4056,7 +4072,7 @@
       "image": "https://blog.playstation.com/tachyon/2024/11/ffbf3dfa1a09770e562560053f40c215838e3643.jpeg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.603Z",
+      "fetchedAt": "2026-10-19T22:13:54.768Z",
       "sponsored": true
     },
     {
@@ -4072,7 +4088,7 @@
       "image": "https://i.ytimg.com/vi/am-DB9lgNZ0/maxresdefault.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
       "sponsored": true
     },
     {
@@ -4088,7 +4104,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/image11-09fd993f2862db1a1a94.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.722Z",
+      "fetchedAt": "2026-10-19T22:13:54.347Z",
       "sponsored": true
     },
     {
@@ -4104,7 +4120,7 @@
       "image": "https://live.staticflickr.com/65535/55590647037_fcd36f6731_k.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.603Z"
+      "fetchedAt": "2026-10-19T22:13:54.768Z"
     },
     {
       "id": "6beeaed2db36",
@@ -4119,7 +4135,7 @@
       "image": "https://assetsio.gnwcdn.com/20261015192232_1.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.457Z",
       "sponsored": true
     },
     {
@@ -4135,7 +4151,7 @@
       "image": "https://images.nintendolife.com/1d5a3b9587e57/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.897Z",
       "sponsored": true
     },
     {
@@ -4151,7 +4167,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/Collage-XBOX-Game-Camp-1920-x-1080-0055b55935f62dc5bfaa.png",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.723Z",
+      "fetchedAt": "2026-10-19T22:13:54.348Z",
       "sponsored": true
     },
     {
@@ -4167,7 +4183,7 @@
       "image": "https://assets.onestore.ms/cdnfiles/sfw-service-web-onestore-onerf-2017-11-8-12/store/common/images/xpalogo_black.png",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.724Z",
+      "fetchedAt": "2026-10-19T22:13:54.350Z",
       "sponsored": true
     },
     {
@@ -4183,7 +4199,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/09/26095438/Kid-asking-for-a-book-in-Egglets-the-long-10-days-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.861Z",
+      "fetchedAt": "2026-10-19T22:13:55.687Z",
       "sponsored": true
     },
     {
@@ -4199,7 +4215,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/1212.jpg?w=300",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.831Z",
+      "fetchedAt": "2026-10-19T22:13:54.536Z",
       "sponsored": true
     },
     {
@@ -4215,7 +4231,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/COD-INTEL-001-TOUT-2-3b83bc4992236e7f5d63.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.724Z",
+      "fetchedAt": "2026-10-19T22:13:54.350Z",
       "sponsored": true
     },
     {
@@ -4231,7 +4247,7 @@
       "image": "https://blog.playstation.com/tachyon/2026/10/f1563de5fb85c4993c3795537b7b74d49afcb0e6.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.604Z"
+      "fetchedAt": "2026-10-19T22:13:54.769Z"
     },
     {
       "id": "9c0b1bb22622",
@@ -4246,7 +4262,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/Unic-1-98b1036da276e2fd109b.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.725Z"
+      "fetchedAt": "2026-10-19T22:13:54.350Z"
     },
     {
       "id": "12ea1ab568bb",
@@ -4261,7 +4277,7 @@
       "image": "https://images.digitalfoundry.net/7127bedccabe6/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
       "sponsored": true
     },
     {
@@ -4277,7 +4293,7 @@
       "image": "https://i.ytimg.com/vi/rz1B4B2yBZY/maxresdefault.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
       "sponsored": true
     },
     {
@@ -4293,7 +4309,7 @@
       "image": "https://assets.onestore.ms/cdnfiles/sfw-service-web-onestore-onerf-2017-11-8-12/store/common/images/xpalogo_black.png",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.725Z",
+      "fetchedAt": "2026-10-19T22:13:54.351Z",
       "sponsored": true
     },
     {
@@ -4309,7 +4325,7 @@
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/10/1920_1080-46cef4f3bde60e1489cb.jpg",
       "fallbackImage": "/assets/fallbacks/xbox.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.725Z",
+      "fetchedAt": "2026-10-19T22:13:54.351Z",
       "sponsored": true
     },
     {
@@ -4325,7 +4341,7 @@
       "image": "https://i.ytimg.com/vi/iYTPypGDgAM/maxresdefault.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.447Z",
       "sponsored": true
     },
     {
@@ -4341,7 +4357,7 @@
       "image": "https://blog.playstation.com/tachyon/2026/10/607d2eff77b540eff7248b98781c620c05417160.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.607Z",
+      "fetchedAt": "2026-10-19T22:13:54.771Z",
       "sponsored": true
     },
     {
@@ -4357,7 +4373,7 @@
       "image": "https://images.pushsquare.com/reviews/ps5/toy-story-3-complete-edition/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.914Z",
+      "fetchedAt": "2026-10-19T22:13:54.668Z",
       "sponsored": true
     },
     {
@@ -4373,7 +4389,7 @@
       "image": "https://images.digitalfoundry.net/6e8c7a3668635/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4389,7 +4405,7 @@
       "image": "https://images.nintendolife.com/4f758efe83d59/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.897Z",
       "sponsored": true
     },
     {
@@ -4405,7 +4421,7 @@
       "image": "https://images.digitalfoundry.net/bd90735a71aca/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4421,7 +4437,7 @@
       "image": "https://images.pushsquare.com/5994c89a8778a/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.914Z",
+      "fetchedAt": "2026-10-19T22:13:54.668Z",
       "sponsored": true
     },
     {
@@ -4437,7 +4453,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/10/11193413/Dandy-Rat-Cricket-Club-screenshot-1-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.861Z",
+      "fetchedAt": "2026-10-19T22:13:55.687Z",
       "sponsored": true
     },
     {
@@ -4453,7 +4469,7 @@
       "image": "https://blog.playstation.com/tachyon/2026/10/4b18a2c6f55e32d04894abcf3900caef2ae80e11.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.609Z",
+      "fetchedAt": "2026-10-19T22:13:54.772Z",
       "sponsored": true
     },
     {
@@ -4469,7 +4485,7 @@
       "image": "https://images.pushsquare.com/26fceb300262e/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.914Z",
+      "fetchedAt": "2026-10-19T22:13:54.668Z",
       "sponsored": true
     },
     {
@@ -4485,7 +4501,7 @@
       "image": "https://i.ytimg.com/vi/OWhMQoeHUc4/maxresdefault.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4501,7 +4517,7 @@
       "image": "https://blog.playstation.com/tachyon/2026/10/607d2eff77b540eff7248b98781c620c05417160.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.612Z",
+      "fetchedAt": "2026-10-19T22:13:54.774Z",
       "sponsored": true
     },
     {
@@ -4517,7 +4533,7 @@
       "image": "https://images.nintendolife.com/55778feb59e58/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.897Z",
       "sponsored": true
     },
     {
@@ -4533,7 +4549,7 @@
       "image": "https://images.digitalfoundry.net/a96b8f0b39247/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4549,7 +4565,7 @@
       "image": "https://images.digitalfoundry.net/eea6dc9ac4706/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4565,7 +4581,7 @@
       "image": "https://i.ytimg.com/vi/aR11eWdfZYE/maxresdefault.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.563Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4581,7 +4597,7 @@
       "image": "https://images.nintendolife.com/cbd0809e94914/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4597,7 +4613,7 @@
       "image": "https://images.nintendolife.com/bffb3d223dff4/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4613,7 +4629,7 @@
       "image": "https://images.nintendolife.com/aad6b80be9629/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4629,7 +4645,7 @@
       "image": "https://i.ytimg.com/vi/mbTc_AUkVFk/maxresdefault.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.564Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4645,7 +4661,7 @@
       "image": "https://blog.playstation.com/tachyon/2048/10/f839c894b605e618511626b5ae9c2de986789783-scaled.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.614Z",
+      "fetchedAt": "2026-10-19T22:13:54.776Z",
       "sponsored": true
     },
     {
@@ -4661,7 +4677,7 @@
       "image": "https://live.staticflickr.com/65535/55579327716_9abcf7df3d_6k.jpg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.615Z",
+      "fetchedAt": "2026-10-19T22:13:54.776Z",
       "sponsored": true
     },
     {
@@ -4677,7 +4693,7 @@
       "image": "https://images.pushsquare.com/ee5ccb1b763f9/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.668Z",
       "sponsored": true
     },
     {
@@ -4693,7 +4709,7 @@
       "image": "https://images.digitalfoundry.net/af952e06e4bff/large.jpg",
       "fallbackImage": "/assets/fallbacks/hardware.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.564Z",
+      "fetchedAt": "2026-10-19T22:13:55.448Z",
       "sponsored": true
     },
     {
@@ -4709,7 +4725,7 @@
       "image": "https://images.nintendolife.com/8f0c98f4c5bf3/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4725,7 +4741,7 @@
       "image": "https://assetsio.gnwcdn.com/rose-belmont.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.457Z",
       "sponsored": true
     },
     {
@@ -4741,7 +4757,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/ss_69ba6b9889cd57f09f553e607e51f75a5bbf8b92.1920x1080.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.832Z",
+      "fetchedAt": "2026-10-19T22:13:54.537Z",
       "sponsored": true
     },
     {
@@ -4757,23 +4773,7 @@
       "image": "https://images.pushsquare.com/6306539efc754/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
-      "sponsored": true
-    },
-    {
-      "id": "82ad00680a72",
-      "title": "Review: Dragon&#039;s Dogma 2 On Switch 2: The First \"Impossible Port\" for the New Generation?",
-      "link": "https://www.digitalfoundry.net/reviews/dragons-dogma-2-on-switch-2-the-first-impossible-port-for-the-new-generation",
-      "source": "Digital Foundry",
-      "sourceId": "digital-foundry",
-      "category": "Hardware",
-      "publishedAt": "2026-10-12T15:00:00.000Z",
-      "summary": "An impressive outing for a demanding game - but frame pacing needs fixing. Dragon's Dogma 2 was one of the most punishing recent games on consoles and PC alike, with advanced graphics and plenty of CPU-intensive simulati…",
-      "summaryType": "snippet",
-      "image": "https://i.ytimg.com/vi/jngh-B6nlT0/maxresdefault.jpg",
-      "fallbackImage": "/assets/fallbacks/hardware.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.564Z",
+      "fetchedAt": "2026-10-19T22:13:54.668Z",
       "sponsored": true
     },
     {
@@ -4789,7 +4789,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/09/26094507/Food-Truck-in-Ravioli-Planet-1024x681.png",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.862Z",
+      "fetchedAt": "2026-10-19T22:13:55.687Z",
       "sponsored": true
     },
     {
@@ -4805,7 +4805,7 @@
       "image": "https://assetsio.gnwcdn.com/Valor-Mortis-General-Lothaire.png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.457Z",
       "sponsored": true
     },
     {
@@ -4821,7 +4821,7 @@
       "image": "https://images.pushsquare.com/a06f126fe37b3/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -4837,7 +4837,7 @@
       "image": "https://images.nintendolife.com/60353d5b0f5af/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4853,7 +4853,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/ss_5a602d2d70972c8fdb8c97bfb7100974ff9139c3.1920x1080.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.832Z",
+      "fetchedAt": "2026-10-19T22:13:54.537Z",
       "sponsored": true
     },
     {
@@ -4869,7 +4869,7 @@
       "image": "https://images.nintendolife.com/c6dcaafdb4c19/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4885,7 +4885,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/1_b1f08d.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.833Z"
+      "fetchedAt": "2026-10-19T22:13:54.538Z"
     },
     {
       "id": "b1fa07f317f6",
@@ -4900,7 +4900,7 @@
       "image": "https://blog.playstation.com/tachyon/2026/10/c3ea2b40621ccdf0a2b37c7819f0d9b0912c35f6.jpeg",
       "fallbackImage": "/assets/fallbacks/playstation.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.615Z",
+      "fetchedAt": "2026-10-19T22:13:54.776Z",
       "sponsored": true
     },
     {
@@ -4916,7 +4916,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/09/18154456/changing-a-color-in-Garden-Ink-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.862Z"
+      "fetchedAt": "2026-10-19T22:13:55.687Z"
     },
     {
       "id": "6f8caf56b732",
@@ -4931,7 +4931,7 @@
       "image": "https://images.pushsquare.com/19233f2fa56ee/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -4947,7 +4947,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/Screenshot-14.png?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.834Z",
+      "fetchedAt": "2026-10-19T22:13:54.539Z",
       "sponsored": true
     },
     {
@@ -4963,7 +4963,7 @@
       "image": "https://images.pushsquare.com/7400ef308f260/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -4979,7 +4979,7 @@
       "image": "https://images.nintendolife.com/1eadd7b09a89d/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -4995,7 +4995,7 @@
       "image": "https://images.pushsquare.com/0b43b22510c0c/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -5011,7 +5011,7 @@
       "image": "https://images.nintendolife.com/a4066be6f5ee9/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -5027,7 +5027,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/5_7d66fb.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.834Z",
+      "fetchedAt": "2026-10-19T22:13:54.539Z",
       "sponsored": true
     },
     {
@@ -5043,7 +5043,7 @@
       "image": "https://assetsio.gnwcdn.com/star-wars-galactic-racer-review-01.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5059,7 +5059,7 @@
       "image": "https://images.nintendolife.com/31b3845ca6f70/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.251Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -5075,7 +5075,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/09/11062455/Burial-for-a-Butterfly-screenshot-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.862Z",
+      "fetchedAt": "2026-10-19T22:13:55.688Z",
       "sponsored": true
     },
     {
@@ -5091,7 +5091,7 @@
       "image": "https://images.pushsquare.com/d9c888539c2f1/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -5107,7 +5107,7 @@
       "image": "https://images.nintendolife.com/f311c7dce5586/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.252Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -5123,7 +5123,7 @@
       "image": "https://images.pushsquare.com/91029415f544e/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -5139,7 +5139,7 @@
       "image": "https://images.nintendolife.com/8bab31019800a/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.252Z",
+      "fetchedAt": "2026-10-19T22:13:54.898Z",
       "sponsored": true
     },
     {
@@ -5155,7 +5155,7 @@
       "image": "https://images.pushsquare.com/e260863af47bb/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -5171,7 +5171,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/1.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.835Z",
+      "fetchedAt": "2026-10-19T22:13:54.540Z",
       "sponsored": true
     },
     {
@@ -5187,7 +5187,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/08/27193253/Running-away-from-AI-in-Cat-Secretary-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.862Z",
+      "fetchedAt": "2026-10-19T22:13:55.688Z",
       "sponsored": true
     },
     {
@@ -5203,7 +5203,7 @@
       "image": "https://images.pushsquare.com/8b9cd557e453f/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -5219,7 +5219,7 @@
       "image": "https://images.purexbox.com/c8122d8ae49cb/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.812Z",
       "sponsored": true
     },
     {
@@ -5235,7 +5235,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/10/9_6c44e2.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.833Z",
+      "fetchedAt": "2026-10-19T22:13:54.538Z",
       "sponsored": true
     },
     {
@@ -5251,7 +5251,7 @@
       "image": "https://images.pushsquare.com/9c1ec69a7bdf5/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
+      "fetchedAt": "2026-10-19T22:13:54.669Z",
       "sponsored": true
     },
     {
@@ -5267,23 +5267,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/09/end-of-abyss-sgf-demo-screenshot-2-1920x1080-723902e259f1_41311a.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.835Z"
-    },
-    {
-      "id": "dbf094b50874",
-      "title": "Mini Review: Dynasty Warriors 3: Complete Edition Remastered (PS5) - A Strong Case for More Musou Revivals",
-      "link": "https://www.pushsquare.com/reviews/ps5/dynasty-warriors-3-complete-edition-remastered",
-      "source": "Push Square Reviews",
-      "sourceId": "push-square-reviews",
-      "category": "Reviews",
-      "publishedAt": "2026-09-30T11:00:00.000Z",
-      "summary": "A true warrior of the Three Kingdoms. Playing Dynasty Warriors 3: Complete Edition Remastered is a strange but not at all unpleasant experience. This is a borderline remake of Dynasty Warriors 3 — a fan-favourite PS2 ins…",
-      "summaryType": "snippet",
-      "image": "https://images.pushsquare.com/6cd0d3f5a558a/large.jpg",
-      "fallbackImage": "/assets/fallbacks/reviews.svg",
-      "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.915Z",
-      "sponsored": true
+      "fetchedAt": "2026-10-19T22:13:54.540Z"
     },
     {
       "id": "6a2dfc4b97fe",
@@ -5298,7 +5282,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/08/29185658/Marupoyo-sand-level-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.862Z"
+      "fetchedAt": "2026-10-19T22:13:55.688Z"
     },
     {
       "id": "6457ed1eafd6",
@@ -5313,7 +5297,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/09/3_9f9dc2.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.836Z",
+      "fetchedAt": "2026-10-19T22:13:54.541Z",
       "sponsored": true
     },
     {
@@ -5329,7 +5313,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/08/29190826/Skating-around-in-RollerGirl-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.862Z",
+      "fetchedAt": "2026-10-19T22:13:55.688Z",
       "sponsored": true
     },
     {
@@ -5345,7 +5329,7 @@
       "image": "https://s3-igpbucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/09/18155908/In-Full-Bloom-too-big-for-the-planet-1024x576.jpg",
       "fallbackImage": "/assets/fallbacks/indie.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.863Z",
+      "fetchedAt": "2026-10-19T22:13:55.689Z",
       "sponsored": true
     },
     {
@@ -5361,7 +5345,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/09/ss_f1e64474ab9acbd661e8fb3bbf5c906a402225aa.1920x1080.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.837Z",
+      "fetchedAt": "2026-10-19T22:13:54.542Z",
       "sponsored": true
     },
     {
@@ -5377,7 +5361,7 @@
       "image": "https://assetsio.gnwcdn.com/Nighthawks-bartender.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5393,7 +5377,7 @@
       "image": "https://assetsio.gnwcdn.com/20260919102815_1.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5409,7 +5393,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/09/ss_46c6a3f4cf75a54d6f0ca902dad45ca881922fb3.1920x1080.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.837Z",
+      "fetchedAt": "2026-10-19T22:13:54.542Z",
       "sponsored": true
     },
     {
@@ -5425,7 +5409,7 @@
       "image": "https://images.purexbox.com/13cbd45e573b4/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.812Z",
       "sponsored": true
     },
     {
@@ -5441,7 +5425,7 @@
       "image": "https://assetsio.gnwcdn.com/roman-sands-rebuild-bestest-best.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5457,7 +5441,7 @@
       "image": "https://assetsio.gnwcdn.com/Control-Resonant-review-BB.png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.789Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5473,7 +5457,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/09/6a1fd8132b48ed1533f6ad23_CONTROL_Resonant_main_f98eec.jpg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.837Z"
+      "fetchedAt": "2026-10-19T22:13:54.543Z"
     },
     {
       "id": "4c56f9de8fe1",
@@ -5488,7 +5472,7 @@
       "image": "https://www.gamespot.com/wp-content/uploads/2026/09/resident-evil-03.jpeg?w=636",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.838Z",
+      "fetchedAt": "2026-10-19T22:13:54.543Z",
       "sponsored": true
     },
     {
@@ -5504,7 +5488,7 @@
       "image": "https://assetsio.gnwcdn.com/Steam-Frame-with-controllers.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5520,7 +5504,7 @@
       "image": "https://assetsio.gnwcdn.com/moonlighter-2_0006_thwack.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.458Z",
       "sponsored": true
     },
     {
@@ -5536,7 +5520,7 @@
       "image": "https://assetsio.gnwcdn.com/the-blood-of-dawnwalker-review-best-01.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.459Z",
       "sponsored": true
     },
     {
@@ -5552,7 +5536,7 @@
       "image": "https://images.purexbox.com/93e6f3dbc72b0/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.813Z",
       "sponsored": true
     },
     {
@@ -5568,7 +5552,7 @@
       "image": "https://assetsio.gnwcdn.com/resonance-a-plague-tale-legacy_0007_Layer-1.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.459Z",
       "sponsored": true
     },
     {
@@ -5584,7 +5568,7 @@
       "image": "https://assetsio.gnwcdn.com/STALKER-2-Cost-of-Hope-(9).png?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.459Z",
       "sponsored": true
     },
     {
@@ -5600,7 +5584,7 @@
       "image": "https://assetsio.gnwcdn.com/mortal-shell-2-rps-bestest-best.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.459Z",
       "sponsored": true
     },
     {
@@ -5616,7 +5600,7 @@
       "image": "https://assetsio.gnwcdn.com/bor-review-header-alt.jpg?width=690&quality=85&format=jpg&auto=webp",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:26.790Z",
+      "fetchedAt": "2026-10-19T22:13:54.459Z",
       "sponsored": true
     },
     {
@@ -5632,7 +5616,7 @@
       "image": "https://images.purexbox.com/f6580b59ee26f/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.813Z",
       "sponsored": true
     },
     {
@@ -5648,7 +5632,7 @@
       "image": "https://images.purexbox.com/da9849044ff83/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.813Z",
       "sponsored": true
     },
     {
@@ -5664,7 +5648,7 @@
       "image": "https://images.purexbox.com/240d9ffa85eba/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.813Z",
       "sponsored": true
     },
     {
@@ -5680,7 +5664,7 @@
       "image": "https://images.purexbox.com/b2dc0e4105284/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.813Z",
       "sponsored": true
     },
     {
@@ -5696,7 +5680,7 @@
       "image": "https://images.purexbox.com/0b03710e45352/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.813Z",
       "sponsored": true
     },
     {
@@ -5712,7 +5696,7 @@
       "image": "https://images.purexbox.com/b38b873409016/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     },
     {
@@ -5728,7 +5712,7 @@
       "image": "https://images.purexbox.com/e5f2236c105b6/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     },
     {
@@ -5744,7 +5728,7 @@
       "image": "https://images.purexbox.com/34a1a805ead5b/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.336Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     },
     {
@@ -5760,7 +5744,7 @@
       "image": "https://images.purexbox.com/688fbd58f3bda/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.337Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     },
     {
@@ -5776,7 +5760,7 @@
       "image": "https://images.purexbox.com/5a8cdc57f4127/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.337Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     },
     {
@@ -5792,7 +5776,7 @@
       "image": "https://images.purexbox.com/dc071165acf43/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.337Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     },
     {
@@ -5808,7 +5792,7 @@
       "image": "https://images.purexbox.com/499646548ebc0/large.jpg",
       "fallbackImage": "/assets/fallbacks/reviews.svg",
       "imageType": "real",
-      "fetchedAt": "2026-10-19T21:12:27.337Z",
+      "fetchedAt": "2026-10-19T22:13:54.814Z",
       "sponsored": true
     }
   ]
