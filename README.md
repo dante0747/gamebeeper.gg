@@ -336,7 +336,6 @@ GameBeeper.gg/
 |   +-- http.js              Fetch wrapper with timeout/retry
 |   +-- analytics.js         GA4 consent wrapper
 |   +-- consent.js           Cookie consent banner
-|   +-- paypal-modal.js      Support/donation modal
 |   +-- videos.js            Video data helpers + genre labels
 |   +-- video-cards.js       Video card HTML generation
 |   +-- video-filters.js     Video filter state machine
@@ -433,6 +432,14 @@ Open [http://localhost:5173](http://localhost:5173).
 3. Set `"category"` to the feed's primary gaming category. Use `"Latest"` for general gaming outlets so articles are classified per-article by keyword/LLM. Use a specific category only for dedicated outlets (e.g., `"PlayStation"` for PlayStation Blog).
 4. Run `npm run build:feed` and verify the articles are relevant gaming content.
 5. Open a PR with your change.
+
+---
+
+## 💖 Sponsor
+
+GameBeeper is **free, ad-free and independent**. If it saves you time, you can sponsor it on GitHub:
+
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-dante0747-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/dante0747)
 
 ---
 

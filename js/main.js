@@ -11,7 +11,6 @@ import { loadFeedCache, fetchAllFromRSS, normaliseCachedArticle } from './feed.j
 import { gridCard, listCard, buildSkeletons, cardPlaceholder, heroMarkup, pickLeadStory } from './cards.js';
 import { initSettings } from './settings-panel.js';
 import { initMyPulse } from './pulse-panel.js';
-import { initPayPalModal } from './paypal-modal.js';
 import { initSummaryModal, openSummaryModal } from './summary.js';
 
 // -- State ---------------------------------------------------------
@@ -947,7 +946,6 @@ async function init() {
     startAutoRefresh,
   });
   initMyPulse({ render: () => { resetPaging(); render(); }, buildFilters });
-  initPayPalModal();
   initSummaryModal();
   initHeroCard();
   initTicker();

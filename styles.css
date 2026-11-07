@@ -1573,8 +1573,8 @@ a.ticker-item:focus-visible { box-shadow: inset 0 0 0 2px var(--signal-ink); }
 .site-version-badge { font-family: var(--font-led); font-size: 15px; font-weight: 600; }
 
 /* 18. OVERLAYS & PANELS -------------------------------------------------------- */
-.settings-popover, .my-pulse-drawer, .pp-modal, .summary-dialog, .cache-confirm-dialog { background: var(--surface-1); border: 1px solid var(--line-2); box-shadow: var(--shadow-3); color: var(--text-1); }
-.settings-popover, .pp-modal, .summary-dialog, .cache-confirm-dialog { border-top: 3px solid var(--signal); }
+.settings-popover, .my-pulse-drawer, .summary-dialog, .cache-confirm-dialog { background: var(--surface-1); border: 1px solid var(--line-2); box-shadow: var(--shadow-3); color: var(--text-1); }
+.settings-popover, .summary-dialog, .cache-confirm-dialog { border-top: 3px solid var(--signal); }
 
 .settings-popover {
   z-index: 300;
@@ -1703,20 +1703,6 @@ a.ticker-item:focus-visible { box-shadow: inset 0 0 0 2px var(--signal-ink); }
 .pulse-nudge-btn { font-weight: 800; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal); }
 .pulse-nudge-close { display: grid; place-items: center; width: 32px; height: 32px; color: var(--text-3); }
 .pulse-nudge-close:hover { color: var(--text-1); background: var(--surface-2); }
-
-.pp-modal-backdrop { position: fixed; inset: 0; z-index: 450; display: grid; place-items: center; padding: var(--s-6); background: rgba(0, 0, 0, 0.8); visibility: hidden; opacity: 0; transition: opacity var(--t-3) var(--ease), visibility 0s linear var(--t-3); }
-.pp-modal-backdrop.open { visibility: visible; opacity: 1; transition-delay: 0s; }
-.pp-modal { position: relative; width: min(380px, 100%); padding: var(--s-8); text-align: center; transform: translateY(8px); transition: transform var(--t-3) var(--ease); }
-.pp-modal-backdrop.open .pp-modal { transform: none; }
-.pp-close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 38px; height: 38px; color: var(--text-2); }
-.pp-close:hover { color: var(--signal-ink); background: var(--signal); }
-.pp-icon { display: inline-grid; place-items: center; width: 52px; height: 52px; margin-bottom: var(--s-4); color: var(--hot); background: rgba(255, 61, 113, 0.12); }
-.pp-title { font-stretch: 125%; font-size: 1.375rem; font-weight: 900; text-transform: uppercase; }
-.pp-desc { margin-top: 6px; font-size: var(--fs-small); color: var(--text-2); }
-.pp-qr-wrap { display: inline-block; margin: var(--s-5) 0 var(--s-4); padding: 10px; background: #fff; }
-.pp-qr { width: 180px; height: 180px; }
-.pp-link { display: flex; width: 100%; }
-.pp-thanks { margin-top: var(--s-4); font-size: 12px; color: var(--text-3); }
 
 #summaryModal { position: fixed; inset: 0; z-index: 420; display: grid; place-items: center; padding: var(--s-6); visibility: hidden; transition: visibility 0s linear var(--t-3); }
 #summaryModal.open { visibility: visible; transition-delay: 0s; }
