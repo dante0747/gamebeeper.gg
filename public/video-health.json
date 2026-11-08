@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T06:14:47.857Z",
+  "generatedAt": "2026-11-08T07:10:43.199Z",
   "totalSources": 8,
   "onlineSources": 0,
   "failedSources": 8,
@@ -8,7 +8,7 @@
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 500",
       "videosFetched": 0
     },
     {
@@ -29,7 +29,7 @@
       "id": "nintendo-yt",
       "name": "Nintendo",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 500",
       "videosFetched": 0
     },
     {
