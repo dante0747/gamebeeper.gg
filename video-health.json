@@ -1,20 +1,21 @@
 {
-  "generatedAt": "2026-11-27T06:17:58.864Z",
+  "generatedAt": "2026-11-27T07:11:43.026Z",
   "totalSources": 8,
-  "onlineSources": 2,
-  "failedSources": 6,
+  "onlineSources": 0,
+  "failedSources": 8,
   "sources": [
     {
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 503",
+      "videosFetched": 0
     },
     {
       "id": "gamespot-yt",
       "name": "GameSpot",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 503",
       "videosFetched": 0
     },
     {
@@ -27,8 +28,9 @@
     {
       "id": "nintendo-yt",
       "name": "Nintendo",
-      "ok": true,
-      "videosFetched": 12
+      "ok": false,
+      "error": "HTTP 503",
+      "videosFetched": 0
     },
     {
       "id": "playstation-yt",
@@ -41,21 +43,21 @@
       "id": "summer-game-fest-yt",
       "name": "Summer Game Fest",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 503",
       "videosFetched": 0
     },
     {
       "id": "the-game-awards-yt",
       "name": "The Game Awards",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 503",
       "videosFetched": 0
     },
     {
       "id": "xbox-yt",
       "name": "Xbox",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 503",
       "videosFetched": 0
     }
   ]
