@@ -1,28 +1,27 @@
 {
-  "generatedAt": "2026-11-28T06:14:58.942Z",
+  "generatedAt": "2026-11-28T07:10:55.195Z",
   "totalSources": 8,
-  "onlineSources": 0,
-  "failedSources": 8,
+  "onlineSources": 1,
+  "failedSources": 7,
   "sources": [
     {
       "id": "digital-foundry-yt",
       "name": "Digital Foundry",
-      "ok": false,
-      "error": "HTTP 503",
-      "videosFetched": 0
+      "ok": true,
+      "videosFetched": 12
     },
     {
       "id": "gamespot-yt",
       "name": "GameSpot",
       "ok": false,
-      "error": "HTTP 503",
+      "error": "HTTP 404",
       "videosFetched": 0
     },
     {
       "id": "ign-yt",
       "name": "IGN",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 503",
       "videosFetched": 0
     },
     {
@@ -36,7 +35,7 @@
       "id": "playstation-yt",
       "name": "PlayStation",
       "ok": false,
-      "error": "HTTP 404",
+      "error": "HTTP 503",
       "videosFetched": 0
     },
     {
